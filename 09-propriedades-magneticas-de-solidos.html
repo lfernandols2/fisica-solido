@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<title>Propriedades Magnéticas de Sólidos</title>
+<style>
+:root{--ink:#1a2333;--navy:#1b2a4a;--muted:#5b6b82;--line:#dfe6ef;--bg:#ffffff;}
+*{box-sizing:border-box}
+body{margin:0;background:#eef1f6;color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.65}
+@page{size:A4;margin:18mm 16mm}
+@media print{body{background:#fff}.sheet{box-shadow:none!important;margin:0!important;max-width:none!important;border:none}.inner{padding:0 2mm}.eq{font-size:12.5px;padding:8px;line-height:1.5;page-break-inside:auto}.eq small{font-size:10px}figure{page-break-inside:avoid}table{font-size:11.5px}h2{page-break-after:avoid}}
+.sheet{max-width:860px;margin:26px auto;background:var(--bg);border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.inner{padding:44px 52px}
+@media(max-width:640px){.inner{padding:26px 22px}}
+header.doc-head{border-bottom:3px solid var(--navy);padding-bottom:14px;margin-bottom:18px}
+.doc-head .inst{font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.doc-head h1{font-size:30px;line-height:1.2;margin:8px 0;color:var(--navy)}
+.doc-head .sub{font-style:italic;color:#33415c;font-size:16px}
+.scope{font-family:Arial,Helvetica,sans-serif;font-size:13px;background:#f4f6fa;border:1px solid var(--line);border-left:4px solid var(--navy);padding:10px 14px;margin:16px 0;line-height:1.5}
+h2{font-size:22px;color:var(--navy);margin:30px 0 8px;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3{font-size:18px;color:#24365c;margin:20px 0 6px}
+p{text-align:justify;margin:8px 0}
+ul,ol{margin:6px 0;padding-left:24px}
+li{margin:4px 0}
+.mapa{font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:var(--muted);background:#f7f9fc;border-left:3px solid #a9bfd9;padding:8px 12px;margin:12px 0;line-height:1.55}
+.eq{background:#f7f9fc;border:1px solid var(--line);padding:10px 10px;margin:10px 0;text-align:center;font-size:14px;overflow:visible;white-space:normal;word-wrap:break-word;overflow-wrap:anywhere;max-width:100%}
+.eq small{display:block;font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);margin-top:6px;white-space:normal;line-height:1.5}
+.eq mjx-container{overflow:visible !important;max-width:100% !important}
+.eq mjx-container[jax="CHTML"][display="true"]{white-space:normal !important;margin:.4em 0 !important}
+mjx-container[jax="CHTML"][display="true"]{overflow:visible !important}
+figure{margin:14px auto;border:1px solid var(--line);background:#fbfcfe;max-width:760px}
+figure .draw{padding:10px;display:grid;place-items:center;background:#fff}
+figure svg{max-width:100%;height:auto}
+figcaption{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:var(--muted);padding:8px 14px;border-top:1px solid var(--line);text-align:justify;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px}
+.tcap{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:var(--muted);margin:12px 0 -8px;line-height:1.45}
+th{background:var(--navy);color:#fff;text-align:left;padding:6px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#f7f9fc}
+.foot{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:10px;display:flex;justify-content:space-between;gap:10px}
+.ref{font-size:15px}
+.ref li{margin:6px 0}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:.95,linebreaks:{automatic:true,width:'container'}},options:{enableMenu:false}};</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style id="dk-style">
+html{color-scheme:light}
+html.dark{color-scheme:dark}
+html.dark body{background:#0b101b;color:#d9e2f2}
+html.dark .sheet{background:#101928;border-color:#26324a;box-shadow:0 6px 30px rgba(0,0,0,.55)}
+html.dark header.doc-head{border-color:#2f6dbd}
+html.dark .doc-head h1{color:#8fc2f7}
+html.dark .doc-head .sub{color:#c1cfe6}
+html.dark .doc-head .inst{color:#7d8fab}
+html.dark .scope{background:#132038;border-color:#26324a;color:#c9d6ee}
+html.dark h2{color:#8fc2f7;border-color:#26324a}
+html.dark h3{color:#a9c6f2}
+html.dark p,html.dark li{color:#d9e2f2}
+html.dark .mapa{background:#132038;color:#a9bbe0;border-color:#3a4f75}
+html.dark .eq{background:#131f33;border-color:#26324a;color:#e6eefb}
+html.dark .eq small{color:#8fa3c2}
+html.dark figure{background:#101928;border-color:#26324a}
+html.dark figure .draw{background:#0c1524}
+html.dark figure .draw svg{filter:invert(.92) hue-rotate(180deg)}
+html.dark figcaption{color:#8fa3c2;border-color:#26324a}
+html.dark .tcap{color:#8fa3c2}
+html.dark th{background:#17345e;color:#eaf2ff}
+html.dark td{border-color:#22314c;color:#d9e2f2}
+html.dark tr:nth-child(even) td{background:#132038}
+html.dark .foot{color:#8fa3c2;border-color:#26324a}
+html.dark a{color:#8fc2f7}
+html.dark mjx-container{color:#e6eefb}
+html.dark small{color:#a9bbe0}
+body,.sheet,.eq,figure,h1,h2,h3,th,td,figcaption,.tcap{transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+button#modeBtn{position:fixed;top:12px;right:12px;z-index:999;font-family:Arial,Helvetica,sans-serif;font-size:12px;padding:7px 14px;border-radius:999px;border:1px solid #cdd6e4;background:#ffffff;color:#26324a;cursor:pointer;opacity:.9;transition:opacity .15s,background .2s,color .2s;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+button#modeBtn:hover{opacity:1}
+html.dark button#modeBtn{background:#1b2a44;border-color:#3a4f75;color:#d9e2f2;box-shadow:none}
+</style>
+<script id="dk-script">(function(){var DT=document.documentElement;function store(on){try{localStorage.setItem('darkmode',on?'1':'0')}catch(e){}}function label(on){var b=document.getElementById('modeBtn');if(!b)return;b.textContent=on?'\u2600\u00a0Modo claro':'\u263E\u00a0Modo noturno';b.title='Alternar modo claro/noturno';}function set(on){DT.classList.toggle('dark',!!on);store(on);label(on);}function mk(){var b=document.getElementById('modeBtn');if(b)return b;b=document.createElement('button');b.id='modeBtn';b.type='button';b.title='Alternar modo claro/noturno';b.addEventListener('click',function(){set(!DT.classList.contains('dark'))});(document.body||DT).appendChild(b);return b;}var p=null,auto=false;try{p=localStorage.getItem('darkmode')}catch(e){}auto=(p===null)&&!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);set(p!==null?p==='1':auto);function go(){mk();label(DT.classList.contains('dark'));}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',go);}else{go();}})();</script>
+</head>
+<body>
+<div class="sheet"><div class="inner">
+<header class="doc-head"><div class="inst">Departamento de Física · UFC — Física do Estado Sólido Experimental</div>
+<h1>Propriedades Magnéticas de Sólidos</h1>
+<div class="sub">Tópico 9 do edital — síntese fundamentada nas referências indicadas ao final.</div></header>
+<div class="scope"><b>Escopo:</b> momentos magnéticos, respostas dia/paramagnéticas, troca, ordens magnéticas, magnons, domínios, histerese, técnicas de medida e aplicações.</div>
+
+<h2>1. Introdução: o magnetismo como fenômeno coletivo</h2>
+<p>Dentre as propriedades dos agregados sólidos, o magnetismo é o mais desproporcional em escala. A energia que orienta um momento magnético de um elétron em um campo de 1 tesla é μ<sub>B</sub>·B ≈ 0,06 meV — quase nada diante dos eV das ligações químicas e até diante dos 26 meV da agitação térmica a 300 K. E, ainda assim, é o magnetismo que ordena ímãs permanentes, discos rígidos, sensores e memórias à temperatura ambiente. A resolução deste paradoxo está no caráter coletivo do fenômeno: os momentos não competem isolados contra um campo fraco — eles se acoplam entre si pela <b>interação de troca</b>, um termo de origem quântica (indistinguibilidade + princípio de Pauli), de energia típica 1–100 meV, na mesma escala que sustenta fônons e ligações. É essa interação — e não o campo aplicado — que estabelece a ordem: o campo apenas alinha domínios já ordenados (§ 7). A ordem magnética é, antes de tudo, um estado do sistema eletrônico, não um efeito de campo [Blundell, caps. 1 e 4].</p>
+<p>Na origem de tudo há dois momentos por elétron. O <b>momento de spin</b> vale <b>μ</b><sub>s</sub> = −g<sub>s</sub>μ<sub>B</sub><b>S</b>/ħ, com g<sub>s</sub> ≈ 2,0023, herança da mecânica quântica relativística; e o <b>momento orbital</b> vale <b>μ</b><sub>L</sub> = −μ<sub>B</sub><b>L</b>/ħ, associado à órbita do elétron em torno do núcleo. Em sólidos, os destinos divergem: nos metais de transição (Fe, Co, Ni) o campo elétrico dos vizinhos "congela" a parte orbital (<i>quenching</i>, § 2.2) e sobra, na prática, quase só o spin; já nos lantanídeos os orbitais 4f ficam blindados pelas camadas 5s/5p e o momento total sobrevive — por isso os maiores momentos de íon conhecidos (Dy³⁺ e Ho³⁺, μ<sub>eff</sub> ≈ 10,6 μ<sub>B</sub>) aparecem nos terras-raras [Blundell, caps. 2 e 3].</p>
+<p>Sem interação entre os momentos — a situação de um "gás magnético" —, a resposta linear se divide em dois extremos. O <b>diamagnetismo</b> é universal: existe até na água e no cobre (o campo induz correntes que se opõem à variação de fluxo — precessão de Larmor —, de modo que χ &lt; 0); em supercondutores esse limite é levado ao extremo, χ = −1 (efeito Meissner). Já o <b>paramagnetismo de spins localizados</b> segue a função de Brillouin e, campo fraco, a <b>lei de Curie</b>, χ = C/T (§ 2.4); em metais puros, os elétrons itinerantes respondem pelo <b>paramagnetismo de Pauli</b>, fraco e quase independente de temperatura, pois apenas elétrons na faixa k<sub>B</sub>T em torno de E<sub>F</sub> se reorientam (§ 3.1). A situação muda quando os momentos interagem: o acoplamento dipolar direto rende, para dois momentos de μ<sub>B</sub> separados por r = 0,3 nm, só E<sub>dip</sub> = μ<sub>0</sub>μ<sub>B</sub>²/4πr³ ≈ 2 μeV — muito menor que k<sub>B</sub>T a qualquer temperatura de trabalho. O que ordena é a troca, cuja forma canônica é o Hamiltoniano de Heisenberg:</p>
+<div class="eq">\[\mathcal{H}_{\mathrm{ex}} = -\!\!\sum_{\langle i,j\rangle}\!\! J_{ij}\,\mathbf{S}_i\cdot\mathbf{S}_j,\qquad J&gt;0:\ \text{ferromagnetismo},\quad J&lt;0:\ \text{antiferromagnetismo}\]</div>
+<p>A escala real de J vem dos dados: para o ferro, k<sub>B</sub>T<sub>C</sub> ≈ 90 meV, correspondendo a energia de troca da ordem de 10 meV por ligação — cerca de cinco mil vezes o acoplamento dipolar. Por isso Fe, Co e Ni permanecem ordenados bem acima da temperatura ambiente, e os momentos se organizam em domínios (Weiss) para anular o momento total na ausência de campo. Acima das temperaturas críticas a ordem desaparece e o material voltará a ser paramagneto; essa fronteira é pormenorizada na § 1.3, e o restante do texto a desdobra — momentos independentes (§ 2), itinerância (§ 3), origem das interações (§ 4), ordem e estruturas (§ 5), transição e excitações coletivas (§ 6), domínios e histerese (§ 7), fenômenos de transporte/ópticos e medidas (§ 8) e fronteira da pesquisa (§ 9).</p>
+<h3>1.1 Definições básicas: B, H, M, χ e μ</h3>
+<p>O fluxo magnético <b>Φ = ∫</b><b>B</b>·d<b>S</b> atravessa uma superfície S; a lei de Gauss ∇·<b>B</b> = 0 garante Φ = 0 em toda superfície fechada — não há "cargas magnéticas" isoladas ao modo das elétricas. Na presença de um material, o campo escreve-se</p>
+<div class="eq">\[\mathbf{B} = \mu_0\,(\mathbf{H} + \mathbf{M}),\qquad \mathbf{M}=\chi_m\,\mathbf{H},\qquad \mu_{\rm r} = \frac{\mu}{\mu_0} = 1+\chi_m\]</div>
+<p>com <b>M</b> a <b>magnetização</b> — soma dos momentos por unidade de volume, em A/m no SI — e μ<sub>0</sub> = 4π×10⁻⁷ T·m/A. Nos regimes lineares, χ<sub>m</sub> &gt; 0 (paramagnetos) ou χ<sub>m</sub> &lt; 0 (diamagnetos); nos ferromagnetos a resposta não é função linear de <b>H</b>: a magnetização satura e memoriza (§ 7), com μ<sub>0</sub>M<sub>s</sub> ≈ 2,15 T no ferro, 1,82 T no cobalto e 0,62 T no níquel — valores que uma máquina elétrica consegue, efetivamente, extrair. A tabela 1 arruma as ordens de grandeza; o apêndice A de Blundell trata as conversões SI↔CGS, pois a literatura mais antiga (Kittel, Néel) escreve <b>B</b>, <b>H</b> e <b>M</b> em unidades gauss.</p>
+
+
+
+<h3>1.2 O teorema de Bohr–van Leeuwen e a origem quântica do magnetismo</h3>
+<p>Uma física estatística clássica, levada a sério, proíbe o magnetismo: no <b>teorema de Bohr–van Leeuwen</b>, a função de partição de qualquer sistema de cargas clássicas em equilíbrio térmico não depende de B — as trajetórias dos elétrons em campo são deformações canônicas das trajetórias sem campo (mesma energia, mesma medida de fase), de modo que a magnetização média se anula exatamente, para todo T. O diamagnetismo de Larmor e o paramagnetismo de Curie não existem na física clássica; ambos nascem da quantização — dos estados estacionários discretos (níveis de Zeeman) e da discreta geometria orbital. Blundell, cap. 1, coloca esse teorema logo na abertura porque ele é o "porquê" estrutural de todo o assunto: <i>todo</i> magnetismo termodinamicamente estável de uma substância — contra a corrente induzida de oposição — é um efeito quântico e, em última instância, coletivo.</p>
+<p>Daqui decorrem os dois roteiros do texto. O roteiro <b>local</b> (§ 2 e § 4) quantiza o átomo isolado: níveis de Zeeman, momento efetivo, lei de Curie — e depois acopla átomos vizinhos pela troca. O roteiro <b>itinerante</b> (§ 3) quantiza o gás de elétrons na rede: níveis de Landau, densidade de estados em E<sub>F</sub>, critério de Stoner. Os dois convergem na ordem coletiva (§ 5–§ 7), e é por isso que um mesmo cobre exibe, na balança, a soma χ<sub>total</sub> ≈ χ<sub>Pauli</sub> + χ<sub>Landau</sub> + χ<sub>diamagnético dos íons</sub>, de sinais contrários e magnitudes comparáveis — a razão de χ<sub>Cu</sub> ser tão pequena quanto é.</p>
+<h3>1.3 Temperaturas críticas: Curie e Néel</h3>
+<p>Em <b>sistemas ferromagnéticos</b>, a temperatura crítica <b>T<sub>C</sub></b> (Curie) separa a fase ordenada da desordenada: abaixo dela surge magnetização espontânea estruturada em domínios; acima dela o material volta a um paramagneto cuja suscetibilidade segue a <b>lei de Curie–Weiss</b>:</p>
+<div class="eq">\[\chi(T) = \frac{C}{\,T - \theta_p\,},\qquad \theta_p \approx T_{\text{C}}\ \text{(ferro)},\quad \theta_p \approx -T_{\text{N}}\ \text{(antiferro)},\qquad C = \frac{\mu_0\, n\, g_J^2\mu_B^2 J(J+1)}{3k_B}\]</div>
+<p>Em <b>antiferromagnetos</b>, a temperatura crítica correspondente é <b>T<sub>N</sub></b> (Néel): abaixo dela instalam-se sub-redes antiparalelas compensadas — sem magnetização líquida, mas com o pico característico de χ em T<sub>N</sub>, assinatura da anisotropia do estado ordenado. Em <b>ferrimagnetos</b> (magnetita), sub-redes de magnitudes diferentes deixam momento líquido. Os valores de referência que a banca espera são: T<sub>C</sub> = 1043 K (Fe), 1388 K (Co), 627 K (Ni), 293 K (Gd); ferrimagnetismo da magnetita Fe₃O₄ até 858 K; e T<sub>N</sub> = 311 K (Cr, estrutura de onda de densidade de spin, § 3.3), 525 K (NiO), 118 K (MnO). As transições são de segunda ordem: a magnetização espontânea cresce continuamente do zero em T<sub>C</sub> com o expoente crítico β ≈ 0,37 (classe 3D Heisenberg), e não com o β = 1/2 do campo molecular (§ 6.1).</p>
+<figure><div class="draw">
+<svg aria-label="Comparação de suscetibilidades" role="img" viewbox="0 0 700 320" width="660" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#5b6b82" stroke-width="1" x1="70" x2="70" y1="40" y2="280"></line>
+<line stroke="#5b6b82" stroke-width="1" x1="70" x2="690" y1="280" y2="280"></line>
+<line stroke="#9aa8bd" stroke-dasharray="4 4" stroke-width="1" x1="70" x2="672" y1="200" y2="200"></line>
+<text fill="#5b6b82" font-family="Arial" font-size="13" x="28" y="52">χ</text>
+<text fill="#5b6b82" font-family="Arial" font-size="13" x="680" y="300">T</text>
+<text fill="#8a97ab" font-family="Arial" font-size="10.5" x="88" y="194">χ = 0</text>
+<line stroke="#1b2a4a" stroke-width="2" x1="80" x2="660" y1="228" y2="228"></line>
+<text fill="#1b2a4a" font-family="Arial" font-size="11.5" x="330" y="250">diamagnético (χ &lt; 0, quase constante)</text>
+<line stroke="#2f6dbd" stroke-width="2" x1="80" x2="660" y1="170" y2="170"></line>
+<text fill="#2f6dbd" font-family="Arial" font-size="11.5" x="500" y="163">Pauli (χ ≈ const)</text>
+<polyline fill="none" points="85,62 120,110 160,140 210,164 280,181 380,190 480,196 660,199" stroke="#7a3b8f" stroke-width="2"></polyline>
+<text fill="#7a3b8f" font-family="Arial" font-size="11.5" x="95" y="52">Curie (χ = C/T)</text>
+<polyline fill="none" points="80,218 170,192 240,163 300,148 360,158 460,172 570,181 660,186" stroke="#b5641d" stroke-width="2"></polyline>
+<line stroke="#b5641d" stroke-dasharray="5 4" stroke-width="1" x1="300" x2="300" y1="60" y2="280"></line>
+<text fill="#b5641d" font-family="Arial" font-size="11.5" x="306" y="55">antiferromagnético — cúspide em T<tspan dy="3" font-size="9">N</tspan></text>
+<polyline fill="none" points="252,45 300,95 360,132 440,152 540,165 660,172" stroke="#1b7a4a" stroke-width="2"></polyline>
+<line stroke="#1b7a4a" stroke-dasharray="5 4" stroke-width="1" x1="250" x2="250" y1="35" y2="280"></line>
+<text fill="#1b7a4a" font-family="Arial" font-size="11.5" x="305" y="36">ferromagnético — divergência em T<tspan dy="3" font-size="9">C</tspan></text>
+<text fill="#8a97ab" font-family="Arial" font-size="10.5" x="365" y="215">acima de T<tspan dy="3" font-size="9">C</tspan><tspan dy="-3">: lei de Curie–Weiss; abaixo: domínios (§ 7)</tspan></text>
+</svg>
+</div><figcaption><b>Figura 1.</b> Confronto das respostas de suscetibilidade. No diamagneto, χ &lt; 0 e quase constante; no paramagneto de Pauli (metais), idem com χ &gt; 0 em escala 10⁻⁵; o gás de spins localizados segue χ = C/T; o antiferromagneto exibe cúspide em T<sub>N</sub> e a lei C/(T+|θ<sub>p</sub>|) acima dele; o ferromagneto diverge como C/(T−θ<sub>p</sub>) ao se aproximar de T<sub>C</sub> por cima, e a fase ordenada (T &lt; T<sub>C</sub>) é regida por domínios.</figcaption></figure>
+<p class="tcap"><b>Tabela 2.</b> Temperaturas de ordem magnética dos imãs de referência.</p>
+<table>
+<tr><th>Tipo</th><th>Material</th><th>T<sub>C</sub> ou T<sub>N</sub></th><th>Ordem/estrutura</th></tr>
+<tr><td>ferro</td><td>Fe</td><td>1043 K</td><td>cúbica de corpo centrado; μ  ≈ 2,2 μ<sub>B</sub>/átomo</td></tr>
+<tr><td>ferro</td><td>Co</td><td>1388 K</td><td>hcp; anisotropia grande (§ 7.4)</td></tr>
+<tr><td>ferro</td><td>Ni</td><td>627 K</td><td>fcc; μ ≈ 0,6 μ<sub>B</sub>/átomo</td></tr>
+<tr><td>ferro</td><td>Gd</td><td>≈ 293 K</td><td>4f localizado; a menor desordem já o destrói</td></tr>
+<tr><td>ferrimagneto</td><td>Fe₃O₄ (magnetita)</td><td>858 K</td><td>sub-redes A/B antiparalelas desiguais</td></tr>
+<tr><td>antiferro</td><td>Cr</td><td>311 K</td><td>onda de densidade de spin incommensurável</td></tr>
+<tr><td>antiferro</td><td>NiO</td><td>525 K</td><td>plano de superexchange 180° O²⁻ (§ 4.3)</td></tr>
+<tr><td>antiferro</td><td>MnO</td><td>118 K</td><td>ordem tipo II fcc, vetor (½,½,½), por difração de nêutrons</td></tr>
+</table>
+
+<h2>2. Momentos magnéticos atômicos independentes</h2>
+<h3>2.1 Dos elétrons ao átomo: spin, orbital e fator de Landé</h3>
+<p>A energia de um momento <b>μ</b> num campo <b>B</b> é E = −<b>μ</b>·<b>B</b>; aplicada ao átomo (momento total <b>J</b> = <b>L</b> + <b>S</b>) essa energia quantiza os níveis em multipletos de Zeeman,</p>
+<div class="eq">\[E_{m_J} = g_J\,\mu_B\, B\, m_J,\qquad \mu_B = \frac{e\hbar}{2m_e} = 9{,}274\times 10^{-24}\ \mathrm{J/T}\]</div>
+<p>com o <b>fator de Landé</b>, que mede como a parte orbital e o spin se compõem no momento total:</p>
+<div class="eq">\[g_J = \frac{3}{2} + \frac{S(S+1) - L(L+1)}{2J(J+1)} \quad\left(\approx 2\ \text{para spin puro},\ \approx 1\ \text{para momento orbital puro}\right)\]</div>
+<p>No SI, μ<sub>B</sub>B = 0,058 meV por tesla: um íon de momento <b>J</b> num campo de 1 T apresenta transições de ressonância (ESR) na frequência γ/2π = g<sub>J</sub>μ<sub>B</sub>B/h ≈ 28 GHz — o mesmo preço que a ressonância de núcleo (NMR) paga com γ/2π = 42,58 MHz/T para ¹H. Quando o <b>μ<sub>eff</sub></b> é medido como μ<sub>eff</sub> = g<sub>J</sub>√[J(J+1)]·μ<sub>B</sub>, é essa arquitetura que está por trás. A combinação L, S, J <b>não é arbitrária</b>: o átomo a organiza pelas regras de Hund — maximiza S, depois L, e define J = |L−S| para camada menos da metade cheia ou J = L+S quando ela excede a metade. O resultado: um íon livre tem momento de magnitude fixa, g<sub>J</sub>√[J(J+1)]·μ<sub>B</sub>, e resposta de Brillouin determinada pelo termo da configuração eletrônica no estado fundamental (Blundell, cap. 2).</p>
+<h3>2.2 <i>Quenching</i> orbital, regras de Hund e tabela de momentos</h3>
+<p>Nos sais de íons 3d, o momento orbital é "congelado" pelo campo cristalino: os cinco orbitais <i>d</i> se desdobram em energia da ordem de um eV (muito maior que k<sub>B</sub>T), e o estado fundamental usa apenas uma combinação real de orbitais <i>d</i> — de modo que &lt;L<sub>z</sub>&gt; ≈ 0. Sobra spin; o μ<sub>eff</sub> medido ronda a previsão "spin só":</p>
+<div class="eq">\[\mu_{\mathrm{eff}}^{\rm spin} = 2\sqrt{S(S+1)}\,\mu_B \qquad (3d,\ \text{com orbital congelado pelo campo cristalino})\]</div>
+<p>Nos lantanídeos, os orbitais 4f (intimamente internos) são blindados pelas camadas 5s/5p, e o momento total sobrevive, na forma g<sub>J</sub>√[J(J+1)]·μ<sub>B</sub> — por isso Dy³⁺ e Ho³⁺ têm μ<sub>eff</sub> ≈ 10,6 μ<sub>B</sub>, os maiores conhecidos. A Tabela 3 confronta previsões e medidas: o padrão é claro — spin puro nos 3d, spin+orbital nos 4f — com duas exceções ilustres: Co²⁺ (quenching incompleto: a contribuição orbital de segunda ordem se faz notar) e Sm³⁺/Eu³⁺ (misturas excitacionais quebram a fórmula simples de Hund; veja § 2.5).</p>
+
+
+
+<h3>2.3 Diamagnetismo de Larmor e diamagnetismo perfeito</h3>
+<p>Quando o íon não tem momento permanente (diamagnetismo de Larmor), a resposta é induzida: o campo aplicado põe em precessão lenta as órbitas atômicas — a frequência de Larmor ω<sub>L</sub> = eB/2m<sub>e</sub> sobrepõe-se à revolução orbital, que se reduz — e resulta χ &lt; 0, universal. Em SI, por íon:</p>
+<div class="eq">\[\chi_{\rm dia} = -\,\frac{\mu_0\,Z e^2}{6m_e}\,\langle r^2\rangle\, n \qquad (\text{precessão de Larmor; } \langle r^2\rangle\ \text{ típico de }(a_0)^2)\]</div>
+<p>É por isso que Cu, água e NaCl têm χ ∼ −10⁻⁵/10⁻⁶; é por isso que o Bi, com nuvem eletrônica volumosa (5d/6p, ⟨r²⟩ grande), coroa a lista (−1,7×10⁻⁴); e é por isso que o supercondutor é a versão perfeita do efeito: correntes de superfície expulsam o fluxo por completo, χ = −1 — o <b>efeito Meissner</b>. Note a diferença de natureza: o diamagnetismo não depende de temperatura e a "oposição" é a lei de Lenz sobre o fluxo, não preferência de energia dos spins — é o máximo que um sistema <i>sem</i> momento intrínseco consegue responder.</p>
+<h3>2.4 Paramagnetismo de Brillouin e lei de Curie</h3>
+<p>Dado um gás de íons independentes de momento J, com interação desprezível, o equilíbrio estatístico (Boltzmann nos níveis de Zeeman) entrega a <b>função de Brillouin</b>:</p>
+<div class="eq">\[\frac{M}{M_s} = B_J(x),\qquad x=\frac{g_J\mu_B J B}{k_B T},\qquad B_J(x) = \frac{2J+1}{2J}\coth\!\left(\frac{2J+1}{2J}x\right) - \frac{1}{2J}\coth\!\left(\frac{x}{2J}\right),\qquad M_s = n\, g_J J\,\mu_B\]</div>
+<p>no limite pequeno x (k<sub>B</sub>T ≫ μ<sub>B</sub>B: regime de campo fraco a T ambiente), B<sub>J</sub> → (J+1)/(3J)·x e a magnetização lineariza:</p>
+<div class="eq">\[\chi = \frac{C}{T},\qquad C = \frac{\mu_0\, n\, g_J^2\mu_B^2 J(J+1)}{3k_B},\qquad \mu_{\rm eff} = g_J\sqrt{J(J+1)}\,\mu_B\]</div>
+<p>com <i>n</i> a densidade de íons magnéticos. Sais paramagnéticos de Mn²⁺ ou Gd³⁺ seguem essa lei de forma exemplar; a saturação (campo forte) e o colapso das curvas M(B,T) numa única função B<sub>J</sub> são a verificação clássica da mecânica estatística quântica:</p>
+<div class="eq">\[\text{todas as } M(B,T)\ \text{colapsam em apenas } \frac{M}{M_s} = B_J\!\left(\frac{B}{T}\times \text{const}\right)\]</div>
+
+
+
+
+
+
+
+<h2>3. O metal: momentos que andam</h2>
+<p>Até aqui tratamos momentos presos a seus íons. Nos metais, a história muda de personagem: os elétrons de valência não pertencem a um átomo — pertencem, ao mesmo tempo, a todos. O magnetismo metálico não é, portanto, uma propriedade do átomo multiplicada por T, mas uma propriedade da <b>estrutura de bandas</b> inteira: quem responde ao campo é a geometria em torno da superfície de Fermi, não uma regra de Hund local. É a leitura magnética da nota "Estrutura de Bandas" [Blundell, cap. 7].</p>
+<h3>3.1 O paramagnetismo de Pauli: só a casquinha de Fermi gira</h3>
+<p>A ideia central caberia num verso: <i>no metal, quase todo mundo já está casado</i>. Cada estado até a energia de Fermi é ocupado por dois elétrons de spins opostos, e um par assim não tem momento líquido — reorientá-lo exige colocá-lo num estado já ocupado. Só a casquinha de espessura k<sub>B</sub>T (25 meV, contra dezenas de eV de faixa ocupada) em torno de E<sub>F</sub> dispõe, de um lado, de estados vazios para receber os elétrons que o campo desloca. O resultado: uma suscetibilidade fraca — a de Pauli — praticamente independente da temperatura, de valor tipicamente 10⁻⁵ em unidades volumétricas, da mesma ordem do diamagnetismo dos íons em volta. Eis por que o alumínio é "quase transparente" ao campo, e por que a balança magnética de um metal soma íons e elétrons.</p>
+
+<h3>3.2 A resposta orbital: níveis de Landau e o diamagnetismo que se opõe</h3>
+<p>O outro termo vem da quantização orbital. Em campo, a órbita circular dos elétrons se quantiza em <b>níveis de Landau</b> — a mesma física que pauta o efeito Hall quântico (Yu–Cardona, § 9.6). Como os níveis se recolhem acima de E<sub>F</sub> conforme B cresce, a energia total do gás cai: aparece o χ<sub>dia</sub> orbital, negativo, que para o gás livre vale exatamente ⅓ do paramagnetismo de Pauli, de sinal oposto. Orbital e spin são uma moeda de duas faces: o termo orbital empurra contra o que o spin empurra para cima.</p>
+
+<h3>3.3 Stoner: quando a troca revende o custo cinético</h3>
+<p>Resta a pergunta que dividiu o século XX: por que o ferro é magneto e o cobre não? A resposta de Stoner compara dois preços. Custa, em energia cinética, <i>polarizar</i> a banda: empurrar elétrons ↑ para órbitas mais altas que, na banda dividida, estavam ocupadas por ↓. Ganha, via interação de troca U, energia por diminuir o número de pares ↑↓ (intuitivamente: elétrons alinhados <i>não se repelem mais</i>). O balanço:</p>
+<div class="eq">\[U\;N(E_F) \gt 1 \qquad\Longleftrightarrow\qquad \text{ferromagnetismo itinerante (critério de Stoner)}\]</div>
+<p>— um único produto entre interação e densidade de estados na Fermi. Bandas <i>d</i> estreitas (em tradução: largura de banda pequena, N(E<sub>F</sub>) alto) tornam o custo cinético baixo e a troca competitiva. Eis por que só os metais de transição sustentam imãs itinerantes, e eis também por que metais com χ realçada mas modesta — paládio, platina — são os "quase-Stoner" que nunca decidem. As consequências estão na Figura 3.</p>
+
+
+<h3>3.4 Momentos no mar: RKKY e Kondo — o metal como mediador</h3>
+<p>Num metal com íons magnéticos ralos (lantanídeos, ligas diluídas), os momentos não se enxergam — mas cada um polariza, pela troca s–d, o mar de elétrons de condução à sua volta, e o mar polariza o vizinho. O resultado, <b>RKKY</b>, é uma troca <i>indireta, de longo alcance (∼1/r³)</i> que <b>oscila em sinal</b> com a distância, com a fase ditada pela escala 2k<sub>F</sub>. Conceito-chave: o mesmo par de vizinhos pode ter troca ferro (J&gt;0) a uma separação e antiferro a outra. É o regime dos lantanídeos: Tb, Dy e Ho ordenam em <b>hélices</b> e estruturas não-colineares, porque nenhum vetor único satisfaz todos os vizinhos de uma vez (§ 5). E mais elétrons de condução ⇒ maior k<sub>F</sub> ⇒ oscilação mais rápida em r — a interação tem <i>periodicidade dependente de banda</i>, não de rede.</p>
+
+
+<h2>4. Por que os momentos se casam: a troca e seus mecanismos</h2>
+<p>Com os momentos e as respostas em mãos, resta a pergunta que organiza metade do tópico: <i>por que</i> eles se alinham? A resposta fica no vocabulário da troca — e ela é mais elétrica do que "magnética": cada mecanismo é um modo diferente de dois spins descobrirem, sem se tocarem, se vale a pena estar alinhado.</p>
+<h3>4.1 O primeiro candidato falha: o acoplamento dipolar</h3>
+<p>Cada momento é uma pequena agulha e, classicamente, agulhas interagem por dipolo–dipolo. Mas a energia dipolar é pequena: a 0,3 nm, dois momentos de um magneton de Bohr sentem \(E_{\rm dip} \sim \mu_0\mu_B^2/4\pi r^3 \approx 2\,\mu\mathrm{eV}\) — três ordens de grandeza abaixo do que a troca entrega (\(\sim\)10 meV por ligação, § 1). O dipolar, porém, não desiste: ele vence em <i>escala grande</i> — decide os <i>domínios</i> e a <i>forma</i> dos ímãs (campo de vazamento, § 7), não a <i>nascença</i> da ordem: explica por que um ímã se divide em domínios, mas não por que T<sub>C</sub> é de mil graus.</p>
+<h3>4.2 Troca direta: a física é elétrica, não técnica</h3>
+<p>O verdadeiro motor é elétrico: para dois elétrons próximos, a indistinguibilidade e o princípio de Pauli dividem o mundo entre o singulete (spins antialinhados) e o tripleto (alinhados) — e a <i>energia de Coulomb</i> difere nos dois, porque a função de onda muda de simetria: elétrons alinhados se evitam no espaço (o "buraco de troca"), o que reduz a repulsão. A diferença entre singulete e tripleto é o <b>integral de troca</b>; no limite de spins localizados, ele se reescreve como energia −J·S<sub>i</sub>·S<sub>j</sub>, o Hamiltoniano de Heisenberg da § 1. O sinal de J decide tudo: positivo alinha os spins, negativo os antialinha. O ponto conceitual que a banca cobra: <b>troca não é uma força magnética entre agulhas</b> — é correlação eletrônica <i>escrita em spin</i>. Heisenberg, em 1928, fez isso para o sólido; mas a troca direta exige sobreposição visível dos orbitais envolvidos e, como os <i>d</i> são compactos, quase sempre algum intermediário faz a ponte — eis os mecanismos seguintes.</p>
+<h3>4.3 Superexchange: quando o oxigênio faz de casamenteiro</h3>
+<p>Nos óxidos (MnO, NiO, Fe₃O₄), os íons magnéticos ficam separados por um ânion O²⁻, sem sobreposição direta. A mediação passa por ele: um 2p do ânion salta <i>virtualmente</i> para o 3d vizinho, reorganiza, e volta — o custo é medido em eV, o ganho, em estabilidade de spin; o balanço é uma troca <i>(super)</i>efetiva entre vizinhanças maiores. As <b>regras de Goodenough–Kanamori</b> resumem a conta em geometria: ligação de 180° com orbitais meio-cheios ⇒ forte <i>antiferro</i> (por isso NiO, MnO e FeO são os clássicos do antiferromagnetismo básico); geometrias de 90° ou orbitais ortogonais favorecem o lado ferro. Na espinela Fe₃O₄, o mesmo mecanismo antiferro acopla as sub-redes A e B com força desigual — resultado: magnetização líquida de sub-redes desiguais (ferrimagnetismo, § 5.3). A lição: <b>no cristal, o mediador define o sinal</b> — a "troca" é um contrato tripartite entre metal, ânion e geometria.</p>
+<h3>4.4 Double exchange: o mesmo elétron que valida os vizinhos</h3>
+<p>Nos manganitas de valência misturada (La\(_{1-x}\)Sr\(_x\)MnO\(_3\)), um elétron itinerante saltando de Mn³⁺ para Mn⁴⁺ precisa <i>que os vizinhos tenham spin alinhado</i> para sobreviver: o salto alimenta o ferromagnetismo e o ferromagnetismo abre o caminho para o salto — magnetismo e condução são o mesmo ato. É a <b>dupla troca</b> (Zener), e a razão física das <b>magnetoresistências colossais</b>: o campo pede a ordem magnética e, com ela, descongestiona o trânsito (§ 8.5). Conceito-síntese: <i>é a eletricidade dando aval à ordem magnética</i> — a troca direta e a superexchange regulavam costumes de ocupação; aqui, a troca é um passaporte de condução.</p>
+<h3>4.5 Dzyaloshinskii–Moriya: a assimetria que torce o par</h3>
+<p>Quando a simetria cristalina falha, o par de spins pode sair do eixo: se um termo spin-órbita se cruza com a <i>ausência de centro de inversão</i> na ligação (ou na interface de um filme), aparece a energia \( \mathbf{D}\cdot(\mathbf{S}_i\times\mathbf{S}_j) \). Ela prefere <i>torcer</i> o par em vez de alinhar ou antialinhar — explica o ferromagnetismo fraco de antiferromagnetos (hematita, ortoferritas) e, em interfaces com forte acoplamento (Pt/Co), define a escala dos <b>skyrmions</b> (§ 9). Conceito: simetria quebrada + spin-órbita ⇒ quiralidade.</p>
+<h3>4.6 O dicionário dos mecanismos</h3>
+
+
+
+<h2>5. Ordens magnéticas: o catálogo dos arranjos</h2>
+<p>Com a troca em mãos, a pergunta já não é <i>se</i> os momentos se organizam, mas <i>como</i>. A resposta depende de três variáveis que a rede fornece: a distância (que define alcance e sinal dos mecanismos, § 4), a geometria das ligações (ângulos de 180° ou 90°, § 4.3) e a balança de magnitudes entre sub-redes. O resultado é um catálogo de estruturas — e cada uma deixa assinatura própria nos experimentos (§ 8): a magnetização líquida aparece na balança; a <i>forma</i> da ordem só aparece na difração de nêutrons.</p>
+<h3>5.1 Ferromagnetismo: a ordem coletiva direta</h3>
+<p>Todos os momentos apontam na mesma direção. A imagem mental é o <b>campo molecular</b> de Weiss: cada spin sente o estado alinhado de seus vizinhos e reforça o próprio alinhamento — um ciclo de reforço mútuo que cristaliza a ordem abaixo de T<sub>C</sub> e, acima dela, entrega a lei de Curie–Weiss (§ 1.3). No estado ordenado, o campo aplicado não <i>cria</i> ordem: escolhe entre estados já ordenados. Essa é a chave para a leitura de domínios e histerese (§ 7): sem ordem de base, não haveria histerese aproveitável.</p>
+<h3>5.2 Antiferromagnetismo: ordem que se cancela</h3>
+<p>Aqui duas sub-redes antiparalelas anulam a magnetização líquida: o cristal está magnética e microscopicamente ordenado, e <i>aparentemente</i> silencioso na balança. A assinatura fica na <b>suscetibilidade anisotrópica</b>: abaixo de T<sub>N</sub>, um campo perpendicular às sub-redes consegue rodar o par de sub-redes inteiro, e um campo paralelo quase não age sobre elas — é essa assimetria que gera a cúspide de χ em T<sub>N</sub> (Figura 1). Os exemplos clássicos (MnO, NiO, FeO) são todos governados por superexchange de 180° (§ 4.3); o Cr metálico organiza-se em onda de densidade de spin incomensurável (§ 3.3).</p>
+<h3>5.3 Ferrimagnetismo: duas redes desiguais</h3>
+<p>Entre o ferro e o antiferro: sub-redes antiparalelas, porém de magnitudes diferentes. O resultado é magnetização líquida <i>sem</i> alinhamento de spins — o caso da magnetita Fe₃O₄ e das ferrites moles dos transformadores (§ 7.5). Detalhe sedutor: em ligas amorfas de terra-rara–metal de transição, as duas sub-redes têm curvas de temperatura distintas e a magnetização <i>cruza por zero</i> num ponto de compensação — janela explorada em memórias assistidas por calor (MAMR).</p>
+<h3>5.4 Hélices e ordens não-colineares</h3>
+<p>Quando a troca oscila em sinal com a distância (RKKY, § 3.4), nenhum alinhamento global agrada a todos os vizinhos; o compromisso é girar. O momento desenha uma <b>hélice</b>, definida por um vetor de ordem incommensurável com a rede — a assinatura típica de Tb, Dy e Ho. Com a torção de Dzyaloshinskii–Moriya (§ 4.5), a hélice ganha quiralidade fixa e, em filme fino, <i>condensa</i> em arranjos de <b>skyrmions</b> — os "anéis de fumaça" magnéticos que retornam na § 9.</p>
+<h3>5.5 Frustração, vidros de spin e gelo de spin</h3>
+<p>Há ordens que desistem de escolher. Em redes <i>triangulares</i> ou <i>pirócloro</i>, não existe configuração que satisfaça todas as ligações antiferro ao mesmo tempo — a <b>frustração</b>. Somada a desordem química aleatória (ligas Cu–Mn), ela gera o <b>vidro de spin</b>: momentos que congelam com o resfriamento a uma T<sub>g</sub>, sem arranjo periódico, com efeitos de "memória" que falam do envelhecimento da própria paisagem configuracional. No extremo, o <b>gelo de spin</b> (Dy₂Ti₂O₇) impõe, ao invés de destruição de ordem, <i>regra dos dois-in-dois-out</i> nos tetraedros — que deixa entropia residual em T→0 e "monopólios" de spins emergentes: o líquido de spins mais célebre da física contemporânea.</p>
+
+
+<h3>5.7 A assinatura de cada ordem</h3>
+<figure><div class="draw">
+<svg aria-label="Padrões de ordem magnética" role="img" viewbox="0 0 700 250" width="660" xmlns="http://www.w3.org/2000/svg">
+<text fill="#1b2a4a" font-family="Arial" font-size="11.5" x="25" y="22">ferromagnético</text>
+<text fill="#1b2a4a" font-family="Arial" font-size="11.5" x="155" y="22">antiferromagnético</text>
+<text fill="#1b2a4a" font-family="Arial" font-size="11.5" x="290" y="22">ferrimagnético</text>
+<text fill="#1b2a4a" font-family="Arial" font-size="11.5" x="425" y="22">helicoidal</text>
+<text fill="#1b2a4a" font-family="Arial" font-size="11.5" x="565" y="22">vidro de spin</text>
+<g stroke="#c9d3e2" stroke-dasharray="3 3" stroke-width="1">
+<line x1="140" x2="140" y1="30" y2="215"></line><line x1="275" x2="275" y1="30" y2="215"></line><line x1="410" x2="410" y1="30" y2="215"></line><line x1="545" x2="545" y1="30" y2="215"></line>
+</g>
+<g><g transform="translate(20,70)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(75,70)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(130,70)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(20,130)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(75,130)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(130,130)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(20,190)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(75,190)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(130,190)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g></g>
+<g><g transform="translate(155,70)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(210,70) rotate(180)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(265,70)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(155,130) rotate(180)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(210,130)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(265,130) rotate(180)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(155,190)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(210,190) rotate(180)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(265,190)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g></g>
+<g><g transform="translate(290,70)"><line stroke="#1b2a4a" stroke-width="3.6" x1="0" x2="0" y1="15" y2="-10"></line><polygon fill="#1b2a4a" points="0,-16 -5.5,-7 5.5,-7"></polygon></g><g transform="translate(345,70) rotate(180)"><line stroke="#1b2a4a" stroke-width="2" x1="0" x2="0" y1="8" y2="-5"></line><polygon fill="#1b2a4a" points="0,-10 -3.6,-2.5 3.6,-2.5"></polygon></g><g transform="translate(400,70)"><line stroke="#1b2a4a" stroke-width="3.6" x1="0" x2="0" y1="15" y2="-10"></line><polygon fill="#1b2a4a" points="0,-16 -5.5,-7 5.5,-7"></polygon></g><g transform="translate(290,130) rotate(180)"><line stroke="#1b2a4a" stroke-width="2" x1="0" x2="0" y1="8" y2="-5"></line><polygon fill="#1b2a4a" points="0,-10 -3.6,-2.5 3.6,-2.5"></polygon></g><g transform="translate(345,130)"><line stroke="#1b2a4a" stroke-width="3.6" x1="0" x2="0" y1="15" y2="-10"></line><polygon fill="#1b2a4a" points="0,-16 -5.5,-7 5.5,-7"></polygon></g><g transform="translate(400,130) rotate(180)"><line stroke="#1b2a4a" stroke-width="2" x1="0" x2="0" y1="8" y2="-5"></line><polygon fill="#1b2a4a" points="0,-10 -3.6,-2.5 3.6,-2.5"></polygon></g><g transform="translate(290,190)"><line stroke="#1b2a4a" stroke-width="3.6" x1="0" x2="0" y1="15" y2="-10"></line><polygon fill="#1b2a4a" points="0,-16 -5.5,-7 5.5,-7"></polygon></g><g transform="translate(345,190) rotate(180)"><line stroke="#1b2a4a" stroke-width="2" x1="0" x2="0" y1="8" y2="-5"></line><polygon fill="#1b2a4a" points="0,-10 -3.6,-2.5 3.6,-2.5"></polygon></g><g transform="translate(400,190)"><line stroke="#1b2a4a" stroke-width="3.6" x1="0" x2="0" y1="15" y2="-10"></line><polygon fill="#1b2a4a" points="0,-16 -5.5,-7 5.5,-7"></polygon></g></g>
+<g><g transform="translate(430,70)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(485,70) rotate(64)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(540,70) rotate(128)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(430,130) rotate(192)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(485,130) rotate(256)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(540,130) rotate(320)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(430,190) rotate(24)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(485,190) rotate(88)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(540,190) rotate(152)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g></g>
+<g><g transform="translate(565,70) rotate(15)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(620,70) rotate(140)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(675,70) rotate(75)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(565,130) rotate(-50)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(620,130) rotate(105)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(675,130) rotate(170)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(565,190) rotate(30)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(620,190) rotate(115)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g><g transform="translate(675,190) rotate(60)"><line stroke="#1b2a4a" stroke-width="3" x1="0" x2="0" y1="11" y2="-7"></line><polygon fill="#1b2a4a" points="0,-14 -4.5,-5 4.5,-5"></polygon></g></g>
+</svg>
+</div><figcaption><b>Figura 4.</b> Padrões de ordem (esboço conceitual): no ferro todos alinham; no antiferro sub-redes opostas de magnitudes iguais cancelam M; no ferrimagneto sub-redes desiguais deixam magnetização líquida; na hélice o vetor gira com a coordenada (RKKY/DMI); no vidro de spin os espins congelam ao acaso. Só a magnetometria enxerga com sinal líquido as ordens ferro e ferrimagnética; as demais confidenciam apenas à difração de nêutrons (§ 8).</figcaption></figure>
+
+
+
+<h2>6. A transição em si: quebra de simetria e excitações coletivas</h2>
+<p>Abaixo de T<sub>C</sub> o material adota um estado que a simetria de alta temperatura não tinha: um eixo escolhido. Essa é a definição operacional de <b>quebra de simetria espontânea</b> — o mesmo que acontece num cristal que escolhe uma rede (nota "Estruturas Cristalinas") ou num supercondutor que escolhe uma fase de condensado. O "parâmetro de ordem" é a magnetização espontânea M<sub>s</sub>: ela é zero em toda a fase desordenada, independe de campo, e cresce continuamente do zero em T<sub>C</sub>.</p>
+<h3>6.1 Landau sem a polinomização</h3>
+<p>A teoria de Landau é uma contabilidade: custa energia manter M ≠ 0 por si só, mas a troca devolve um desconto proporcional a M² (cada spin alinhado com os vizinhos economiza). Acima de T<sub>C</sub>, o preço domina e o mínimo é M = 0; abaixo, a curvatura da energia em torno de M = 0 troca de sinal, e o mínimo passa a M ≠ 0. Formalmente, F = F₀ + a(T−T<sub>C</sub>)M² + bM⁴; a consequência conceitual é:</p>
+<div class="eq">\[M_s(T) \propto (T_{\text{C}} - T)^{1/2},\qquad \chi \propto |T_{\text{C}} - T|^{-1}\]</div>
+<p>— expoentes de <i>campo médio</i>. Os expoentes reais são diferentes (β ≈ 0,37 no ferro, classe 3D Heisenberg), porque perto de T<sub>C</sub> as flutuações de M escalam junto — mas a <i>forma</i> da história (zero contínuo, divergência de χ, expoentes universais que dependem apenas do "tipo" de spin e da dimensão) é a parte que a banca quer ver. Os "tipos" são modelos com nomes de família: <b>Ising</b> (spin só tem duas direções, ↑/↓ — anisotropia forte), <b>XY</b> (gira num plano), <b>Heisenberg</b> (gira em 3D) — quanto mais direções o spin tem, mais "gordo" o campo flutuante e mais difícil a ordem. Corolário famoso (<b>Mermin–Wagner</b>): com simetria de spin contínua e dimensão finita (1D e 2D isotrópicos), não há ordem a T ≠ 0. Os imãs 2D reais (CrI₃, § 9) só existem <i>por causa</i> da anisotropia que aproxima a física do caso de Ising.</p>
+<h3>6.2 Magnons: o som do ímã</h3>
+<p>Estabelecido o estado ordenado, o primeiro "custo" de agitação não é virar um spin inteiro — caro (quebraria J com todos os vizinhos) — e sim entortá-lo levemente, junto com todos: uma <b>onda de spin</b>. Quantizada, essa onda é o <b>magnon</b>, o "fônon do ímã": a excitação coletiva que obedece à mesma aritmética dos fônons de rede (nota "Fônons em Sólidos"), só que carrega spin em vez de deslocamento. O ponto econômico é o mesmo dos fônons: virar um spin vale ~J; entortar dez levemente vale ~k²·J — por isso os ferromagnetos carregam a agitação térmica em ondas de spin, não em viradas "um aqui, um ali".</p>
+<div class="eq">\[\omega(k) \sim D k^2\qquad (\text{ferro};\ D \approx 2JSa^2),\qquad\qquad \omega(k) \approx c\,|k|\qquad (\text{antiferro},\ \text{linear})\]</div>
+
+
+
+<h2>7. Domínios, paredes e histerese: o imã à escala útil</h2>
+<p>Numa ironia, a última coisa que a física de § 5 prevê — "todos alinhados" — é exatamente o que <i>não</i> se vê num pedaço de ferro em repouso: olhado com Kerr (§ 8.4), ele está zerado. A explicação é contábil. Um bloco magnetizado por inteiro gera um <b>campo de vazamento</b> externo cuja energia vale ∼μ<sub>0</sub>M<sub>s</sub>²/2 por unidade de volume — no ferro, da ordem de 2 MJ/m³. Dividir o corpo em <b>domínios</b> com direções alternadas apaga grande parte desse campo; o preço são <b>paredes de domínio</b>, superfícies caras por metro quadrado. O equilíbrio entre as duas contas — campo de vazamento economizado × parede paga — ajusta número, tamanho e forma dos domínios; em chapas grossas aparecem <i>domínios de fechamento</i> na superfície, em que o fluxo curva para voltar por dentro do material. A imagem conceitual: <i>a troca quer a direção única; a geometria quer anular o campo de vazamento; o cristal negocia entre as duas demandas</i>.</p>
+<h3>7.1 A parede de Bloch: girar devagar custa menos</h3>
+<p>Dentro da parede, a magnetização não salta de ↑ para ↓ de uma vez: gira continuamente ao longo de uma distância δ. Girar <i>devagar</i> poupa energia de troca (a rigidez A penaliza curvatura rápida), mas <i>alongar</i> a parede expande a região que paga anisotropia K. O equilíbrio dá</p>
+<div class="eq">\[\delta \sim \pi\sqrt{A/K},\qquad \sigma_{\mathrm{w}} \sim 4\sqrt{AK}\]</div>
+<p>— e os números do ferro calibram a intuição: δ ≈ 60–100 nm (uma parede tem ~300 espaçamentos de rede de espessura!) e σ<sub>w</sub> ≈ 3–4 mJ/m². Em filmes abaixo de ~100 nm a parede muda de estratégia: para evitar o campo de vazamento, ela gira <i>dentro</i> do plano — <b>parede de Néel</b> em vez de Bloch. As paredes também não são paredes escolares: existem porque há anisotropia que fixa os eixos fáceis (§ 7.3); um cristal isotrópico não teria razão para manter a ordem numa direção só.</p>
+<h3>7.2 O ciclo de histerese: a biografia do material</h3>
+<p>Imantando do zero, o processo tem três atos. Primeiro, <i>deslocamento de paredes</i>: barato, quase reversível, interrompido pelos <b>saltos de Barkhausen</b> — a parede gruda num defeito e solta, o chiado audível num circuito de captação. Segundo, <i>rotação</i> da magnetização contra a anisotropia — a subida final e mais cara até M<sub>s</sub>. Terceiro, no caminho de volta, o material <i>lembra</i>: em H = 0 ainda sobra a <b>remanência</b> M<sub>r</sub>; só um campo oposto de magnitude <b>H<sub>c</sub></b> (coercividade) anula a magnetização, e a mesma coisa acontece do outro lado — o <b>ciclo de histerese</b> fecha. A área do ciclo é a energia dissipada por ciclo (perdas por histerese e por correntes de Foucault — é por isso que o núcleo de transformador é de Fe–Si laminar).</p>
+<figure><div class="draw">
+<svg aria-label="Ciclo de histerese" role="img" viewbox="0 0 700 300" width="650" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#5b6b82" stroke-width="1" x1="80" x2="672" y1="170" y2="170"></line>
+<line stroke="#5b6b82" stroke-width="1" x1="370" x2="370" y1="32" y2="290"></line>
+<text fill="#5b6b82" font-family="Arial" font-size="12" x="676" y="174">H</text>
+<text fill="#5b6b82" font-family="Arial" font-size="12" x="340" y="26">M</text>
+<polyline fill="none" points="90,282 200,278 260,262 300,170 340,133 370,120 400,107 430,78 470,62 540,58 660,57" stroke="#1b2a4a" stroke-width="2.2"></polyline>
+<polyline fill="none" points="90,283 230,280 300,268 350,230 370,220 410,192 440,170 470,120 510,76 560,64 660,60" stroke="#2f6dbd" stroke-width="2.2"></polyline>
+<polyline fill="none" points="370,170 395,152 420,118 455,84 500,68 560,62" stroke="#8a97ab" stroke-dasharray="5 4" stroke-width="1.6"></polyline>
+<circle cx="370" cy="120" fill="#1b2a4a" r="3.5"></circle><circle cx="370" cy="220" fill="#2f6dbd" r="3.5"></circle>
+<circle cx="300" cy="170" fill="#1b2a4a" r="3.5"></circle><circle cx="440" cy="170" fill="#2f6dbd" r="3.5"></circle>
+<text fill="#1b2a4a" font-family="Arial" font-size="11.5" x="596" y="50">±M</text><text fill="#1b2a4a" font-family="Arial" font-size="11.5" x="586" y="72">s</text>
+<text fill="#1b2a4a" font-family="Arial" font-size="11.5" x="378" y="136">+M<tspan dy="3" font-size="9">r</tspan></text>
+<text fill="#2f6dbd" font-family="Arial" font-size="11.5" x="378" y="238">−M<tspan dy="3" font-size="9">r</tspan></text>
+<text fill="#1b2a4a" font-family="Arial" font-size="11.5" x="252" y="160">−H<tspan dy="3" font-size="9">c</tspan></text>
+<text fill="#2f6dbd" font-family="Arial" font-size="11.5" x="452" y="186">+H<tspan dy="3" font-size="9">c</tspan></text>
+<text fill="#8a97ab" font-family="Arial" font-size="10.5" x="392" y="150">curva virgem (1ª imantação)</text>
+</svg>
+</div><figcaption><b>Figura 6.</b> Ciclo de histerese esquemático. A curva tracejada é a primeira imantação (a partir do estado desmagnetizado); ao saturar em +M<sub>s</sub> e voltar, a magnetização conserva M<sub>r</sub> em H = 0 e só se anula em −H<sub>c</sub>; a metade inferior fecha a simetria. A <i>área</i> encerrada é a energia dissipada por ciclo: laços largos servem aos ímãs permanentes; laços estreitos reduzem as perdas de transformador (§ 7.5).</figcaption></figure>
+<h3>7.3 Anisotropia: o escultor dos eixos fáceis</h3>
+<p>Por que o ferro prefere ⟨100⟩ e o níquel ⟨111⟩? Porque o acoplamento <b>spin-órbita</b> — a única porta por onde a rede "enxerga" o spin — amarra a direção da magnetização à simetria cristalina. A energia de anisotropia paga pelo desvio do eixo fácil (no uniaxial, ∼K<sub>1</sub>·sin²θ); números dos materiais: K<sub>1</sub> ≈ 4,8×10⁴ J/m³ no ferro, ∼4,5×10⁵ J/m³ no Co hcp (por isso o eixo-c do cobalto ancora a ordem até T<sub>C</sub> = 1388 K) e ∼4,5×10⁶ J/m³ no Nd₂Fe₁₄B — o padrão moderno de ímã duro. A segunda escultura é a <b>anisotropia de forma</b>: o campo desmagnetizante prefere magnetizar <i>ao longo</i> da menor dimensão — é por isso que todo filme fino é "fácil no plano" e toda agulha é fácil no seu comprimento. O campo que demonstra essa preferência é o <b>campo de anisotropia</b> H<sub>k</sub> = 2K/(μ<sub>0</sub>M<sub>s</sub>); para partículas de domínio único, o <b>modelo de Stoner–Wohlfarth</b> descreve a comutação por rotação coerente do dipolo contra H<sub>k</sub>, com campo de comutação dependendo do ângulo — a curva em <i>asteroide</i> que decide quando um grão de mídia vira (e apaga) o seu dado.</p>
+<h3>7.4 Superparamagnetismo: o ímã que esquece</h3>
+<p>Reduza a partícula a poucos nm e a barreira de anisotropia KV fica comparável à agitação térmica: a magnetização passa a inverter aleatoriamente entre as medidas, e o ciclo <i>se fecha</i> (sem M<sub>r</sub>, sem H<sub>c</sub>). É o <b>superparamagnetismo</b>:</p>
+<div class="eq">\[\tau = \tau_0\,e^{\,K_1V/k_B T},\qquad T_B = \frac{K_1 V}{k_B\,\ln(\tau_m/\tau_0)}\]</div>
+<p>com τ<sub>0</sub> ∼ 10⁻⁹–10⁻¹⁰ s a tentativa de inversão e T<sub>B</sub> a <b>temperatura de bloqueio</b>, a fronteira entre superparamagnetismo puro e memória magnética. O limite prático: em mídia de gravação, cada grão precisa manter o dado por ~10 anos ⇒ fator térmico KV/k<sub>B</sub>T ≥ ∼60 — teto de miniaturização (a "densidade superparamagnética"). No lado útil, são os agentes de contraste <b>SPION</b> (Fe₃O₄ e afins) na ressonância MRI, os <b>ferrofluidos</b> (líquidos imantados em selos e alto-falantes) e as <i>magnetossomas</i> de bactérias que navegam pelo campo da Terra — superparamagnéticos portáteis fornecidos por evolução.</p>
+<h3>7.5 Duros e moles: os sistemas que a engenharia precisa</h3>
+<p>A mesma física se divide em duas profissões. Os <b>moles</b> imantam com campo mínimo (μ<sub>r</sub> alto) e perdem nada por ciclo — servem a transformadores, cabeças leitoras e blindagem. Os <b>duros</b> resistem a desmagnetizar (H<sub>c</sub> alto) e acumulam energia (produto B·H máximo, BH<sub>max</sub>) — servem aos ímãs permanentes. O teto físico de BH<sub>max</sub> é μ<sub>0</sub>M<sub>s</sub>²/4, por isso a <i>saturação</i> e a <i>anisotropia</i> têm que crescer juntas; é o que o Nd₂Fe₁₄B faz (μ<sub>0</sub>M<sub>s</sub> ≈ 1,6 T e K<sub>1</sub> ≈ 4,5 MJ/m³).</p>
+<p class="tcap"><b>Tabela 6.</b> Materiais moles e duros: números de escala e usos.</p>
+<table>
+<tr><th>Material</th><th>Classe</th><th>H<sub>c</sub> típico</th><th>BH<sub>max</sub></th><th>Uso típico</th></tr>
+<tr><td>Fe–Si orientado a grão</td><td>mole</td><td>30–100 A/m</td><td>—</td><td>núcleos de transformador (50/60 Hz)</td></tr>
+<tr><td>permalloy Ni₈₀Fe₂₀</td><td>mole</td><td>≈ 1 A/m</td><td>—</td><td>cabeças leitoras, blindagem (μ<sub>i</sub> ∼ 10⁵)</td></tr>
+<tr><td>ferrite mole MnZn</td><td>mole</td><td>10–100 A/m</td><td>—</td><td>indutores/EMI kHz–MHz</td></tr>
+<tr><td>fitas/fios amorfos</td><td>mole</td><td>1–10 A/m</td><td>—</td><td>transformadores de baixa perda</td></tr>
+<tr><td>ferrite dura SrFe₁₂O₁₉</td><td>duro</td><td>2–3×10⁵ A/m</td><td>∼40 kJ/m³</td><td>ímãs econômicos, falantes, motores pequenos</td></tr>
+<tr><td>Alnico</td><td>duro</td><td>~5×10⁴ A/m</td><td>∼40–50 kJ/m³</td><td>ímãs clássicos; excelente para alta T</td></tr>
+<tr><td>SmCo₅ / Sm₂Co₁₇</td><td>duro</td><td>6–8×10⁵ A/m</td><td>160–240 kJ/m³</td><td>aeroespacial e alta temperatura</td></tr>
+<tr><td>Nd₂Fe₁₄B</td><td>duro</td><td>8×10⁵–1,2×10⁶ A/m</td><td>até ∼400 kJ/m³</td><td>motores de EV, VCM de HDD, fones</td></tr>
+</table>
+
+
+
+<h2>8. Como o magnetismo se mede — e como ele fala com corrente e luz</h2>
+<p>Teoria em mãos, resta ler o mundo. Cada propriedade do tópico tem um instrumento que a alcança, e um efeito que a transforma em tecnologia. Esta seção amarra os dois lados.</p>
+<h3>8.1 Momentometria: SQUID, VSM e torque</h3>
+<p>Para medir um momento há três balanças. A <b>SQUID</b> (Superconducting Quantum Interference Device) explora a quantização de fluxo Φ<sub>0</sub> = h/2e em supercondutores: cada quantum de fluxo atravessado pelo loop de Josephson é um tique de <b>interferência</b>, e a sensibilidade alcança ~10⁻¹¹–10⁻¹⁰ A·m² (~10⁻⁸ emu) — a medida mais sensível em uso geral, a que suporta os dados de χ(T) e M(H) de um material novo. A <b>VSM</b> (vibrating sample magnetometer) agita a amostra dentro de bobinas detectoras: menos sensível (~10⁻⁷ A·m²), mas ótima para varrer curvas M(H) rapidamente. A <b>torção</b> (magnetômetro de torque) lê o <i>componente perpendicular</i> do momento ao campo: em anisotropias e texturas, é a balança que sente a direção. Em todas, a amostra entra "no furo"; a física é a mesma — calibrar M em função de H e T.</p>
+<h3>8.2 Ressonâncias: spin sob micro-ondas</h3>
+<p>O spin precessa no campo com ω = g·μ<sub>B</sub>B/ħ (≈ 28 GHz por tesla); uma micro-onda sintonizada <b>excita</b> a precessão. No <b>ESR</b> (elétron), a linha revela g — e desvios dele contam a mistura orbital residual (§ 2.2). No <b>FMR</b> (ferromagnético), é o modo k = 0 do magnon (§ 6.2) que ressoa; a <i>largura de linha</i> mede o amortecimento — a constante do "dinamômetro" da spintrônica (Gilbert). No <b>NMR</b> quem precessa é o núcleo (42,58 MHz/T para ¹H); o <b>deslocamento de Knight</b> reporta a polarização de spin dos elétrons de condução e no <b>Mössbauer</b> ⁵⁷Fe o campo hiperfino interno ronda ~33 T no α-Fe — o "termômetro de campo local" que confirma os números de magnetização por átomo.</p>
+<h3>8.3 Nêutrons: a fotografia magnética direta</h3>
+<p>A técnica que <i>mostra</i> a ordem é a difração de nêutrons: a partícula não tem carga (atravessa tudo) mas carrega <b>momento magnético</b> — espalha magneticamente. Os picos magnéticos <i>extra</i> no difratograma revelam o vetor de ordem: o MnO confessou o antiferromagnetismo em q = (½,½,½) (Tabela 2); as hélices de Ho aparecem como satélites em q<sub>inc</sub>; no <b>espalhamento inelástico</b>, a energia trocada em cada (q,ω) desenha a dispersão completa de magnons da Figura 5. Nêutrons polarizados somam seletividade de spin; espalhamento em ângulo pequeno vê texturas grandes — vórtices, skyrmions (§ 9).</p>
+<h3>8.4 Luz: MOKE e XMCD</h3>
+<p>O <b>MOKE</b> (efeito Kerr magneto-óptico) mede a rotação que a luz refletida recebe ao sair de um ímã; em microscópio, <i>vê</i> os domínios como manchas claras e escuras — a técnica que confirmou por imagem as divisões da § 7 e hoje é o padrão para imãs 2D (CrI₃). A técnica <b>XMCD</b> (dicroísmo circular de raios X) soma a sensibilidade química: sintonizada na borda L de um elemento específico, as <i>sum rules</i> separam μ<sub>L</sub> de μ<sub>S</sub> — o experimento que quantificou o <i>quenching</i>: no ferro metálico, μ<sub>L</sub> ≈ 0,08 μ<sub>B</sub> contra μ<sub>S</sub> ≈ 2,05 μ<sub>B</sub>. É o § 2.2 medido com fótons.</p>
+<h3>8.5 Corrente: Hall e as magnetoresistências</h3>
+<p>O <b>efeito Hall</b> é a porta de entrada: no campo, a força de Lorentz curva os portadores e abre uma tensão transversal V<sub>H</sub> = R<sub>H</sub>·I·B/t que mede sinal, densidade e tipo de portador (elétron vs buraco) — a técnica de caracterização padrão de semicondutores (Dresselhaus, cap. 10; Yu–Cardona, § 5.5); em gás 2D de alta mobilidade ela degenera no <b>Hall quântico</b> (Yu–Cardona, § 9.6). Já as <b>magnetoresistências "gigantes"</b> não dependem da carga — dependem da <i>magnetização</i>:</p>
+<div class="eq">\[\mathrm{TMR} = \frac{R_{\mathrm{AP}} - R_{\mathrm{P}}}{R_{\mathrm{P}}} = \frac{2P_1 P_2}{1 - P_1 P_2}\ \ \ (\text{modelo de Jullière},\ P = \text{polarização de spin})\]</div>
+
+
+
+
+
+<h2>9. A fronteira (2010s–)</h2><p>A fronteira reúne <b>ímãs 2D</b>, cuja ordem depende da anisotropia; <b>skyrmions</b>, texturas topológicas candidatas a memórias; <b>líquidos de spin</b>, marcados por frustração sem ordem convencional; e <b>altermagnetos</b>, antiferromagnetos com bandas dependentes de spin. Essas linhas retomam os mesmos elementos centrais: troca, anisotropia, simetria e coletividade.</p>
+
+
+<h2>10. Síntese: o roteiro da banca</h2>
+<p>Na prova escrita, o tópico se cobra como arquitetura, não como lista. Os 12 pilares: (1) momentos atômicos: spin + orbital, Hund, fator de Landé, μ<sub>eff</sub>; (2) teorema de Bohr–van Leeuwen: o magnetismo é quântico por construção; (3) diamagnetismo de Larmor: universal, χ &lt; 0, com supercondutor como caso extremo; (4) paramagnetismo de Brillouin/Curie: função de B<sub>J</sub>, lei χ = C/T, μ<sub>eff</sub> medido; (5) Pauli/Landau: por que metais têm 10⁻⁵ de χ, com faces de sinal oposto; (6) Stoner: ferromagnetismo itinerante como U·N(E<sub>F</sub>) &gt; 1 e momentos não inteiros; (7) troca: Heisenberg −J·S₁·S₂ e família (superexchange com regras de Goodenough–Kanamori, RKKY oscilatório, dupla troca, DMI); (8) ordens: ferro/antiferro/ferrim/hélice/vidro, com T<sub>C</sub> e T<sub>N</sub> e assinaturas (χ(T), nêutrons); (9) excitação coletiva: magnons, dispersões, Bloch T<sup>3/2</sup>; (10) domínios, paredes, histerese: M<sub>s</sub>, M<sub>r</sub>, H<sub>c</sub> e materiais moles/duros; (11) medidas: SQUID/VSM/ESR-FMR/NMR/Mössbauer/nêutrons/MOKE/XMCD; (12) aplicação à corrente: Hall, AMR/GMR/TMR/CMR e espintrônica. Dominar as conexões — por que a troca manda, por que o Pauli não dá ímã, por que domínios nascem — é o que distingue o candidato forte.</p>
+<h2>Referências</h2>
+<ul class="ref">
+<li><b>Edital Nº 48/2026/CCV/UFC</b> — Anexo: programa do setor <i>Física do Estado Sólido Experimental</i>, item 9, <i>Propriedades Magnéticas de Sólidos</i>. (arquivo <i>edital.pdf</i>, na pasta)</li>
+<li>Blundell, S. (2001). <i>Magnetism in Condensed Matter</i>. Oxford University Press. — referência principal; caps. 1–8 mapeiam §§ 1–9 deste texto. (arquivo <i>Magnetism in Condensed Matter{Stephen Blundell}(2001, Oxford Univers.pdf</i>, na pasta)</li>
+<li>Ashcroft, N. W. &amp; Mermin, N. D. (1976). <i>Solid State Physics</i>. Saunders. — caps. 31 (diamagnetismo/paramagnetismo), 32 (interações eletrônicas e estrutura magnética) e 33 (ordem magnética). (arquivo <i>Ashcroft_Mermin_eng.pdf</i>, na pasta)</li>
+<li>Grosso, G. &amp; Pastori Parravicini, G. (2014). <i>Solid State Physics</i>, 2ª ed. Academic Press/Elsevier. — tratamento paralelo de magnetismo e ordem. (arquivo <i>[Solid State Physics] Giuseppe Grosso… – Solid state physics.djvu</i>, na pasta)</li>
+<li>Dresselhaus, M. S., Dresselhaus, G., Cronin, S. B. &amp; Souza Filho, A. G. (2018). <i>Solid State Properties: From Bulk to Nano</i>. Springer. — cap. 10, magnetotransporte e efeito Hall. (arquivo <i>Dresselhaus_Solid_State_Properties_2018.pdf</i>, na pasta)</li>
+<li>Yu, P. Y. &amp; Cardona, M. (2010). <i>Fundamentals of Semiconductors</i>, 3ª ed. Springer. — § 5.5 (magnetotransporte e Hall) e § 9.6 (níveis de Landau e Hall quântico). (arquivo <i>[Graduate Texts in Physics ] Peter Y. Yu, Manuel Cardona (auth.) – Fundamentals of Semiconductors…pdf</i>, na pasta)</li>
+</ul>
+<div class="foot"><span>Propriedades Magnéticas de Sólidos — tópico 9 do edital · Física do Estado Sólido Experimental</span><span>versão condensada · redução editorial de até 30% · SI</span></div>
+</div></div>
+</body>
+</html>

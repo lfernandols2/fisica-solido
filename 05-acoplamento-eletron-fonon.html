@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acoplamento Elétron–Fônon — Prova escrita (concurso docente)</title>
+<style>
+:root{--ink:#1a2333;--navy:#1b2a4a;--muted:#5b6b82;--line:#dfe6ef;--bg:#ffffff;}
+*{box-sizing:border-box}
+body{margin:0;background:#eef1f6;color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.6}
+@page{size:A4;margin:18mm 16mm}
+@media print{body{background:#fff}.sheet{box-shadow:none!important;margin:0!important;max-width:none!important;border:none}.inner{padding:0 2mm}.eq{font-size:12px;padding:8px;line-height:1.5}figure{page-break-inside:avoid}table{font-size:11px}h2{page-break-after:avoid}}
+.sheet{max-width:860px;margin:26px auto;background:var(--bg);border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.inner{padding:40px 48px}
+@media(max-width:640px){.inner{padding:24px 20px}}
+header.doc-head{border-bottom:3px solid var(--navy);padding-bottom:12px;margin-bottom:16px}
+.doc-head .inst{font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.doc-head h1{font-size:28px;line-height:1.2;margin:6px 0;color:var(--navy)}
+.doc-head .sub{font-style:italic;color:#33415c;font-size:15px}
+.scope{font-family:Arial,Helvetica,sans-serif;font-size:12px;background:#f4f6fa;border:1px solid var(--line);border-left:4px solid var(--navy);padding:8px 12px;margin:14px 0;line-height:1.45}
+h2{font-size:20px;color:var(--navy);margin:26px 0 6px;border-bottom:1px solid var(--line);padding-bottom:5px}
+h3{font-size:16px;color:#24365c;margin:16px 0 4px}
+p{text-align:justify;margin:6px 0}
+ul,ol{margin:4px 0;padding-left:22px}
+li{margin:3px 0}
+.eq{background:#f7f9fc;border:1px solid var(--line);padding:8px 10px;margin:8px 0;text-align:center;font-size:13px;overflow:visible;white-space:normal;word-wrap:break-word;overflow-wrap:anywhere;max-width:100%}
+.eq small{display:block;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:var(--muted);margin-top:4px;white-space:normal;line-height:1.4}
+.eq mjx-container{overflow:visible !important;max-width:100% !important}
+.eq mjx-container[jax="CHTML"][display="true"]{white-space:normal !important;margin:.4em 0 !important}
+mjx-container[jax="CHTML"]{overflow:visible !important}
+figure{margin:12px auto;border:1px solid var(--line);background:#fbfcfe;max-width:700px}
+figure .draw{padding:8px;display:grid;place-items:center;background:#fff}
+figure svg{max-width:100%;height:auto}
+figcaption{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);padding:6px 12px;border-top:1px solid var(--line);text-align:justify;line-height:1.4}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-family:Arial,Helvetica,sans-serif;font-size:12px}
+th{background:var(--navy);color:#fff;text-align:left;padding:5px 7px;font-size:10px;text-transform:uppercase;letter-spacing:.04em}
+td{padding:5px 7px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#f7f9fc}
+.foot{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:var(--muted);border-top:1px solid var(--line);margin-top:22px;padding-top:8px;display:flex;justify-content:space-between;gap:10px}
+.ref{font-size:14px}
+.ref li{margin:4px 0}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:.95,linebreaks:{automatic:true,width:'container'}},options:{enableMenu:false}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style id="dk-style">
+html{color-scheme:light}
+html.dark{color-scheme:dark}
+html.dark body{background:#0b101b;color:#d9e2f2}
+html.dark .sheet{background:#101928;border-color:#26324a;box-shadow:0 6px 30px rgba(0,0,0,.55)}
+html.dark header.doc-head{border-color:#2f6dbd}
+html.dark .doc-head h1{color:#8fc2f7}
+html.dark .doc-head .sub{color:#c1cfe6}
+html.dark .doc-head .inst{color:#7d8fab}
+html.dark .scope{background:#132038;border-color:#26324a;color:#c9d6ee}
+html.dark h2{color:#8fc2f7;border-color:#26324a}
+html.dark h3{color:#a9c6f2}
+html.dark p,html.dark li{color:#d9e2f2}
+html.dark .eq{background:#131f33;border-color:#26324a;color:#e6eefb}
+html.dark .eq small{color:#8fa3c2}
+html.dark figure{background:#101928;border-color:#26324a}
+html.dark figure .draw{background:#0c1524}
+html.dark figure .draw svg{filter:invert(.92) hue-rotate(180deg)}
+html.dark figcaption{color:#8fa3c2;border-color:#26324a}
+html.dark th{background:#17345e;color:#eaf2ff}
+html.dark td{border-color:#22314c;color:#d9e2f2}
+html.dark tr:nth-child(even) td{background:#132038}
+html.dark .foot{color:#8fa3c2;border-color:#26324a}
+html.dark a{color:#8fc2f7}
+html.dark mjx-container{color:#e6eefb}
+html.dark small{color:#a9bbe0}
+body,.sheet,.eq,figure,h1,h2,h3,th,td,figcaption{transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+button#modeBtn{position:fixed;top:12px;right:12px;z-index:999;font-family:Arial,Helvetica,sans-serif;font-size:12px;padding:7px 14px;border-radius:999px;border:1px solid #cdd6e4;background:#ffffff;color:#26324a;cursor:pointer;opacity:.9;transition:opacity .15s,background .2s,color .2s;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+button#modeBtn:hover{opacity:1}
+html.dark button#modeBtn{background:#1b2a44;border-color:#3a4f75;color:#d9e2f2;box-shadow:none}
+</style>
+<script id="dk-script">(function(){var DT=document.documentElement;function store(on){try{localStorage.setItem('darkmode',on?'1':'0')}catch(e){}}function label(on){var b=document.getElementById('modeBtn');if(!b)return;b.textContent=on?'\u2600\u00a0Modo claro':'\u263E\u00a0Modo noturno';b.title='Alternar modo claro/noturno';}function set(on){DT.classList.toggle('dark',!!on);store(on);label(on);}function mk(){var b=document.getElementById('modeBtn');if(b)return b;b=document.createElement('button');b.id='modeBtn';b.type='button';b.title='Alternar modo claro/noturno';b.addEventListener('click',function(){set(!DT.classList.contains('dark'))});(document.body||DT).appendChild(b);return b;}var p=null,auto=false;try{p=localStorage.getItem('darkmode')}catch(e){}auto=(p===null)&&!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);set(p!==null?p==='1':auto);function go(){mk();label(DT.classList.contains('dark'));}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',go);}else{go();}})();</script>
+</head>
+<body>
+<div class="sheet"><div class="inner">
+
+<header class="doc-head">
+<div class="inst">Concurso docente &middot; Física da Matéria Condensada &middot; Prova escrita</div>
+<h1>Acoplamento Elétron–Fônon</h1>
+<div class="sub">Introdução, teoria e exemplos — texto direto para estudo, em nível de doutorado.</div>
+</header>
+
+<div class="scope">
+<b>Fontes.</b> Ashcroft e Mermin, <i>Solid State Physics</i>; Dresselhaus, Dresselhaus e Jorio, <i>Solid State Properties: From Bulk to Nano</i>, Springer, 2018; Hofmann, <i>Solid State Physics</i>, Wiley-VCH, 2ª ed., 2015; Grosso e Pastori Parravicini, <i>Solid State Physics</i>, 2ª ed., Academic Press, 2013.
+</div>
+
+<h2>1. Introdução</h2>
+
+<p>Num cristal perfeito e em repouso, os estados de Bloch são autoestados do Hamiltoniano e a condutividade seria infinita. A resistividade finita dos metais é consequência direta da quebra de periodicidade pela vibração térmica da rede: cada átomo se desloca de sua posição de equilíbrio, o potencial periódico deixa de ser estacionário e os elétrons são espalhados. Essa perturbação é a <b>interação elétron–fônon</b>.</p>
+
+<p>A interação é relevante quando \(T\) não é muito inferior à <b>temperatura de Debye</b> \(\Theta_D\). A baixas temperaturas, os fônons congelam e o espalhamento residual é devido a imperfeições (vacâncias, impurezas). A <b>resistividade residual</b> mede a qualidade da amostra; a parcela que cresce com \(T\) mede a vibração da rede.</p>
+
+<p>Essa única perturbação explica: a resistividade dos metais (linear em \(T\) acima de \(\Theta_D\), \(T^5\) abaixo); a <b>mobilidade</b> em semicondutores; a <b>absorção óptica indireta</b> (essencial para a fotovoltaica de silício); o deslocamento da lacuna com \(T\); o <b>polaron</b> (elétron + nuvem de distorção); o <b>efeito de arrasto de fôno</b> na termoeletricidade; e a <b>supercondutividade</b> convencional via pares de Cooper.</p>
+
+<h2>2. Teoria</h2>
+
+<h3>2.1. Do cristal estático à perturbação linear</h3>
+
+<p>O sistema elétron–rede é escrito em três blocos: energia cinética e repulsão entre elétrons, energia cinética e interação íon–íon, e a atração elétron–íon. Só o último depende das posições iônicas.</p>
+
+<figure>
+<div class="draw">
+<svg width="600" height="180" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rede de equilíbrio e rede deformada">
+<rect width="600" height="180" fill="#ffffff"/>
+<g font-family="Arial" font-size="11">
+<text x="150" y="16" fill="#1b2a4a" font-weight="bold" text-anchor="middle">(a) equilíbrio</text>
+<text x="450" y="16" fill="#1b2a4a" font-weight="bold" text-anchor="middle">(b) deformada</text>
+<line x1="300" y1="22" x2="300" y2="165" stroke="#dfe6ef"/>
+<line x1="40" y1="60" x2="260" y2="60" stroke="#1b2a4a" stroke-width="2.5"/>
+<circle cx="60" cy="120" r="8" fill="#1b2a4a"/><text x="60" y="124" fill="#fff" font-size="11" text-anchor="middle">+</text>
+<circle cx="100" cy="120" r="8" fill="#fff" stroke="#1b2a4a" stroke-width="1.4"/><text x="100" y="124" fill="#1b2a4a" font-size="11" text-anchor="middle">&#8722;</text>
+<circle cx="140" cy="120" r="8" fill="#1b2a4a"/><text x="140" y="124" fill="#fff" font-size="11" text-anchor="middle">+</text>
+<circle cx="180" cy="120" r="8" fill="#fff" stroke="#1b2a4a" stroke-width="1.4"/><text x="180" y="124" fill="#1b2a4a" font-size="11" text-anchor="middle">&#8722;</text>
+<circle cx="220" cy="120" r="8" fill="#1b2a4a"/><text x="220" y="124" fill="#fff" font-size="11" text-anchor="middle">+</text>
+<text x="150" y="150" fill="#5b6b82" font-size="10" text-anchor="middle">potencial congelado</text>
+<path d="M320,60 C 370,60 390,40 440,40 C 490,40 520,60 580,60" fill="none" stroke="#1b2a4a" stroke-width="2.5"/>
+<circle cx="340" cy="120" r="8" fill="#1b2a4a"/><text x="340" y="124" fill="#fff" font-size="11" text-anchor="middle">+</text>
+<circle cx="380" cy="120" r="8" fill="#fff" stroke="#1b2a4a" stroke-width="1.4"/><text x="380" y="124" fill="#1b2a4a" font-size="11" text-anchor="middle">&#8722;</text>
+<circle cx="420" cy="120" r="8" fill="#1b2a4a"/><text x="420" y="124" fill="#fff" font-size="11" text-anchor="middle">+</text>
+<circle cx="440" cy="120" r="8" fill="#fff" stroke="#1b2a4a" stroke-width="1.4"/><text x="440" y="124" fill="#1b2a4a" font-size="11" text-anchor="middle">&#8722;</text>
+<circle cx="480" cy="120" r="8" fill="#1b2a4a"/><text x="480" y="124" fill="#fff" font-size="11" text-anchor="middle">+</text>
+<circle cx="530" cy="120" r="8" fill="#fff" stroke="#1b2a4a" stroke-width="1.4"/><text x="530" y="124" fill="#1b2a4a" font-size="11" text-anchor="middle">&#8722;</text>
+<line x1="395" y1="95" x2="405" y2="95" stroke="#a00" stroke-width="1.8"/><polygon points="409,95 401,92 401,98" fill="#a00"/>
+<line x1="455" y1="95" x2="445" y2="95" stroke="#a00" stroke-width="1.8"/><polygon points="441,95 449,92 449,98" fill="#a00"/>
+<text x="425" y="85" fill="#a00" font-size="10" text-anchor="middle">u</text>
+<text x="450" y="150" fill="#5b6b82" font-size="10" text-anchor="middle">distorção desloca a banda</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Fig. 1 — Cristal estático e perturbação linear.</b> (a) Rede em equilíbrio: banda plana, sem acoplamento. (b) Distorção longitudinal: a banda se desloca localmente. A dependência linear com \(u\) fornece o perturbador (2).</figcaption>
+</figure>
+
+<div class="eq">\[ H = H_{el}+H_{ion}+H_{el-ion},\qquad H_{el-ion}=\sum_{k,i}V_{el-ion}(\mathbf{r}_{k}-\mathbf{R}_{i}) \tag{1} \] <small>\(H_{el}\) e \(H_{ion}\) são os blocos eletrônico e iônico; \(H_{el-ion}\) é a atração elétron–íon. A separação sustenta a aproximação de Born–Oppenheimer: resolve-se primeiro o problema eletrônico com íons congelados em \(\mathbf{R}_{i}^{0}\), obtendo as bandas \(E(\mathbf{k})\); o que sobra é tratado como perturbação.</small></div>
+
+<p>Com deslocamentos \(\mathbf{s}_{i}\) em torno de \(\mathbf{R}_{i}^{0}\), expande-se o potencial em Taylor e retém-se o termo linear:</p>
+
+<div class="eq">\[ \hat{H}_{e-ph} = -\sum_{i}\mathbf{s}_{i}\cdot\nabla V_{el-ion}(\mathbf{r}-\mathbf{R}_{i}^{0}) \tag{2} \] <small>A dependência linear em \(\mathbf{s}_{i}\) é o conteúdo físico: um deslocamento rígido global não produz gradiente. O acoplamento só enxerga a <b>deformação</b> local da rede.</small></div>
+
+<p>O deslocamento é escrito em coordenadas normais (modos de Bloch):</p>
+
+<div class="eq">\[ \mathbf{s}_{i} = \frac{1}{\sqrt{NM}}\sum_{q,j}Q_{q,j}\,e^{i\mathbf{q}\cdot\mathbf{R}_{i}^{0}}\,\hat{e}_{j} \tag{3} \] <small>\(Q_{q,j}\) é a coordenada normal do modo \((\mathbf{q},j)\), com frequência \(\omega_{q,j}\). Modos acústicos de onda longa equivalem a dilatação local; modos ópticos em cristais com dois átomos distintos geram dipolos oscilantes.</small></div>
+
+<h3>2.2. O fôno quantizado</h3>
+
+<p>Cada coordenada normal é um oscilador harmônico quantizado. O deslocamento contínuo é substituído por operadores de criação e aniquilação:</p>
+
+<div class="eq">\[ \hat{Q}_{q,j} = \left(\frac{\hbar}{2\omega_{q,j}}\right)^{1/2}\left(\hat{a}_{q,j}+\hat{a}^{\dagger}_{-q,j}\right) \tag{4} \] <small>\(\hat{a}_{q,j}\) e \(\hat{a}^{\dagger}_{q,j}\) aniquilam e criam um fôno no modo \((\mathbf{q},j)\). A combinação é real, como convém a um deslocamento físico.</small></div>
+
+<p>Substituindo (4) em (2) e somando sobre os modos, obtém-se o perturbador completo:</p>
+
+<div class="eq">\[ \hat{H}_{e-ph} = -\sum_{q,j}\left(\frac{\hbar}{2NM\omega_{q,j}}\right)^{1/2}\left[\hat{a}_{q,j}\sum_{i}e^{i(\mathbf{q}\cdot\mathbf{R}_{i}^{0}-\omega_{q,j}t)}\,\hat{e}_{j}\cdot\nabla V_{el-ion}(\mathbf{r}-\mathbf{R}_{i}^{0})+\text{c.c.}\right] \tag{5} \] <small>O primeiro termo descreve <b>absorção</b> de fôno; o conjugado, <b>emissão</b>. O fator \(\big(\hbar/2NM\omega_{q,j}\big)^{1/2}\) é o ponto zero do oscilador: mesmo a \(T=0\) há acoplamento.</small></div>
+
+<p>A ocupação térmica do modo é dada pela distribuição de Bose–Einstein:</p>
+
+<div class="eq">\[ n_{q,j} = \frac{1}{e^{\hbar\omega_{q,j}/k_{B}T}-1} \tag{6} \] <small>A taxa de absorção é \(\propto n_{q,j}\); a de emissão, \(\propto n_{q,j}+1\). A \(T=0\) só há emissão; a altas temperaturas, \(n_{q,j}\simeq k_{B}T/\hbar\omega_{q,j}\) e as taxas crescem linearmente com \(T\).</small></div>
+
+<h3>2.3. Regra de ouro e conservações</h3>
+
+<p>A taxa de transição de \(i\) para \(f\) é dada pela regra de ouro de Fermi:</p>
+
+<div class="eq">\[ \frac{1}{\tau} = \frac{2\pi}{\hbar}\sum_{f}\left|\langle f|\hat{H}_{e-ph}|i\rangle\right|^{2}\,\delta(E_{f}-E_{i}) \tag{7} \] <small>\(\tau\) é o tempo de relaxação; a soma sobre \(f\) inclui estados eletrônicos e modos fônicos acessíveis, com os pesos \(n_{q,j}\) e \(n_{q,j}+1\).</small></div>
+
+<figure>
+<div class="draw">
+<svg width="600" height="180" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Processo normal e umklapp">
+<rect width="600" height="180" fill="#ffffff"/>
+<g font-family="Arial" font-size="11">
+<text x="150" y="16" fill="#1b2a4a" font-weight="bold" text-anchor="middle">(a) normal (G=0)</text>
+<text x="450" y="16" fill="#1b2a4a" font-weight="bold" text-anchor="middle">(b) umklapp (G&#8800;0)</text>
+<line x1="300" y1="22" x2="300" y2="165" stroke="#dfe6ef"/>
+<line x1="50" y1="140" x2="250" y2="140" stroke="#1b2a4a" stroke-width="1.2"/><polygon points="256,140 246,136 246,144" fill="#1b2a4a"/>
+<line x1="50" y1="140" x2="50" y2="30" stroke="#1b2a4a" stroke-width="1.2"/><polygon points="50,24 46,34 54,34" fill="#1b2a4a"/>
+<text x="258" y="144" fill="#1b2a4a" font-size="10">kx</text>
+<text x="50" y="20" fill="#1b2a4a" font-size="10" text-anchor="middle">ky</text>
+<line x1="220" y1="40" x2="220" y2="140" stroke="#5b6b82" stroke-dasharray="4 3" stroke-width="1.2"/>
+<text x="216" y="34" fill="#5b6b82" font-size="9" text-anchor="end">zona</text>
+<line x1="50" y1="140" x2="140" y2="100" stroke="#1b2a4a" stroke-width="2"/><polygon points="146,97 136,97 140,107" fill="#1b2a4a"/>
+<line x1="140" y1="100" x2="190" y2="55" stroke="#0e7490" stroke-width="2"/><polygon points="195,51 185,53 189,62" fill="#0e7490"/>
+<line x1="50" y1="140" x2="190" y2="55" stroke="#a00" stroke-width="2"/><polygon points="195,51 185,51 189,61" fill="#a00"/>
+<text x="90" y="128" fill="#1b2a4a" font-size="10" text-anchor="end">k</text>
+<text x="160" y="80" fill="#0e7490" font-size="10">q</text>
+<text x="120" y="80" fill="#a00" font-size="10" text-anchor="end">k'</text>
+<text x="150" y="165" fill="#5b6b82" font-size="10" text-anchor="middle">k' = k + q</text>
+<line x1="340" y1="140" x2="570" y2="140" stroke="#1b2a4a" stroke-width="1.2"/><polygon points="576,140 566,136 566,144" fill="#1b2a4a"/>
+<line x1="340" y1="140" x2="340" y2="30" stroke="#1b2a4a" stroke-width="1.2"/><polygon points="340,24 336,34 344,34" fill="#1b2a4a"/>
+<text x="578" y="144" fill="#1b2a4a" font-size="10">kx</text>
+<text x="340" y="20" fill="#1b2a4a" font-size="10" text-anchor="middle">ky</text>
+<line x1="540" y1="40" x2="540" y2="140" stroke="#5b6b82" stroke-dasharray="4 3" stroke-width="1.2"/>
+<text x="536" y="34" fill="#5b6b82" font-size="9" text-anchor="end">zona</text>
+<line x1="340" y1="140" x2="430" y1="90" stroke="#1b2a4a" stroke-width="2"/><polygon points="436,87 426,87 430,97" fill="#1b2a4a"/>
+<line x1="430" y1="90" x2="520" y2="45" stroke="#0e7490" stroke-width="2"/><polygon points="525,41 515,43 519,52" fill="#0e7490"/>
+<line x1="520" y1="45" x2="380" y2="45" stroke="#5b6b82" stroke-width="1.8" stroke-dasharray="6 4"/><polygon points="374,45 384,41 384,49" fill="#5b6b82"/>
+<line x1="340" y1="140" x2="375" y2="45" stroke="#a00" stroke-width="2"/><polygon points="377,39 369,50 382,50" fill="#a00"/>
+<text x="380" y="128" fill="#1b2a4a" font-size="10">k</text>
+<text x="470" y="70" fill="#0e7490" font-size="10" text-anchor="end">q</text>
+<text x="450" y="38" fill="#5b6b82" font-size="10">G</text>
+<text x="365" y="38" fill="#a00" font-size="10" text-anchor="end">k'</text>
+<text x="450" y="165" fill="#5b6b82" font-size="10" text-anchor="middle">k' = k + q + G</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Fig. 2 — Conservação de momento.</b> (a) Processo normal: \(\mathbf{k}'=\mathbf{k}+\mathbf{q}\), dentro da zona. (b) Umklapp: \(\mathbf{k}'=\mathbf{k}+\mathbf{q}+\mathbf{G}\), com \(\mathbf{G}\) da rede recíproca. Só o umklapp destrói a corrente em metais.</figcaption>
+</figure>
+
+<p>As duas conservações são:</p>
+
+<div class="eq">\[ \mathbf{k}' = \mathbf{k} \pm \mathbf{q} + \mathbf{G} \tag{8} \] <small>\(\mathbf{G}=0\): processo <b>normal</b> (momento cristalino conservado). \(\mathbf{G}\neq 0\): processo de <b>umklapp</b> (transfere momento à rede). Só o umklapp destrói a corrente em metais.</small></div>
+
+<div class="eq">\[ E_{\mathbf{k}'} = E_{\mathbf{k}} \pm \hbar\omega_{q,j} \tag{9} \] <small>Conservação de energia: emissão (\(-\)) ou absorção (\(+\)) de um fôno. Para elétrons térmicos, \(E\sim k_{B}T\) e \(\hbar\omega_{q,j}\sim k_{B}\Theta_D\): a baixa \(T\) só há fônons de \(\mathbf{q}\) pequeno, com espalhamento de ângulo pequeno.</small></div>
+
+<h3>2.4. Mecanismos de acoplamento</h3>
+
+<p>O que muda de material para material é \(\nabla V_{el-ion}\) para cada modo. Os três canônicos são:</p>
+
+<p><b>Fröhlich (eletromagnético):</b> em cristais polares, o fôno longitudinal óptico gera campo elétrico macroscópico. A força é medida pela constante adimensional:</p>
+
+<div class="eq">\[ \alpha = \frac{e^{2}}{4\pi\varepsilon_{0}\hbar}\left(\frac{m^{*}}{2\hbar\omega_{LO}}\right)^{1/2}\left(\frac{1}{\varepsilon_{\infty}}-\frac{1}{\varepsilon_{0}}\right) \tag{10} \] <small>\(\alpha=0\) em Si e Ge (sem dipolo). Valores típicos: 0,02 (InSb) a 3–4 (haluros alcalinos). Válido para \(\alpha\ll1\).</small></div>
+
+<p><b>Deformação potencial:</b> a dilatação local desloca as bandas. A constante \(\Xi\) mede a sensibilidade da banda à dilatação:</p>
+
+<div class="eq">\[ \left|M_{DP}\right|^{2} = \frac{\hbar\,\Xi^{2}\,q}{2\rho\mathcal{V}u} \tag{11} \] <small>\(\rho\) densidade, \(\mathcal{V}\) volume, \(u\) velocidade do som. O acoplamento cresce com \(q\): ondas curtas deformam mais a rede. Presente em todos os materiais; único canal acústico do Si e Ge.</small></div>
+
+<p><b>Piezoelétrico:</b> em cristais polares sem centro de simetria (GaAs, GaN), a deformação acústica gera polarização e campo elétrico. Intermediário entre Fröhlich e deformação potencial.</p>
+
+<table>
+<tr><th>Mecanismo</th><th>Origem</th><th>Onde domina</th></tr>
+<tr><td>Deformação potencial</td><td>Dilatação desloca bordas de banda</td><td>Sempre presente; único canal acústico do Si/Ge</td></tr>
+<tr><td>Piezoelétrico</td><td>Deformação gera polarização (sem centro de simetria)</td><td>III–V, II–VI; GaAs abaixo de ~100 K</td></tr>
+<tr><td>Fróhlich</td><td>Fôno óptico em cristal polar gera campo E macroscópico</td><td>III–V, II–VI, óxidos; inexistente no Si/Ge</td></tr>
+<tr><td>Intervalley</td><td>Fôno de \(\mathbf{q}\) grande transfere elétron entre vales</td><td>Si (\(\Delta\)), Ge, GaAs (\(\Gamma\), L, X)</td></tr>
+</table>
+
+<h3>2.5. Transporte: mobilidade e resistividade</h3>
+
+<p>No formalismo de Boltzmann, a mobilidade é:</p>
+
+<div class="eq">\[ \mu = \frac{e\langle\tau\rangle}{m^{*}} \tag{12} \] <small>\(\langle\tau\rangle\) é o tempo de relaxação médio ponderado pela energia. Separa o que é eletrônico (\(m^{*}\)) do que é vibracional (\(\tau\)).</small></div>
+
+<figure>
+<div class="draw">
+<svg width="600" height="180" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mobilidade e resistividade versus temperatura">
+<rect width="600" height="180" fill="#ffffff"/>
+<g font-family="Arial" font-size="11">
+<text x="150" y="16" fill="#1b2a4a" font-weight="bold" text-anchor="middle">(a) semicondutor</text>
+<text x="450" y="16" fill="#1b2a4a" font-weight="bold" text-anchor="middle">(b) metal</text>
+<line x1="300" y1="22" x2="300" y2="165" stroke="#dfe6ef"/>
+<line x1="65" y1="150" x2="65" y2="30" stroke="#1b2a4a" stroke-width="1.2"/><polygon points="65,24 61,34 69,34" fill="#1b2a4a"/>
+<line x1="65" y1="150" x2="270" y2="150" stroke="#1b2a4a" stroke-width="1.2"/><polygon points="276,150 266,146 266,154" fill="#1b2a4a"/>
+<text x="58" y="26" fill="#1b2a4a" font-size="10" text-anchor="end">log &#956;</text>
+<text x="278" y="154" fill="#1b2a4a" font-size="10">log T</text>
+<path d="M80,135 C 130,125 190,95 260,65" fill="none" stroke="#0e7490" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M80,45 C 130,65 185,105 260,140" fill="none" stroke="#a00" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M80,145 C 110,135 135,105 160,80 C 180,60 215,68 245,95 C 258,110 265,128 268,138" fill="none" stroke="#1b2a4a" stroke-width="2.5"/>
+<circle cx="170" cy="75" r="3" fill="#1b2a4a"/>
+<line x1="170" y1="80" x2="170" y2="150" stroke="#9fb0c6" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="170" y="165" fill="#1b2a4a" font-size="10" text-anchor="middle">máx</text>
+<text x="90" y="130" fill="#0e7490" font-size="10">impurezas</text>
+<text x="90" y="40" fill="#a00" font-size="10">fônons ac.</text>
+<text x="200" y="70" fill="#1b2a4a" font-size="10" font-weight="bold">total</text>
+<line x1="340" y1="150" x2="340" y2="30" stroke="#1b2a4a" stroke-width="1.2"/><polygon points="340,24 336,34 344,34" fill="#1b2a4a"/>
+<line x1="340" y1="150" x2="570" y2="150" stroke="#1b2a4a" stroke-width="1.2"/><polygon points="576,150 566,146 566,154" fill="#1b2a4a"/>
+<text x="333" y="26" fill="#1b2a4a" font-size="10" text-anchor="end">&#961;</text>
+<text x="578" y="154" fill="#1b2a4a" font-size="10">T</text>
+<path d="M345,142 C 390,140 420,125 455,95 C 485,70 520,40 565,15" fill="none" stroke="#1b2a4a" stroke-width="2.5"/>
+<line x1="345" y1="142" x2="400" y2="142" stroke="#0e7490" stroke-width="1.6" stroke-dasharray="5 3"/>
+<text x="355" y="135" fill="#0e7490" font-size="9">residual</text>
+<line x1="480" y1="150" x2="480" y2="138" stroke="#1b2a4a" stroke-width="1.2"/>
+<line x1="480" y1="138" x2="480" y2="90" stroke="#9fb0c6" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="480" y="165" fill="#1b2a4a" font-size="10" text-anchor="middle">&#938;<tspan dy="3" font-size="8">D</tspan><tspan dy="-3"></tspan></text>
+<text x="420" y="120" fill="#5b6b82" font-size="10">T<tspan dy="-3" font-size="8">5</tspan><tspan dy="3"></tspan></text>
+<text x="540" y="30" fill="#5b6b82" font-size="10" text-anchor="end">linear em T</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Fig. 3 — Dependências de temperatura.</b> (a) Mobilidade em semicondutor: impurezas crescem com \(T\), fônons decaem; a soma produz um máximo. (b) Resistividade em metais: piso residual, \(T^5\) abaixo de \(\Theta_D\), linear acima.</figcaption>
+</figure>
+
+<p>Os mecanismos atuam em paralelo (aditividade de Matthiessen):</p>
+
+<div class="eq">\[ \frac{1}{\tau} = \sum_{j}\frac{1}{\tau_{j}} = \frac{1}{\tau_{ac}}+\frac{1}{\tau_{pz}}+\frac{1}{\tau_{LO}}+\frac{1}{\tau_{imp}} \tag{13} \] <small>\(\tau_{ac}\): fônons acústicos; \(\tau_{pz}\): piezoelétrico; \(\tau_{LO}\): fônons ópticos polares; \(\tau_{imp}\): impurezas iônicas.</small></div>
+
+<p>Para fônons acústicos (deformação potencial), o cálculo clássico de Bardeen–Shockley dá:</p>
+
+<div class="eq">\[ \mu_{ac} \sim \left(m^{*}\right)^{-5/2}E^{-1/2}\left(k_{B}T\right)^{-1} \tag{14} \] <small>Para portadores não degenerados, \(\mu_{ac}\propto T^{-3/2}\). Para fônons ópticos polares, a taxa \(\propto (e^{\hbar\omega_{LO}/k_{B}T}-1)^{-1}\) congela exponencialmente abaixo de \(\hbar\omega_{LO}/k_{B}\). Para impurezas iônicas, \(\tau\sim E^{3/2}\): mobilidade <em>cresce</em> com \(T\). Daí o máximo de \(\mu(T)\).</small></div>
+
+<p>Em metais, a resistividade segue a fórmula de Bloch–Grüneisen:</p>
+
+<div class="eq">\[ \sigma \sim \begin{cases} \Theta_D/T, & T\gg\Theta_D \\ (\Theta_D/T)^{5}, & T\ll\Theta_D \end{cases} \tag{15} \] <small>Acima de \(\Theta_D\): lei linear. Abaixo: só fônons de \(\mathbf{q}\) pequeno, espalhamento de ângulo pequeno, resultando em \(T^5\). A baixas \(T\), o patamar residual é devido a imperfeições.</small></div>
+
+<p><b>Efeito de arrasto de fôno:</b> sob gradiente térmico, fônons fluem do quente para o frio e arrastam elétrons, contribuindo para a potência termoelétrica. Explica o sinal positivo da potência de metais nobres.</p>
+
+<h3>2.6. O polaron</h3>
+
+<p>Em cristal polar, o elétron deforma a rede à sua volta, criando uma nuvem de polarização que o acompanha. O elétron + distorção é uma quase-partícula: o <b>polaron</b>.</p>
+
+<div class="eq">\[ E_{pol} = -\alpha\,\hbar\omega_{LO} \tag{16} \] <small>Correção de energia do estado fundamental (limite de acoplamento fraco). Para GaAs (\(\alpha=0{,}068\), \(\hbar\omega_{LO}=36{,}7\) meV): \(E_{pol}\approx-2{,}5\) meV.</small></div>
+
+<div class="eq">\[ m_{polaron}^{*} = m_{banda}^{*}\left(1+\frac{\alpha}{6}\right) \tag{17} \] <small>Para GaAs: acréscimo de 1%. Para \(\alpha=4{,}4\) (MgO): 73%. Para \(\alpha\simeq6\): o formalismo de acoplamento fraco se rompe (polaron pequeno).</small></div>
+
+<p>O polaron reduz a mobilidade, desloca a lacuna com \(T\) e produz bandas de absorção no infravermelho médio. Em materiais de acoplamento forte, o elétron se localiza e o transporte passa a ser por saltos.</p>
+
+<h3>2.7. Efeitos ópticos</h3>
+
+<p><b>Renormalização:</b> o acoplamento elétron–fônon faz a lacuna depender de \(T\) (pela população de fônons, não pela expansão térmica) e alarga as linhas espectrais.</p>
+
+<figure>
+<div class="draw">
+<svg width="600" height="180" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Linha sem fôno e borda de absorção indireta">
+<rect width="600" height="180" fill="#ffffff"/>
+<g font-family="Arial" font-size="11">
+<text x="150" y="16" fill="#1b2a4a" font-weight="bold" text-anchor="middle">(a) linha sem fôno</text>
+<text x="450" y="16" fill="#1b2a4a" font-weight="bold" text-anchor="middle">(b) absorção indireta</text>
+<line x1="300" y1="22" x2="300" y2="165" stroke="#dfe6ef"/>
+<line x1="65" y1="150" x2="270" y2="150" stroke="#1b2a4a" stroke-width="1.2"/><polygon points="276,150 266,146 266,154" fill="#1b2a4a"/>
+<line x1="65" y1="150" x2="65" y2="30" stroke="#1b2a4a" stroke-width="1.2"/><polygon points="65,24 61,34 69,34" fill="#1b2a4a"/>
+<text x="58" y="26" fill="#1b2a4a" font-size="10" text-anchor="end">I</text>
+<text x="278" y="154" fill="#1b2a4a" font-size="10">energia</text>
+<line x1="90" y1="150" x2="90" y2="132" stroke="#a00" stroke-width="2"/>
+<line x1="120" y1="150" x2="120" y2="80" stroke="#a00" stroke-width="2"/>
+<line x1="150" y1="150" x2="150" y2="15" stroke="#1b2a4a" stroke-width="2.5"/>
+<line x1="180" y1="150" x2="180" y2="80" stroke="#a00" stroke-width="2"/>
+<line x1="210" y1="150" x2="210" y2="132" stroke="#a00" stroke-width="2"/>
+<text x="150" y="10" fill="#1b2a4a" font-size="9" text-anchor="middle">sem fôno</text>
+<text x="115" y="70" fill="#a00" font-size="9" text-anchor="middle">bandas</text>
+<line x1="150" y1="165" x2="180" y2="165" stroke="#5b6b82"/><polygon points="146,165 154,161 154,169" fill="#5b6b82"/><polygon points="184,165 176,161 176,169" fill="#5b6b82"/>
+<text x="165" y="180" fill="#5b6b82" font-size="10" text-anchor="middle">&#8463;&#969;</text>
+<line x1="340" y1="150" x2="570" y2="150" stroke="#1b2a4a" stroke-width="1.2"/><polygon points="576,150 566,146 566,154" fill="#1b2a4a"/>
+<line x1="340" y1="150" x2="340" y2="30" stroke="#1b2a4a" stroke-width="1.2"/><polygon points="340,24 336,34 344,34" fill="#1b2a4a"/>
+<text x="333" y="26" fill="#1b2a4a" font-size="10" text-anchor="end">&#945;</text>
+<text x="578" y="154" fill="#1b2a4a" font-size="10">h&#957;</text>
+<path d="M340,150 L390,150 L390,135 L440,135 L440,122 L490,122 L490,110 L540,110 L540,98 L570,98" fill="none" stroke="#1b2a4a" stroke-width="2.2"/>
+<line x1="465" y1="150" x2="465" y2="70" stroke="#9fb0c6" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="465" y="62" fill="#5b6b82" font-size="10" text-anchor="middle">E<tspan dy="3" font-size="8">g</tspan><tspan dy="-3"></tspan></text>
+<text x="390" y="165" fill="#a00" font-size="9" text-anchor="middle">E<tspan dy="3" font-size="8">g</tspan><tspan dy="-3"></tspan> &#8722; &#8463;&#969;</text>
+<text x="540" y="165" fill="#0e7490" font-size="9" text-anchor="middle">E<tspan dy="3" font-size="8">g</tspan><tspan dy="-3"></tspan> + &#8463;&#969;</text>
+<text x="450" y="180" fill="#5b6b82" font-size="9" text-anchor="middle">cada degrau = um fôno</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Fig. 4 — Efeitos ópticos.</b> (a) Linha sem fôno (\(n=0\)) e bandas laterais separadas por \(\hbar\omega_q\), com intensidades dadas por (19). (b) Borda de absorção indireta: degraus em \(E_g\pm\hbar\omega_q\); a baixa \(T\) só há emissão.</figcaption>
+</figure>
+
+<p><b>Absorção indireta:</b> em semicondutores de lacuna indireta (Si, Ge), o fóton promove o elétron verticalmente, mas o fôno completa o vetor de onda. A borda de absorção tem estrutura em degraus:</p>
+
+<div class="eq">\[ \hbar\omega_{lim} = \begin{cases} E_{g}-\hbar\omega_{q}, & \text{emissão de fôno} \\ E_{g}+\hbar\omega_{q}, & \text{absorção de fôno} \end{cases} \tag{18} \] <small>A emissão é possível mesmo a \(T=0\); a absorção requer fôno presente na rede. A baixa \(T\) só há emissão; a alta \(T\) ambos os canais contribuem.</small></div>
+
+<p><b>Linha sem fôno e bandas laterais:</b> quando o acoplamento é forte, o elétron deixa a rede excitada em \(n\) quanta. A intensidade segue distribuição de Poisson:</p>
+
+<div class="eq">\[ I_{n} = e^{-S}\,\frac{S^{n}}{n!} \tag{19} \] <small>\(S\) é o fator de Huang–Rhys. \(S\ll1\): domina a linha sem fôno (\(n=0\)). \(S\gtrsim1\): a linha sem fôno desaparece entre as bandas laterais.</small></div>
+
+<p><b>Espalhamento Raman:</b> a luz espalhada inelasticamente sai com energia deslocada de \(\pm\hbar\omega_{q}\). A razão Stokes/anti-Stokes mede diretamente \(n_{q,j}\) e, com ela, a temperatura da amostra.</p>
+
+<h3>2.8. Supercondutividade</h3>
+
+<p>Dois elétrons se repelem, mas a troca de um fôno virtual pode ligá-los: o primeiro emite um fôno virtual, absorvido pelo segundo antes que a conservação de energia seja verificada (permitida pelo princípio da incerteza). Só elétrons numa janela de \(\hbar\omega_{D}\) em torno de \(E_F\) participam. O resultado é uma atração líquida e a formação de <b>pares de Cooper</b>.</p>
+
+<div class="eq">\[ \Delta = 3.53\,k_{B}T_{C} \tag{20} \] <small>\(\Delta\) é a lacuna supercondutora a \(T=0\) (teoria BCS). Para Al (\(T_C=1{,}16\) K): \(\Delta\approx0{,}35\) meV.</small></div>
+
+<div class="eq">\[ T_{C} = 1.13\,\Theta_D\,\exp\left[-\frac{1}{g(E_F)V}\right] \tag{21} \] <small>\(g(E_F)\) é a densidade de estados em \(E_F\); \(V\) é a integral de atração mediada pelo fôno. A escala de temperatura vem dos fônons; todo o material está no expoente.</small></div>
+
+<div class="eq">\[ T_{C} = A\,M^{-1/2} \tag{22} \] <small><b>Efeito isotópico:</b> \(\Theta_D\propto M^{-1/2}\). Substituir um isótopo por outro mais pesado abaixa \(T_C\). A descoberta no mercúrio (1950) provou que os fônons sustentam o pareamento.</small></div>
+
+<h2>3. Exemplos</h2>
+
+<h3>3.1. Silício: borda de absorção</h3>
+
+<p>O Si tem lacuna indireta (máximo da valência em \(\Gamma\), mínimo da condução perto de \(X\)). Medições de absorção junto à borda revelam quatro processos com fônons de 18,3 meV, 57,7 meV, 90,5 meV e 122,4 meV. Com \(E_g=1{,}17\) eV a 0 K, os limiares de emissão são:</p>
+
+<ul>
+<li>\(E_g - 18{,}3\) meV = 1,1517 eV (1077 nm)</li>
+<li>\(E_g - 57{,}7\) meV = 1,1123 eV (1115 nm)</li>
+<li>\(E_g - 90{,}5\) meV = 1,0795 eV (1149 nm)</li>
+<li>\(E_g - 122{,}4\) meV = 1,0476 eV (1184 nm)</li>
+</ul>
+
+<p>A 300 K (\(k_BT=25{,}9\) meV), a ocupação \(n=0{,}97\) para o modo de 18,3 meV abre o canal de absorção e borrar a escada. A lacuna reduz para ~1,12 eV. O Si absorve luz visível, mas é péssimo emissor (recombinação radiativa lenta, assistida por fôno).</p>
+
+<h3>3.2. GaAs vs. Si: mobilidade</h3>
+
+<p>A 300 K: \(\mu_{Si}\approx1500\) cm²/V·s, \(\mu_{Ge}\approx3900\) cm²/V·s, \(\mu_{GaAs}\approx8500\) cm²/V·s.</p>
+
+<p><b>Si:</b> sem dipolo (\(\alpha=0\)), com centro de simetria (sem piezoelétrico). Só deformação potencial, com \(\Xi\approx6{,}4\) eV (long.) e \(3{,}0\) eV (trans.). Mobilidade \(\propto T^{-3/2}\).</p>
+
+<p><b>GaAs:</b> polar e sem centro de simetria. Coexistem Fröhlich (\(\alpha=0{,}068\), \(\hbar\omega_{LO}=36{,}7\) meV), piezoelétrico e deformação potencial. A 300 K, \(n=0{,}32\) para o modo LO. O Fröhlich é de longo alcance e predominantemente de momento pequeno: transfere energia mas pouco momento. Cálculos ab initio dão 8340 cm²/V·s, em acordo com os 8500 medidos.</p>
+
+<h3>3.3. Metais: curva universal</h3>
+
+<table>
+<tr><th>Metal</th><th>\(\Theta_D\) (K)</th><th>\(T/\Theta_D\) a 300 K</th><th>Regime a 300 K</th></tr>
+<tr><td>Au</td><td>175</td><td>1,71</td><td>Bem acima de \(\Theta_D\): linear</td></tr>
+<tr><td>Na</td><td>202</td><td>1,49</td><td>Acima de \(\Theta_D\): linear</td></tr>
+<tr><td>Cu</td><td>333</td><td>0,90</td><td>Próximo de \(\Theta_D\)</td></tr>
+<tr><td>Al</td><td>395</td><td>0,76</td><td>Abaixo de \(\Theta_D\)</td></tr>
+<tr><td>Ni</td><td>472</td><td>0,64</td><td>Abaixo de \(\Theta_D\)</td></tr>
+</table>
+
+<p>Para Cu a 20 K: \(T/\Theta_D=0{,}06\), resistividade fônica \(\sim(0{,}06)^5\approx8\times10^{-7}\) do valor a \(\Theta_D\). Abaixo disso, o patamar residual é devido a imperfeições. A <b>razão de resistividade residual</b> (RRR = \(\rho_{300K}/\rho_{4K}\)) é a régua de qualidade da amostra.</p>
+
+<h3>3.4. Supercondutividade: Al e Hg</h3>
+
+<p><b>Alumínio:</b> \(\Theta_D=395\) K, \(T_C=1{,}16\) K. Invertendo (21):</p>
+
+<div class="eq">\[ g(E_{F})V = \left[\ln\left(\frac{1.13\,\Theta_D}{T_{C}}\right)\right]^{-1} = \left[\ln\left(\frac{446}{1{,}16}\right)\right]^{-1} = \frac{1}{5{,}95} = 0{,}17 \tag{23} \] <small>Um valor típico de metais simples. A sensibilidade é extrema: \(g(E_F)V=0{,}20\) daria \(T_C=3{,}0\) K; \(0{,}15\) daria \(0{,}57\) K.</small></div>
+
+<p><b>Mercúrio (efeito isotópico):</b> \(M=199{,}5\) u → \(T_C=4{,}185\) K; \(M=203{,}4\) u → \(T_C=4{,}146\) K. Pela equação (22): \(T_C(203{,}4)=4{,}185\times\sqrt{199{,}5/203{,}4}=4{,}145\) K. Extraindo o expoente: \(\alpha=\ln(4{,}185/4{,}146)/\ln(203{,}4/199{,}5)=0{,}48\), contra o 0,50 previsto. Prova decisiva do mecanismo fônico.</p>
+
+<p><b>Limitações:</b> Cu e Ni têm fônons mas não são supercondutores. É preciso que a atração mediada pelos fônons vença a repulsão de Coulomb. Supercondutores de alta temperatura fogem ao esquema BCS.</p>
+
+<h2>4. Conclusão</h2>
+
+<p>O acoplamento elétron–fôno é o único assunto em que a dinâmica da rede e a eletrônica do cristal se tornam inseparáveis. A construção teórica é uma cadeia sem saltos: Hamiltoniano (1) → expansão linear (2) → coordenadas normais (3) → quantização (4)–(5) → regra de ouro (7) → conservações (8)–(9) → mecanismos (10)–(11) → mobilidade (12)–(15) → polaron (16)–(17) → óptica (18)–(19) → pareamento (20)–(22).</p>
+
+<p>O que distingue os materiais é o valor de \(\nabla V_{el-ion}\) para cada modo: Fröhlich em cristais polares (10), piezoelétrico onde há polaridade sem centro de simetria, deformação potencial em toda parte (11). A equação (12) traduz \(\tau\) em mobilidade; a soma de Matthiessen (13) junta os canais; a equação (14) entrega a queda de \(\mu\) com \(T\). Nos metais, a curva universal de Bloch–Grüneisen (15) dá linear acima de \(\Theta_D\) e \(T^5\) abaixo.</p>
+
+<p>Os exemplos mostram a teoria em escala real: a borda de absorção do Si em 1077–1184 nm; o GaAs com 8500 cm²/V·s mesmo com acoplamento polar; o Al com \(g(E_F)V=0{,}17\) e \(T_C=1{,}16\) K; o Hg com efeito isotópico \(\alpha=0{,}48\). Os limites são: expansão linear válida para distorção pequena; polaron para \(\alpha\ll1\); BCS para acoplamento fraco.</p>
+
+<h2>Referências</h2>
+<ol class="ref">
+<li>N. W. Ashcroft e N. D. Mermin, <i>Solid State Physics</i>, Holt–Saunders, 1976.</li>
+<li>M. S. Dresselhaus, G. Dresselhaus e A. Jorio, <i>Solid State Properties: From Bulk to Nano</i>, Graduate Texts in Physics, Springer, 2018.</li>
+<li>P. Hofmann, <i>Solid State Physics</i>, Wiley-VCH, 2ª ed., 2015.</li>
+<li>G. Grosso e G. Pastori Parravicini, <i>Solid State Physics</i>, 2ª ed., Academic Press, 2013.</li>
+</ol>
+
+<div class="foot"><span>UFC · Acoplamento Elétron–Fônon · prova escrita</span><span>Introdução · Teoria · Exemplos · Conclusão</span></div>
+</div></div>
+</body>
+</html>

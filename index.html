@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset='utf-8'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<title>Física do Estado Sólido — Notas dos Tópicos</title>
+<style>
+:root{--ink:#1a2333;--navy:#1b2a4a;--muted:#5b6b82;--line:#dfe6ef;--bg:#ffffff;}
+*{box-sizing:border-box}
+body{margin:0;background:#eef1f6;color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.65}
+.sheet{max-width:860px;margin:26px auto;background:var(--bg);border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.inner{padding:44px 52px}
+@media(max-width:640px){.inner{padding:26px 22px}}
+header.doc-head{border-bottom:3px solid var(--navy);padding-bottom:14px;margin-bottom:18px}
+.doc-head .inst{font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.doc-head h1{font-size:30px;line-height:1.2;margin:8px 0;color:var(--navy)}
+.doc-head .sub{font-style:italic;color:#33415c;font-size:16px}
+.scope{font-family:Arial,Helvetica,sans-serif;font-size:13px;background:#f4f6fa;border:1px solid var(--line);border-left:4px solid var(--navy);padding:10px 14px;margin:16px 0;line-height:1.5}
+h2{font-size:22px;color:var(--navy);margin:30px 0 8px;border-bottom:1px solid var(--line);padding-bottom:6px}
+p{text-align:justify;margin:8px 0}
+ol.cards{list-style:none;margin:14px 0;padding:0}
+.cards li{margin:0}
+.cards a.card{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:#fbfcfe;padding:12px 16px;margin:8px 0;border-radius:4px}
+.cards a.card:hover{background:#f1f5fb;border-color:#a9bfd9}
+.cards .num{flex:0 0 46px;height:46px;display:grid;place-items:center;background:var(--navy);color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:20px;border-radius:3px}
+.cards .t{font-size:17px;line-height:1.35}
+.cards .n{display:block;font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);letter-spacing:.02em;margin-top:3px}
+.foot{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:10px;line-height:1.6}
+</style>
+<style id="dk-style">
+html{color-scheme:light}
+html.dark{color-scheme:dark}
+html.dark body{background:#0b101b;color:#d9e2f2}
+html.dark .sheet{background:#101928;border-color:#26324a;box-shadow:0 6px 30px rgba(0,0,0,.55)}
+html.dark header.doc-head{border-color:#2f6dbd}
+html.dark .doc-head h1{color:#8fc2f7}
+html.dark .doc-head .sub{color:#c1cfe6}
+html.dark .doc-head .inst{color:#7d8fab}
+html.dark .scope{background:#132038;border-color:#26324a;color:#c9d6ee}
+html.dark h2{color:#8fc2f7;border-color:#26324a}
+html.dark p{color:#d9e2f2}
+html.dark .cards a.card{background:#15203a;border-color:#26324a;color:#d9e2f2}
+html.dark .cards a.card:hover{background:#18264a;border-color:#3a4f75}
+html.dark .cards .num{background:#17345e;color:#eaf2ff}
+html.dark .cards .n{color:#8fa3c2}
+html.dark .foot{color:#8fa3c2;border-color:#26324a}
+body,.sheet,.scope,.cards a.card,h1,h2{transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+button#modeBtn{position:fixed;top:12px;right:12px;z-index:999;font-family:Arial,Helvetica,sans-serif;font-size:12px;padding:7px 14px;border-radius:999px;border:1px solid #cdd6e4;background:#ffffff;color:#26324a;cursor:pointer;opacity:.9;transition:opacity .15s,background .2s,color .2s;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+button#modeBtn:hover{opacity:1}
+html.dark button#modeBtn{background:#1b2a44;border-color:#3a4f75;color:#d9e2f2;box-shadow:none}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},chtml:{scale:.95},options:{enableMenu:false}};</script>
+<script async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
+<script id="dk-script">(function(){var DT=document.documentElement;function store(on){try{localStorage.setItem('darkmode',on?'1':'0')}catch(e){}}function label(on){var b=document.getElementById('modeBtn');if(!b)return;b.textContent=on?'\u2600\u00a0Modo claro':'\u263E\u00a0Modo noturno';b.title='Alternar modo claro/noturno';}function set(on){DT.classList.toggle('dark',!!on);store(on);label(on);}function mk(){var b=document.getElementById('modeBtn');if(b)return b;b=document.createElement('button');b.id='modeBtn';b.type='button';b.title='Alternar modo claro/noturno';b.addEventListener('click',function(){set(!DT.classList.contains('dark'))});(document.body||DT).appendChild(b);return b;}var p=null,auto=false;try{p=localStorage.getItem('darkmode')}catch(e){}auto=(p===null)&&!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);set(p!==null?p==='1':auto);function go(){mk();label(DT.classList.contains('dark'));}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',go);}else{go();}})();</script>
+</head>
+<body>
+<button id="modeBtn" type="button" title="Alternar modo claro/noturno">&#9784;&nbsp;Modo</button>
+<div class='sheet'><div class='inner'>
+<header class='doc-head'><div class='inst'>Departamento de Física · UFC — Física do Estado Sólido Experimental</div>
+<h1>Notas dos 10 Tópicos</h1>
+<div class='sub'>Física do Estado Sólido — a lista de tópicos do edital (CCV002, ANEXO I, pg. 31), com um clique por tópico. Leitura direta no celular ou no computador; as notas internas incluem modo noturno, tabelas, figuras e fórmulas.</div></header>
+<div class='scope'><b>Como usar:</b> toque em um tópico abaixo para abrir a nota completa. Em cada nota: mapas de leitura no fim das seções, números de geração no rodapé e o botão do modo noturno no canto superior direito. Este índice e as notas ficam no repositório GitHub <i>lfernandols2/fisica-solido</i>, servidos pelo GitHub Pages.</div>
+<h2>Tópicos do edital</h2>
+<ol class='cards'>
+<li><a class='card' href='01-estruturas-cristalinas-redes-reciprocas.html'><span class='num'>1</span><span class='t'>Estruturas Cristalinas e Redes Recíprocas<span class='n'>reticulados de Bravais · bases · redes recíprocas</span></span></a></li>
+<li><a class='card' href='02-estrutura-de-bandas-eletronicas.html'><span class='num'>2</span><span class='t'>Estrutura de Bandas Eletrônicas em Sólidos<span class='n'>quase-livres · apertado · k·p · zonas de Brillouin</span></span></a></li>
+<li><a class='card' href='03-fonons-em-solidos.html'><span class='num'>3</span><span class='t'>Fônons em Sólidos<span class='n'>vibrações da rede · dispersão · quantização</span></span></a></li>
+<li><a class='card' href='04-excitons-em-solidos.html'><span class='num'>4</span><span class='t'>Éxcitons em Sólidos<span class='n'>pares elétron-buraco · Wannier e Frenkel</span></span></a></li>
+<li><a class='card' href='05-acoplamento-eletron-fonon.html'><span class='num'>5</span><span class='t'>Acoplamento Elétron-Fônon<span class='n'>polarons · renormalização · supercondutividade</span></span></a></li>
+<li><a class='card' href='06-plasmons-em-gas-de-eletrons.html'><span class='num'>6</span><span class='t'>Plasmons em Gás de Elétrons<span class='n'>oscilações coletivas · bordas · 2D</span></span></a></li>
+<li><a class='card' href='07-propriedades-de-materiais-semicondutores.html'><span class='num'>7</span><span class='t'>Propriedades de Materiais Semicondutores<span class='n'>dopagem · transportes · heteroestruturas</span></span></a></li>
+<li><a class='card' href='08-propriedades-dieletricas-de-solidos.html'><span class='num'>8</span><span class='t'>Propriedades Dielétricas de Sólidos<span class='n'>polarização · ferroelétricos · relaxação</span></span></a></li>
+<li><a class='card' href='09-propriedades-magneticas-de-solidos.html'><span class='num'>9</span><span class='t'>Propriedades Magnéticas de Sólidos<span class='n'>magnetismo · estrutura local · ordem</span></span></a></li>
+<li><a class='card' href='10-propriedades-opticas-de-solidos.html'><span class='num'>10</span><span class='t'>Propriedades Ópticas de Sólidos<span class='n'>ε(ω) · bordas de absorção · excitons · reststrahlen · Raman</span></span></a></li>
+</ol>
+<div class='foot'>elaborado em 01/11/2026 · Notas de estudo do edital CCV002 (Física do Estado Sólido Experimental, UFC) · referências: Yu &amp; Cardona (4ª ed.), Hofmann (2ª ed.), Ashcroft &amp; Mermin, Grosso &amp; Pastori Parravicini</div>
+</div></div>
+</body>
+</html>

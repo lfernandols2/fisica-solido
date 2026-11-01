@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plasmons em Gás de Elétrons — Prova escrita (concurso docente)</title>
+<style>
+:root{--ink:#1a2333;--navy:#1b2a4a;--muted:#5b6b82;--line:#dfe6ef;--bg:#ffffff;}
+*{box-sizing:border-box}
+body{margin:0;background:#eef1f6;color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.65}
+@page{size:A4;margin:18mm 16mm}
+@media print{body{background:#fff}.sheet{box-shadow:none!important;margin:0!important;max-width:none!important;border:none}.inner{padding:0 2mm}.eq{font-size:12.5px;padding:8px;line-height:1.5;page-break-inside:auto}.eq small{font-size:10px}figure{page-break-inside:avoid}table{font-size:11.5px}h2{page-break-after:avoid}}
+.sheet{max-width:860px;margin:26px auto;background:var(--bg);border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.inner{padding:44px 52px}
+@media(max-width:640px){.inner{padding:26px 22px}}
+header.doc-head{border-bottom:3px solid var(--navy);padding-bottom:14px;margin-bottom:18px}
+.doc-head .inst{font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.doc-head h1{font-size:30px;line-height:1.2;margin:8px 0;color:var(--navy)}
+.doc-head .sub{font-style:italic;color:#33415c;font-size:16px}
+.scope{font-family:Arial,Helvetica,sans-serif;font-size:13px;background:#f4f6fa;border:1px solid var(--line);border-left:4px solid var(--navy);padding:10px 14px;margin:16px 0;line-height:1.5}
+h2{font-size:22px;color:var(--navy);margin:30px 0 8px;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3{font-size:18px;color:#24365c;margin:20px 0 6px}
+p{text-align:justify;margin:8px 0}
+ul,ol{margin:6px 0;padding-left:24px}
+li{margin:4px 0}
+.eq{background:#f7f9fc;border:1px solid var(--line);padding:10px 10px;margin:10px 0;text-align:center;font-size:14px;overflow:visible;white-space:normal;word-wrap:break-word;overflow-wrap:anywhere;max-width:100%}
+.eq small{display:block;font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);margin-top:6px;white-space:normal;line-height:1.5}
+.eq mjx-container{overflow:visible !important;max-width:100% !important}
+.eq mjx-container[jax="CHTML"][display="true"]{white-space:normal !important;margin:.4em 0 !important}
+mjx-container[jax="CHTML"]{overflow:visible !important}
+figure{margin:14px auto;border:1px solid var(--line);background:#fbfcfe;max-width:760px}
+figure .draw{padding:10px;display:grid;place-items:center;background:#fff}
+figure svg{max-width:100%;height:auto}
+figcaption{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:var(--muted);padding:8px 14px;border-top:1px solid var(--line);text-align:justify;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px}
+th{background:var(--navy);color:#fff;text-align:left;padding:6px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#f7f9fc}
+.foot{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:10px;display:flex;justify-content:space-between;gap:10px}
+.ref{font-size:15px}
+.ref li{margin:6px 0}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:.95,linebreaks:{automatic:true,width:'container'}},options:{enableMenu:false}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style id="dk-style">
+html{color-scheme:light}
+html.dark{color-scheme:dark}
+html.dark body{background:#0b101b;color:#d9e2f2}
+html.dark .sheet{background:#101928;border-color:#26324a;box-shadow:0 6px 30px rgba(0,0,0,.55)}
+html.dark header.doc-head{border-color:#2f6dbd}
+html.dark .doc-head h1{color:#8fc2f7}
+html.dark .doc-head .sub{color:#c1cfe6}
+html.dark .doc-head .inst{color:#7d8fab}
+html.dark .scope{background:#132038;border-color:#26324a;color:#c9d6ee}
+html.dark h2{color:#8fc2f7;border-color:#26324a}
+html.dark h3{color:#a9c6f2}
+html.dark p,html.dark li{color:#d9e2f2}
+html.dark .eq{background:#131f33;border-color:#26324a;color:#e6eefb}
+html.dark .eq small{color:#8fa3c2}
+html.dark figure{background:#101928;border-color:#26324a}
+html.dark figure .draw{background:#0c1524}
+html.dark figure .draw svg{filter:invert(.92) hue-rotate(180deg)}
+html.dark figcaption{color:#8fa3c2;border-color:#26324a}
+html.dark th{background:#17345e;color:#eaf2ff}
+html.dark td{border-color:#22314c;color:#d9e2f2}
+html.dark tr:nth-child(even) td{background:#132038}
+html.dark .foot{color:#8fa3c2;border-color:#26324a}
+html.dark a{color:#8fc2f7}
+html.dark mjx-container{color:#e6eefb}
+html.dark small{color:#a9bbe0}
+body,.sheet,.eq,figure,h1,h2,h3,th,td,figcaption{transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+button#modeBtn{position:fixed;top:12px;right:12px;z-index:999;font-family:Arial,Helvetica,sans-serif;font-size:12px;padding:7px 14px;border-radius:999px;border:1px solid #cdd6e4;background:#ffffff;color:#26324a;cursor:pointer;opacity:.9;transition:opacity .15s,background .2s,color .2s;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+button#modeBtn:hover{opacity:1}
+html.dark button#modeBtn{background:#1b2a44;border-color:#3a4f75;color:#d9e2f2;box-shadow:none}
+</style>
+<script id="dk-script">(function(){var DT=document.documentElement;function store(on){try{localStorage.setItem('darkmode',on?'1':'0')}catch(e){}}function label(on){var b=document.getElementById('modeBtn');if(!b)return;b.textContent=on?'\u2600\u00a0Modo claro':'\u263E\u00a0Modo noturno';b.title='Alternar modo claro/noturno';}function set(on){DT.classList.toggle('dark',!!on);store(on);label(on);}function mk(){var b=document.getElementById('modeBtn');if(b)return b;b=document.createElement('button');b.id='modeBtn';b.type='button';b.title='Alternar modo claro/noturno';b.addEventListener('click',function(){set(!DT.classList.contains('dark'))});(document.body||DT).appendChild(b);return b;}var p=null,auto=false;try{p=localStorage.getItem('darkmode')}catch(e){}auto=(p===null)&&!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);set(p!==null?p==='1':auto);function go(){mk();label(DT.classList.contains('dark'));}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',go);}else{go();}})();</script>
+</head>
+<body>
+<div class="sheet"><div class="inner">
+
+<header class="doc-head">
+<div class="inst">Concurso docente &middot; Física da Matéria Condensada &middot; Prova escrita</div>
+<h1>Plasmons em Gás de Elétrons</h1>
+<div class="sub">Introdução, teoria, exemplos e conclusão — texto direto para estudo, em nível de doutorado.</div>
+</header>
+
+<div class="scope">
+<b>Fontes.</b> Ashcroft e Mermin, <i>Solid State Physics</i>; Dresselhaus, Dresselhaus e Jorio, <i>Solid State Properties: From Bulk to Nano</i>, Springer, 2018; Hofmann, <i>Solid State Physics</i>, Wiley-VCH, 2ª ed., 2015; Grosso e Pastori Parravicini, <i>Solid State Physics</i>, 2ª ed., Academic Press, 2013. As figuras são esquemas originais inspirados nos gráficos dos livros, fora de escala — não são reproduções das páginas.
+</div>
+
+<h2>1. Introdução</h2>
+
+<p>Num metal, os elétrons de valência não ficam presos a átomos individuais: formam um gás que se move sobre o arranjo periódico de íons positivos. Se uma perturbação desloca essa nuvem como um todo — todos os elétrons na mesma direção, ao mesmo tempo —, uma região do cristal fica com carga excedente e outra com falta; o campo elétrico resultante puxa os elétrons de volta, a nuvem ultrapassa o equilíbrio e o sistema oscila. Essa vibração coletiva do gás de elétrons é chamada <b>oscilação de plasma</b>, e o <b>plásmon</b> é o seu quantum: \(\hbar\omega_{p}\), uma excitação que envolve maciçamente a nuvem eletrônica, e não um elétron isolado saltando de um estado para outro.</p>
+
+<p>A distinção entre movimento coletivo e movimento individual é o eixo do assunto. Elétrons individualmente têm energias de Fermi da ordem de alguns eV e estados discretos determinados pela estrutura de bandas; coletivamente, respondem a campos macroscópicos com uma frequência própria, \(\omega_{p}\), que depende apenas da densidade de elétrons e da massa — não do cristal, não da banda. Daí saem as consequências clássicas da física do estado sólido: os metais refletem a luz abaixo da frequência de plasma e a absorvem ou transmitem acima dela; o alumínio perde exatamente cerca de 15 eV quando um feixe de elétrons atravessa uma lâmina fina; nanopartículas de ouro e de prata ressonam no visível e dão cor ao vidro; e a interação de Coulomb entre cargas dentro do metal aparece blindada, e não cru. Este tópico constrói tudo isso a partir de um modelo simples — o gás de elétrons livres — e termina mostrando onde o modelo se rompe e o que se mede no laboratório.</p>
+
+<p>O modelo de partida é o <b>gás de elétrons livres homogêneo</b> sobre um fundo de carga positiva uniforme: os íons fornecem a neutralidade e ficam fixos, e os elétrons interagem entre si apenas pelo campo eletromagnético que eles próprios geram — a autoinclusão é o que produz a frequência de plasma. Não há estrutura de banda, não há potencial periódico, não há transições entre bandas. O preço dessa simplicidade é conhecido: o modelo explica a resposta coletiva de baixa frequência e a ótica dos metais alcalinos, mas falha perto das frequências de transição interbanda (em ouro e prata, no visível) e não descreve o amortecimento microscópico, que entra por um parâmetro empírico. Assumindo essa hipótese, o percurso é: derivação da frequência de plasma a partir da equação de movimento coletiva; função dielétrica, condutividade e reflexão; blindagem eletrostática de Thomas–Fermi; quantização e dispersão do plásmon; modos de superfície; e os exemplos experimentais — tabelas de densidades, borda de plasma do alumínio, EELS e nanopartículas ressonantes.</p>
+
+<h2>2. Teoria</h2>
+
+<h3>2.1. A frequência de plasma</h3>
+
+<p>Considere um gás de elétrons de densidade \(n\) deslocado coletivamente por um campo \(\mathbf{s}(\mathbf{r},t)\) — cada elétron sai do equilíbrio pela mesma quantidade no mesmo instante. Onde a nuvem comprime, sobra carga positiva; onde ela se rarefaz, sobra carga negativa. A conta é a equação de continuidade linearizada: a variação local de densidade é dada pela divergência do fluxo, e como o deslocamento é pequeno, integra-se uma vez no tempo para escrever a densidade em função do deslocamento:</p>
+
+<div class="eq">\[ \frac{\partial\,\delta n}{\partial t}=-n\,\nabla\cdot\mathbf{v}\quad\Longrightarrow\quad \delta n(\mathbf{r},t)=-n\,\nabla\cdot\mathbf{s}(\mathbf{r},t) \tag{1} \] <small>equação de continuidade na forma linearizada, com \(\mathbf{v}=\partial\mathbf{s}/\partial t\) a velocidade de deslocamento. Regiões em que a nuvem se afasta (\(\nabla\cdot\mathbf{s}\) positivo) ficam com déficit de elétrons, \(\delta n\) negativo; regiões em que ela se comprime ficam com excesso. A densidade de carga resultante é \(\rho=-e\,\delta n\).</small></div>
+
+<p>Com a densidade de carga em mãos, o campo sai da lei de Gauss e o movimento da segunda lei de Newton. O elétron sente o campo que a própria redistribuição de carga gerou — é uma força restauradora, proporcional ao deslocamento, exatamente o que caracteriza um oscilador harmônico:</p>
+
+<div class="eq">\[ \begin{aligned} m\frac{\partial^{2}\mathbf{s}}{\partial t^{2}} &= -e\mathbf{E}(\mathbf{r},t) \\[2pt] \nabla\cdot\mathbf{E} &= \frac{\rho}{\varepsilon_{0}}=\frac{e n}{\varepsilon_{0}}\,\nabla\cdot\mathbf{s} \end{aligned} \tag{2} \] <small>equação de movimento da nuvem (força de Coulomb sobre cada elétron) acoplada à lei de Gauss. Para um modo longitudinal senoidal, \(\mathbf{s}\propto e^{i\mathbf{q}\cdot\mathbf{r}}\), a divergência vira um fator \(i\mathbf{q}\), o campo fica paralelo a \(\mathbf{s}\) e proporcional a ele, e o par de equações se fecha sobre si mesmo: o deslocamento cria o campo, o campo restaura o deslocamento.</small></div>
+
+<p>Eliminando \(\mathbf{E}\) entre as duas linhas da equação (2), o deslocamento obedece a uma equação harmônica simples, e a constante que aparece é a frequência de plasma do gás de elétrons:</p>
+
+<div class="eq">\[ \frac{\partial^{2}\mathbf{s}}{\partial t^{2}}+\omega_{p}^{2}\,\mathbf{s}=0,\qquad \omega_{p}^{2}=\frac{ne^{2}}{\varepsilon_{0}m} \tag{3} \] <small>oscilador harmônico coletivo: \(\omega_p\) é a frequência de plasma, determinada só pela densidade de elétrons \(n\), pela carga elementar \(e\), pela massa \(m\) e pela permissividade do vácuo \(\varepsilon_0\) — não depende do vetor de onda nem do material. \(\hbar\omega_p\) é a energia do quantum de vibração: o plásmon de volume, no modelo livre, é não dispersivo em primeira ordem.</small></div>
+
+<p>Duas observações fixam a escala. Primeira: a frequência é a de oscilação da nuvem eletrônica contra os íons; se os íons também se movessem, a massa na equação (3) seria trocada pela massa reduzida, e a correção seria da ordem de \(m/M\) — irrelevante, porque \(m\) é oitentas vezes menor que a massa do hidrogênio. Por isso as oscilações iônicas (fônons) ficam na casa dos terahertz e as eletrônicas na casa dos \(10^{15}\) a \(10^{16}\ \mathrm{s^{-1}}\), na faixa ultravioleta. Segunda: a ordem de grandeza. Com \(n=10^{29}\ \mathrm{m^{-3}}\) — densidade típica de um metal alcalino —, a equação (3) dá \(\omega_{p}\approx1{,}8\times10^{16}\ \mathrm{s^{-1}}\) e \(\hbar\omega_{p}\approx12\ \mathrm{eV}\); para o sódio, \(n=2{,}5\times10^{28}\ \mathrm{m^{-3}}\), sai \(\hbar\omega_{p}\approx5{,}9\ \mathrm{eV}\); para o alumínio, com três elétrons de valência por átomo, \(\hbar\omega_{p}\approx16\ \mathrm{eV}\). Trata-se, portanto, de uma resposta na região ultravioleta do espectro — daí o interesse óptico do problema. Note ainda que o modo é longitudinal: a luz, que é transversal, não acopla com uma oscilação uniforme no interior do volume; esse acoplamento exige uma superfície, um defeito ou uma composição espacial, assunto da seção 2.5.</p>
+
+<figure>
+<div class="draw">
+<svg width="700" height="250" viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Deslocamento coletivo da nuvem de elétrons e oscilação temporal">
+<rect width="700" height="250" fill="#ffffff"/>
+<g font-family="Arial" font-size="12">
+<text x="180" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Nuvem deslocada sobre a rede fixa</text>
+<rect x="55" y="45" width="250" height="140" rx="8" fill="#eef3fb" stroke="#1b2a4a" stroke-width="1.4"/>
+<g fill="#1b2a4a">
+<circle cx="90" cy="62" r="8"/><circle cx="150" cy="62" r="8"/><circle cx="210" cy="62" r="8"/><circle cx="270" cy="62" r="8"/>
+<circle cx="90" cy="170" r="8"/><circle cx="150" cy="170" r="8"/><circle cx="210" cy="170" r="8"/><circle cx="270" cy="170" r="8"/>
+</g>
+<g fill="#ffffff" font-size="11" text-anchor="middle" font-weight="bold">
+<text x="90" y="66">+</text><text x="150" y="66">+</text><text x="210" y="66">+</text><text x="270" y="66">+</text>
+<text x="90" y="174">+</text><text x="150" y="174">+</text><text x="210" y="174">+</text><text x="270" y="174">+</text>
+</g>
+<ellipse cx="175" cy="115" rx="85" ry="38" fill="none" stroke="#5b6b82" stroke-width="1.6" stroke-dasharray="5 4"/>
+<ellipse cx="215" cy="115" rx="85" ry="38" fill="rgba(14,116,144,.10)" stroke="#0e7490" stroke-width="2" stroke-dasharray="5 4"/>
+<g stroke="#a00" stroke-width="2" fill="none">
+<line x1="175" y1="115" x2="207" y2="115"/><polygon points="215,115 204,110 204,120" fill="#a00" stroke="none"/>
+</g>
+<text x="193" y="105" fill="#a00" font-size="11" text-anchor="middle">s</text>
+<text x="120" y="140" fill="#5b6b82" font-size="10">equil&#237;brio</text>
+<text x="245" y="140" fill="#0e7490" font-size="10">deslocada</text>
+<g stroke="#1b2a4a" stroke-width="2" fill="none">
+<line x1="270" y1="203" x2="160" y2="203"/><polygon points="150,203 161,198 161,208" fill="#1b2a4a" stroke="none"/>
+</g>
+<text x="210" y="222" fill="#1b2a4a" font-size="11" text-anchor="middle">E restaurador: leva a nuvem de volta</text>
+<line x1="350" y1="28" x2="350" y2="235" stroke="#dfe6ef"/>
+<text x="525" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Oscila&#231;&#227;o coletiva s(t)</text>
+<line x1="390" y1="195" x2="668" y2="195" stroke="#1b2a4a" stroke-width="1.4"/>
+<line x1="390" y1="195" x2="390" y2="45" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="390,38 386,48 394,48" fill="#1b2a4a"/>
+<polygon points="675,195 665,191 665,199" fill="#1b2a4a"/>
+<text x="380" y="50" fill="#1b2a4a" font-size="11" text-anchor="end">s</text>
+<text x="680" y="199" fill="#1b2a4a" font-size="11">t</text>
+<path d="M390,130 C412,72 434,72 456,130 C478,188 500,188 522,130 C544,72 566,72 588,130 C610,188 632,188 654,130" fill="none" stroke="#0e7490" stroke-width="2.6"/>
+<line x1="456" y1="60" x2="456" y2="195" stroke="#dfe6ef" stroke-dasharray="3 3"/>
+<g stroke="#a00" stroke-width="1.4">
+<line x1="390" y1="210" x2="456" y2="210"/><line x1="390" y1="205" x2="390" y2="215"/><line x1="456" y1="205" x2="456" y2="215"/>
+</g>
+<text x="423" y="234" fill="#a00" font-size="11" text-anchor="middle">T = 2&#960;/&#969;_p</text>
+<text x="560" y="112" fill="#5b6b82" font-size="11" text-anchor="middle">toda a nuvem vibra em un&#237;ssono</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Esquema 1 — A oscilação de plasma.</b> Esquerda: a nuvem de elétrons (tracejada) se desloca em bloco sobre a rede de íons positivos; a redistribuição de carga gera um campo restaurador que devolve a nuvem ao equilíbrio, ultrapassa-o e mantém a oscilação. Direita: o deslocamento coletivo oscila no tempo com frequência \(\omega_p\), que depende só da densidade de elétrons — é esse movimento coletivo, e não o movimento individual de cada elétron, que constitui o plásmon.</figcaption>
+</figure>
+
+<h3>2.2. Função dielétrica, condutividade e reflexão</h3>
+
+<p>Para responder a um campo elétrico externo senoidal, retoma-se a equação de movimento da nuvem com duas mudanças: acrescenta-se o campo aplicado \(\mathbf{E}_{\mathrm{ext}}\) e um termo de amortecimento \(-m\gamma\,\mathbf{v}\), que representa as colisões dos elétrons com íons, defeitos e fônons. No regime permanente a velocidade é senoidal e fica proporcional ao campo; a razão entre a corrente \(\mathbf{j}=-ne\mathbf{v}\) e o campo é a <b>condutividade de Drude</b>, e a função dielétrica do meio se liga a ela por uma identidade que vale para qualquer material condutor:</p>
+
+<div class="eq">\[ \sigma(\omega)=\frac{ne^{2}/m}{\gamma-i\omega},\qquad \varepsilon(\omega)=1+\frac{i\,\sigma(\omega)}{\varepsilon_{0}\,\omega} \tag{4} \] <small>condutividade de Drude na convenção \(e^{-i\omega t}\), com \(\gamma\) a taxa de colisão (da ordem de \(10^{13}\) a \(10^{14}\ \mathrm{s^{-1}}\) nos metais a temperatura ambiente), e a relação geral entre resposta dissipativa e constante dielétrica. Toda a ótica do metal — reflexão, absorção, transmissão — sai daí sem novo ingredientes.</small></div>
+
+<p>Substituindo a condutividade na segunda igualdade e reorganizando, chega-se à função dielétrica do gás de elétrons livres — a expressão central do assunto:</p>
+
+<div class="eq">\[ \varepsilon(\omega)=1-\frac{\omega_{p}^{2}}{\omega(\omega+i\gamma)}\;\xrightarrow[\;\gamma\to0\;]{}\;1-\frac{\omega_{p}^{2}}{\omega^{2}} \tag{5} \] <small>função dielétrica de Drude. No limite sem amortecimento, \(\varepsilon\) é negativa para \(\omega\) menor que \(\omega_p\), anula-se exatamente em \(\omega=\omega_p\) e tende a 1 em altas frequências: abaixo da frequência de plasma o metal não deixa a onda propagar, acima dela fica transparente. A passagem por zero é a <b>borda de plasma</b>, observada como queda abrupta da refletividade.</small></div>
+
+<p>As consequências ópticas são imediatas. Para \(\omega\) menor que \(\omega_p\), \(\varepsilon\) é negativa e o vetor de onda \(k=(\omega/c)\sqrt{\varepsilon}\) vira imaginário: a onda eletromagnética não propaga, decai exponencialmente dentro do metal e o cristal devolve quase toda a luz incidente — é a reflexão metálica, a razão pela qual os metais são espelhos. Para \(\omega\) maior que \(\omega_p\), \(\varepsilon\) é positiva e a onda entra: o metal transmite (ou absorve, se houver transições interbanda em jogo). Em incidência normal, a fração refletida sai da continuidade dos campos na superfície:</p>
+
+<div class="eq">\[ R(\omega)=\left|\frac{1-\sqrt{\varepsilon(\omega)}}{1+\sqrt{\varepsilon(\omega)}}\right|^{2} \tag{6} \] <small>refletividade em incidência normal para um meio sem perdas. Com \(\varepsilon\) negativa, \(\sqrt{\varepsilon}\) é puramente imaginário e o módulo do quociente vale 1: reflexão total. Logo acima de \(\omega_p\), \(\varepsilon\) cresce a partir de zero e \(R\) cai rapidamente — a borda de reflexão. Com \(\gamma\) diferente de zero, o degrau arredonda-se e passa a haver penetração também abaixo de \(\omega_p\).</small></div>
+
+<p>No regime de reflexão total o campo não desaparece na superfície: ele decai exponencialmente ao longo de uma camada cuja profundidade, no modelo sem perdas, é simplesmente \(\delta=c/\omega_{p}\) — para a frequência de plasma típica de um metal, da ordem de dezenas de nanômetros. É por isso que a luz interage apenas com os primeiros átomos da superfície, e por isso que figuras de interferência e reflexão em metais são fenômenos de interface. A quantidade que interessa aos experimentos de perda de energia é a <b>função de perda</b>: o quanto o meio dissiparia energia por unidade de frequência quando submetido a um campo senoidal:</p>
+
+<div class="eq">\[ \mathcal{L}(\omega)=-\,\mathrm{Im}\!\left[\frac{1}{\varepsilon(\omega)}\right] \tag{7} \] <small>função de perda óptica, medida na espectroscopia de perda de energia de elétrons (EELS). Nosso \(\varepsilon\) passa por zero em \(\omega_p\), onde \(1/\varepsilon\) diverge e a perda forma um pico estreito — é esse pico que identifica o plásmon de volume. Amortecimentos de naturezas diferentes (colisões, Landau, interbanda) alargam ou deslocam o pico.</small></div>
+
+<p>Dois mecanismos limitam a vida do modo. O primeiro é o amortecimento de colisão \(\gamma\): os elétrons trocam momentum com a rede, e a energia do plásmon se reparte em calor; nos bons metais, isso dá larguras de fração de eV. O segundo é mais sutil e é puramente quântico — o <b>amortecimento de Landau</b>. Se algum elétron individual tiver velocidade de fase igual à sua própria velocidade, ele ressona com a onda de densidade e absorve energia dela, criando um par elétron–lacuna; para o plásmon de volume em comprimento de onda longo esse canal é praticamente fechado, porque a velocidade de fase \(\omega_{p}/q\) supera a velocidade de Fermi, e o modo é surpreendentemente bem definido — no alumínio, o pico de 15 eV tem largura de cerca de 0,5 eV, o que equivale a uma vida da ordem de \(10^{-15}\ \mathrm{s}\). O gás de plásmons, portanto, não é um conceito de livro: é uma excitação real, observável, com energia e largura mensuráveis.</p>
+
+<figure>
+<div class="draw">
+<svg width="700" height="270" viewBox="0 0 700 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Função dielétrica e refletividade em função da frequência">
+<rect width="700" height="270" fill="#ffffff"/>
+<g font-family="Arial" font-size="12">
+<text x="180" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Fun&#231;&#227;o diel&#233;trica &#949;(&#969;)</text>
+<line x1="70" y1="240" x2="330" y2="240" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="337,240 327,236 327,244" fill="#1b2a4a"/><text x="342" y="244" fill="#1b2a4a" font-size="11">&#969;</text>
+<line x1="70" y1="240" x2="70" y2="45" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="70,38 66,48 74,48" fill="#1b2a4a"/><text x="58" y="44" fill="#1b2a4a" font-size="11" text-anchor="end">&#949;</text>
+<line x1="70" y1="185" x2="330" y2="185" stroke="#dfe6ef" stroke-width="1.2"/>
+<text x="76" y="180" fill="#5b6b82" font-size="10">&#949; = 0</text>
+<line x1="113" y1="185" x2="113" y2="240" stroke="#a00" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="113" y="258" fill="#a00" font-size="11" text-anchor="middle">&#969;_p</text>
+<path d="M70,215 C85,202 98,193 113,185 C129,178 170,171 200,168 C230,165 280,163 330,162" fill="none" stroke="#1b2a4a" stroke-width="2.6"/>
+<line x1="70" y1="165" x2="330" y2="165" stroke="#5b6b82" stroke-dasharray="3 3"/>
+<text x="326" y="160" fill="#5b6b82" font-size="10" text-anchor="end">&#949; &#8594; 1</text>
+<text x="88" y="230" fill="#1b2a4a" font-size="10">&#949; &lt; 0: n&#227;o propaga</text>
+<text x="205" y="150" fill="#1b2a4a" font-size="10">&#949; &gt; 0: onda entra no metal</text>
+<line x1="350" y1="28" x2="350" y2="255" stroke="#dfe6ef"/>
+<text x="525" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Refletividade R(&#969;)</text>
+<line x1="390" y1="240" x2="668" y2="240" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="675,240 665,236 665,244" fill="#1b2a4a"/><text x="680" y="244" fill="#1b2a4a" font-size="11">&#969;</text>
+<line x1="390" y1="240" x2="390" y2="45" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="390,38 386,48 394,48" fill="#1b2a4a"/><text x="378" y="44" fill="#1b2a4a" font-size="11" text-anchor="end">R</text>
+<line x1="433" y1="85" x2="433" y2="240" stroke="#a00" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="433" y="258" fill="#a00" font-size="11" text-anchor="middle">&#969;_p</text>
+<path d="M390,75 L433,75 C445,75 455,120 470,165 C485,205 510,228 545,232 C575,235 620,235 660,235" fill="none" stroke="#1b2a4a" stroke-width="2.6"/>
+<text x="400" y="66" fill="#1b2a4a" font-size="10">R &#8776; 1: espelho met&#225;lico</text>
+<text x="545" y="205" fill="#1b2a4a" font-size="10">acima de &#969;_p: transparente</text>
+<text x="525" y="30" fill="#5b6b82" font-size="10" text-anchor="middle">limite sem perdas (&#947; = 0)</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Esquema 2 — Borda de plasma.</b> Esquerda: a função dielétrica do gás de elétrons livres cresce de valores negativos, cruza o zero exatamente em \(\omega_p\) e assíntota para 1. Direita: enquanto \(\varepsilon\) é negativa a refletividade é total; logo acima de \(\omega_p\) ela despenca e a luz passa a entrar no metal. Em um metal real \(\gamma\) arredonda a borda e as transições interbandas acrescentam estrutura; curvas esquemáticas, fora de escala.</figcaption>
+</figure>
+
+<h3>2.3. Blindagem eletrostática: Thomas–Fermi</h3>
+
+<p>A mesma física aparece em um problema aparentemente distinto: como o gás de elétrons responde a uma carga pontual colocada dentro dele. Sem blindagem, o potencial de Coulomb de um íon de impureza decairia como \(1/r\) e teria alcance infinito, atraindo elétrons de longe — resultado absurdo num meio com portadores livres. Com os elétrons livres para se movimentarem, eles se acumulam em torno da carga positiva e a redistribuição de sua densidade cancela parcialmente o campo: a carga é <b>blindada</b>. A conta é eletrostática e lineariza a resposta do gás no vetor de onda: na aproximação de Thomas–Fermi, que supõe que o elétron se ajusta instantaneamente ao potencial local, a função dielétrica estática depende do vetor de onda, e não apenas da frequência:</p>
+
+<div class="eq">\[ \varepsilon(q,0)=1+\frac{q_{\mathrm{TF}}^{2}}{q^{2}},\qquad V_{\mathrm{ef}}(q)=\frac{e^{2}/\varepsilon_{0}}{q^{2}+q_{\mathrm{TF}}^{2}} \tag{8} \] <small>tela de Thomas–Fermi no espaço de onda: a interação de Coulomb crua, \(e^{2}/(\varepsilon_{0}q^{2})\), é trocada por uma interação efetiva finita em \(q\to0\), porque \(\varepsilon\) diverge no comprimento de onda longo. No espaço real isso equivale a multiplicar o potencial por um fator exponencial decrescente: a carga parece enxergar um volume finito ao seu redor.</small></div>
+
+<p>O comprimento de blindagem sai de \(q_{\mathrm{TF}}\), que por sua vez se calcula com a densidade de estados na energia de Fermi: são os elétrons junto ao nível de Fermi — os únicos que podem se realocar sem custo de energia — que efetuam a blindagem. Para um gás de elétrons tridimensional não interagente, a densidade de estados por unidade de volume e de energia é \(3n/(2E_{F})\), e daí vem o vetor de Thomas–Fermi:</p>
+
+<div class="eq">\[ q_{\mathrm{TF}}^{2}=\frac{3ne^{2}}{2\varepsilon_{0}E_{F}},\qquad E_{F}=\frac{\hbar^{2}}{2m}\left(3\pi^{2}n\right)^{2/3} \tag{9} \] <small>vítor de blindagem de Thomas–Fermi e energia de Fermi do gás livre. No sódio, essas fórmulas dão \(q_{\mathrm{TF}}\approx0{,}5\ \mathrm{\mathring{A}^{-1}}\): o potencial de uma impureza é cortado em poucos ångströms — cerca de um espaçamento de rede. Blindagem curta é a razão pela qual o metal trata os íons como perturbações locais e mantém a estrutura de bandas.</small></div>
+
+<p>O potencial efetivo, no espaço real, comporta-se como \(e^{-q_{\mathrm{TF}}r}/r\): curto, saturado, sem cauda de Coulomb. Duas consequências valem a pena fixar. Primeira: essa blindagem é o motivo pelo qual um metal não sustenta campo elétrico estático em seu interior e pelo qual a interação elétron–elétron efetiva é curta — suposição implicitamente usada em toda a teoria de bandas e em modelos de pares em supercondutores. Segunda: a blindagem é apenas aproximadamente local. A resposta exata oscila no espaço real com o comprimento de onda de Fermi — as <b>oscilações de Friedel</b>, \(\delta n(r)\) proporcional a \(\cos(2k_{F}r)/r^{3}\), que saem de uma correção de borda do gás de Fermi no espaço de onda e aparecem ao redor de impurezas e descontinuidades de superfície, medidas por microscopia de tunelamento. O vetor \(2k_{F}\) é a assinatura do livro-razão de Fermi: elétrons na borda da distribuição são os responsáveis pela resposta, exatamente como na fórmula (9).</p>
+
+<figure>
+<div class="draw">
+<svg width="700" height="240" viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Blindagem de Thomas-Fermi do potencial de Coulomb">
+<rect width="700" height="240" fill="#ffffff"/>
+<g font-family="Arial" font-size="12">
+<text x="185" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Coulomb cru e potencial blindado</text>
+<line x1="60" y1="215" x2="330" y2="215" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="337,215 327,211 327,219" fill="#1b2a4a"/><text x="342" y="219" fill="#1b2a4a" font-size="11">r</text>
+<line x1="60" y1="215" x2="60" y2="45" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="60,38 56,48 64,48" fill="#1b2a4a"/><text x="50" y="44" fill="#1b2a4a" font-size="11" text-anchor="end">V(r)</text>
+<path d="M75,58 C84,125 112,172 160,195 C220,210 290,213 330,213" fill="none" stroke="#1b2a4a" stroke-width="2.6"/>
+<path d="M75,58 C82,138 100,190 138,203 C185,213 255,214 330,214" fill="none" stroke="#0e7490" stroke-width="2.4" stroke-dasharray="7 4"/>
+<text x="205" y="168" fill="#1b2a4a" font-size="11">sem tela: 1/r</text>
+<text x="205" y="187" fill="#0e7490" font-size="11">com tela: decai mais r&#225;pido</text>
+<text x="195" y="234" fill="#5b6b82" font-size="11" text-anchor="middle">blindagem em ~1/q_TF</text>
+<line x1="350" y1="28" x2="350" y2="228" stroke="#dfe6ef"/>
+<text x="525" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">&#949;(q,0) = 1 + q&#178;_TF/q&#178;</text>
+<line x1="390" y1="215" x2="668" y2="215" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="675,215 665,211 665,219" fill="#1b2a4a"/><text x="680" y="219" fill="#1b2a4a" font-size="11">q</text>
+<line x1="390" y1="215" x2="390" y2="45" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="390,38 386,48 394,48" fill="#1b2a4a"/><text x="378" y="44" fill="#1b2a4a" font-size="11" text-anchor="end">&#949;</text>
+<line x1="390" y1="195" x2="665" y2="195" stroke="#5b6b82" stroke-dasharray="3 3"/>
+<text x="660" y="190" fill="#5b6b82" font-size="10" text-anchor="end">&#949; &#8594; 1</text>
+<path d="M437,75 C447,112 470,152 483,165 C505,179 545,186 577,188 C610,190 640,192 668,193" fill="none" stroke="#1b2a4a" stroke-width="2.6"/>
+<line x1="483" y1="165" x2="483" y2="215" stroke="#a00" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="483" y="233" fill="#a00" font-size="11" text-anchor="middle">q_TF</text>
+<circle cx="483" cy="165" r="3.5" fill="#a00"/>
+<text x="497" y="150" fill="#1b2a4a" font-size="10">curto-circuito da blindagem:</text>
+<text x="497" y="163" fill="#1b2a4a" font-size="10">&#949; dobra em dois em q = q_TF</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Esquema 3 — Blindagem de Thomas–Fermi.</b> Esquerda: a carga de uma impureza no metal não gera mais um potencial de Coulomb de alcance infinito (curva cheia): os elétrons livres se redistribuem em volta dela e cortam a cauda (tracejada), num comprimento característico \(1/q_{\mathrm{TF}}\). Direita: a função dielétrica estática cresce como \(1/q^{2}\) para comprimentos de onda longos e tende a 1 em \(q\) grande, onde a carga enxerga o elétron crua; em \(q=q_{\mathrm{TF}}\) a blindagem já dobrou o valor da constante dielétrica. Curvas esquemáticas, fora de escala.</figcaption>
+</figure>
+
+<h3>2.4. Quantização: o plásmon</h3>
+
+<p>Até aqui a oscilação foi tratada classicamente, como uma onda de densidade. A mecânica quântica faz o que já fez com a rede vibrante: cada modo de oscilação coletiva é um oscilador harmônico, e o oscilador harmônico quantizado tem níveis separados por \(\hbar\omega_{p}\). Criar um quantum dessa excitação — fazer a nuvem inteira saltar um degrau — é criar <b>um plásmon</b>. O formalismo é idêntico ao dos fônons, com a diferença de que o modo é eletromagnético e, no modelo livre, a sua frequência não depende do vetor de onda:</p>
+
+<div class="eq">\[ \hat{H}=\sum_{\mathbf{q}}\hbar\omega_{\mathbf{q}}\left(\hat{b}_{\mathbf{q}}^{\dagger}\hat{b}_{\mathbf{q}}+\tfrac{1}{2}\right),\qquad \omega_{\mathbf{q}}\simeq\omega_{p} \tag{10} \] <small>hamiltoniano do gás de plásmons na aproximação de campo médio: operadores de criação e aniquilação \(\hat{b}^{\dagger}\) e \(\hat{b}\), níveis inteiros de energia \(\hbar\omega_p\). Ao contrário do fóno acústico, cuja frequência vai a zero com o vetor de onda, o plásmon de volume tem uma lacuna finita em \(\mathbf{q}\to0\): não existe plásmon estaticamente — é preciso energia mínima \(\hbar\omega_p\) para existir.</small></div>
+
+<p>A aproximação \(\omega_{\mathbf{q}}\approx\omega_{p}\) ignora a energia cinética da nuvem, que importa em comprimentos de onda curtos: deslocar a nuvem com vetor de onda \(q\) envolve elétrons com momento \(\hbar q\), e a correção é de segunda ordem em \(q\). A correção clássica, devida a Bohm e Gross, acopla a oscilação de densidade à dispersão do gás de Fermi:</p>
+
+<div class="eq">\[ \omega^{2}(q)=\omega_{p}^{2}+\frac{3}{5}\,v_{F}^{2}q^{2} \tag{11} \] <small>dispersão de Bohm–Gross do plásmon de volume: o termo \(\tfrac{3}{5}v_{F}^{2}q^{2}\) vem da pressão de degenerescência do gás de Fermi — é a mesma correção de blue shift que a compressão dá à onda de densidade. Para comprimentos de onda óticos o termo é minúsculo e o plásmon parece não dispersivo; ele só se torna relevante em EELS de alta resolução e em comprimentos de onda curtos, onde o modo também começa a se amortecer por espalhamento em pares.</small></div>
+
+<p>Em duas dimensões — gases de elétrons em interfaces, chuva de elétrons em heteroestruturas, a própria folha de grafeno — a eletrostática muda de figura. O campo de uma onda de densidade plana não se espalha em três direções, a blindagem é mais fraca e a pressão de Fermi deixa de ser a correção dominante. O resultado é que o plásmon bidimensional não tem lacuna: a frequência vai a zero com o vetor de onda, seguindo uma raiz quadrada — existe plásmon de baixa energia, inclusive em comprimento de onda longo, ao contrário do caso tridimensional:</p>
+
+<div class="eq">\[ \omega^{2}(q)=\frac{n_{\mathrm{2D}}\,e^{2}\,q}{2\varepsilon_{0}\,m} \tag{12} \] <small>dispersão do plásmon bidimensional, com \(n_{\mathrm{2D}}\) a densidade de elétrons por unidade de área. O comportamento \(\omega\propto\sqrt{q}\) é a assinatura da eletrostática 2D: sem lacuna em \(q\to0\), o modo é acessível em comprimentos de onda muito longos, é muito dispersivo e pode ser ajustado eletricamente — é a base dos plásmons em gases de elétrons bidimensionais e, com as correções de Fermi próprias do material, dos plásmons do grafeno.</small></div>
+
+<h3>2.5. Modos de superfície: onde a luz encontra o plásmon</h3>
+
+<p>O plásmon de volume é longitudinal e, no interior do metal, não conversa com a luz: uma onda eletromagnética transversal não consegue criar uma oscilação de densidade uniforme numa direção. A superfície resolve o problema. Na interface entre o metal e o dielétrico, o campo elétrico tem componente perpendicular à fronteira e a oscilação de carga do plásmon gera um campo evanescente que se acopla à luz — com o vetor de onda do fóton quase nulo, o acoplamento acontece no centro da zona, exatamente como no infravermelho dos fônons. A igualdade entre a resposta do metal e a do meio exterior, obtida das condições de contorno de Maxwell, dá a condição de ressonância; para uma interface plana entre metal e vácuo, ela se reduz a \(\varepsilon(\omega)=-1\), que com a equação (5) fornece</p>
+
+<p>\(\omega_{\mathrm{sp}}=\omega_{p}/\sqrt{2}\) para a interface plana; a superfície, portanto, ressona abaixo do volume — é o <b>plásmon de superfície</b>. Para uma nanopartícula muito menor que o comprimento de onda da luz, a geometria muda: a partícula inteira se polariza como um dipolo, e o campo dipolar externo desloca a nuvem de elétrons contra os íons da própria esfera. A condição de ressonância (a chamada condição de Fröhlich) é \(\varepsilon(\omega)=-2\varepsilon_{m}\), com \(\varepsilon_{m}\) a constante dielétrica do meio envolvente; resolvendo para o gás com fundo dielétrico \(\varepsilon_{\infty}\) — que representa a polarização dos elétrons de core, presente em todos os metais nobres:</p>
+
+<div class="eq">\[ \omega_{\mathrm{sp}}=\frac{\omega_{p}}{\sqrt{\varepsilon_{\infty}+2\varepsilon_{m}}} \tag{13} \] <small>frequência do plásmon de superfície de uma esfera (ressonância de Fröhlich) em um meio \(\varepsilon_m\). Para gás livre em vácuo (\(\varepsilon_{\infty}=1\), \(\varepsilon_m=1\)) recupera-se \(\omega_p/\sqrt{3}\). Em prata, \(\varepsilon_{\infty}\) perto de 5 desloca a ressonância dos 9 eV do volume para cerca de 3,5 eV — no azul–violeta do visível, que é de fato a cor que as nanopartículas de prata espalham.</small></div>
+
+<p>A consequência óptica é notável e é o que torna o assunto atual: numa nanopartícula metálica, a ressonância de superfície concentra o campo eletromagnético numa região minúscula, amplifica a absorção e o espalhamento por muitas ordens de grandeza em relação à seção de choque geométrica, e sintoniza tudo pela forma, pelo tamanho e pelo meio. Ouro e prata no visível, cor do vidro de ouro rubi, colorimetria sem marcadores em biossensores, substratos para espalhamento SERS e pontas de microscopia que enxergam campos nanométricos são aplicações diretas da equação (13) — assunto dos exemplos.</p>
+
+<h2>3. Exemplos</h2>
+
+<p>A teoria se verifica em três frentes: os números que a fórmula (3) prevê para cada material, as perdas de energia medidas em feixes de elétrons e as respostas ópticas na reflexão e na absorção. Começa-se pela conta direta: a densidade de elétrons livres de cada metal, inserida na frequência de plasma, fixa a régua de energia de todo o assunto — e revela de imediato por que os alcalinos, o alumínio e os metais nobres aparecem em capítulos diferentes dos livros de ótica:</p>
+
+<table>
+<tr><th>Material</th><th>n (10²⁸ m⁻³)</th><th>&#8463;&#969;_p (eV)</th><th>Perfil no modelo livre</th></tr>
+<tr><td>Lítio (Li)</td><td>4,6</td><td>8,0</td><td>alcalino leve: plasma no ultravioleta médio</td></tr>
+<tr><td>Sódio (Na)</td><td>2,5</td><td>5,9</td><td>alcalino de referência: resposta quase ideal</td></tr>
+<tr><td>Potássio (K)</td><td>1,3</td><td>4,3</td><td>alcalino pesado: frequência de plasma mais baixa</td></tr>
+<tr><td>Alumínio (Al)</td><td>18,1</td><td>15,8</td><td>três elétrons de valência: plásmon de volume bem isolado</td></tr>
+<tr><td>Prata (Ag)</td><td>5,9</td><td>9,0</td><td>9 eV no livre; com o fundo dielétrico, superfície a cerca de 3,5 eV</td></tr>
+<tr><td>Ouro (Au)</td><td>5,9</td><td>9,0</td><td>igual à prata no livre; as interbandas 5d–6s deslocam a ressonância para o visível</td></tr>
+</table>
+
+<h3>3.1. A régua das densidades</h3>
+
+<p>A tabela é lida de cima para baixo como uma lei de escala: \(\hbar\omega_{p}\) cresce com a raiz quadrada da densidade, porque é isso que manda a equação (3). Os metais alcalinos, com um elétron de valência por átomo e átomos relativamente pesados, ficam todos abaixo de 9 eV — suas bordas de plasma caem no ultravioleta e, por serem quase free-electron, são o material de teste do modelo. O alumínio, com três elétrons de valência por átomo e densidade atômica alta, salta para 16 eV e produz o plásmon de volume mais bem isolado de toda a tabela. Já prata e ouro mostram onde o modelo livre começa a falhar: as duas densidades são praticamente idênticas e as duas calculam 9 eV, mas as ressonâncias medidas no visível (cerca de 3,5 eV na prata, 2,4 eV no ouro) vêm de efeitos que o gás de elétrons livres não tem — a polarização dos elétrons de core, que entra como \(\varepsilon_{\infty}\) na equação (13), e as transições interbanda 5d–6s, que absorvem no azul e dão ao ouro sua cor. A régua vale, mas é preciso saber onde ela termina.</p>
+
+<h3>3.2. O plásmon de volume no experimento: EELS</h3>
+
+<p>A técnica que observa plásmons diretamente é a espectroscopia de perda de energia de elétrons (EELS): um feixe monocromático de elétrons rápidos atravessa uma lâmina fina — ou é refletida por uma superfície — e a energia que os elétrons perdem ao sair é medida ponto a ponto. O espalhamento elástico dá o pico de zero perda; as perdas inelásticas desenham a função de perda da equação (7), cujos máximos identificam os modos coletivos. Os valores medidos para os plásmons de volume dos materiais mais estudados são:</p>
+
+<table>
+<tr><th>Sistema</th><th>Plásmon de volume medido</th><th>Leitura</th></tr>
+<tr><td>Alumínio (filme fino)</td><td>15,3 eV</td><td>três elétrons de valência; pico estreito, vida da ordem de 10⁻¹⁵ s</td></tr>
+<tr><td>Silício</td><td>16,6 eV</td><td>semicondutor: plásmon dos quatro elétrons de valência</td></tr>
+<tr><td>Diamante</td><td>≈ 34 eV</td><td>quatro elétrons em ligações sp³ muito rígidas: escala máxima</td></tr>
+</table>
+
+<p>O acordo com a equação (3) é de alguns por cento: para o alumínio a fórmula dá 15,8 eV com o modelo livre e o experimento acusa 15,3 eV — a diferença vem da blindagem e das transições interbanda, que o modelo não inclui. No silício e no diamante não há elétrons livres; o que se observa é o <b>plásmon de valência</b>, a oscilação coletiva dos quatro elétrons de ligação, e o fato de o pico do diamante cair em 34 eV mostra como a escala sobe com a rigidez da ligação e com a densidade efetiva. Em amostras muito finas aparece, junto do pico de volume, a contribuição de superfície perto de \(\omega_{p}/\sqrt{2}\) — a assinatura do modo da equação (13) para a geometria de placa, um efeito indesejado para quem quer medir \(\omega_{p}\) e uma ferramenta para quem estuda interfaces.</p>
+
+<figure>
+<div class="draw">
+<svg width="700" height="270" viewBox="0 0 700 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="EELS: feixe de elétrons e espectro de perda de energia">
+<rect width="700" height="270" fill="#ffffff"/>
+<g font-family="Arial" font-size="12">
+<text x="180" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Feixe atravessa uma l&#225;mina fina</text>
+<rect x="150" y="50" width="26" height="150" fill="#eef3fb" stroke="#1b2a4a" stroke-width="1.4"/>
+<text x="163" y="222" fill="#5b6b82" font-size="11" text-anchor="middle">filme</text>
+<g stroke="#1b2a4a" stroke-width="2" fill="none">
+<line x1="45" y1="110" x2="140" y2="110"/>
+<line x1="178" y1="110" x2="294" y2="110"/>
+</g>
+<polygon points="148,110 138,105 138,115" fill="#1b2a4a"/>
+<polygon points="302,110 292,105 292,115" fill="#1b2a4a"/>
+<text x="95" y="98" fill="#1b2a4a" font-size="11" text-anchor="middle">el&#233;tron incidente (E&#8320;)</text>
+<text x="316" y="114" fill="#1b2a4a" font-size="11">E&#8320;: sa&#237;da el&#225;stica</text>
+<path d="M176,112 C215,130 255,155 298,166" fill="none" stroke="#a00" stroke-width="2.2"/>
+<polygon points="306,169 295,166 297,157" fill="#a00"/>
+<text x="248" y="192" fill="#a00" font-size="11" text-anchor="middle">E&#8320; &#8722; &#8463;&#969;_p: perda inel&#225;stica</text>
+<line x1="350" y1="28" x2="350" y2="252" stroke="#dfe6ef"/>
+<text x="525" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Espectro de perda &#8722;Im[1/&#949;]</text>
+<line x1="390" y1="215" x2="668" y2="215" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="675,215 665,211 665,219" fill="#1b2a4a"/><text x="680" y="219" fill="#1b2a4a" font-size="11">E</text>
+<line x1="390" y1="215" x2="390" y2="45" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="390,38 386,48 394,48" fill="#1b2a4a"/><text x="378" y="44" fill="#1b2a4a" font-size="11" text-anchor="end">perda</text>
+<path d="M390,213 C420,212 455,210 470,205 C478,200 484,182 489,178 C494,174 500,196 508,205 C515,211 522,213 526,205 C528,170 530,110 531,100 C532,110 534,170 536,205 C540,213 560,213 600,213 C630,213 655,213 670,213" fill="none" stroke="#1b2a4a" stroke-width="2.4"/>
+<line x1="531" y1="100" x2="531" y2="215" stroke="#a00" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="531" y="90" fill="#a00" font-size="11" text-anchor="middle">&#8463;&#969;_p &#8776; 15 eV (volume)</text>
+<text x="482" y="168" fill="#1b2a4a" font-size="10" text-anchor="end">superf&#237;cie</text>
+<g stroke="#5b6b82" stroke-width="1.2">
+<line x1="390" y1="215" x2="390" y2="221"/><line x1="483" y1="215" x2="483" y2="221"/><line x1="577" y1="215" x2="577" y2="221"/><line x1="670" y1="215" x2="670" y2="221"/>
+</g>
+<g fill="#5b6b82" font-size="11" text-anchor="middle">
+<text x="390" y="236">0</text><text x="483" y="236">10</text><text x="577" y="236">20</text><text x="670" y="236">30</text>
+</g>
+<text x="530" y="258" fill="#1b2a4a" font-size="11" text-anchor="middle">energia perdida (eV) — alum&#237;nio</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Esquema 4 — EELS e o plásmon de volume.</b> Esquerda: o feixe de elétrons rápidos atravessa a lâmina; a maioria sai com a energia original, mas uma fração perde exatamente a energia de um quantum coletivo. Direita: o espectro de perda do alumínio, esquemático — pico de volume em torno de 15 eV, oriundo da equação (7), e contribuição de superfície perto de \(\omega_p/\sqrt{2}\) em amostras finas; a largura do pico traduz a vida do plásmon. Fora de escala.</figcaption>
+</figure>
+
+<h3>3.3. Borda de reflexão: o metal como espelho e como janela</h3>
+
+<p>A segunda verificação é óptica e dispensa feixe de elétrons: mede-se a refletividade da luz em função da frequência. A equação (6) prevê degraus: refletividade total enquanto \(\omega\) fica abaixo de \(\omega_p\), queda abrupta acima. É exatamente o que se observa no alumínio, cuja borda de reflexão aparece por volta de 15 eV, coerente com a mesma densidade de elétrons que produziu o pico de EELS — duas técnicas, uma conta. Nos metais alcalinos a borda cai mais embaixo, na faixa ultravioleta, e ali o modelo livre é tão bom que a posição medida acompanha o cálculo da tabela da seção 3.1 quase ponto a ponto; é por isso que sódio e potássio aparecem nos livros como a demonstração viva da equação (5), enquanto prata e ouro, no visível, exigem a correção dielétrica da equação (13).</p>
+
+<p>O lado inverso da moeda é a transparência. Acima da frequência de plasma o metal deixa de ser espelho: o campo entra, e se não houver canais de absorção — como nos alcalinos, que têm interbandas fora da região —, a luz simplesmente atravessa. Daí a consequência que costuma ser cobrada em prova: <b>todo metal é transparente o bastante em frequências altas o bastante</b>, e a frequência de corte é \(\omega_{p}\); nos alcalinos isso abre janelas de transparência no ultravioleta, e nos dielétricos (que não têm portadores livres, logo \(\omega_{p}\) efetivo nulo) a pergunta se inverte — lá o gap de banda é quem decide onde o material absorve. Um dado prático fecha o assunto: a profundidade de penetração \(c/\omega_{p}\) abaixo da borda é da ordem de 10 a 30 nanômetros, ou seja, a luz só enxerga os primeiros planos atômicos — reflexão em metais é sempre fenômeno de superfície, e é por isso que a amostra precisa estar limpa para o espectro sair reprodutível.</p>
+
+<h3>3.4. Plásmons de superfície em nanopartículas</h3>
+
+<p>Quando a partícula metálica encolhe para dezenas de nanômetros — muito menor que o comprimento de onda da luz —, a resposta deixa de ser a de um espelho e passa a ser a de um dipolo acoplado à onda. A ressonância de Fröhlich da equação (13) dita a frequência; as curvas abaixo comparam prata e ouro no visível, e a comparação explica duas cores de vidro muito diferentes:</p>
+
+<figure>
+<div class="draw">
+<svg width="700" height="255" viewBox="0 0 700 255" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nanopartícula metálica ressonante e espectro de absorção de ouro e prata">
+<rect width="700" height="255" fill="#ffffff"/>
+<g font-family="Arial" font-size="12">
+<text x="180" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Nanopart&#237;cula: dipolo oscilante</text>
+<path d="M30,100 q10,-12 20,0 t20,0 t20,0 t20,0" fill="none" stroke="#a00" stroke-width="2"/>
+<polygon points="104,100 94,95 94,105" fill="#a00"/>
+<text x="60" y="84" fill="#a00" font-size="11" text-anchor="middle">luz</text>
+<circle cx="195" cy="125" r="58" fill="#eef3fb" stroke="#1b2a4a" stroke-width="1.6"/>
+<g fill="#1b2a4a">
+<circle cx="172" cy="105" r="6"/><circle cx="218" cy="105" r="6"/><circle cx="172" cy="145" r="6"/><circle cx="218" cy="145" r="6"/>
+</g>
+<g fill="#ffffff" font-size="9" text-anchor="middle" font-weight="bold">
+<text x="172" y="108">+</text><text x="218" y="108">+</text><text x="172" y="148">+</text><text x="218" y="148">+</text>
+</g>
+<ellipse cx="210" cy="125" rx="42" ry="42" fill="rgba(14,116,144,.12)" stroke="#0e7490" stroke-width="2" stroke-dasharray="5 4"/>
+<g stroke="#a00" stroke-width="2" fill="none">
+<line x1="195" y1="125" x2="227" y2="125"/><polygon points="235,125 224,120 224,130" fill="#a00" stroke="none"/>
+</g>
+<text x="211" y="116" fill="#a00" font-size="11" text-anchor="middle">s</text>
+<text x="150" y="90" fill="#1b2a4a" font-size="16">+</text>
+<text x="252" y="160" fill="#0e7490" font-size="16">&#8722;</text>
+<text x="195" y="214" fill="#1b2a4a" font-size="11" text-anchor="middle">a nuvem inteira vibra contra os &#237;ons</text>
+<text x="195" y="236" fill="#5b6b82" font-size="11" text-anchor="middle">resson&#226;ncia: &#949;(&#969;_sp) = &#8722;2&#949;_m</text>
+<line x1="350" y1="28" x2="350" y2="242" stroke="#dfe6ef"/>
+<text x="525" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Espectro de nanosferas no vis&#237;vel</text>
+<line x1="390" y1="215" x2="668" y2="215" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="675,215 665,211 665,219" fill="#1b2a4a"/>
+<line x1="390" y1="215" x2="390" y2="45" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="390,38 386,48 394,48" fill="#1b2a4a"/><text x="378" y="44" fill="#1b2a4a" font-size="11" text-anchor="end">abs.</text>
+<path d="M390,200 C420,194 445,176 454,152 C458,138 462,138 466,152 C476,180 510,206 560,211 C600,214 640,214 668,214" fill="none" stroke="#0e7490" stroke-width="2.4"/>
+<path d="M390,213 C480,212 525,204 538,172 C542,155 546,155 550,172 C563,204 610,212 668,213" fill="none" stroke="#1b2a4a" stroke-width="2.4"/>
+<line x1="460" y1="145" x2="460" y2="215" stroke="#0e7490" stroke-width="1.2" stroke-dasharray="5 4"/>
+<line x1="544" y1="160" x2="544" y2="215" stroke="#1b2a4a" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="466" y="126" fill="#0e7490" font-size="11">Ag: 400 nm (3,1 eV)</text>
+<text x="556" y="152" fill="#1b2a4a" font-size="11">Au: 520 nm (2,4 eV)</text>
+<g stroke="#5b6b82" stroke-width="1.2">
+<line x1="460" y1="215" x2="460" y2="221"/><line x1="530" y1="215" x2="530" y2="221"/><line x1="600" y1="215" x2="600" y2="221"/><line x1="670" y1="215" x2="670" y2="221"/>
+</g>
+<g fill="#5b6b82" font-size="11" text-anchor="middle">
+<text x="460" y="236">400</text><text x="530" y="236">500</text><text x="600" y="236">600</text><text x="670" y="236">700</text>
+</g>
+<text x="530" y="254" fill="#1b2a4a" font-size="11" text-anchor="middle">&#955; (nm)</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Esquema 5 — Ressonância de plásmon de superfície.</b> Esquerda: a luz desloca a nuvem de elétrons de uma nanopartícula em bloco; a restauração pelo fundo positivo gera um dipolo oscilante e a condição de Fröhlich. Direita: os espectros de absorção–espalhamento calculados com a equação (13) para nanosferas em água: prata ressona em torno de 400 nm e ouro em 520 nm — a cor do vidro de ouro vem da luz verde–amarela que sobra no feixe transmitido. Curvas esquemáticas, fora de escala.</figcaption>
+</figure>
+
+<p>O ouro é o exemplo mais didático. No modelo livre ele teria \(\hbar\omega_{p}\approx9\ \mathrm{eV}\) — invisível, ultravioleta —, mas o fundo dielétrico dos elétrons 5d faz a ressonância da equação (13) cair para cerca de 2,4 eV, no verde–amarelo. A nanopartícula absorve e espalha exatamente essa parte do espectro, e o que transparece fica avermelhado: é a cor do vidro de ouro rubi, conhecida séculos antes de existir a palavra plásmon. A prata, com ressonância perto de 400 nm, espalha no violeta–azul e aparece nos microescopos como partículas claras; a mesma fórmula, com \(\varepsilon_{m}\) do meio, explica por que a cor muda quando a partícula sai da água para o óleo ou para o ar — deslocamento previsto pela equação (13) e usado em sensores: a adsorção de uma molécula na superfície altera o índice local, corre a ressonância e o deslocamento é lido no comprimento de onda, sem marcação fluorescente nenhuma. Acrescentam-se a isso os campos localizados na região entre partículas próximas — a base do espalhamento amplificado Raman (SERS) — e a sintonia por forma (esferas, bastões, estrelas), que abre a banda de ressonância de uma mesma substância por todo o visível.</p>
+
+<h3>3.5. Como se observam os plásmons</h3>
+
+<p>Três famílias de técnica cobrem o assunto. Primeira, a <b>óptica</b>: refletividade e transmitância em função da frequência, com fonte no ultravioleta e detector acoplado, mais a transformada de Kramers–Kronig que converte \(R(\omega)\) na função dielétrica complexa \(\varepsilon(\omega)=\varepsilon_{1}+i\varepsilon_{2}\); daí se lê a posição da borda, a profundidade de penetração e a energia de \(\omega_{p}\). É assim que se obtem as curvas da seção 3.3 e que se separa resposta livre de resposta interbanda, porque as duas aparecem em frequências diferentes. Segunda, o <b>EELS</b>: com resolução de elétrons agora na casa dos milésimos de eV, o pico de perda de volume e o de superfície se resolvem, e a largura vira tempo de vida; acoplado a um microscópio, o mesmo feixe mapeia o plásmon de uma nanopartícula ou de uma interface nanométrica, ponto a ponto — é a ferramenta que confirmou numericamente os valores da tabela da seção 3.2. Terceira, indiretamente, pela <b>fotoemissão e pelo tunelamento</b>: na espectroscopia de fotoemissão, o elétron ejetado pode deixar para trás um plásmon, e a satélite de perda aparece deslocada em \(\hbar\omega_{p}\) do pico principal; na microscopia de tunelamento, a condutância diferencial acoplada à espectroscopia mostra a mesma assinatura em superfícies individuais.</p>
+
+<p>Um quarto caminho, moderno e já padrão em laboratório, é o de <b>plásmons em estruturas bidimensionais</b>: em gases de elétrons bidimensionais confinados em heteroestruturas, a dispersão da equação (12) é medida por espalhamento de luz inelástica e ajustada por tensão de porta — a densidade muda, a frequência muda junto, e o plásmon vira um dispositivo sintonizável no infravermelho distante. No grafeno, a mesma raiz quadrada aparece com a velocidade de Fermi no lugar da massa efetiva, e a sintonia elétrica cobre uma faixa espectral enorme. Para o candidato à prova, porém, o essencial é outro: perceber que as quatro frentes — reflexão, perda de energia, satélites de fotoemissão e dispersão 2D — medem todas a mesma quantidade, \(\omega_{p}\), por caminhos diferentes.</p>
+
+<h2>4. Conclusão</h2>
+
+<p>O plásmon é o exemplo mais limpo de excitação coletiva no estado sólido: a resposta de uma nuvem inteira de elétrons a um deslocamento comum, descrita por uma única linha de conta. Da equação de movimento acoplada à lei de Gauss sai a frequência de plasma, \(\omega_{p}^{2}=ne^{2}/\varepsilon_{0}m\), que depende só da densidade — e essa independência é o que dá ao assunto seu poder explicativo: com um número de tabela se antecipa a escala de energia de todo o fenômeno, dos 4 eV do potássio aos 34 eV do diamante. A mesma quantidade organiza a ótica: enquanto a função dielétrica é negativa o metal é espelho, logo acima da borda ele transmite, e a função de perda, com seu pico em \(\omega_{p}\), é o que os elétrons do EELS medem. Quantizando o oscilador, chega-se ao plásmon de energia \(\hbar\omega_{p}\), com a dispersão de Bohm–Gross corrigindo a frequência em comprimentos de onda curtos, e a superfície — e não o volume — é o lugar onde o modo conversa com a luz.</p>
+
+<p>Ao lado da resposta dinâmica está a eletrostática: o mesmo gás que oscila também blinda, e a tela de Thomas–Fermi corta a interação de Coulomb em poucos ångströms, com as oscilações de Friedel marcando a resposta exata na borda de Fermi. São duas faces de uma moeda — o gás de elétrons responde a campos variáveis com a frequência de plasma e a campos estáticos com o vetor de blindagem — e as duas saem do mesmo modelo. Os exemplos confirmam e também limitam: alumínio e alcalinos concordam com o modelo livre a poucos por cento, e as nanopartículas de ouro e prata exigem acrescentar o fundo dielétrico dos core e as transições interbanda, que deslocam a ressonância para o visível e dão ao ouro sua cor — é ali que o gás de elétrons livres termina e a estrutura de bandas, dos tópicos anteriores, reassume o comando.</p>
+
+<p>Fecha-se o assunto notando as pontes com o restante do curso. Com os <b>fônons</b>, o plásmon acopla em semicondutores polares, produzindo modos mistos plásmon–fóno observados no infravermelho; com a <b>estrutura eletrônica</b>, as interbandas modificam \(\varepsilon(\omega)\) e, com ela, as ressonâncias medidas; com o <b>transporte</b>, a blindagem da equação (8) é o que permite tratar íons e impurezas como perturbações locais na teoria da condutividade; e com as <b>superfícies e interfaces</b>, os modos da equação (13) sustentam toda a ótica de nanopartículas e a microscopia de campo próximo. O gás de elétrons livres é um modelo de duas constantes — \(n\) e \(\gamma\) —, e é justamente essa pobreza que o torna o ponto de partida obrigatório: primeiro entende-se a resposta coletiva pura, depois se acrescenta, um a um, os ingredientes que a natureza real traz.</p>
+
+<h2>Referências</h2>
+<ol class="ref">
+<li>N. W. Ashcroft e N. D. Mermin, <i>Solid State Physics</i>, Holt–Saunders, 1976.</li>
+<li>M. S. Dresselhaus, G. Dresselhaus e A. Jorio, <i>Solid State Properties: From Bulk to Nano</i>, Graduate Texts in Physics, Springer, 2018.</li>
+<li>P. Hofmann, <i>Solid State Physics</i>, Wiley-VCH, 2ª ed., 2015.</li>
+<li>G. Grosso e G. Pastori Parravicini, <i>Solid State Physics</i>, 2ª ed., Academic Press, 2013.</li>
+</ol>
+
+<div class="foot"><span>UFC · Plasmons em Gás de Elétrons · prova escrita</span><span>Introdução · Teoria · Exemplos · Conclusão</span></div>
+</div></div>
+</body>
+</html>

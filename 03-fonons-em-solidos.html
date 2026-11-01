@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fônons em Sólidos — Prova escrita (concurso docente)</title>
+<style>
+:root{--ink:#1a2333;--navy:#1b2a4a;--muted:#5b6b82;--line:#dfe6ef;--bg:#ffffff;}
+*{box-sizing:border-box}
+body{margin:0;background:#eef1f6;color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.65}
+@page{size:A4;margin:18mm 16mm}
+@media print{body{background:#fff}.sheet{box-shadow:none!important;margin:0!important;max-width:none!important;border:none}.inner{padding:0 2mm}.eq{font-size:12.5px;padding:8px;line-height:1.5;page-break-inside:auto}.eq small{font-size:10px}figure{page-break-inside:avoid}table{font-size:11.5px}h2{page-break-after:avoid}}
+.sheet{max-width:860px;margin:26px auto;background:var(--bg);border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.inner{padding:44px 52px}
+@media(max-width:640px){.inner{padding:26px 22px}}
+header.doc-head{border-bottom:3px solid var(--navy);padding-bottom:14px;margin-bottom:18px}
+.doc-head .inst{font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.doc-head h1{font-size:30px;line-height:1.2;margin:8px 0;color:var(--navy)}
+.doc-head .sub{font-style:italic;color:#33415c;font-size:16px}
+.scope{font-family:Arial,Helvetica,sans-serif;font-size:13px;background:#f4f6fa;border:1px solid var(--line);border-left:4px solid var(--navy);padding:10px 14px;margin:16px 0;line-height:1.5}
+h2{font-size:22px;color:var(--navy);margin:30px 0 8px;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3{font-size:18px;color:#24365c;margin:20px 0 6px}
+p{text-align:justify;margin:8px 0}
+ul,ol{margin:6px 0;padding-left:24px}
+li{margin:4px 0}
+.eq{background:#f7f9fc;border:1px solid var(--line);padding:10px 10px;margin:10px 0;text-align:center;font-size:14px;overflow:visible;white-space:normal;word-wrap:break-word;overflow-wrap:anywhere;max-width:100%}
+.eq small{display:block;font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);margin-top:6px;white-space:normal;line-height:1.5}
+.eq mjx-container{overflow:visible !important;max-width:100% !important}
+.eq mjx-container[jax="CHTML"][display="true"]{white-space:normal !important;margin:.4em 0 !important}
+mjx-container[jax="CHTML"]{overflow:visible !important}
+figure{margin:14px auto;border:1px solid var(--line);background:#fbfcfe;max-width:760px}
+figure .draw{padding:10px;display:grid;place-items:center;background:#fff}
+figure svg{max-width:100%;height:auto}
+figcaption{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:var(--muted);padding:8px 14px;border-top:1px solid var(--line);text-align:justify;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px}
+th{background:var(--navy);color:#fff;text-align:left;padding:6px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#f7f9fc}
+.foot{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:10px;display:flex;justify-content:space-between;gap:10px}
+.ref{font-size:15px}
+.ref li{margin:6px 0}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:.95,linebreaks:{automatic:true,width:'container'}},options:{enableMenu:false}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style id="dk-style">
+html{color-scheme:light}
+html.dark{color-scheme:dark}
+html.dark body{background:#0b101b;color:#d9e2f2}
+html.dark .sheet{background:#101928;border-color:#26324a;box-shadow:0 6px 30px rgba(0,0,0,.55)}
+html.dark header.doc-head{border-color:#2f6dbd}
+html.dark .doc-head h1{color:#8fc2f7}
+html.dark .doc-head .sub{color:#c1cfe6}
+html.dark .doc-head .inst{color:#7d8fab}
+html.dark .scope{background:#132038;border-color:#26324a;color:#c9d6ee}
+html.dark h2{color:#8fc2f7;border-color:#26324a}
+html.dark h3{color:#a9c6f2}
+html.dark p,html.dark li{color:#d9e2f2}
+html.dark .eq{background:#131f33;border-color:#26324a;color:#e6eefb}
+html.dark .eq small{color:#8fa3c2}
+html.dark figure{background:#101928;border-color:#26324a}
+html.dark figure .draw{background:#0c1524}
+html.dark figure .draw svg{filter:invert(.92) hue-rotate(180deg)}
+html.dark figcaption{color:#8fa3c2;border-color:#26324a}
+html.dark th{background:#17345e;color:#eaf2ff}
+html.dark td{border-color:#22314c;color:#d9e2f2}
+html.dark tr:nth-child(even) td{background:#132038}
+html.dark .foot{color:#8fa3c2;border-color:#26324a}
+html.dark a{color:#8fc2f7}
+html.dark mjx-container{color:#e6eefb}
+html.dark small{color:#a9bbe0}
+body,.sheet,.eq,figure,h1,h2,h3,th,td,figcaption{transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+button#modeBtn{position:fixed;top:12px;right:12px;z-index:999;font-family:Arial,Helvetica,sans-serif;font-size:12px;padding:7px 14px;border-radius:999px;border:1px solid #cdd6e4;background:#ffffff;color:#26324a;cursor:pointer;opacity:.9;transition:opacity .15s,background .2s,color .2s;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+button#modeBtn:hover{opacity:1}
+html.dark button#modeBtn{background:#1b2a44;border-color:#3a4f75;color:#d9e2f2;box-shadow:none}
+</style>
+<script id="dk-script">(function(){var DT=document.documentElement;function store(on){try{localStorage.setItem('darkmode',on?'1':'0')}catch(e){}}function label(on){var b=document.getElementById('modeBtn');if(!b)return;b.textContent=on?'\u2600\u00a0Modo claro':'\u263E\u00a0Modo noturno';b.title='Alternar modo claro/noturno';}function set(on){DT.classList.toggle('dark',!!on);store(on);label(on);}function mk(){var b=document.getElementById('modeBtn');if(b)return b;b=document.createElement('button');b.id='modeBtn';b.type='button';b.title='Alternar modo claro/noturno';b.addEventListener('click',function(){set(!DT.classList.contains('dark'))});(document.body||DT).appendChild(b);return b;}var p=null,auto=false;try{p=localStorage.getItem('darkmode')}catch(e){}auto=(p===null)&&!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);set(p!==null?p==='1':auto);function go(){mk();label(DT.classList.contains('dark'));}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',go);}else{go();}})();</script>
+</head>
+<body>
+<div class="sheet"><div class="inner">
+
+<header class="doc-head">
+<div class="inst">Concurso docente &middot; Física da Matéria Condensada &middot; Prova escrita</div>
+<h1>Fônons em Sólidos</h1>
+<div class="sub">Introdução, teoria, exemplos e conclusão — texto direto para estudo, em nível de doutorado.</div>
+</header>
+
+<div class="scope">
+<b>Fontes.</b> Ashcroft e Mermin, <i>Solid State Physics</i>; Dresselhaus, Dresselhaus e Jorio, <i>Solid State Properties: From Bulk to Nano</i>, Springer, 2018; Hofmann, <i>Solid State Physics</i>, Wiley-VCH, 2ª ed., 2015; Grosso e Pastori Parravicini, <i>Solid State Physics</i>, 2ª ed., Academic Press, 2013. As figuras são esquemas originais inspirados nos gráficos dos livros, fora de escala — não são reproduções das páginas.
+</div>
+
+<h2>1. Introdução</h2>
+
+<p>Um cristal a temperatura finita não é um arranjo rígido. Os íons oscilam em torno de suas posições de equilíbrio, e o movimento de cada átomo é transmitido aos vizinhos pela força de ligação: o deslocamento de um cria força sobre o próximo, que também se desloca, e assim por diante. O conjunto dessas oscilações acopladas são as <b>vibrações da rede</b> — movimentos coletivos dos íons que percorrem o cristal como ondas. Este tópico responde a três perguntas: como a rede vibra, o que a mecânica quântica faz dessas vibrações e o que daí resulta para as propriedades térmicas do sólido.</p>
+
+<p>O cálculo se apoia na <b>aproximação harmônica</b>. A energia potencial de interação entre dois átomos vizinhos, \(\phi(r)\), é função da distância entre eles e atinge mínimo na distância de equilíbrio; expandindo-a em série de Taylor em torno desse mínimo, os termos lineares se anulam — a derivada primeira num mínimo é zero — e o primeiro termo não nulo é quadrático. A força restauradora fica proporcional ao deslocamento, como na mola de Hooke, e cada átomo é tratado como um oscilador harmônico. Enquanto a amplitude de vibração for pequena face ao espaçamento de rede — como de fato é, da ordem de alguns por cento —, a truncagem é excelente. Quando a amplitude cresce, os termos cúbicos e superiores da série voltam a contar: é aí que surgem os efeitos <b>anarmônicos</b> — expansão térmica, espalhamento entre fônons, fusão — que a teoria harmônica, por definição, não produz.</p>
+
+<p>Duas linguagens descrevem o mesmo fenômeno. A clássica trata cada deslocamento como onda: soluciona a equação de movimento da rede e obtém a <b>relação de dispersão</b> \(\omega(\mathbf{k})\), que dá a frequência de vibração em função do vetor de onda \(\mathbf{k}\) — a grandeza que, no cristal, ocupa o lugar do momento linear e fica definida a menos de um vetor da rede recíproca. As soluções com \(\omega(\mathbf{k})\) bem definida são os <b>modos normais</b>: cada um envolve todos os átomos do cristal vibrando com a mesma frequência, de modo que a excitação não fica presa a átomo algum. A linguagem quântica parte de outro dado: o oscilador harmônico tem níveis de energia igualmente espaçados por \(\hbar\omega\), e a passagem de um nível para o outro cria ou destrói um quantum de vibração — o <b>fóno</b>, nome escolhido por analogia com o fóton, quantum do campo eletromagnético. Fônons são bósons: obedecem à estatística de Bose–Einstein e não estão sujeitos ao princípio de exclusão.</p>
+
+<p>O assunto é o alicerce de boa parte da física térmica dos sólidos. A energia térmica fica guardada nas vibrações da rede, e daí vem a <b>capacidade térmica</b>; o calor se propaga por elas nos isolantes, e daí vem a <b>condutividade térmica</b> da rede; a assimetria do potencial anarmônico faz o sólido dilatar e, em temperatura alta o bastante, fundir; os fônons espalham os elétrons e ajudam a fixar a resistividade dos metais; e transições eletrônicas indiretas, como a do silício, só ocorrem quando um fóno entra na conta. Pressuposto: estruturas cristalinas, rede recíproca e zona de Brillouin, do tópico anterior. O percurso segue a construção dos modelos — oscilador de um átomo; cadeia monoatômica infinita; cadeia diatômica e seus dois ramos; cadeia finita e condições de contorno; quantização e fônons; três dimensões — e fecha com as propriedades térmicas.</p>
+
+<h2>2. Teoria</h2>
+
+<h3>2.1. A aproximação harmônica e um átomo isolado</h3>
+
+<p>Seja \(\phi(r)\) a energia potencial de interação entre dois átomos vizinhos de um cristal. À distância de equilíbrio \(r=a\) ela é mínima, de modo que \(\phi'(a)=0\); mantendo os dois primeiros termos da expansão em torno de \(a\) e definindo a <b>constante de força</b> \(\gamma=\phi''(a)\) — a rigidez da ligação, que mede o quanto a força cresce por unidade de deslocamento —, a força restauradora sobre o átomo é \(-\gamma x\), com \(x\) o deslocamento a partir do equilíbrio. A equação de movimento é a de um oscilador harmônico simples:</p>
+
+<div class="eq">\[ M\frac{d^{2}x}{dt^{2}}=-\gamma x \tag{1} \] <small>\(M\) massa do átomo; \(x\) deslocamento; \(\gamma\) constante de força. A solução é senoidal, com frequência angular \(\omega=\sqrt{\gamma/M}\) — quanto mais rígida a ligação e mais leve o átomo, mais rápida a vibração.</small></div>
+
+<p>A energia do oscilador é a soma da cinética e da potencial, e seu valor médio a temperatura \(T\) sai do teorema da equipartição da mecânica estatística, segundo o qual cada coordenada que aparece ao quadrado no Hamiltoniano contribui com \(k_BT/2\). Há duas — a posição e o momento —, logo \(\langle E\rangle=k_BT\). No ponto de maior deslocamento toda a energia é potencial, o que fornece a amplitude:</p>
+
+<div class="eq">\[ \begin{aligned} E &= \tfrac{1}{2}Mv^{2}+\tfrac{1}{2}\gamma x^{2} \\ x_{\max} &= \left(\frac{2k_BT}{\gamma}\right)^{1/2} \end{aligned} \tag{2} \] <small>energia total do oscilador e amplitude térmica máxima; \(k_B\) constante de Boltzmann. Na prática \(x_{\max}\) é apenas alguns por cento do espaçamento de rede, o que justifica a aproximação harmônica.</small></div>
+
+<p>Duas contas de ordem de grandeza fixam a escala do problema. Para constantes de força típicas de ligações sólidas e massas de átomos pesados, \(\omega\) fica da ordem de \(10^{13}\ \mathrm{s^{-1}}\) — radiação infravermelha —, e a amplitude calculada na equação (2) é pequena face à distância entre vizinhos, como se esperava. O que ainda falta é o essencial: os osciladores não são independentes. O deslocamento de um átomo exerce força sobre o próximo, e é esse acoplamento que transforma oscilações locais em ondas que atravessam o cristal — assunto da seção seguinte, tratado primeiro numa cadeia unidimensional, que já contém toda a física.</p>
+
+<h3>2.2. Cadeia infinita com um átomo por célula</h3>
+
+<p>O modelo mais simples que acopla os osciladores é uma cadeia infinita de átomos iguais de massa \(M\), espaçados por \(a\), ligados por forças que, na aproximação harmônica, se reduzem ao par de vizinhos mais próximos com constante de força \(\gamma\). Restringindo-nos a vibrações longitudinais — os deslocamentos seguem a direção da cadeia —, o problema fica unidimensional e nada se perde do essencial. Cada átomo \(n\) é puxado por seus vizinhos: se ele se desloca para a direita, o vizinho da esquerda o puxa de volta e o da direita o arrasta, e a soma das duas forças dá a equação de movimento</p>
+
+<div class="eq">\[ M\frac{d^{2}u_{n}}{dt^{2}}=-\gamma\left(2u_{n}-u_{n-1}-u_{n+1}\right) \tag{3} \] <small>\(u_{n}\) deslocamento do átomo \(n\) em relação ao seu equilíbrio. O termo \(2u_{n}\) vem do par de vizinhos; a diferença \(2u_{n}-u_{n-1}-u_{n+1}\) é aproximadamente \(-a^{2}\,\partial^{2}u/\partial x^{2}\), isto é, a equação de onda no contínuo.</small></div>
+
+<p>Como a cadeia é periódica, procuram-se soluções que também sejam periódicas — ondas definidas apenas nos sítios da rede, com comprimento de onda \(\lambda\) e vetor de onda \(k=2\pi/\lambda\):</p>
+
+<div class="eq">\[ u_{n}(t)=u\,e^{i(kan-\omega t)} \tag{4} \] <small>\(u\) amplitude; \(a\) espaçamento de cadeia; \(\omega\) frequência. Substituindo na equação (3) e cancelando o fator exponencial, a igualdade só se mantém para certos pares \((k,\omega)\).</small></div>
+
+<p>A substituição produz \(-M\omega^{2}=-2\gamma(1-\cos ka)\), e daí sai a relação de dispersão da cadeia monoatômica:</p>
+
+<div class="eq">\[ \omega(k)=\sqrt{\frac{2\gamma(1-\cos ka)}{M}}=2\sqrt{\frac{\gamma}{M}}\,\left|\sin\frac{ka}{2}\right| \tag{5} \] <small>relação de dispersão fônica da cadeia com um átomo por célula; periodicidade \(2\pi/a\) no espaço recíproco. Cada par \((k,\omega)\) é um modo normal: todos os átomos vibram com a mesma \(\omega\), mas com fases que mudam de sítio para sítio.</small></div>
+
+<p>Duas regiões da curva merecem leitura atenta. No limite de comprimentos de onda longos, \(k\to 0\) — isto é, \(\lambda\gg a\) —, o seno pode ser substituído por seu argumento e a dispersão se torna reta:</p>
+
+<div class="eq">\[ \omega(k)\simeq\sqrt{\frac{\gamma}{M}}\,ak=v\,k,\qquad v=a\sqrt{\frac{\gamma}{M}} \tag{6} \] <small>limite de ondas longas: velocidade de fase \(\omega/k\) e velocidade de grupo \(\partial\omega/\partial k\) coincidem e são constantes. Essa \(v\) é a velocidade do som no material — o cristal se comporta como um meio elástico contínuo, indiferente à estrutura atômica.</small></div>
+
+<p>No extremo oposto, \(k=\pi/a\), o comprimento de onda atinge seu mínimo \(\lambda=2a\): vizinhos consecutivos vibram em contra-fase e a velocidade de grupo \(\partial\omega/\partial k\) se anula, porque a dispersão fica plana na borda da zona. A solução é uma onda estacionária, que não transporta energia. Além disso, a equação (5) é periódica em \(k\) com período \(2\pi/a\) — exatamente um vetor da rede recíproca unidimensional: é o mesmo motivo pelo qual a energia eletrônica era periódica. Duas ondas com vetores de onda que diferem por \(2\pi/a\) descrevem o mesmo movimento dos átomos, porque a onda só existe nos sítios. Basta, portanto, conhecer \(\omega(k)\) na primeira zona de Brillouin, \(-\pi/a\le k\le\pi/a\) — a célula de Wigner–Seitz da rede recíproca, definida no tópico anterior.</p>
+
+<figure>
+<div class="draw">
+<svg width="700" height="250" viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cadeia monoatômica com molas e relação de dispersão fônica">
+<rect width="700" height="250" fill="#ffffff"/>
+<g font-family="Arial" font-size="12">
+<text x="175" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Cadeia com um átomo por célula</text>
+<line x1="30" y1="80" x2="320" y2="80" stroke="#dfe6ef" stroke-width="1" stroke-dasharray="3 3"/>
+<g fill="#1b2a4a">
+<circle cx="60" cy="80" r="10"/><circle cx="120" cy="80" r="10"/><circle cx="180" cy="80" r="10"/><circle cx="240" cy="80" r="10"/><circle cx="300" cy="80" r="10"/>
+</g>
+<g stroke="#0e7490" stroke-width="2" fill="none">
+<path d="M70,80 l6,-6 l8,12 l8,-12 l8,12 l8,-12 l8,6"/>
+<path d="M130,80 l6,-6 l8,12 l8,-12 l8,12 l8,-12 l8,6"/>
+<path d="M190,80 l6,-6 l8,12 l8,-12 l8,12 l8,-12 l8,6"/>
+<path d="M250,80 l6,-6 l8,12 l8,-12 l8,12 l8,-12 l8,6"/>
+</g>
+<g stroke="#a00" stroke-width="1.6">
+<line x1="110" y1="55" x2="130" y2="55"/><polygon points="137,55 128,51 128,59" fill="#a00"/>
+</g>
+<text x="116" y="47" fill="#a00" font-size="11" text-anchor="middle">u&#8345; = u e^(ikan)</text>
+<g fill="#5b6b82" font-size="11" text-anchor="middle">
+<text x="60" y="112">n&#8722;1</text><text x="120" y="112">n</text><text x="180" y="112">n+1</text><text x="240" y="112">n+2</text>
+</g>
+<line x1="120" y1="135" x2="180" y2="135" stroke="#1b2a4a" stroke-width="1.2"/><line x1="120" y1="131" x2="120" y2="139" stroke="#1b2a4a" stroke-width="1.2"/><line x1="180" y1="131" x2="180" y2="139" stroke="#1b2a4a" stroke-width="1.2"/>
+<text x="150" y="152" fill="#1b2a4a" font-size="11" text-anchor="middle">a</text>
+<text x="175" y="180" fill="#33477a" font-size="11" text-anchor="middle">molas de constante &#947; ligam vizinhos</text>
+<text x="175" y="198" fill="#33477a" font-size="11" text-anchor="middle">e a equa&#231;&#227;o (3) acopla todos os &#225;tomos</text>
+<line x1="350" y1="28" x2="350" y2="220" stroke="#dfe6ef"/>
+<text x="525" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Dispers&#227;o &#969;(k)</text>
+<line x1="390" y1="190" x2="670" y2="190" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="677,190 667,186 667,194" fill="#1b2a4a"/>
+<text x="682" y="194" fill="#1b2a4a" font-size="11">k</text>
+<line x1="530" y1="45" x2="530" y2="190" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="530,38 526,48 534,48" fill="#1b2a4a"/>
+<text x="538" y="44" fill="#1b2a4a" font-size="11">&#969;</text>
+<path d="M390,62 Q450,66 530,190 Q610,66 670,62" fill="none" stroke="#1b2a4a" stroke-width="2.6"/>
+<line x1="530" y1="190" x2="600" y2="82" stroke="#0e7490" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="546" y="152" fill="#0e7490" font-size="11" transform="rotate(-57 546 152)">v = velocidade do som</text>
+<line x1="390" y1="62" x2="390" y2="190" stroke="#dfe6ef" stroke-dasharray="3 3"/>
+<line x1="670" y1="62" x2="670" y2="190" stroke="#dfe6ef" stroke-dasharray="3 3"/>
+<text x="390" y="207" fill="#5b6b82" font-size="11" text-anchor="middle">&#8722;&#960;/a</text>
+<text x="670" y="207" fill="#5b6b82" font-size="11" text-anchor="middle">&#960;/a</text>
+<text x="530" y="207" fill="#5b6b82" font-size="11" text-anchor="middle">0</text>
+<text x="396" y="54" fill="#a00" font-size="11">&#969;&#8320; = 2&#8730;(&#947;/M)</text>
+<text x="530" y="230" fill="#5b6b82" font-size="11" text-anchor="middle">bordas k = &#177;&#960;/a: &#8706;&#969;/&#8706;k = 0 (onda estacion&#225;ria)</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Esquema 1 — Cadeia monoatômica e sua dispersão.</b> Esquerda: átomos de massa \(M\) ligados por molas de constante \(\gamma\), com o deslocamento \(u_n\) medido a partir de cada equilíbrio. Direita: a relação de dispersão é reta perto de \(k=0\) — ondas longas propagam-se como som —, satura em \(\omega_0\) e tem velocidade de grupo nula nas bordas da primeira zona de Brillouin, onde a solução é uma onda estacionária.</figcaption>
+</figure>
+
+<figure>
+<div class="draw">
+<svg width="700" height="215" viewBox="0 0 700 215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Movimento dos átomos para comprimentos de onda longos e curtos">
+<rect width="700" height="215" fill="#ffffff"/>
+<g font-family="Arial" font-size="12">
+<text x="175" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">k &#8810; &#960;/a : &#955; &#8811; a (som)</text>
+<line x1="35" y1="85" x2="320" y2="85" stroke="#dfe6ef" stroke-width="1" stroke-dasharray="3 3"/>
+<g fill="#1b2a4a">
+<circle cx="55" cy="85" r="9"/><circle cx="112" cy="79" r="9"/><circle cx="169" cy="71" r="9"/><circle cx="226" cy="66" r="9"/><circle cx="283" cy="64" r="9"/>
+</g>
+<g stroke="#0e7490" stroke-width="1.6" fill="none">
+<line x1="55" y1="76" x2="55" y2="62"/><polygon points="55,56 51,66 59,66" fill="#0e7490" stroke="none"/>
+<line x1="112" y1="70" x2="112" y2="56"/><polygon points="112,50 108,60 116,60" fill="#0e7490" stroke="none"/>
+<line x1="169" y1="62" x2="169" y2="48"/><polygon points="169,42 165,52 173,52" fill="#0e7490" stroke="none"/>
+<line x1="226" y1="57" x2="226" y2="43"/><polygon points="226,37 222,47 230,47" fill="#0e7490" stroke="none"/>
+<line x1="283" y1="55" x2="283" y2="41"/><polygon points="283,35 279,45 287,45" fill="#0e7490" stroke="none"/>
+</g>
+<path d="M50,130 Q170,72 290,118" fill="none" stroke="#33477a" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="175" y="150" fill="#33477a" font-size="11" text-anchor="middle">vizinhos praticamente em fase: o cristal parece cont&#237;nuo</text>
+<text x="175" y="196" fill="#5b6b82" font-size="11" text-anchor="middle">&#969; = vk &#183; propaga&#231;&#227;o como onda el&#225;stica</text>
+<line x1="350" y1="28" x2="350" y2="205" stroke="#dfe6ef"/>
+<text x="525" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">k = &#960;/a : &#955; = 2a (borda da zona)</text>
+<line x1="385" y1="85" x2="665" y2="85" stroke="#dfe6ef" stroke-width="1" stroke-dasharray="3 3"/>
+<g fill="#1b2a4a">
+<circle cx="405" cy="65" r="9"/><circle cx="462" cy="105" r="9"/><circle cx="519" cy="65" r="9"/><circle cx="576" cy="105" r="9"/><circle cx="633" cy="65" r="9"/>
+</g>
+<g stroke="#a00" stroke-width="1.6" fill="none">
+<line x1="405" y1="56" x2="405" y2="44"/><polygon points="405,38 401,48 409,48" fill="#a00" stroke="none"/>
+<line x1="462" y1="114" x2="462" y2="126"/><polygon points="462,132 458,122 466,122" fill="#a00" stroke="none"/>
+<line x1="519" y1="56" x2="519" y2="44"/><polygon points="519,38 515,48 523,48" fill="#a00" stroke="none"/>
+<line x1="576" y1="114" x2="576" y2="126"/><polygon points="576,132 572,122 580,122" fill="#a00" stroke="none"/>
+<line x1="633" y1="56" x2="633" y2="44"/><polygon points="633,38 629,48 637,48" fill="#a00" stroke="none"/>
+</g>
+<text x="525" y="150" fill="#33477a" font-size="11" text-anchor="middle">vizinhos em contra-fase: meio comprimento de onda</text>
+<text x="525" y="196" fill="#5b6b82" font-size="11" text-anchor="middle">&#8802;&#8706;&#969;/&#8706;k = 0 &#183; onda estacion&#225;ria, n&#227;o conduz energia</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Esquema 2 — Do regime acústico ao limite da zona.</b> Esquerda: para \(k\) pequeno a onda é muito maior que o espaçamento e os átomos vizinhos se movem quase em fase; a cadeia não percebe a estrutura discreta e propaga som. Direita: em \(k=\pi/a\), o comprimento de onda cai para \(2a\), o menor possível, e vizinhos alternam sentido — a superposição de ondas contrárias dá uma onda estacionária, com velocidade de grupo nula.</figcaption>
+</figure>
+
+<h3>2.3. Cadeia com dois átomos por célula: ramos acústico e ótico</h3>
+
+<p>Cristais com mais de um átomo na base — o cloreto de sódio, o silício, o arseneto de gálio — exigem um passo adiante. Tome uma cadeia com dois átomos por célula, de massas \(M_1\) e \(M_2\), célula de período \(b\), um átomo na origem e outro em \(b/2\); as molas de constante \(\gamma\) continuam ligando vizinhos mais próximos. Agora cada célula tem dois deslocamentos, \(u_n\) e \(v_n\), e a equação de movimento se desdobra em um par acoplado:</p>
+
+<div class="eq">\[ \begin{aligned} M_{1}\frac{d^{2}u_{n}}{dt^{2}} &= -\gamma\left(2u_{n}-v_{n-1}-v_{n}\right) \\ M_{2}\frac{d^{2}v_{n}}{dt^{2}} &= -\gamma\left(2v_{n}-u_{n}-u_{n+1}\right) \end{aligned} \tag{7} \] <small>equações de movimento da cadeia diatômica; \(u_n\) e \(v_n\) são os deslocamentos dos dois átomos da célula \(n\). O mesmo ansatz ondulatório da equação (4) resolve o par.</small></div>
+
+<p>Com \(u_n=ue^{i(kbn-\omega t)}\) e \(v_n=ve^{i(kbn-\omega t)}\) o sistema vira um problema de autovalores, e a condição de existência de solução não trivial é o anulamento do determinante dos coeficientes:</p>
+
+<div class="eq">\[ \begin{vmatrix} 2\gamma-\omega^{2}M_{1} & -\gamma\left(1+e^{-ikb}\right) \\ -\gamma\left(1+e^{ikb}\right) & 2\gamma-\omega^{2}M_{2} \end{vmatrix}=0 \tag{8} \] <small>determinante nulo garante autovalores distintos de zero para as amplitudes \(u\) e \(v\); expandi-lo é uma única operação de álgebra.</small></div>
+
+<p>O resultado é uma relação de dispersão com <b>duas raízes</b>, um sinal de mais e um sinal de menos para cada \(k\) — dois ramos de soluções:</p>
+
+<div class="eq">\[ \omega^{2}=\gamma\left(\frac{1}{M_{1}}+\frac{1}{M_{2}}\right)\pm\gamma\left[\left(\frac{1}{M_{1}}+\frac{1}{M_{2}}\right)^{2}-\frac{4}{M_{1}M_{2}}\sin^{2}\frac{kb}{2}\right]^{1/2} \tag{9} \] <small>dispersão da cadeia diatômica. A raiz inferior é o <b>ramo acústico</b>, que vai a zero com \(k\); a superior é o <b>ramo ótico</b>, que permanece finito em \(k=0\).</small></div>
+
+<p>Os dois ramos se explicam pelo comportamento em \(k=0\), onde a onda tem comprimento infinito e todas as células vibram em uníssono. No ramo acústico os dois átomos da célula se movem <i>em fase</i>, como um bloco só, e a frequência tende a zero — no limite, é deslocamento uniforme, custo nenhum de energia, que corresponde à propagação de som. No ramo ótico eles se movem <i>em contra-fase</i>, cada átomo contra o outro dentro da própria célula, e a frequência em \(k=0\) é finita:</p>
+
+<div class="eq">\[ \omega_{\mathrm{op}}(0)=\sqrt{2\gamma\left(\frac{1}{M_{1}}+\frac{1}{M_{2}}\right)}=\sqrt{\frac{2\gamma}{\mu}},\qquad \omega_{\mathrm{ac}}(k\to0)\simeq b\sqrt{\frac{\gamma}{2(M_{1}+M_{2})}}\;k \tag{10} \] <small>\(\mu=M_{1}M_{2}/(M_{1}+M_{2})\) massa reduzida: no ramo ótico os átomos oscilam um contra o outro, reduzindo a massa efetiva e elevando a frequência; no acústico, o conjunto inteiro desliza em fase e a massa que inércia é a soma \(M_1+M_2\). Com \(M_1=M_2=M\) e \(b=2a\), a inclinação acústica recupera a velocidade da equação (6).</small></div>
+
+<p>O nome <b>ótico</b> vem da interação com a luz. Se os dois átomos da base são elementos diferentes e carregam cargas opostas — um cristal iônico ou um composto polar como o arseneto de gálio —, movê-los em contra-fase cria um dipolo oscilante, que acopla ao campo elétrico de uma onda eletromagnética. A frequência óptica em \(k=0\), da ordem de \(10^{13}\ \mathrm{s^{-1}}\), cai no infravermelho, e como o vetor de onda do fóton é \(\omega/c\) — minúsculo frente a \(\pi/b\) —, apenas os modos com \(k\approx0\) são acessíveis à radiação. É por isso que a espectroscopia infravermelha e o espalhamento Raman enxergam exatamente esses modos, assunto dos exemplos.</p>
+
+<figure>
+<div class="draw">
+<svg width="700" height="300" viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cadeia diatômica e os ramos acústico e ótico">
+<rect width="700" height="300" fill="#ffffff"/>
+<g font-family="Arial" font-size="12">
+<text x="175" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Cadeia diat&#244;mica M&#8321; / M&#8322;</text>
+<line x1="30" y1="60" x2="320" y2="60" stroke="#dfe6ef" stroke-width="1" stroke-dasharray="3 3"/>
+<g>
+<circle cx="55" cy="60" r="12" fill="#1b2a4a"/><circle cx="112" cy="60" r="8" fill="#0e7490"/><circle cx="169" cy="60" r="12" fill="#1b2a4a"/><circle cx="226" cy="60" r="8" fill="#0e7490"/><circle cx="283" cy="60" r="12" fill="#1b2a4a"/>
+</g>
+<g stroke="#5b6b82" stroke-width="2" fill="none">
+<path d="M67,60 l6,-6 l8,12 l8,-12 l8,12 l8,-12 l8,6"/>
+<path d="M120,60 l6,-6 l8,12 l8,-12 l8,12 l8,-12 l8,6"/>
+<path d="M181,60 l6,-6 l8,12 l8,-12 l8,12 l8,-12 l8,6"/>
+<path d="M234,60 l6,-6 l8,12 l8,-12 l8,12 l8,-12 l8,6"/>
+</g>
+<line x1="55" y1="95" x2="169" y2="95" stroke="#1b2a4a" stroke-width="1.2"/><line x1="55" y1="91" x2="55" y2="99" stroke="#1b2a4a" stroke-width="1.2"/><line x1="169" y1="91" x2="169" y2="99" stroke="#1b2a4a" stroke-width="1.2"/>
+<text x="112" y="112" fill="#1b2a4a" font-size="11" text-anchor="middle">b (2 espa&#231;os)</text>
+<text x="55" y="140" fill="#1b2a4a" font-size="11" text-anchor="middle">M&#8321;</text>
+<text x="112" y="140" fill="#0e7490" font-size="11" text-anchor="middle">M&#8322;</text>
+<text x="175" y="170" fill="#33477a" font-size="11" text-anchor="middle">2 &#225;tomos por c&#233;lula = 2 ramos para cada k</text>
+<rect x="35" y="195" width="16" height="16" fill="#1b2a4a"/><text x="58" y="208" fill="#5b6b82" font-size="11">&#225;tomo 1</text>
+<rect x="130" y="195" width="16" height="16" fill="#0e7490"/><text x="153" y="208" fill="#5b6b82" font-size="11">&#225;tomo 2</text>
+<text x="175" y="245" fill="#5b6b82" font-size="11" text-anchor="middle">se M&#8321; = M&#8322; o gap fecha e os dois ramos</text>
+<text x="175" y="262" fill="#5b6b82" font-size="11" text-anchor="middle">se juntam na curva do Esquema 1</text>
+<line x1="350" y1="28" x2="350" y2="285" stroke="#dfe6ef"/>
+<text x="525" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Ramos ac&#250;stico e &#243;ptico</text>
+<line x1="390" y1="245" x2="670" y2="245" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="677,245 667,241 667,249" fill="#1b2a4a"/>
+<text x="682" y="249" fill="#1b2a4a" font-size="11">k</text>
+<line x1="530" y1="45" x2="530" y2="245" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="530,38 526,48 534,48" fill="#1b2a4a"/>
+<text x="538" y="44" fill="#1b2a4a" font-size="11">&#969;</text>
+<path d="M390,170 C450,178 495,205 530,245 C565,205 610,178 670,170" fill="none" stroke="#0e7490" stroke-width="2.6"/>
+<path d="M390,145 C450,95 490,80 530,80 C570,80 610,95 670,145" fill="none" stroke="#a00" stroke-width="2.6"/>
+<line x1="670" y1="145" x2="670" y2="170" stroke="#33477a" stroke-width="1.6" stroke-dasharray="4 3"/>
+<polygon points="670,170 666,161 674,161" fill="#33477a"/><polygon points="670,145 666,154 674,154" fill="#33477a"/>
+<text x="663" y="162" fill="#33477a" font-size="11" text-anchor="end">gap</text>
+<text x="602" y="66" fill="#a00" font-size="11">ramo &#243;ptico</text>
+<text x="398" y="218" fill="#0e7490" font-size="11">ramo ac&#250;stico</text>
+<text x="390" y="263" fill="#5b6b82" font-size="11" text-anchor="middle">&#8722;&#960;/b</text>
+<text x="670" y="263" fill="#5b6b82" font-size="11" text-anchor="middle">&#960;/b</text>
+<text x="530" y="263" fill="#5b6b82" font-size="11" text-anchor="middle">0</text>
+<text x="522" y="62" fill="#a00" font-size="11" text-anchor="end">k = 0: contra-fase (dipolo)</text>
+<text x="530" y="282" fill="#0e7490" font-size="11" text-anchor="middle">k = 0: em fase (som)</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Esquema 3 — Dois átomos, dois ramos.</b> Esquerda: cadeia com dois átomos distintos por célula de período \(b\). Direita: a dispersão se desdobra em ramo acústico, que desce até zero no centro da zona, e ramo ótico, que termina em frequência finita; a separação entre eles em \(k=\pi/b\) é o gap de frequência, que só existe enquanto as massas diferem.</figcaption>
+</figure>
+
+<h3>2.4. Cadeia finita, contornos de Born–von Kármán e contagem de modos</h3>
+
+<p>Uma cadeia real tem uma quantidade finita de átomos, com começo e fim, e isso levanta uma pergunta de fronteira: o que fazer nas extremidades? Em 1912, Born e von Kármán propuseram a solução mais econâmica, as <b>condições de contorno periódicas</b> (ou cíclicas): identificar o último átomo com o primeiro, como se a cadeia fosse um anel. A vantagem é que a periodicidade global é preservada — nenhuma onda sofre reflexão em superfície —, e o sólido finito é descrito como uma repetição de blocos idênticos, sem precisar tratar a superfície. Em três dimensões a visualização de anel não existe, mas a matemática é a mesma: o cristal finito é identificado consigo mesmo ao longo dos três vetores primitivos — no caso cúbico, um cubo de lado \(L\) com cópias idênticas em todas as direções.</p>
+
+<div class="eq">\[ u_{N+n}(t)=u_{n}(t)\quad\Longrightarrow\quad e^{ikNa}=1\quad\Longrightarrow\quad k=\frac{2\pi}{Na}\,m \tag{11} \] <small>contorno cíclico de Born–von Kármán: a cadeia é identificada consigo mesma, \(u(x+Na)=u(x)\), de modo que a fase acumulada numa volta inteira deve ser múltipla de \(2\pi\) — \(N\) átomos, comprimento \(L=Na\), \(m\) inteiro. Os \(k\) permitidos ficam igualmente espaçados por \(2\pi/(Na)=2\pi/L\).</small></div>
+
+<p>As consequências da contagem são o coração da quantização do problema. Com \(N\) células — na cadeia monoatômica, \(N\) átomos —, os valores permitidos de \(k\) são discretos e separados por \(2\pi/(Na)\); como a dispersão é periódica com \(2\pi/a\), todos eles cabem na primeira zona de Brillouin, e o número de modos distintos por ramo é exatamente \(N\) — nem mais nem menos. Para um macroscópio, \(N\sim10^{23}\) e o espaçamento entre vizinhos em \(k\) é tão fino que os modos discretos se confundem com um contínuo; para uma nanoestrutura, não. Na cadeia diatômica da seção 2.3 o anel tem \(N\) células de período \(b\) — dois átomos em cada, \(2N\) átomos no total e comprimento \(Nb\) —, e o mesmo argumento aplicado ao ansatz \(e^{ikbn}\) dá \(e^{ikNb}=1\), isto é, \(k=2\pi m/(Nb)\): são \(N\) valores de \(k\) por ramo, os mesmos que se repartem nos \(N\) modos acústicos e \(N\) óticos dos \(2N\) deslocamentos. Em três dimensões a periodicidade é imposta ao longo dos três vetores primitivos da rede, e o contorno cíclico aplicado ao deslocamento quantiza o vetor de onda em três componentes:</p>
+
+<div class="eq">\[ \begin{aligned} \mathbf{u}(\mathbf{r}+N_{j}\mathbf{a}_{j}) &= \mathbf{u}(\mathbf{r}),\quad j=1,2,3\\ e^{iN_{j}\mathbf{k}\cdot\mathbf{a}_{j}} &= 1\;\Longrightarrow\;\mathbf{k}\cdot\mathbf{a}_{j}=\frac{2\pi m_{j}}{N_{j}}\\ \mathbf{k} &= \sum_{j=1}^{3}\frac{m_{j}}{N_{j}}\,\mathbf{b}_{j} \end{aligned} \tag{12} \] <small>\(\mathbf{u}\) deslocamento, agora vetor; \(N_j\) número de células ao longo do vetor primitivo \(\mathbf{a}_j\), com \(N=N_1N_2N_3\) o total de células primitivas do cristal — todos da ordem de \(N^{1/3}\) —, \(\mathbf{b}_j\) vetores primitivos da rede recíproca e \(m_j\) inteiros. No caso cúbico, em que todos os \(N_j\) são iguais e \(L=N_{j}a\) é o lado do cristal, vem \(\mathbf{k}=(2\pi/L)(n_{x},n_{y},n_{z})\). Cada valor de \(\mathbf{k}\) ocupa no espaço de onda um volume \(\Delta\mathbf{k}=(2\pi)^{3}/V\) — no cubo, densidade \((L/2\pi)^{3}\) por unidade de volume —, e há exatamente \(N\) valores por célula da rede recíproca, um para cada célula primitiva. Basta descrever a primeira zona.</small></div>
+
+<p>E a contagem de graus de liberdade fecha o raciocínio. Um ponto em três dimensões tem três graus de liberdade de posição; com \(N\) átomos, o sistema tem \(3N\) graus de liberdade e, portanto, \(3N\) modos normais independentes — para cada átomo, três modos, um por direção. Na cadeia unidimensional monoatômica, \(N\) átomos dão \(N\) modos, todos no ramo acústico; na cadeia diatômica, as \(N\) células de dois átomos dão \(2N\) deslocamentos, que se repartem em \(N\) modos acústicos e \(N\) óticos, com \(N\) valores de \(k\), como na equação (11). Em três dimensões há \(N_{1}N_{2}N_{3}\) pontos de \(\mathbf{k}\) — um para cada célula primitiva, como ditou a equação (12) —; com \(p\) átomos na base são \(3p\) ramos para cada ponto, três acústicos — um longitudinal e dois transversais — e \(3(p-1)\) óticos, isto é, \(3pN_{1}N_{2}N_{3}\) modos para os \(pN_{1}N_{2}N_{3}\) átomos do cristal: exatamente os \(3N\) da primeira frase. Essa é a regra que explica, por exemplo, por que o alumínio, de base monoatômica, não tem ramo ótico algum, enquanto o diamante, de base com dois átomos, tem.</p>
+
+<h3>2.5. Quantização das vibrações: os fônons</h3>
+
+<p>Até aqui tudo foi clássico: deslocamentos contínuos, energia média dada pela equipartição. Acontece que várias propriedades — notadamente a capacidade térmica em baixa temperatura — só se explicam quantizando as vibrações. O caminho é padrão da mecânica quântica. Um oscilador harmônico de frequência \(\omega\), isolado, tem hamiltoniano \(H=p^{2}/2m+\tfrac12 m\omega^{2}x^{2}\); introduzindo os operadores de aniquilação e criação \(\hat{a}\) e \(\hat{a}^{\dagger}\), que respectivamente diminuem e aumentam em unidade o número de quanta, o hamiltoniano se reorganiza e os autovalores ficam uniformemente espaçados:</p>
+
+<div class="eq">\[ \hat{H}=\hbar\omega\left(\hat{a}^{\dagger}\hat{a}+\tfrac{1}{2}\right),\qquad \hat{N}=\hat{a}^{\dagger}\hat{a},\qquad E_{l}=\left(l+\tfrac{1}{2}\right)\hbar\omega \tag{13} \] <small>\(\hat{a}|l\rangle=\sqrt{l}\,|l-1\rangle\) e \(\hat{a}^{\dagger}|l\rangle=\sqrt{l+1}\,|l+1\rangle\); \(l=0,1,2,\dots\) número de quanta. A energia mínima, \(\hbar\omega/2\), é a energia de ponto zero — o oscilador nunca para completamente.</small></div>
+
+<p>Agora o salto conceitual. O cristal periódico, com os contornos de Born–von Kármán da seção 2.4, tem modos normais independentes — um para cada \(\mathbf{k}\) permitido — e cada modo é, por construção, um oscilador harmônico autônomo de frequência \(\omega(\mathbf{k})\). Desacoplar os modos é o que fez a transformada para as coordenadas normais; cada um pode então ser quantizado separadamente. O sistema inteiro é descrito pela soma das energias dos osciladores, e excitar o modo \(\mathbf{k}\) em um nível acima do fundamental custa exatamente \(\hbar\omega(\mathbf{k})\): nasce daí o <b>fóno</b>, o quantum de vibração da rede. O estado do cristal é escrito como \(|n_{1},n_{2},\dots\rangle\), com \(n_{\mathbf{k}}\) fônons no modo \(\mathbf{k}\):</p>
+
+<div class="eq">\[ E=\sum_{\mathbf{k}}\left(n_{\mathbf{k}}+\tfrac{1}{2}\right)\hbar\omega(\mathbf{k}) \tag{14} \] <small>energia total da rede vibrante. \(\hat{a}^{\dagger}_{\mathbf{k}}\) cria e \(\hat{a}_{\mathbf{k}}\) aniquila um fóno do modo \(\mathbf{k}\); o modo vazio \(n_{\mathbf{k}}=0\) ainda guarda a energia de ponto zero \(\tfrac12\hbar\omega(\mathbf{k})\).</small></div>
+
+<p>Três consequências decorrem e valem a pena fixar. Primeira: fóno não é partícula de verdade, é uma excitação coletiva — a contagem quântica de uma onda que envolve todos os átomos —, mas carrega energia e momento \(\hbar\mathbf{k}\) e se comporta como partícula quando colide, o que permite descrever transporte térmico como um gás de fônons em movimento. Segunda: fóno é bóson — a troca de dois fônons não muda o estado —, de modo que nenhum princípio de exclusão limita sua ocupação; a estatística que o descreve é a de Bose–Einstein, com o número médio de fônons no modo de frequência \(\omega\) dado por</p>
+
+<div class="eq">\[ \langle n\rangle=\frac{1}{e^{\hbar\omega/k_{B}T}-1} \tag{15} \] <small>distribuição de Bose–Einstein: \(k_{B}T\) é a energia térmica disponível. Se \(\hbar\omega\gg k_{B}T\), o denominador explode e o modo praticamente não é excitado; se \(\hbar\omega\ll k_{B}T\), \(\langle n\rangle\simeq k_{B}T/\hbar\omega\) — o regime clássico, do qual se recupera a equipartição.</small></div>
+
+<p>Terceira: a relação de dispersão da equação (5) e as demais passam a se chamar <b>relações de dispersão fônicas</b>, e \(\mathbf{k}\) atua simultaneamente como vetor de onda e como número quântico de translação — em átomos, a simetria esférica dava \(l\) e \(m\); no cristal, a simetria translacional dá \(\mathbf{k}\), tal como já ocorrera com os elétrons no tópico anterior. Um último detalhe de linguagem: como \(\hbar\mathbf{k}\) do fóton é desprezível (o fóton viaja à luz, com \(|\mathbf{k}|=\omega/c\) minúsculo), a luz só excita fônons com \(\mathbf{k}\approx0\) — a regra de seleção que faz o infravermelho e o Raman sondarem o centro da zona.</p>
+
+<figure>
+<div class="draw">
+<svg width="700" height="245" viewBox="0 0 700 245" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Níveis do oscilador harmônico e criação de fóno">
+<rect width="700" height="245" fill="#ffffff"/>
+<g font-family="Arial" font-size="12">
+<text x="185" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Oscilador harm&#244;nico: n&#237;veis &#250;nicos de &#8463;&#969;</text>
+<line x1="70" y1="215" x2="300" y2="215" stroke="#1b2a4a" stroke-width="1.4"/>
+<line x1="70" y1="215" x2="70" y2="35" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="70,28 66,38 74,38" fill="#1b2a4a"/><text x="76" y="40" fill="#1b2a4a" font-size="11">E</text>
+<g stroke="#1b2a4a" stroke-width="2">
+<line x1="110" y1="190" x2="270" y2="190"/>
+<line x1="110" y1="150" x2="270" y2="150"/>
+<line x1="110" y1="110" x2="270" y2="110"/>
+<line x1="110" y1="70" x2="270" y2="70"/>
+</g>
+<g fill="#5b6b82" font-size="11" text-anchor="end">
+<text x="104" y="194">l = 0</text><text x="104" y="154">l = 1</text><text x="104" y="114">l = 2</text><text x="104" y="74">l = 3</text>
+</g>
+<line x1="285" y1="190" x2="285" y2="150" stroke="#a00" stroke-width="1.6"/>
+<polygon points="285,143 281,153 289,153" fill="#a00"/>
+<text x="293" y="174" fill="#a00" font-size="11">&#8463;&#969;</text>
+<rect x="130" y="196" width="70" height="4" fill="rgba(14,116,144,.35)"/>
+<text x="165" y="207" fill="#0e7490" font-size="10" text-anchor="middle">ponto zero</text>
+<text x="185" y="238" fill="#5b6b82" font-size="11" text-anchor="middle">quantos iguais: cada salto &#233; um f&#243;no</text>
+<line x1="350" y1="28" x2="350" y2="225" stroke="#dfe6ef"/>
+<text x="525" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">F&#243;nos: energia em k</text>
+<g stroke="#dfe6ef" stroke-width="1" stroke-dasharray="3 3">
+<line x1="390" y1="60" x2="665" y2="60"/><line x1="390" y1="110" x2="665" y2="110"/><line x1="390" y1="160" x2="665" y2="160"/>
+</g>
+<line x1="390" y1="215" x2="665" y2="215" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="672,215 662,211 662,219" fill="#1b2a4a"/><text x="678" y="219" fill="#1b2a4a" font-size="11">k</text>
+<line x1="430" y1="215" x2="430" y2="72" stroke="#a00" stroke-width="2.4"/>
+<line x1="470" y1="215" x2="470" y2="112" stroke="#a00" stroke-width="2.4"/>
+<line x1="510" y1="215" x2="510" y2="140" stroke="#a00" stroke-width="2.4"/>
+<line x1="550" y1="215" x2="550" y2="168" stroke="#a00" stroke-width="2.4"/>
+<line x1="590" y1="215" x2="590" y2="190" stroke="#a00" stroke-width="2.4"/>
+<line x1="630" y1="215" x2="630" y2="203" stroke="#a00" stroke-width="2.4"/>
+<g fill="#a00"><circle cx="430" cy="72" r="4"/><circle cx="470" cy="112" r="4"/><circle cx="510" cy="140" r="4"/><circle cx="550" cy="168" r="4"/><circle cx="590" cy="190" r="4"/><circle cx="630" cy="203" r="4"/></g>
+<text x="446" y="76" fill="#a00" font-size="11">n&#8320; + 1</text>
+<text x="486" y="116" fill="#a00" font-size="11">n&#8320;</text>
+<text x="526" y="144" fill="#a00" font-size="11">n&#8320; &#8722; 1</text>
+<path d="M430,80 Q450,66 470,104" fill="none" stroke="#0e7490" stroke-width="2"/>
+<polygon points="470,104 461,102 466,94" fill="#0e7490"/>
+<text x="450" y="58" fill="#0e7490" font-size="11" text-anchor="middle">aniquila&#231;&#227;o</text>
+<text x="530" y="40" fill="#33477a" font-size="11" text-anchor="middle">cada coluna &#233; um modo k, com sua pr&#243;pria &#969;(k)</text>
+<text x="530" y="238" fill="#5b6b82" font-size="11" text-anchor="middle">E = &#931; (n&#8342; + 1/2) &#8463;&#969;(k)</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Esquema 4 — Da escada de níveis ao gás de fônons.</b> Esquerda: os níveis de um oscilador harmônico são equidistantes, separados por \(\hbar\omega\), com o fundamental em \(\hbar\omega/2\). Direita: cada modo \(\mathbf{k}\) do cristal é um desses osciladores com sua própria frequência \(\omega(\mathbf{k})\); criar um fóno é promover o modo em um degrau, aniquilar é descer — e a soma sobre todos os modos dá a energia da rede vibrante.</figcaption>
+</figure>
+
+<h3>2.6. Três dimensões: ramos, polarizações e dispersão fônica</h3>
+
+<p>Passar da cadeia ao cristal tridimensional não muda a física, só a contabilidade. O vetor de onda da cadeia, \(k\), ganha três componentes e passa a ser \(\mathbf{k}=(k_{x},k_{y},k_{z})\), restrito à primeira zona de Brillouin, célula de Wigner–Seitz da rede recíproca —, e os deslocamentos também: cada átomo oscila em três direções, o que dá, para cada \(\mathbf{k}\), tantas frequências quantas direções e átomos por célula. Com \(p\) átomos na base, o sistema de equações de movimento é um determinante \(3p\times3p\): saem \(3p\) ramos de dispersão \(\omega_{j}(\mathbf{k})\), com \(j=1,\dots,3p\). Três deles são sempre <b>ramos acústicos</b> — um <b>longitudinal</b>, em que os átomos oscilam paralelos à direção de propagação de \(\mathbf{k}\), e dois <b>transversais</b>, com oscilação perpendicular —, todos descendo a zero como som em \(\mathbf{k}\to0\). Os \(3(p-1)\) restantes são <b>ramos óticos</b>, que terminam em frequência finita no centro da zona. Base monoatômica (\(p=1\)): três acústicos e nada mais, como no alumínio. Base diatômica (\(p=2\)): seis ramos, três e três, como no diamante, no silício e no arseneto de gálio.</p>
+
+<p>Em três dimensões a relação de dispersão não é uma curva, é uma superfície — ou, como se costuma desenhar, um conjunto de curvas amostradas ao longo dos caminhos de alta simetria da zona: de \(\Gamma\), o centro, até \(X\), \(L\), \(K\) e volta. Vale o mesmo que na cadeia: cada ramo é periódico no espaço recíproco, os comprimentos de onda curtos são equivalentes aos longos, e a primeira zona basta. Os extremos em \(\Gamma\) são o ponto de partida experimental — modos óticos em \(\Gamma\) são os que a luz alcança, e seus deslocamentos, estudados um a um, dizem se o modo é ativo em Raman (se a polarizabilidade do cristal varia com a distorção) ou no infravermelho (se a distorção gera dipolo). Com base de átomos diferentes, como no arseneto de gálio, os dois efeitos aparecem juntos.</p>
+
+<figure>
+<div class="draw">
+<svg width="700" height="290" viewBox="0 0 700 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dispersão fônica em alumínio e diamante ao longo dos caminhos de alta simetria">
+<rect width="700" height="290" fill="#ffffff"/>
+<g font-family="Arial" font-size="12">
+<text x="180" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Alum&#237;nio: 1 &#225;tomo na base</text>
+<line x1="45" y1="240" x2="315" y2="240" stroke="#1b2a4a" stroke-width="1.4"/>
+<g stroke="#dfe6ef" stroke-dasharray="3 3"><line x1="112" y1="45" x2="112" y2="240"/><line x1="179" y1="45" x2="179" y2="240"/><line x1="247" y1="45" x2="247" y2="240"/></g>
+<g fill="#5b6b82" font-size="11" text-anchor="middle"><text x="45" y="257">&#915;</text><text x="112" y="257">X</text><text x="179" y="257">W</text><text x="247" y="257">L</text><text x="315" y="257">&#915;</text></g>
+<g fill="none" stroke="#1b2a4a" stroke-width="2.4">
+<path d="M45,240 Q78,140 112,120 Q145,132 179,110 Q213,150 247,138 Q281,168 315,240"/>
+<path d="M45,240 Q78,110 112,78 Q145,96 179,72 Q213,120 247,104 Q281,140 315,240"/>
+<path d="M45,240 Q78,175 112,158 Q145,168 179,145 Q213,178 247,166 Q281,192 315,240"/>
+</g>
+<text x="180" y="278" fill="#5b6b82" font-size="11" text-anchor="middle">3 ramos ac&#250;sticos apenas: 1 LA + 2 TA</text>
+<text x="180" y="36" fill="#33477a" font-size="11" text-anchor="middle">n&#227;o h&#225; ramo &#243;ptico: um &#225;tomo por c&#233;lula</text>
+<line x1="350" y1="28" x2="350" y2="275" stroke="#dfe6ef"/>
+<text x="525" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Diamante: 2 &#225;tomos na base</text>
+<line x1="390" y1="240" x2="660" y2="240" stroke="#1b2a4a" stroke-width="1.4"/>
+<g stroke="#dfe6ef" stroke-dasharray="3 3"><line x1="457" y1="45" x2="457" y2="240"/><line x1="524" y1="45" x2="524" y2="240"/><line x1="592" y1="45" x2="592" y2="240"/></g>
+<g fill="#5b6b82" font-size="11" text-anchor="middle"><text x="390" y="257">&#915;</text><text x="457" y="257">X</text><text x="524" y="257">W</text><text x="592" y="257">L</text><text x="660" y="257">&#915;</text></g>
+<g fill="none" stroke-width="2.4">
+<path stroke="#1b2a4a" d="M390,240 Q423,140 457,120 Q490,132 524,110 Q558,150 592,138 Q626,168 660,240"/>
+<path stroke="#1b2a4a" d="M390,240 Q423,110 457,78 Q490,96 524,72 Q558,120 592,104 Q626,140 660,240"/>
+<path stroke="#1b2a4a" d="M390,240 Q423,175 457,158 Q490,168 524,145 Q558,178 592,166 Q626,192 660,240"/>
+<path stroke="#a00" stroke-dasharray="7 4" d="M390,60 Q423,52 457,58 Q490,50 524,54 Q558,64 592,58 Q626,60 660,60"/>
+<path stroke="#a00" stroke-dasharray="7 4" d="M390,84 Q423,74 457,80 Q490,72 524,76 Q558,86 592,80 Q626,82 660,84"/>
+</g>
+<line x1="374" y1="60" x2="374" y2="84" stroke="#33477a" stroke-width="1.6"/>
+<polygon points="374,84 370,75 378,75" fill="#33477a"/><polygon points="374,60 370,69 378,69" fill="#33477a"/>
+<text x="366" y="76" fill="#33477a" font-size="10" text-anchor="end">gap</text>
+<text x="525" y="42" fill="#a00" font-size="11" text-anchor="middle">3 ramos &#243;pticos (tracejado)</text>
+<text x="525" y="278" fill="#5b6b82" font-size="11" text-anchor="middle">3 ac&#250;sticos + 3 &#243;pticos: 6 ramos no total</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Esquema 5 — Dispersão fônica em três dimensões.</b> Corte ao longo dos caminhos \(\Gamma\!\to\!X\!\to\!W\!\to\!L\!\to\!\Gamma\) da primeira zona. Esquerda: o alumínio, com um átomo por célula, só tem os três ramos acústicos, que caem linearmente perto de \(\Gamma\). Direita: o diamante, com dois átomos, soma três ramos óticos acima de um gap; em ambos, os ramos planos nas bordas marcam velocidade de grupo nula. Desenhos esquemáticos, fora de escala — não são curvas calculadas.</figcaption>
+</figure>
+
+<h3>2.7. Capacidade térmica: de Dulong–Petit a Debye</h3>
+
+<p>A primeira grande aplicação dos fônons é o calor específico. Historicamente, o problema foi um dos primeiros triunfos da teoria quântica. Classicamente, o teorema da equipartição dá \(\langle E\rangle=3k_{B}T\) por átomo — três direções, cada uma com \(k_BT\), como já vimos na equação (2) —, e portanto uma capacidade molar independente de temperatura, igual para todo material. É a lei de Dulong–Petit:</p>
+
+<div class="eq">\[ C_{V}=\frac{\partial\langle E\rangle}{\partial T}=3N_{A}k_{B}=3R\simeq24{,}9\ \mathrm{J\,K^{-1}mol^{-1}} \tag{16} \] <small>por mol de átomos; \(N_A\) número de Avogadro, \(R\) constante dos gases. O valor é atingido com boa aproximação à temperatura ambiente, mas a lei falha em dois pontos: não cai a zero em \(T=0\) — o que a termodinâmica exige — e subestima o chumbo a 77 K enquanto superestima o diamante, que a 77 K está em \(0{,}1\ \mathrm{J\,K^{-1}mol^{-1}\!}\).</small></div>
+
+<p>A saída é tratar os modos como osciladores quantizados, como propôs Einstein: \(3N_{A}\) osciladores independentes, todos com uma mesma frequência \(\omega_{E}\), ocupados segundo a estatística de Bose–Einstein da equação (15). Diferenciando a energia média obtém-se:</p>
+
+<div class="eq">\[ C=3R\left(\frac{\hbar\omega_{E}}{k_{B}T}\right)^{2}\frac{e^{\hbar\omega_{E}/k_{B}T}}{\left(e^{\hbar\omega_{E}/k_{B}T}-1\right)^{2}}=3R\left(\frac{\Theta_{E}}{T}\right)^{2}\frac{e^{\Theta_{E}/T}}{\left(e^{\Theta_{E}/T}-1\right)^{2}} \tag{17} \] <small>capacidade do modelo de Einstein, com a <b>temperatura de Einstein</b> \(\Theta_{E}=\hbar\omega_{E}/k_{B}\) fixando a escala. Para \(T\gg\Theta_{E}\) recupera-se Dulong–Petit; para \(T\ll\Theta_{E}\) a capacidade cai exponencialmente, porque os osciladores “congelam” no fundamental.</small></div>
+
+<p>O modelo de Einstein acerta o essencial — a queda a zero e a recuperação do valor clássico —, mas erra a lei de baixa temperatura: a curva experimental é uma potência \(C\propto T^{3}\), não uma exponencial. A causa é que todos os osciladores de Einstein têm a mesma frequência alta, e a baixas temperaturas nenhum deles pode ser excitado. Na realidade a rede tem modos de frequência arbitrariamente baixa — os acústicos, com \(\omega\simeq vk\) —, que continuam acessíveis mesmo com pouca energia térmica. O modelo de Debye incorpora isso assumindo a dispersão linear da equação (6) para <i>todos</i> os \(\mathbf{k}\), e integrando sobre a densidade de estados de fônons — o número de modos por intervalo de frequência, \(g(\omega)\,d\omega\):</p>
+
+<div class="eq">\[ \langle E\rangle=3\int_{0}^{\omega_{D}}g(\omega)\,\frac{\hbar\omega}{e^{\hbar\omega/k_{B}T}-1}\,d\omega,\qquad g(\omega)=\frac{V\omega^{2}}{2\pi^{2}v^{3}} \tag{18} \] <small>energia média do sólido no modelo de Debye e densidade de estados resultante da contagem de pontos de \(\mathbf{k}\) dentro de uma esfera de raio \(\omega/v\): como o número de estados cresce com o volume da esfera no espaço de onda, \(g\propto\omega^{2}\). O fator 3 é o das três polarizações.</small></div>
+
+<p>A constante de proporcionalidade de \(g(\omega)\) sai de uma exigência de contagem: o modelo tem de reproduzir exatamente os \(3N\) modos do cristal com \(N\) átomos, o que fixa o limite superior da integral, a <b>frequência de Debye</b> \(\omega_{D}\), e com ela a <b>temperatura de Debye</b> \(\Theta_{D}=\hbar\omega_{D}/k_{B}\), que dá a escala de temperatura do material. Fica-se com</p>
+
+<div class="eq">\[ 3N=3\int_{0}^{\omega_{D}}g(\omega)\,d\omega\quad\Longrightarrow\quad \omega_{D}^{3}=\frac{6\pi^{2}N}{V}v^{3},\qquad \Theta_{D}=\frac{\hbar\omega_{D}}{k_{B}} \tag{19} \] <small>normalização da densidade de estados: \(V\) volume do cristal, \(N/V\) densidade atômica. Quanto mais rígida a ligação e mais leve o átomo, maior \(\Theta_{D}\) — de 105 K no chumbo a 1860 K no diamante.</small></div>
+
+<p>Com isso, a energia vira uma integral padrão e a capacidade se obtém diferenciando-a. Dois limites bastam para fixar o comportamento. Em alta temperatura, \(k_{B}T\gg\hbar\omega_{D}\), todos os modos são excitados e o resultado converge para Dulong–Petit — a lei clássica é o limite de alta temperatura de qualquer modelo quântico. Em baixa temperatura, \(k_{B}T\ll\hbar\omega_{D}\), pode-se estender o limite superior da integral até o infinito, a integral vale \(\pi^{4}/15\) e sobra a lei cúbica:</p>
+
+<div class="eq">\[ C=\frac{12\pi^{4}}{5}Nk_{B}\left(\frac{T}{\Theta_{D}}\right)^{3} \tag{20} \] <small>lei \(T^{3}\) de Debye: vale porque a densidade de estados é quadrática e a ocupação de Bose–Einstein congela os modos altos; descreve muito bem os isolantes em baixa temperatura, ao contrário da exponencial de Einstein.</small></div>
+
+<p>Por que a lei \(T^{3}\) é o teste decisivo: ela depende da dispersão linear dos acústicos, portanto medir \(C(T)\) em baixa temperatura é medir o comportamento das ondas sonoras de maior comprimento de onda do cristal. Uma tabela resume o que foi dito — a capacidade molar de vários sólidos a 77 K e a 273 K, contra o valor clássico:</p>
+
+<table>
+<tr><th>Material</th><th>\(C\) a 77 K (J K⁻¹ mol⁻¹)</th><th>\(C\) a 273 K (J K⁻¹ mol⁻¹)</th><th>Leitura</th></tr>
+<tr><td>Cobre (Cu)</td><td>12,5</td><td>24,3</td><td>\(\Theta_D\) baixa (343 K): já quase clássico à temperatura ambiente</td></tr>
+<tr><td>Alumínio (Al)</td><td>9,1</td><td>23,8</td><td>mesmo comportamento, escala de \(T\) maior</td></tr>
+<tr><td>Ouro (Au)</td><td>19,1</td><td>25,2</td><td>átomo pesado, modo barato, clássico já a 77 K</td></tr>
+<tr><td>Chumbo (Pb)</td><td>23,6</td><td>26,7</td><td>\(\Theta_D=105\) K: clássico até perto do nitrogênio fervendo</td></tr>
+<tr><td>Ferro (Fe)</td><td>8,1</td><td>24,8</td><td>ligação forte, queda apreciável a 77 K</td></tr>
+<tr><td>Diamante (C)</td><td>0,1</td><td>5,2</td><td>\(\Theta_D=1860\) K: congelado a 77 K, muito distante de Dulong–Petit a 273 K</td></tr>
+</table>
+
+<figure>
+<div class="draw">
+<svg width="700" height="255" viewBox="0 0 700 255" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Densidade de estados de Debye e contagem de estados no espaço de onda">
+<rect width="700" height="255" fill="#ffffff"/>
+<g font-family="Arial" font-size="12">
+<text x="180" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Contagem de modos no espa&#231;o de onda</text>
+<circle cx="180" cy="125" r="72" fill="rgba(14,116,144,.10)" stroke="#0e7490" stroke-width="2"/>
+<g fill="#1b2a4a">
+<circle cx="180" cy="125" r="3.5"/><circle cx="215" cy="105" r="3.5"/><circle cx="150" cy="95" r="3.5"/><circle cx="140" cy="150" r="3.5"/><circle cx="212" cy="152" r="3.5"/><circle cx="180" cy="70" r="3.5"/><circle cx="240" cy="135" r="3.5"/><circle cx="120" cy="120" r="3.5"/><circle cx="180" cy="180" r="3.5"/><circle cx="163" cy="140" r="3.5"/><circle cx="196" cy="140" r="3.5"/><circle cx="196" cy="110" r="3.5"/><circle cx="163" cy="110" r="3.5"/><circle cx="238" cy="98" r="3.5"/><circle cx="124" cy="90" r="3.5"/><circle cx="146" cy="176" r="3.5"/><circle cx="216" cy="176" r="3.5"/>
+</g>
+<line x1="180" y1="125" x2="238" y2="85" stroke="#a00" stroke-width="1.8"/>
+<text x="248" y="80" fill="#a00" font-size="11">raio k = &#969;/v</text>
+<text x="180" y="129" fill="#0e7490" font-size="11" text-anchor="middle" dx="6" dy="-6">&#915;</text>
+<text x="180" y="225" fill="#33477a" font-size="11" text-anchor="middle">cada ponto &#233; um k permitido; a esfera de raio &#969;/v</text>
+<text x="180" y="243" fill="#33477a" font-size="11" text-anchor="middle">cont&#234;m N(&#969;) modos &#8212; volume da esfera &#8733; &#969;&#179;</text>
+<line x1="350" y1="28" x2="350" y2="235" stroke="#dfe6ef"/>
+<text x="525" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Densidade de estados g(&#969;) &#8733; &#969;&#178;</text>
+<line x1="390" y1="215" x2="670" y2="215" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="677,215 667,211 667,219" fill="#1b2a4a"/><text x="682" y="219" fill="#1b2a4a" font-size="11">&#969;</text>
+<line x1="390" y1="45" x2="390" y2="215" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="390,38 386,48 394,48" fill="#1b2a4a"/><text x="378" y="44" fill="#1b2a4a" font-size="11" text-anchor="end">g</text>
+<path d="M390,215 Q500,175 585,95" fill="none" stroke="#1b2a4a" stroke-width="2.6"/>
+<line x1="585" y1="95" x2="585" y2="215" stroke="#a00" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="585" y="86" fill="#a00" font-size="11" text-anchor="middle">&#969;<tspan dy="3" font-size="9">D</tspan></text>
+<text x="585" y="233" fill="#5b6b82" font-size="11" text-anchor="middle">corte de Debye: &#8721; 3g(&#969;)d&#969; = 3N</text>
+<rect x="391" y="216" width="194" height="0" fill="none"/>
+<path d="M390,215 Q500,175 585,95 L585,215 Z" fill="rgba(27,42,74,.10)"/>
+<text x="470" y="196" fill="#33477a" font-size="11">par&#225;bola: mais modos por faixa</text>
+<text x="470" y="213" fill="#33477a" font-size="11">quanto maior &#969;, pois a esfera cresce</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Esquema 6 — Densidade de estados fônicos.</b> Esquerda: os vetores de onda permitidos formam uma rede cúbica no espaço de onda e os modos com frequência menor que \(\omega\) são os pontos dentro da esfera de raio \(\omega/v\). Direita: o volume da esfera cresce com \(\omega^3\), logo o número acumulado de modos cresce com \(\omega^3\) e a densidade de estados com \(\omega^2\), cortada em \(\omega_D\) pela exigência de caber exatamente \(3N\) modos.</figcaption>
+</figure>
+
+<h3>2.8. Condutividade térmica, anarmonicidade e interação elétron–fóno</h3>
+
+<p>O calor também atravessa o cristal pelas vibrações, e a descrição mais útil muda de linguagem: em vez das ondas estendidas dos modos normais, usam-se pacotes de onda — soma localizada de modos com \(\mathbf{k}\) próximos —, que viajam com velocidade de grupo e carregam energia de um ponto a outro. É o que se chama gás de fônons. A condutividade térmica total do material é a soma da contribuição da rede e a dos elétrons livres dos metais,</p>
+
+<div class="eq">\[ \kappa=\kappa_{p}+\kappa_{e} \tag{21} \] <small>\(\kappa_p\) condução por fônons e \(\kappa_e\) por elétrons. Nos isolantes só sobra a primeira; nos metais, a segunda predomina — mas as duas se somam, sem interferência apreciável.</small></div>
+
+<p>e para a parte da rede vale a mesma fórmula da teoria cinética dos gases, com os fônons no papel de partículas que colidem:</p>
+
+<div class="eq">\[ \kappa_{p}=\frac{1}{3}\,c\,\lambda_{p}\,v_{p} \tag{22} \] <small>\(c\) calor específico por unidade de volume, \(\lambda_p\) caminho livre médio do fóno — a média da distância percorrida entre dois espalhamentos — e \(v_p\) velocidade do fóno, da ordem da velocidade do som. Análoga à condutividade elétrica de Drude, com \(\Delta T/\Delta x\) no lugar do campo elétrico.</small></div>
+
+<p>O comportamento de \(\kappa_{p}(T)\) é o produto de três fatores concorrentes. A baixa temperatura, \(c\) cai como \(T^{3}\) e poucos fônons existem para carregar calor — a condutividade cresce. A alta temperatura, a densidade de fônons fica grande e eles começam a espalhar uns aos outros, encurtando \(\lambda_{p}\) — a condutividade cai. Entre os dois há um máximo, tipicamente em torno de 10% da temperatura de Debye. Nota-se ainda que o espalhamento fóno–fóno não pode existir num cristal puramente harmônico: lá as ondas se superponem e atravessam uma à outra sem se sentir, como ondas na água de baixa amplitude. Ele exige os termos anarmônicos do potencial — é por isso que a fórmula (22) é a fronteira entre o harmônico, que dá os modos, e o anarmônico, que lhes põe tempo de vida finito: num cristal real os fônons decaem em outros fônons e a descrição sobrevive com uma largura espectral, isto é, com um tempo médio de vida antes da descoerência.</p>
+
+<p>A mesma anarmonicidade tem uma segunda consequência cotidiana, a <b>expansão térmica</b>. O potencial entre vizinhos é assimétrico — sobe devagar ao se afastar e repentinamente ao se aproximar —, de modo que a amplitude média de oscilação em torno do equilíbrio desloca a distância média para fora: oscilando com mais energia, o átomo passa mais tempo longe do vizinho do que perto. Formalmente, o coeficiente de dilatação linear \(\alpha\) é definido por \(\Delta l/l=\alpha\,\Delta T\), com \(\alpha\) da ordem de \(10^{-5}\ \mathrm{K^{-1}}\) à temperatura ambiente, nulificando-se em \(T=0\) — como manda a termodinâmica. E quando a amplitude térmica chega a uma fração apreciável do espaçamento de rede, a própria rede perde estabilidade: é o quadro microscópico da fusão, em que a ordem de longo alcance se desfaz.</p>
+
+<p>Fecha-se o círculo com a interação entre fônons e elétrons, que é o termo antes deixado de fora. Escrevendo a posição de cada íon como soma da equilíbrio mais o deslocamento, \(\mathbf{R}_i=\mathbf{R}_i^{0}+\mathbf{s}_i\), e expandindo o potencial elétron–íon até primeira ordem em \(\mathbf{s}_i\), o termo extra é</p>
+
+<div class="eq">\[ \hat{H}_{\mathrm{el\text{-}f\acute{o}no}}=-\sum_{k,i}\mathbf{s}_{i}\cdot\nabla V_{\mathrm{el\text{-}ion}}\left(\mathbf{r}_{k}-\mathbf{R}_{i}^{0}\right) \tag{23} \] <small>expansão de primeira ordem do acoplamento elétron–rede; \(\mathbf{s}_i\) se reescreve em coordenadas normais e, quantizado, vira \(\hat{a}_{\mathbf{q}}\) e \(\hat{a}^{\dagger}_{\mathbf{q}}\): o elétron absorve ou emite um fóno. Descreve a resistividade por fônons, o alargamento de linhas e as transições indiretas.</small></div>
+
+<p>Esse termo é pequeno — afinal, a aproximação de Born–Oppenheimer congelou os íons justamente por serem lentos —, mas é ele que permite tudo que envolve mudança de estado ao mesmo tempo para elétrons e vibrações: a resistividade dos metais, que cresce com a temperatura porque há mais fônons para espalhar os elétrons; as transições indiretas do silício, em que o elétron pula de valência para condução trocando momento com um fóno; e as recombinações assistidas por fóno em materiais de lacuna indireta. Assim, os dois tópicos — bandas e fônons — se encontram: as bandas dizem quais estados existem, os fônons dizem como os elétrons mudam de um para o outro.</p>
+
+<figure>
+<div class="draw">
+<svg width="700" height="250" viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Potencial anarmônico e expansão térmica">
+<rect width="700" height="250" fill="#ffffff"/>
+<g font-family="Arial" font-size="12">
+<text x="180" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Potencial assim&#233;trico entre vizinhos</text>
+<line x1="55" y1="215" x2="310" y2="215" stroke="#1b2a4a" stroke-width="1.4"/>
+<line x1="55" y1="215" x2="55" y2="40" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="55,33 51,43 59,43" fill="#1b2a4a"/><text x="45" y="44" fill="#1b2a4a" font-size="11" text-anchor="end">&#966;</text>
+<text x="316" y="219" fill="#1b2a4a" font-size="11">r</text>
+<path d="M75,45 C75,175 130,225 165,225 C215,225 275,150 295,60" fill="none" stroke="#1b2a4a" stroke-width="2.6"/>
+<path d="M165,205 C165,215 185,222 205,215" fill="none" stroke="#a00" stroke-width="2"/>
+<text x="216" y="212" fill="#a00" font-size="11">subida mais devagar</text>
+<path d="M120,225 C120,213 138,207 152,213" fill="none" stroke="#0e7490" stroke-width="2"/>
+<text x="70" y="243" fill="#0e7490" font-size="11">repul&#231;&#227;o r&#225;pida ao aproximar</text>
+<line x1="165" y1="60" x2="165" y2="215" stroke="#dfe6ef" stroke-dasharray="3 3"/>
+<text x="165" y="55" fill="#5b6b82" font-size="11" text-anchor="middle">r&#8320; equil&#237;brio</text>
+<line x1="350" y1="28" x2="350" y2="235" stroke="#dfe6ef"/>
+<text x="525" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Amplitude m&#233;dia e T</text>
+<line x1="390" y1="215" x2="665" y2="215" stroke="#1b2a4a" stroke-width="1.4"/>
+<line x1="390" y1="215" x2="390" y2="50" stroke="#1b2a4a" stroke-width="1.4"/>
+<text x="672" y="219" fill="#1b2a4a" font-size="11">r</text>
+<text x="380" y="52" fill="#1b2a4a" font-size="11" text-anchor="end">&#966;</text>
+<path d="M405,60 C405,165 445,205 470,205 C505,205 560,130 585,60" fill="none" stroke="#1b2a4a" stroke-width="2.6"/>
+<path d="M418,178 C418,186 434,191 450,186" fill="none" stroke="#0e7490" stroke-width="2.4"/>
+<text x="455" y="182" fill="#0e7490" font-size="11">T&#8321; baixa: &#177; pequeno</text>
+<path d="M412,140 C412,155 442,168 476,158" fill="none" stroke="#a00" stroke-width="2.4"/>
+<text x="482" y="152" fill="#a00" font-size="11">T&#8322; alta: &#177; grande</text>
+<line x1="434" y1="186" x2="434" y2="196" stroke="#0e7490" stroke-width="1.4"/><line x1="452" y1="186" x2="452" y2="196" stroke="#0e7490" stroke-width="1.4"/>
+<line x1="432" y1="158" x2="432" y2="176" stroke="#a00" stroke-width="1.4"/><line x1="466" y1="158" x2="466" y2="176" stroke="#a00" stroke-width="1.4"/>
+<circle cx="443" cy="191" r="3" fill="#0e7490"/><circle cx="449" cy="167" r="3" fill="#a00"/>
+<text x="530" y="240" fill="#5b6b82" font-size="11" text-anchor="middle">o centro da oscila&#231;&#227;o migra para a direita</text>
+</g>
+</svg>
+</div>
+<figcaption><b>Esquema 7 — Anarmonicidade, dilatação e fusão.</b> Esquerda: o potencial entre dois átomos é mais blando ao se afastar e mais duro ao se aproximar — a série de Taylor truncada na quadrática perde justamente essa assimetria. Direita: quanto maior a temperatura, maior a amplitude, e a média da oscilação se afasta do mínimo; a distância interatômica média cresce com \(T\) (expansão térmica) e, se a amplitude chega a fração grande do espaçamento de rede, a ordem desfaz-se (fusão).</figcaption>
+</figure>
+
+<h2>3. Exemplos</h2>
+
+<p>Os modelos teóricos ganham corpo em três frentes: os materiais que ilustram cada arranjo estrutural, as curvas medidas de capacidade e condução, e as técnicas com que os fônons são observados. A tabela abaixo reúne a escala de temperaturas de Debye — a energia típica das vibrações de cada material — e a condutividade térmica à temperatura ambiente, que é o produto direto da teoria da seção 2.8:</p>
+
+<table>
+<tr><th>Material</th><th>\(\Theta_D\) (K)</th><th>\(\omega_D\) (Hz)</th><th>\(\kappa\) a 300 K (W m⁻¹ K⁻¹)</th><th>Perfil</th></tr>
+<tr><td>Chumbo (Pb)</td><td>105</td><td>1,37 × 10¹³</td><td>35</td><td>átomo pesado e ligação fraca: vibrações baratas, quase clássico a 77 K</td></tr>
+<tr><td>Cobre (Cu)</td><td>343</td><td>4,49 × 10¹³</td><td>386</td><td>metal: o calor é conduzido principalmente pelos elétrons</td></tr>
+<tr><td>Silício (Si)</td><td>645</td><td>8,45 × 10¹³</td><td>150</td><td>isolante covalente: condução toda por fônons</td></tr>
+<tr><td>Diamante (C)</td><td>1860</td><td>2,44 × 10¹⁴</td><td>2300</td><td>átomo leve e ligação fortíssima: maior \(\kappa\) de todos, metais inclusos</td></tr>
+<tr><td>Quartzo (SiO₂)</td><td>—</td><td>—</td><td>10</td><td>rede aberta e desordenada</td></tr>
+<tr><td>Vidro</td><td>—</td><td>—</td><td>0,8</td><td>desordem espalha fortemente os fônons</td></tr>
+<tr><td>Polistireno</td><td>—</td><td>—</td><td>0,03</td><td>polímero: caminho livre médio minúsculo — isolante térmico</td></tr>
+</table>
+
+<h3>3.1. Alumínio e diamante: uma base e duas bases</h3>
+
+<p>O alumínio e o diamante têm a mesma rede de Bravais — cúbica de faces centradas — e comportamentos vibracionais distintos, porque a base é diferente. O alumínio tem um único átomo por célula; com três átomos por célula primitiva contadas na célula convencional, o que importa é a base: um átomo, logo três ramos acústicos e nenhum ótico, como no esquema 5. O diamante tem dois átomos na base, o que dá seis ramos — três acústicos e três óticos —, e os modos óticos em \(\Gamma\) são ativos em Raman, de onde se mede a frequência de ligação C–C sem tocar na amostra. A escala de frequência é fixada pelos dois fatores da equação (10): massa e rigidez. O diamante, com átomos leves e ligação covalente fortíssima, chega a \(\omega_{D}=2{,}4\times10^{14}\ \mathrm{Hz}\); o chumbo, pesado e metallicamente fraco, para em \(1{,}4\times10^{13}\ \mathrm{Hz}\) — uma diferença de vinte vezes na frequência e, como \(\Theta_D\propto\omega_D\), também na temperatura de Debye.</p>
+
+<p>O efeito na vida macroscópica é imediato e vale como exemplo de raciocínio: o diamante é bom condutor térmico não por ter elétrons livres — não tem —, mas porque seus fônons são rápidos (velocidade do som alta, \(v\propto\sqrt{\gamma/M}\)) e sua temperatura de Debye alta mantém a população de fônons baixa até temperaturas altas, deixando o caminho livre médio longo. O resultado é \(\kappa\approx2300\ \mathrm{W\,m^{-1}K^{-1}}\) à temperatura ambiente, maior que a do cobre — e é por isso que o diamante é um caso clássico de isolante elétrico que é excelente condutor térmico, ao contrário do vidro, cuja desordem reduz \(\lambda_p\) a poucas distâncias interatômicas e derruba \(\kappa\) para \(0{,}8\ \mathrm{W\,m^{-1}K^{-1}}\).</p>
+
+<h3>3.2. Capacidade térmica: os dois modelos contra o experimento</h3>
+
+<p>Compare-se o que cada modelo promete. O clássico, Dulong–Petit, é uma constante: acerta o cobre, o ouro e o ferro à temperatura ambiente (24–25 contra 24,9 \(\mathrm{J\,K^{-1}mol^{-1}}\)) e falha em baixa temperatura, onde a capacidade real despenca. O modelo de Einstein traz a queda a zero, mas pelo caminho errado: exponencial, enquanto o experimento — bem representado pelo diamante, com \(\Theta_D=1860\ \mathrm{K}\) — mostra uma reta de inclinação 3 na escala dupla logarítmica, isto é, \(C\propto T^{3}\). O modelo de Debye explica a reta: mantém os modos acústicos de baixa frequência, cuja densidade de estados cresce com \(\omega^{2}\) (esquema 6), e esses modos continuam sendo excitados mesmo quando \(k_BT\) não alcança as frequências óticas. À temperatura ambiente o diamante ainda está a 5,2 \(\mathrm{J\,K^{-1}mol^{-1}}\) — um terço do valor clássico — porque \(273\ \mathrm{K}\ll\Theta_D\); o chumbo, com \(\Theta_D=105\ \mathrm{K}\), já está saturado a 77 K.</p>
+
+<figure>
+<div class="draw">
+<svg width="700" height="275" viewBox="0 0 700 275" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Capacidade térmica: Dulong-Petit, Einstein, Debye e experimento">
+<rect width="700" height="275" fill="#ffffff"/>
+<g font-family="Arial" font-size="12">
+<text x="350" y="18" fill="#1b2a4a" font-weight="bold" text-anchor="middle">Capacidade molar C(T): modelos e experimento</text>
+<line x1="70" y1="230" x2="660" y2="230" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="667,230 657,226 657,234" fill="#1b2a4a"/><text x="674" y="234" fill="#1b2a4a" font-size="11">T</text>
+<line x1="70" y1="230" x2="70" y2="40" stroke="#1b2a4a" stroke-width="1.4"/>
+<polygon points="70,33 66,43 74,43" fill="#1b2a4a"/><text x="58" y="44" fill="#1b2a4a" font-size="11" text-anchor="end">C</text>
+<line x1="70" y1="70" x2="640" y2="70" stroke="#a00" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="600" y="62" fill="#a00" font-size="11" text-anchor="middle">Dulong&#8211;Petit: 3R</text>
+<path d="M70,228 Q140,120 230,86 Q340,71 640,70" fill="none" stroke="#33477a" stroke-width="2.6"/>
+<text x="150" y="110" fill="#33477a" font-size="11">Debye: C &#8733; T&#179; no in&#237;cio</text>
+<path d="M70,229 Q160,200 250,150 Q330,105 420,84 Q540,73 640,71" fill="none" stroke="#0e7490" stroke-width="2.4" stroke-dasharray="7 4"/>
+<text x="300" y="185" fill="#0e7490" font-size="11">Einstein: cai exponencial</text>
+<path d="M70,230 Q150,150 240,100 Q360,72 640,70" fill="none" stroke="#1b2a4a" stroke-width="2"/>
+<g fill="#1b2a4a"><circle cx="140" cy="176" r="3.5"/><circle cx="220" cy="115" r="3.5"/><circle cx="300" cy="90" r="3.5"/><circle cx="420" cy="77" r="3.5"/><circle cx="540" cy="73" r="3.5"/></g>
+<text x="470" y="120" fill="#1b2a4a" font-size="11">pontos: experimento</text>
+<text x="200" y="258" fill="#5b6b82" font-size="11" text-anchor="middle">T &#8810; &#920;<tspan dy="3" font-size="9">D</tspan><tspan dy="-3"> (baixa T)</tspan></text>
+<text x="550" y="258" fill="#5b6b82" font-size="11" text-anchor="middle">T &#8811; &#920;<tspan dy="3" font-size="9">E</tspan><tspan dy="-3"> ou &#920;</tspan><tspan dy="3" font-size="9">D</tspan><tspan dy="-3"> (alta T)</tspan></text>
+<line x1="70" y1="70" x2="70" y2="230" stroke="#dfe6ef" stroke-dasharray="3 3"/>
+</g>
+</svg>
+</div>
+<figcaption><b>Esquema 8 — Capacidade térmica e os limites dos modelos.</b> No alto, a previsão clássica independente de \(T\). O modelo de Einstein (tracejado) cai a zero rapidamente demais, enquanto a curva experimental (pontos) é acompanhada pelo Debye, que reproduz a lei \(T^{3}\) porque preserva os modos acústicos de baixa frequência; todos convergem para o valor clássico em alta temperatura. Curvas esquemáticas, fora de escala.</figcaption>
+</figure>
+
+<h3>3.3. Condutividade térmica do silício: o máximo da curva</h3>
+
+<p>O silício é o exemplo paradigmático da condução por fônons. Sua \(\kappa(T)\) cresce como \(T^{3}\) a baixas temperaturas — a capacidade da lei de Debye é o gargalo, pois há poucos fônons para carregar calor —, atinge um pico agudo por volta de 20–30 K e depois decai, aproximadamente como \(1/T\), conforme o espalhamento fóno–fóno toma conta. O pico se situa tipicamente em torno de 10% da temperatura de Debye (645 K no Si), como previsto. A posição do pico é também um indicador de qualidade cristalina: em cristais muito perfeitos o espalhamento por defeitos é desprezível, o caminho livre médio cresce e o pico fica mais alto e mais estreito; já no vidro amorfo a mesma curva nem existe, porque o desordenamento limita \(\lambda_p\) em qualquer temperatura. É o contraste entre o caminho livre médio limitado pela estrutura (cristal perfeito), pela desordem (vidro) ou pela população térmica de fônons (alta \(T\)).</p>
+
+<p>Vale ainda o comentário sobre os metais. No cobre, \(\kappa=386\ \mathrm{W\,m^{-1}K^{-1}}\) parece modesto diante dos 2300 do diamante, e a razão é de composição, não de qualidade: nos metais a maior parte do calor é conduzida pelos elétrons livres — o termo \(\kappa_e\) da equação (21) —, e a contribuição da rede é só uma fração, embora não nula. Nos isolantes, \(\kappa_e=0\) e toda a condução é fônica, de modo que a comparação justa entre materiais é: diamante, 2300 (fônons num cristal quase perfeito e de ligações rígidas); silício, 150 (mesmo mecanismo, ligações mais moles); cobre, 386, dos quais apenas uma pequena fração vêm da rede, o resto dos elétrons. Somando as duas partes conforme a equação (21), obtém-se a ordem de grandeza correta para qualquer material.</p>
+
+<h3>3.4. Como se observam os fônons</h3>
+
+<p>Três famílias de técnica cobrem o assunto. Primeira, o <b>espalhamento inelástico de nêutrons</b>: um nêutron bombardeia o cristal e sai com energia diferente da incidente; medindo a perda de energia e a mudança de momento, obtém-se \(\omega\) e \(\mathbf{k}\) do fóno criado ou aniquilado, ponto a ponto da zona de Brillouin. É a técnica que desenha as curvas de dispersão completas — as curvas calculadas dos esquemas 5 e 8 são comparadas com esses pontos medidos. Segunda, a <b>espectroscopia óptica</b>: o infravermelho absorve e o Raman espalha, ambos acessando apenas modos com \(\mathbf{k}\approx0\), porque o fóton tem vetor de onda desprezível; o Raman enxerga modos óticos que mudam a polarizabilidade, o infravermelho os que criam dipolo, e a frequência medida em \(\Gamma\) fixa a constante de força da ligação. Terceira, indiretamente, pelas <b>propriedades térmicas</b>: ajustando \(C(T)\) à lei de Debye obtém-se \(\Theta_D\), e medindo \(\kappa(T)\) infere-se o caminho livre médio — ambas as rotas já percorridas nas seções 2.7 e 2.8.</p>
+
+<p>Um quarto caminho, que costuma ser cobrado em prova por sua elegância, é o <b>Raman em semicondutores dopados</b>: no silício, o pico Raman em \(520\ \mathrm{cm^{-1}}\) é o modo ótico em Γ; deslocamentos e alargamentos desse pico medem temperatura, strain e desordem sem nenhum contato com a amostra. Da mesma forma, a atenuação ultrassom dá a velocidade do som, que é o parâmetro \(v\) da equação (6) — a régua que calibra toda a dispersão acústica.</p>
+
+<h2>4. Conclusão</h2>
+
+<p>A teoria dos fônons é a mesma linha de raciocínio dos tópicos anteriores aplicada à parte vibrante do cristal. Trunca-se o potencial na ordem quadrática — aproximação harmônica — e os átomos viram osciladores acoplados; a cadeia monoatômica entrega a relação de dispersão \(\omega(k)=2\sqrt{\gamma/M}\,|\sin(ka/2)|\), reta na origem, com a velocidade do som \(v=a\sqrt{\gamma/M}\), e plana nas bordas da primeira zona, onde as soluções são ondas estacionárias; a periodicidade de \(\omega\) em \(2\pi/a\) restringe tudo à zona de Brillouin, como já ocorria com a energia eletrônica. Com dois átomos na base, a dispersão se desdobra em ramo acústico e ramo ótico, separados por um gap que fecha quando as massas se igualam — e é o movimento em contra-fase dos íons carregados no ramo ótico que acopla a luz, fazendo do infravermelho e do Raman janelas para o centro da zona.</p>
+
+<p>As condições de contorno de Born–von Kármán quantizam \(\mathbf{k}\) e revelam a contagem exata dos modos: \(3N\) para \(N\) átomos, distribuídos em \(3p\) ramos quando a base tem \(p\) átomos. A quantização, por sua vez, converte cada modo num oscilador harmônico de níveis \((l+\tfrac12)\hbar\omega\) e define o fóno, quantum de vibração que obedece à estatística de Bose–Einstein — daí em diante a rede é descrita como um gás de quanta com energia \(\sum_{\mathbf{k}}(n_{\mathbf{k}}+\tfrac12)\hbar\omega_{\mathbf{k}}\). Com isso se fecha o problema térmico: a lei de Dulong–Petit é o limite clássico de alta temperatura, o modelo de Einstein acerta a queda a zero mas erra a lei, e o modelo de Debye, ao preservar a dispersão linear dos acústicos e cortar a densidade de estados em \(\omega_D\) pela exigência de contar \(3N\) modos, reproduz a lei \(C\propto T^{3}\) que o experimento mostra; a condutividade térmica sai da cinética do gás de fônons, \(\kappa_p=\tfrac13 c\lambda_p v_p\), com o pico em torno de \(0{,}1\,\Theta_D\) separando o domínio da capacidade térmica do domínio do espalhamento fóno–fóno.</p>
+
+<p>Fecha-se o assunto notando o que a aproximação harmônica não dá e o que ela pressupõe. Não dá espalhamento fóno–fóno — em potencial harmônico as ondas se superponem e atravessam-se —, de modo que a própria existência de resistividade térmica finita, de expansão térmica e de fusão aponta para os termos anarmônicos que foram truncados. E pressupõe os íons congelados, a aproximação de Born–Oppenheimer; devolvendo os deslocamentos ao hamiltoniano elétron–íon surge o acoplamento elétron–fóno, responsável pela resistividade dos metais, pelas transições indiretas do silício e pelas recombinações radiativas assistidas. Os exemplos confirmam a escala: alumínio, de base monoatômica, só tem ramos acústicos; diamante e silício, de base diatômica, somam seis ramos e temperaturas de Debye de 1860 K e 645 K; e do chumbo ao polistireno, a condutividade térmica varia cinco ordens de grandeza conforme massa, rigidez e ordem do cristal. É esse o material que sustenta todas as propriedades térmicas dos tópicos seguintes.</p>
+
+<h2>Referências</h2>
+<ol class="ref">
+<li>N. W. Ashcroft e N. D. Mermin, <i>Solid State Physics</i>, Holt–Saunders, 1976.</li>
+<li>M. S. Dresselhaus, G. Dresselhaus e A. Jorio, <i>Solid State Properties: From Bulk to Nano</i>, Graduate Texts in Physics, Springer, 2018.</li>
+<li>P. Hofmann, <i>Solid State Physics</i>, Wiley-VCH, 2ª ed., 2015.</li>
+<li>G. Grosso e G. Pastori Parravicini, <i>Solid State Physics</i>, 2ª ed., Academic Press, 2013.</li>
+</ol>
+
+<div class="foot"><span>UFC · Fônons em Sólidos · prova escrita</span><span>Introdução · Teoria · Exemplos · Conclusão</span></div>
+</div></div>
+</body>
+</html>

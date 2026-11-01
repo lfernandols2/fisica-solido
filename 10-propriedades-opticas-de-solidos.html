@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset='utf-8'/>
+<title>Propriedades Ópticas de Sólidos</title>
+<style>
+:root{--ink:#1a2333;--navy:#1b2a4a;--muted:#5b6b82;--line:#dfe6ef;--bg:#ffffff;}
+*{box-sizing:border-box}
+body{margin:0;background:#eef1f6;color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.65}
+@page{size:A4;margin:18mm 16mm}
+@media print{body{background:#fff}.sheet{box-shadow:none!important;margin:0!important;max-width:none!important;border:none}.inner{padding:0 2mm}.eq{font-size:12.5px;padding:8px;line-height:1.5;page-break-inside:auto}.eq small{font-size:10px}figure{page-break-inside:avoid}table{font-size:11.5px}h2{page-break-after:avoid}}
+.sheet{max-width:860px;margin:26px auto;background:var(--bg);border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.inner{padding:44px 52px}
+@media(max-width:640px){.inner{padding:26px 22px}}
+header.doc-head{border-bottom:3px solid var(--navy);padding-bottom:14px;margin-bottom:18px}
+.doc-head .inst{font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.doc-head h1{font-size:30px;line-height:1.2;margin:8px 0;color:var(--navy)}
+.doc-head .sub{font-style:italic;color:#33415c;font-size:16px}
+.scope{font-family:Arial,Helvetica,sans-serif;font-size:13px;background:#f4f6fa;border:1px solid var(--line);border-left:4px solid var(--navy);padding:10px 14px;margin:16px 0;line-height:1.5}
+h2{font-size:22px;color:var(--navy);margin:30px 0 8px;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3{font-size:18px;color:#24365c;margin:20px 0 6px}
+p{text-align:justify;margin:8px 0}
+ul,ol{margin:6px 0;padding-left:24px}
+li{margin:4px 0}
+.mapa{font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:var(--muted);background:#f7f9fc;border-left:3px solid #a9bfd9;padding:8px 12px;margin:12px 0;line-height:1.55}
+.eq{background:#f7f9fc;border:1px solid var(--line);padding:10px 10px;margin:10px 0;text-align:center;font-size:14px;overflow:visible;white-space:normal;word-wrap:break-word;overflow-wrap:anywhere;max-width:100%}
+.eq small{display:block;font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);margin-top:6px;white-space:normal;line-height:1.5}
+.eq mjx-container{overflow:visible !important;max-width:100% !important}
+.eq mjx-container[jax="CHTML"][display="true"]{white-space:normal !important;margin:.4em 0 !important}
+mjx-container[jax="CHTML"][display="true"]{overflow:visible !important}
+figure{margin:14px auto;border:1px solid var(--line);background:#fbfcfe;max-width:760px}
+figure .draw{padding:10px;display:grid;place-items:center;background:#fff}
+figure svg{max-width:100%;height:auto}
+figcaption{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:var(--muted);padding:8px 14px;border-top:1px solid var(--line);text-align:justify;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px}
+.tcap{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:var(--muted);margin:12px 0 -8px;line-height:1.45}
+th{background:var(--navy);color:#fff;text-align:left;padding:6px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#f7f9fc}
+.foot{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:10px;display:flex;justify-content:space-between;gap:10px}
+.ref{font-size:15px}
+.ref li{margin:6px 0}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:.95,linebreaks:{automatic:true,width:'container'}},options:{enableMenu:false}};</script>
+<script async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
+<style id="dk-style">
+html{color-scheme:light}
+html.dark{color-scheme:dark}
+html.dark body{background:#0b101b;color:#d9e2f2}
+html.dark .sheet{background:#101928;border-color:#26324a;box-shadow:0 6px 30px rgba(0,0,0,.55)}
+html.dark header.doc-head{border-color:#2f6dbd}
+html.dark .doc-head h1{color:#8fc2f7}
+html.dark .doc-head .sub{color:#c1cfe6}
+html.dark .doc-head .inst{color:#7d8fab}
+html.dark .scope{background:#132038;border-color:#26324a;color:#c9d6ee}
+html.dark h2{color:#8fc2f7;border-color:#26324a}
+html.dark h3{color:#a9c6f2}
+html.dark p,html.dark li{color:#d9e2f2}
+html.dark .mapa{background:#132038;color:#a9bbe0;border-color:#3a4f75}
+html.dark .eq{background:#131f33;border-color:#26324a;color:#e6eefb}
+html.dark .eq small{color:#8fa3c2}
+html.dark figure{background:#101928;border-color:#26324a}
+html.dark figure .draw{background:#0c1524}
+html.dark figure .draw svg{filter:invert(.92) hue-rotate(180deg)}
+html.dark figcaption{color:#8fa3c2;border-color:#26324a}
+html.dark .tcap{color:#8fa3c2}
+html.dark th{background:#17345e;color:#eaf2ff}
+html.dark td{border-color:#22314c;color:#d9e2f2}
+html.dark tr:nth-child(even) td{background:#132038}
+html.dark .foot{color:#8fa3c2;border-color:#26324a}
+html.dark a{color:#8fc2f7}
+html.dark mjx-container{color:#e6eefb}
+html.dark small{color:#a9bbe0}
+body,.sheet,.eq,figure,h1,h2,h3,th,td,figcaption,.tcap{transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+button#modeBtn{position:fixed;top:12px;right:12px;z-index:999;font-family:Arial,Helvetica,sans-serif;font-size:12px;padding:7px 14px;border-radius:999px;border:1px solid #cdd6e4;background:#ffffff;color:#26324a;cursor:pointer;opacity:.9;transition:opacity .15s,background .2s,color .2s;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+button#modeBtn:hover{opacity:1}
+html.dark button#modeBtn{background:#1b2a44;border-color:#3a4f75;color:#d9e2f2;box-shadow:none}
+</style>
+<script id="dk-script">(function(){var DT=document.documentElement;function store(on){try{localStorage.setItem('darkmode',on?'1':'0')}catch(e){}}function label(on){var b=document.getElementById('modeBtn');if(!b)return;b.textContent=on?'\u2600\u00a0Modo claro':'\u263E\u00a0Modo noturno';b.title='Alternar modo claro/noturno';}function set(on){DT.classList.toggle('dark',!!on);store(on);label(on);}function mk(){var b=document.getElementById('modeBtn');if(b)return b;b=document.createElement('button');b.id='modeBtn';b.type='button';b.title='Alternar modo claro/noturno';b.addEventListener('click',function(){set(!DT.classList.contains('dark'))});(document.body||DT).appendChild(b);return b;}var p=null,auto=false;try{p=localStorage.getItem('darkmode')}catch(e){}auto=(p===null)&&!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);set(p!==null?p==='1':auto);function go(){mk();label(DT.classList.contains('dark'));}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',go);}else{go();}})();</script>
+</head>
+<body>
+<div class='sheet'><div class='inner'>
+<header class='doc-head'><div class='inst'>Departamento de Física · UFC — Física do Estado Sólido Experimental</div>
+<h1>Propriedades Ópticas de Sólidos</h1>
+<div class='sub'>Tópico 10 do edital — em diálogo com Yu e Cardona, <i>Fundamentals of Semiconductors</i> (caps. 6 e 7), Hofmann, <i>Solid State Physics</i> (§§ 5.2.3, 7.4.3 e 9.4), Ashcroft e Mermin (cap. 1) e Grosso e Pastori Parravicini — além das notas irmãs da pasta, listadas na § 10.</div></header>
+<div class='scope'><b>Escopo:</b> o que acontece quando a luz atravessa, rebate ou espalha em um sólido — a função dielétrica ε(ω) como gramática central; reflexão e transparência dos metais (borda de plasma); bordas de absorção diretas e indiretas; excitons; absorção pelos modos ópticos da rede (reststrahlen) e espalhamento Raman; birrefringência e não-linearidade guiadas pela simetria do cristal; centros de cor e luminescência; e as medidas (espectroscopia, elipsometria, espectroscopia modulada) que recuperam ε(ω). O texto mantém unidades SI e quantifica cada afirmação com números das referências listadas.</div>
+<div class='scope'><b>Conexões com a pasta:</b> a ε(ω) (§ 2) retoma a resposta da nota <i>Propriedades Dielétricas</i>; a borda interbanda (§ 3) usa as bandas de <i>Estrutura de Bandas</i> e os gaps de <i>Semicondutores</i>; os excitons (§ 3) têm nota própria (<i>Éxcitons em Sólidos</i>); a absorção pelos fônons e o espalhamento (§ 4) ligam <i>Fônons em Sólidos</i> e <i>Acoplamento Elétron-Fônon</i>; a borda de plasma (§ 5) é o lado óptico dos <i>Plasmons em Gás de Elétrons</i>; a magneto-óptica (§ 8) cruza com a <i>Propriedades Magnéticas</i>.</div>
+<h2>1. Introdução: a luz anda na escala do sólido</h2>
+<p>Um fóton de luz visível tem entre 1,65 e 3,1 eV (750&nbsp;nm–400&nbsp;nm); no infravermelho, de meV a 1,65 eV; no ultravioleta, de 3,1 eV para cima. Compare com a "tabela de preços" do sólido: gaps de semicondutores entre 0,2 e 4&nbsp;eV; modos ópticos de fônons entre 15 e 160&nbsp;meV (130–1200&nbsp;cm⁻¹); energia de plasma dos metais, 5–15&nbsp;eV; banda <i>d</i> do cobre e do ouro, ~2–2,5&nbsp;eV. A sobreposição não é coincidência: fóton e sólido cobram na mesma moeda, porque as duas escalas nascem da mesma mecânica — ligações eletrônicas e frequências naturais de osciladores atômicos. Por isso <b>"propriedades ópticas de sólidos" é, na prática, espectroscopia</b>: cada janela espectral fotografa um tipo diferente de excitação, e o espectro medido devolve a energia e a força de cada excitação do material [Yu–Cardona § 6.1; Hofmann § 9.4].</p>
+<p>A linguagem única de todas essas medidas é a <b>função dielétrica complexa</b>. A onda de luz aciona a polarização do material; na definição, <b>D</b> = ε<sub>0</sub><b>E</b> + <b>P</b> se escreve com ε(ω) — e a resposta é <i>complexa</i>, porque a polarização pode estar em fase com a onda (refração) ou atrasada de π/2 (dissipação, absorção):</p>
+<div class='eq'>\[\tilde n^{\,2} = \varepsilon(\omega) = \varepsilon_1(\omega) + i\,\varepsilon_2(\omega),\qquad R = \left|\frac{\tilde n - 1}{\tilde n + 1}\right|^{2}\ (\text{incidência normal})\]</div>
+<p>Aqui <b>ε₂</b> mede o que a luz <i>gasta</i> (absorção) e <b>ε₁</b> mede o que ela <i>carrega</i> (refração — com n e κ, as duas partes de ñ). ε₂ &gt; 0 em toda faixa em que uma transição real é possível — por isso os picos de ε₂ são o "retrato" dos estados excitáveis do cristal. As medidas de laboratório (refletância R, transmitância T, fase elipsométrica) nunca leem ε diretamente: medem as consequências de ε nas fronteiras do material, e uma reconstrução — em que a causalidade (teoremas de Kramers–Kronig, § 2) amarra ε₁ e ε₂ numa única função. O tópico inteiro é a operação inversa: das curvas R(ω) e T(ω) de volta à energia e à força de cada excitação [Yu–Cardona §§ 6.1.2–6.1.3].</p>
+<h3>1.1 A escala espectral: o que cada janela vê</h3>
+<p>A organização: cada <b>janela</b> de energia abre um regime de física — fônons, elétrons de banda, portadores livres, centros locais. Na ordem de energia:</p>
+<p class='tcap'><b>Tabela 1.</b> Janelas espectrais e o que a luz vê em cada uma.</p>
+<table>
+<tr><th>Janela (energia · comprimento de onda)</th><th>O que sonda</th><th>Fenômeno típico / técnica</th></tr>
+<tr><td>terahertz / IR de longa onda (0,004–0,05&nbsp;eV · 300–25&nbsp;μm)</td><td>fônons acústicos de baixa energia; portadores e ciclotron</td><td>Brillouin; THz; absorção de dopantes rasos</td></tr>
+<tr><td>infravermelho (0,05–1,65&nbsp;eV · 25&nbsp;μm–750&nbsp;nm)</td><td>modos ópticos de fônons (reststrahlen); vibrações moleculares; absorção de portadores livres</td><td>FTIR; espectroscopia de reflexão</td></tr>
+<tr><td>visível (1,65–3,1&nbsp;eV · 750–400&nbsp;nm)</td><td>gaps de semicondutores (Ge, Si, GaAs, InGaN); cores de metais (Cu, Au) e de centros de cor</td><td>absorção/reflectância; fotoluminescência; elipsometria</td></tr>
+<tr><td>UV próximo (3,1–6,2&nbsp;eV · 400–200&nbsp;nm)</td><td>gaps amplos (GaN ~3,4; diamante 5,47&nbsp;eV); excitons; estruturas E<sub>1</sub> e E<sub>2</sub> de ε₂</td><td>modulation spectroscopy; fotoluminescência UV</td></tr>
+<tr><td>UV profundo e de vácuo (6,2–124&nbsp;eV · 200–10&nbsp;nm)</td><td>bordas de plasma de metais; transições de banda mais internas</td><td>reflectância sem janelas — no ar, quartzo corta em ~155&nbsp;nm e LiF em ~105&nbsp;nm</td></tr>
+<tr><td>raios X (&gt;124&nbsp;eV)</td><td>níveis de núcleo de cada elemento (bordas K, L)</td><td>absorção de raios X (XAS/XMCD — dicroísmo elétrico-magnético)</td></tr>
+</table>
+<p class='mapa'><b>Leitura recomendada:</b> Yu–Cardona cap. 6 (abertura da óptica macroscópica, § 6.1, e a determinação experimental das funções ópticas, § 6.1.2); Hofmann cap. 9, § 9.4 (constante dielétrica dependente da frequência); edital item 10 (o tópico 10, "Propriedades Ópticas de Sólidos", pg. 31 do ANEXO I).</p>
+<h2>2. A função dielétrica: a resposta do sólido à luz</h2>
+<p>Primeiro, uma pergunta de muitas camadas: a quem a luz "pergunta" quando entra no sólido? A resposta depende de <i>quão rápido</i> a luz oscila. Um campo de 10¹⁵&nbsp;Hz (visível/UV) é demais para os íons — a inércia deles os deixa parados — e só os <b>elétrons</b> de valência respondem: essa é a fonte de ε<sub>∞</sub>, a contribuição "de alta frequência". Uma onda de 10¹³&nbsp;Hz (infravermelho) tem tempo de arrancar os íons da célula: entram os <b>modos ópticos de fônons</b>. Frequências de kHz–MHz extras arrastam <i>dipolos</i> (moléculas polares, domínios ferroelétricos) — o território da nota <i>Propriedades Dielétricas</i>. A função ε(ω), medida de DC até os raios X, empilha essas respostas em camadas: ε₀ (baixa frequência) contém tudo; ε₁ + iε₂ no visível contém só a parte eletrônica; e por cima de cada excitação real abre-se uma "janela" na ε₂ [Yu–Cardona § 6.2.1; Hofmann § 9.4].</p>
+<p>Em segundo lugar, <i>como</i> o material absorve. Toda excitação <i>ligada</i> adequa-se, em primeira aproximação, a um <b>oscilador de Lorentz</b>: uma carga presa a uma "mola" de frequência natural ω<sub>0</sub>, com amortecimento γ. Perto de ω<sub>0</sub>, a ε₂ tem um pico (absorção); a ε₁, movida pela causalidade, faz a "dispersão anômala" — muda rápido de valor, com inclinação que liga os dois lados do pico. Este é o modelo que cobre <i>todos</i> os capítulos deste texto com troca de rótulos: pico de interbanda (§ 3), ressonância de fôon (§ 4), banda de plasma (§ 5). A diferença entre materiais é só quem é a "mola": elétron ligado, dipolo de célula, ou tabela periódica [Yu–Cardona § 6.2.2; Hofmann § 9.4.2].</p>
+<p>Em cristais, a soma dos osciladores vem da estrutura de bandas. ε₂(ω) <i>soma</i>, sobre a primeira zona de Brillouin, todas as transições interbanda permitidas na energia ħω, com o peso dos elementos de matriz e da densidade de pares inicial–final de estados — a <b>densidade de estados conjunta</b>, J-DOS. Onde a banda tem <i>pontos críticos</i> (mínimos M<sub>0</sub>, pontos de sela M<sub>1</sub>/M<sub>2</sub>, máximos M<sub>3</sub>), a J-DOS adquire inclinações e picos — as <b>singularidades de Van Hove</b>: o "enrugado" de ε₂ denuncia a topologia da banda. Por isso, no semicondutor a estrutura de borda (E<sub>0</sub>) segue o gap; as estruturas E<sub>1</sub>/E<sub>2</sub> (nos grupos IV e III–V, entre ~3 e ~5 eV) denunciam as largas regiões de sela ao longo das direções Λ e X [Yu–Cardona §§ 6.2.2–6.2.4].</p>
+<p>O lado experimental tem uma ferramenta feita para esses pontos: a <b>espectroscopia de modulação</b> (§ 8) perturba o cristal (campo elétrico, tensão mecânica, temperatura) e mede a <i>derivada</i> da refletância; os "ombros" das singularidades de Van Hove, mansas na absorção, viram picos afiados na derivada — com a energia de transição lida direto no pico [Yu–Cardona § 6.6]. E as contas fecham: os <b>teoremas de Kramers–Kronig</b> são a causalidade aplicada à polarização — não existem ε₁ e ε₂ independentes; uma decide a outra. Por isso toda banda de absorção carrega consigo a oscilação de n (dispersão anômala) em volta, e por isso a parte de fase da resposta é reconstruída a partir da medida de magnitude [Yu–Cardona § 6.1.3].</p>
+<p class='mapa'><b>Leitura recomendada:</b> Yu–Cardona §§ 6.1–6.1.3 (eletrodinâmica macroscópica, determinação experimental das funções ópticas, relações de Kramers–Kronig) e §§ 6.2.1–6.2.4 (função dielétrica: resultados experimentais, teoria microscópica, J-DOS e singularidades de Van Hove); Hofmann §§ 9.3–9.4 (campo local e constante dielétrica dependente da frequência); nota <i>Propriedades Dielétricas</i>; Ashcroft e Mermin cap. 1 (a resposta do elétron livre na visão de Drude).</p>
+<h2>3. Interbanda: as bandas se revelam na absorção</h2>
+<p>Um fóton visível carrega momentum minúsculo: ħk ≈ 10⁻³&nbsp;Å⁻¹, contra a ~1&nbsp;Å⁻¹ da primeira zona de Brillouin — três ordens de grandeza a menos. Ele, portanto, <i>não empurra</i> o elétron no espaço-k: a transição interbanda é quase vertical no diagrama de bandas, Δk ≈ 0 — uma <b>transição direta</b>. Quando o mínimo da banda de condução e o máximo da banda de valência ficam no mesmo k (GaAs, ambos em Γ), o <b>gap óptico coincide com o gap de bandas</b>, e a absorção abre de golpe: a borda direta sobe íngreme e forte, com a J-DOS de uma borda M<sub>0</sub> (Yu–Cardona § 6.2.5). Quando a simetria confere às bandas paridades incompatíveis, o elemento de matriz se anula e a borda fica <i>direta-proibida</i> — mais fraca, mas com a mesma assinatura de energia (§ 6.2.7).</p>
+<p>Nos elementos IV (Si, Ge, GaP, SiC, diamante) os extremos ficam em k <i>diferentes</i>: o mínimo de condução do Si fica em ~0,85 do caminho Γ–X; o do Ge, no ponto L. Uma transição vertical naquele k cai <i>acima</i> do mínimo real: para <b>chegar ao gap verdadeiro</b> é preciso conservar o momentum com um fônon que carregue o Δk — entra um fôon (acústico ou óptico) da região do mínimo. Este é o <b>gap indireto</b> [Yu–Cardona § 6.2.6]: a absorção nasce em duas sapatas — abaixo do gap, com <i>aniquilação</i> de um fôon térmico (E<sub>g</sub> − ħω<sub>ph</sub>), e acima, com <i>criação</i> de fôon (E<sub>g</sub> + ħω<sub>ph</sub>) — e a intensidade é fraca, porque a probabilidade é de segunda ordem no acoplamento elétron-fônon (nota <i>Acoplamento Elétron-Fônon</i>). A consequência industrial é brutal: emitir exige o caminho contrário, com o fôon também na conta — Si e Ge praticamente <i>não emitem</i> luz; por isso todo LED e todo laser de semicondutor usa material <i>direto</i> (GaAs, GaN, InGaN) [Hofmann § 7.4.3].</p>
+<h3>3.1 Excitons: elétron e buraco se casam</h3>
+<p>Há um refinamento que a borda "seca" não mostra. O elétron saltado deixa um buraco e os dois se atraem por Coulomb: o par pode ficar <b>ligado</b> — o <b>exciton</b>. Os estados ligados ficam <i>abaixo</i> da borda de absorção, em série tipo hidrogênio, com massa reduzida μ e o "plano inclinado" do screening ε<sub>∞</sub>:</p>
+<div class='eq'>\[E_n = E_g - \frac{R^{*}}{n^{2}},\qquad R^{*} = 13{,}6\ \mathrm{eV}\ \frac{\mu}{m_e}\frac{1}{\varepsilon_{\infty}^{2}}\]</div>
+<p>Dois sabores, com o mesmo nome: nos semicondutores com gap pequeno, o par é <i>espalhado</i> pelo screening (exciton de <b>Wannier</b>: no GaAs, μ/m<sub>e</sub> ≈ 0,06 e ε<sub>∞</sub> ≈ 11 dão R* ≈ 4,2&nbsp;meV e raio ~10&nbsp;nm — o exciton "vive" sobre muitos átomos); em isolantes de gap amplo (NaCl, cristais moleculares), o par fica <i>dentro de uma célula</i> (exciton de <b>Frenkel</b>, ligação de frações de eV). No limite 2D a física muda de escala: no MoS₂ monocamada o screening falha e o exciton levanta ~0,5&nbsp;eV de ligação — e o espectro quase inteiro se escreve em excitons (nota <i>Éxcitons em Sólidos</i>). No espectro, a assinatura é a série de linhas de absorção <i>sub-gap</i>, convergindo para a borda [Yu–Cardona §§ 6.3–6.3.2].</p>
+<figure><div class='draw'>
+<svg viewBox="0 0 700 340" width="660" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Transições direta e indireta e série de excitons">
+<line x1="55" y1="45" x2="55" y2="310" stroke="#5b6b82" stroke-width="1"/>
+<line x1="55" y1="310" x2="500" y2="310" stroke="#5b6b82" stroke-width="1"/>
+<text x="240" y="328" font-family="Arial" font-size="11" fill="#5b6b82">k → (Γ em 90; direção X)</text>
+<text x="30" y="42" font-family="Arial" font-size="12" fill="#5b6b82">E</text>
+<polyline points="60,235 80,242 90,245 110,238 160,252 240,270 330,285 420,296 500,300" fill="none" stroke="#2f6dbd" stroke-width="2.2"/>
+<polyline points="55,205 75,178 90,170 150,180 220,196 280,208 330,213 355,215 410,210 470,196 500,190" fill="none" stroke="#1b2a4a" stroke-width="2.2"/>
+<text x="408" y="182" font-family="Arial" font-size="11" fill="#1b2a4a">banda de condução</text>
+<text x="404" y="292" font-family="Arial" font-size="11" fill="#2f6dbd">banda de valência</text>
+<line x1="90" y1="245" x2="90" y2="172" stroke="#1b2a4a" stroke-width="1.5"/>
+<g fill="#1b2a4a"><polygon points="90,168 85,180 95,180"/></g>
+<text x="100" y="215" font-family="Arial" font-size="10.5" fill="#1b2a4a">direta: Δk ≈ 0, forte</text>
+<line x1="200" y1="252" x2="350" y2="218" stroke="#7a3b8f" stroke-width="1.5"/>
+<g fill="#7a3b8f"><polygon points="356,217 344,217 350,228"/></g>
+<line x1="200" y1="252" x2="350" y2="252" stroke="#7a3b8f" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="130" y="268" font-family="Arial" font-size="10.5" fill="#7a3b8f">indireta: fôon paga o Δk, fraca</text>
+<text x="358" y="240" font-family="Arial" font-size="10.5" fill="#7a3b8f">fôon q</text>
+<line x1="530" y1="150" x2="530" y2="290" stroke="#9aa8bd" stroke-width="1"/>
+<line x1="552" y1="168" x2="688" y2="168" stroke="#1b2a4a" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="556" y="162" font-family="Arial" font-size="10" fill="#1b2a4a">borda: E<tspan dy="3" font-size="7.5">g</tspan></text>
+<line x1="552" y1="178" x2="688" y2="178" stroke="#b5641d" stroke-width="2"/>
+<line x1="552" y1="192" x2="688" y2="192" stroke="#b5641d" stroke-width="1.5"/>
+<line x1="552" y1="203" x2="688" y2="203" stroke="#b5641d" stroke-width="1.2"/>
+<text x="556" y="225" font-family="Arial" font-size="9.5" fill="#5b4623">série do exciton:</text>
+<text x="556" y="238" font-family="Arial" font-size="9.5" fill="#5b4623">E<tspan dy="3" font-size="7.5">n</tspan><tspan dy="-3"> = E</tspan><tspan dy="3" font-size="7.5">g</tspan><tspan dy="-3"> − R*/n²</tspan></text>
+<text x="556" y="258" font-family="Arial" font-size="9" fill="#8a97ab">GaAs: R* ≈ 4,2 meV;</text>
+<text x="556" y="271" font-family="Arial" font-size="9" fill="#8a97ab">MoS₂ mono: ~0,5 eV</text>
+</svg>
+</div><figcaption><b>Figura 2.</b> Transições interbanda no diagrama de bandas. <i>Direta</i>: o fóton não empurra o elétron no espaço-k (Δk ≈ 0) e a borda é forte — o gap óptico é o do ponto Γ. <i>Indireta</i>: o mínimo de condução está em outro k; um fôon paga o Δk (seta inclinada), a absorção fica fraca e nasce nas duas "sapatas" E<sub>g</sub> ∓ ħω<sub>ph</sub>. À direita, abaixo da borda, a série de excitons — pares elétron+buraco ligados, com o espaçamento caindo como 1/n². O GaAs (R* ≈ 4,2 meV) os exibe com nitidez a baixa temperatura; no MoS₂ monocamada a ligação chega a ~0,5 eV.</figcaption></figure>
+<p class='tcap'><b>Tabela 2.</b> Gaps ópticos: direto contra indireto, e o que cada tipo entrega.</p>
+<table>
+<tr><th>Material</th><th>Gap (eV)</th><th>Tipo</th><th>O que resulta na luz</th></tr>
+<tr><td>Si</td><td>1,12 (300 K)</td><td>indireta</td><td>absorve com fôon; não emite — sensor de imagem e fotovoltaica, não LED</td></tr>
+<tr><td>Ge</td><td>0,66 (indireta a L); ~0,8 direta em Γ</td><td>indireta</td><td>fotodiodos de IR; absorção de borda fraca, que se alarga com a temperatura</td></tr>
+<tr><td>GaAs</td><td>1,42 (300 K)</td><td>direta</td><td>borda íngreme e forte; lasers e LEDs de IR; base do AlGaAs/GaAs</td></tr>
+<tr><td>GaP</td><td>2,26 / 2,78</td><td>indireta</td><td>LEDs verdes históricos, via centro <i>N</i> isoeletrônico</td></tr>
+<tr><td>GaN</td><td>3,44</td><td>direta</td><td>LED azul e laser azul-violeta (Nobel 2014; Blu-ray)</td></tr>
+<tr><td>diamante</td><td>5,47</td><td>indireta</td><td>transparente no visível; corta o UV curto (~225 nm)</td></tr>
+<tr><td>MoS₂ monocamada</td><td>~1,9</td><td>direta</td><td>excitons gigantes; óptica de 2D</td></tr>
+</table>
+<p class='mapa'><b>Leitura recomendada:</b> Yu–Cardona §§ 6.2.5–6.2.7 (bordas diretas, indiretas e "proibidas") e §§ 6.3–6.3.2 (excitons em M<sub>0</sub> e espectros de absorção); Hofmann § 9.4.2 (transições eletrônicas no dielétrico); notas <i>Éxcitons em Sólidos</i>, <i>Estrutura de Bandas</i> e <i>Semicondutores</i>.</p>
+<h2>4. Fônons ópticos: a rede absorve no infravermelho — e espalha a luz</h2>
+<p>Até aqui, os íons foram apenas figurantes: os elétrons respondiam sozinhos. No infravermelho isso muda de lado. As frequências dos modos ópticos (cerca de 130–1200 cm⁻¹, ou 15–160 meV) caem exatamente na faixa do IR médio, e o campo elétrico da onda arrasta a própria matéria: em cada célula, os dois sub-reticulares oscilam em fases opostas — o modo óptico. Quando os íons da célula são diferentes (Na⁺/Cl⁻, GaAs: íons de carga efetiva oposta), esse movimento relativo fabrica um <b>dipolo dinâmico</b>, que acopla o modo ao fóton com força: na ressonância com a frequência transversal ω<sub>TO</sub> a ε₂ ergue um pico e o cristal absorve de tal forma que filmes de poucos micrômetros já ficam opacos. Note quem tem voz: só os modos que geram dipolo são IR-ativos — e as cargas "efetivas" do modo (§ 6.4.4 de Yu–Cardona) quantificam quanto do fóton o dipolo enxerga [Yu–Cardona §§ 6.4.1–6.4.4].</p>
+<p>A medida mais imediata, porém, é o reflexo. Entre ω<sub>TO</sub> e ω<sub>LO</sub> a ε₁ troca de sinal e fica negativa: a onda que chega não encontra como se propagar dentro do meio e rebate quase integralmente. É a banda de <b>reststrahlen</b> — "raios que restam", gesta histórica: Rubens (anos 1890) filtrava o IR termal rebatendo a luz umas 20 vezes sobre unavailable? sais haloides, guardando só esta estreita faixa. Hoje se lê a mesma banda na linguagem mais exata do modo acoplado: dentro do cristal, a onda resultante de fóton + fônon não é nem pura luz nem pura vibração — é um <b>polariton de fônon</b>, cuja dispersão une a linha de luz à dispersão do modo [Yu–Cardona § 6.4.1].</p>
+<p>Entre a dinâmica de rede e a resposta óptica, a ponte é a <b>relação de Lyddane–Sachs–Teller</b>. Em palavras: os extremos do modo polar separados pelas constantes de força e pelas massas estabelecem a razão entre a ε estática (que já conta a mola do dipolo) e a ε "de alta frequência" (que só vê os elétrons):</p>
+<div class='eq'>\[\frac{\omega_{LO}^{2}}{\omega_{TO}^{2}} = \frac{\varepsilon_{0}}{\varepsilon_{\infty}}\qquad\text{NaCl: }\Big(\frac{264}{164}\Big)^{2}\!\approx 2{,}59,\quad \frac{\varepsilon_{0}}{\varepsilon_{\infty}} = \frac{5{,}9}{2{,}25}\approx 2{,}62\]<small>Relação de Lyddane–Sachs–Teller: a razão quadrada das frequências do modo polar (LO/TO em cm⁻¹ para o NaCl) é fixada pelas constantes dielétricas estática e de alta frequência. No μm: ω<sub>TO</sub> ≈ 61 μm e ω<sub>LO</sub> ≈ 38 μm.</small></div>
+<p>Quando um modo polar amolece — a "fônon mole" dos ferroelétricos — o lado esquerdo tende a 1, ε<sub>0</sub> dispara, e a polarização espontânea instala-se: por isso a relação LST é o parâmetro dielétrico do fenômeno ferroelétrico (nota <i>Propriedades Dielétricas</i>). No outro extremo, a população quântica do modo governa o espalhamento: a luz que entra pode <i>criar</i>(Stokes, fóton sai com ħω<sub>i</sub> − ħω<sub>ph</sub>) ou <i>annihilate</i> um fônon térmico (anti-Stokes, sai com +), vendo a rede pelo lado da <b>polarizabilidade</b>, que oscila no ritmo do modo. Este é o <b>espalhamento Raman</b>: nos cristais covalentes (Si, Ge, diamante), que não têm dipolo dinâmico e <i>não</i> absorvem IR de primeira ordem, é ele que fala — e fala de todos os modos que deformam a polarizabilidade. Nos cristais centrosimétricos (Si, NaCl, diamante) vale a <b>regra de exclusão mútua</b>: os modos IR-ativos e os Raman-ativos são conjuntos diferentes; nos não centrados (GaAs, ZnS) os mesmos TO (268) e LO (292 cm⁻¹) comparecem nas duas técnicas. A versão acústica do espalhamento, com fônons de GHz, é o <b>Brillouin</b> [Yu–Cardona §§ 7.2.1–7.2.8].</p>
+<figure><div class='draw'>
+<svg viewBox="0 0 700 310" width="660" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Banda de reststrahlen do NaCl">
+<line x1="60" y1="250" x2="640" y2="250" stroke="#5b6b82" stroke-width="1"/>
+<line x1="60" y1="40" x2="60" y2="250" stroke="#5b6b82" stroke-width="1"/>
+<text x="24" y="46" font-family="Arial" font-size="12" fill="#5b6b82">R</text>
+<text x="330" y="296" font-family="Arial" font-size="11" fill="#5b6b82">número de onda (cm⁻¹) →</text>
+<g fill="#5b6b82"><text x="196" y="266" font-family="Arial" font-size="10">100</text><text x="341" y="266" font-family="Arial" font-size="10">200</text><text x="486" y="266" font-family="Arial" font-size="10">300</text><text x="631" y="266" font-family="Arial" font-size="10">400</text></g>
+<rect x="298" y="58" width="145" height="26" fill="#dfe6ef" stroke="#8a97ab"/>
+<polyline points="60,222 96,212 147,206 200,196 240,178 268,120 298,76 310,62 360,60 420,60 443,62 460,120 478,196 500,238 540,242 570,226 605,218 640,214" fill="none" stroke="#1b2a4a" stroke-width="2.4"/>
+<line x1="298" y1="58" x2="298" y2="250" stroke="#b5641d" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="443" y1="58" x2="443" y2="250" stroke="#b5641d" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="238" y="42" font-family="Arial" font-size="10.5" fill="#b5641d">ω<tspan dy="3" font-size="8">TO</tspan><tspan dy="-3"> = 164</tspan></text>
+<text x="452" y="42" font-family="Arial" font-size="10.5" fill="#b5641d">ω<tspan dy="3" font-size="8">LO</tspan><tspan dy="-3"> = 264</tspan></text>
+<text x="370" y="78" font-family="Arial" font-size="10.5" fill="#1b2a4a">banda de reststrahlen — R ≈ 1</text>
+<text x="120" y="150" font-family="Arial" font-size="10" fill="#5b6b82">absorção em ω<tspan dy="3" font-size="7.5">TO</tspan><tspan dy="-3"> (ε</tspan><tspan dy="3" font-size="7.5">2</tspan><tspan dy="-3"> pico):</tspan></text>
+<text x="120" y="163" font-family="Arial" font-size="10" fill="#5b6b82">o fóton se gasta no modo</text>
+<text x="470" y="170" font-family="Arial" font-size="10" fill="#5b6b82">ε<tspan dy="3" font-size="7.5">1</tspan><tspan dy="-3"> &lt; 0 entre TO e LO:</tspan></text>
+<text x="470" y="183" font-family="Arial" font-size="10" fill="#5b6b82">a onda não entra — rebate</text>
+<text x="120" y="196" font-family="Arial" font-size="9.5" fill="#8a97ab">o "raio que restam":</text>
+<text x="120" y="209" font-family="Arial" font-size="9.5" fill="#8a97ab">múltiplas reflexões (Rubens)</text>
+<text x="120" y="222" font-family="Arial" font-size="9.5" fill="#8a97ab">extraem só esta faixa</text>
+</svg>
+</div><figcaption><b>Figura 3.</b> Esquema da refletância do NaCl perto do modo polar. À esquerda de ω<sub>TO</sub> = 164 cm⁻¹ o fóton é absorvido (pico de ε₂); entre ω<sub>TO</sub> e ω<sub>LO</sub> = 264 cm⁻¹ a ε₁ fica negativa e a onda não se propaga — a refletância sobe para perto de 1 (banda de <i>reststrahlen</i>); acima de ω<sub>LO</sub> o reflexo cai de queda com a estrutura de n na região da UV — anômalos. As posições desta assinatura, lidas com a relação LST, retomam ε₀ e ε∞ macroscópicos.</figcaption></figure>
+<h2>5. Borda de plasma: o que o metal diz ao fóton</h2>
+<p>Nos metais, a densidade de elétrons de valência está tão alta que, em frequências suficientemente baixas, a coluna livre completa o caminho intra-banda e o cristal reage como um meio contínuo com polarização indutiva. A resposta dos elétrons livres é governada pela <b>equação de Drude</b>:</p>
+<div class='eq'>\[m^{*}\,\frac{d\mathbf{v}}{dt} = -e\mathbf{E}(t) - m^{*}\gamma\mathbf{v}\qquad\Rightarrow\qquad 
+\sigma(\omega) = \frac{n e^{2} \tau}{m^{*}}\frac{1}{1 - i\omega\tau}
+ = \frac{\varepsilon_{0}\,\omega_{p}^{2}}{4\pi}\frac{1}{1 - i\omega\tau}\]}</div>
+<p>Onde n é a densidade de elétrons, τ = 1/γ o tempo de colisão e ω<sub>p</sub> = √(4πn e²/m*) a <b>frequência de plasma</b>. Acima de ω<sub>p</sub>, a ε₁ fica positiva, o cristal deixa de ser condutor óptico e a luz atravessa. Abaixo de ω<sub>p</sub>, a ε₁ < 0 e a onda não se propaga — a refletância é próxima de 1 (o metal está "opaco").</p>
+<p>Os números da pasta: <b>Na</b> (gás de valência única): ω<sub>p</sub> ≈ 5,9 eV; <b>Ag</b>: ω<sub>p</sub> ≈ 9,2 eV; <b>Al</b>: ω<sub>p</sub> ≈ 15,8 eV; <b>Cu</b>: banda d ≈ 2,1 eV sob o Fermi, plasmão de esp2 ~ 3–4 eV. Em microestruturas, ajustando n (ou usando dopagem de buracos), o plasma pode ser movido e dispositivos de <b>túnel óptico</b> e <b>moduladores de fase</b> são construídos [Hofmann § 5.2.3; Grosso–Parravicini].</p>
+<p>É importante notar que a frequência limite ω<sub>p</sub> separa o regime "metálico" (ε₁ < 0, ω < ω<sub>p</sub>) do "semicondutor-like" ou dielétrico (ε₁ > 0, ω > ω<sub>p</sub>). Em semicondutores dopados o mesmo jogo ocorre com n ajustado por impurezas: o <b>gap de Burstein–Moss</b> empurra a borda de absorção para mais alta energia (ε₂ sobe mais cedo) porque os estados de condução já têm elétrons ocupados. Avançando da espectroscopia pura para a tecnologia: isto é o princípio dos <b>transparência ótica controlada</b> e dos diodos Schottky reversíveis por tensão [Yu–Cardona § 6.5; Hofmann § 7.4.3].</p>
+<figure><div class='draw'>
+<svg viewBox="0 0 600 320" width="580" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Frequência de plasma em metais">
+<rect x="0" y="100" width="560" height="200" fill="#fafafa" stroke="#5b6b82" stroke-width="1"/>
+<circle cx="100" cy="200" r="30" fill="#1b2a4a" stroke="#5b6b82" stroke-width="1.5"/>
+<text x="100" y="210" font-family="Arial" font-size="11" fill="#5b4623">Na, ω<sub>p</sub> ≈ 5,9 eV</text>
+<circle cx="220" cy="160" r="30" fill="#5b6b82" stroke="#5b6b82" stroke-width="1.5"/>
+<text x="220" y="170" font-family="Arial" font-size="11" fill="#2f6dbd">Ag, ω<sub>p</sub> ≈ 9,2 eV</text>
+<circle cx="350" cy="130" r="30" fill="#8a97ab" stroke="#5b6b82" stroke-width="1.5"/>
+<text x="350" y="140" font-family="Arial" font-size="11" fill="#8a97ab">Al, ω<sub>p</sub> ≈ 15,8 eV</text>
+<text x="60" y="310" font-family="Arial" font-size="10.5" fill="#5b6b82">ε₁ > 0 → ótico / transmissivo (ω > ω<sub>p</sub>)</text>
+<text x="60" y="10" font-family="Arial" font-size="10.5" fill="#5b6b82">ε₁ < 0 → metálico / reflexivo (ω < ω<sub>p</sub>)</text>
+<text x="500" y="310" font-family="Arial" font-size="10.5" fill="#5b6b82">transparência UV / EFV</text>
+<line x1="0" y1="200" x2="560" y2="200" stroke="#dfe6ef" stroke-width="0.5"/>
+<text x="565" y="200" font-family="Arial" font-size="10.5" fill="#5b6b82">ω → 0 → ω<sub>p</sub> →</text>
+</svg>
+</div><figcaption><b>Figura 5.</b> Frequências de plasma dos metais: abaixo de ω<sub>p</sub> a ε₁ < 0 e o cristal reflete quase toda a luz (condutor); acima de ω<sub>p</sub> a ε₁ > 0 e a luz atravessa (semicondutor/dielétrico). As posições dos círculos mostram os valores exatos dos metais da família da pasta (Na, Ag, Al).</figcaption></figure>
+<h2>6. Birrefringência e óptica dos cristais não-isótropos</h2>
+<p>Em sólidos cristalinos, o tensor dielétrico ε<sub>ij</sub> pode ser diagonalizado em três eixos principais. Se ε<sub>11</sub> ≠ ε<sub>22</sub> ≠ ε<sub>33</sub>, a velocidade de onda depende da direção: o cristal não é ópticamente isótropo e o índice de refração n(𝐧) varia com a direção do vetor ótico 𝐧. O efeito é a <b>birrefringência</b>: um feixe de luz linearmente polarizada entra como um único raio e sai dividido em duas ondas ordinária (o) e extraordinária (e), com índices n<sub>o</sub> e n<sub>e</sub>, que se propagam em velocidades diferentes e tornam-se incoerentes ao atravessar o cristal. A separação angular (ou de atraso) é o que permite a construção de polarizadores, retardadores de fase e o famigerado <b>cristal óptico</b> (calcita, quartz, mica) [Hofmann § 5.2.3; Hofmann § 11.1].</p>
+<p>A calcita CaCO₃ (CaCO₃, hexágono) é o exemplo canônico: n<sub>o</sub> = 1,658 e n<sub>e</sub> = 1,486. A birefringência Δn = n<sub>o</sub> − n<sub>e</sub> = 0,172 determina a rotação de 21,7° por milímetro ao 589 nm (D-line de sódio). A luz incide normalmente sobre a face cleavable {101̄4} e o feixe ordinário segue reto (índice n<sub>o</sub> = 1,658), enquanto o extraordinário obedece ao caminho maior dentro da célula, com n<sub>e</sub> = 1,486. O atraso de fase δ = (2π/λ)·Δn·d pode ser medido em um interferômetro de interferogramas de caminho variável: este é o princípio dos instrumentos de medição de tensão ótica, usados para caracterizar tensões mecânicas em ópticas de silício fundido e em peças de aviões [Hofmann § 11.1, problemas de engenharia].</p>
+<p>Não apenas tensão: a birefringência depende da temperatura e da pressão. Na calcita, diminui cerca de 0,0005 por K ao resfriar (dα/dT ≈ −5×10⁻⁴ K⁻¹) e sob alta pressão o índice acompanha a compressão elástica. Isso permite que o efeito seja usado como <b>sensor de temperatura e pressão</b> em laboratório, e ainda em ótica adaptativa, onde o controle da fase da luz passa justamente por calcular a rotação e o atraso de cada onda. Em cristais ferroelectricos como o LiNbO₃, a birrefringência é elétrica: o domínio do cristal decide a orientação dos eixos n<sub>o</sub>, n<sub>e</sub>, e um campo externo pode inverter o sinal [Hofmann § 7.4.3].</p>
+<p>Quando dois raios polarizados ortogonalmente se encontram depois do cristal e são recompostos por um analisador (polarizador analisador), a intensidade resultante segue o modelo de Malus: I = I₀ cos²δ, onde δ é a diferença de fase acumulada. É assim que se obtém o famoso efeito <b>quarter-wave plate</b> (λ/4) ou <b>half-wave plate</b> (λ/2), que rotaciona a polarização em π/2 ou π, respectivamente. Estes componentes são a base de toda a instrumentação de polarimetria moderna e de displays LCD que usam liquid crystals cuja orientação depende de tensão aplicada — o princípio dos cristais líquidos é outro nome para birrefringência controlada [Yu–Cardona § 7.1.1; Hofmann § 11.1].</p>
+<p>O defeito ou impureza no cristal introduz centros de cor: em NaCl com F-center (deficiência de ânion, elétron preso no buraco vazio), a absorção extra nascente (∼2,7 eV = 460 nm, azul) colora o cristal de amarelo; em berilo com Cr³⁺ substitui o Be²⁺, a esmeralda aparece; e YAG dopado com Ce³⁺ em vez de Y³⁺, o YAG:Ce brilha em ~460 nm (azul) — ao ser iluminado com UV (∼365 nm), o Ce³⁺ emite azul e o restante passa para o amarelo, produzindo a sensação de luz branca "fria" que todo mundo vê nas lâmpadas de LED. O mesmo esquema governou a <b>luminescência</b> em geral: a luz absorvida excita um centro (excitão, corador, dopante), que relaxa por radiação (fluorescência, pico rápido) ou não-radiação (fosforescência, demora). A taxa Φ = rad/(rad + nr) define o <b>quantum yield</b>; o tempo de vida τ decide se o sinal chega a tempo para ser fotografado (fotoluminescência) ou fica lento (fosforescência) [Yu–Cardona § 7.1.1–7.1.5; Hofmann § 9.4.1–9.4.2].</p>
+<figure><div class='draw'>
+<svg viewBox="0 0 600 340" width="580" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Birrefringência na calcita">
+<polyline points="40,300 140,200 250,300 350,180 460,300 560,180" fill="none" stroke="#1b2a4a" stroke-width="2.5"/>
+<line x1="40" y1="300" x2="40" y2="20" stroke="#5b6b82" stroke-width="1"/>
+<line x1="140" y1="200" x2="140" y2="20" stroke="#5b6b82" stroke-width="1"/>
+<line x1="250" y1="300" x2="250" y2="20" stroke="#5b6b82" stroke-width="1"/>
+<line x1="350" y1="180" x2="350" y2="20" stroke="#5b6b82" stroke-width="1"/>
+<line x1="460" y1="300" x2="460" y2="20" stroke="#5b6b82" stroke-width="1"/>
+<line x1="560" y1="180" x2="560" y2="20" stroke="#5b6b82" stroke-width="1"/>
+<text x="20" y="318" font-family="Arial" font-size="10.5" fill="#5b6b82">n<sub>o</sub> = 1,658</text>
+<text x="125" y="215" font-family="Arial" font-size="10.5" fill="#5b6b82">n<sub>e</sub> = 1,486</text>
+<text x="240" y="318" font-family="Arial" font-size="10.5" fill="#5b6b82">Caminho ordinário</text>
+<text x="345" y="193" font-family="Arial" font-size="10.5" fill="#8a97ab">Caminho extraordinário</text>
+<text x="555" y="193" font-family="Arial" font-size="10.5" fill="#8a97ab">Δn = 0,172</text>
+<text x="555" y="315" font-family="Arial" font-size="10.5" fill="#8a97ab">21,7° / mm a 589 nm</text>
+<text x="50" y="20" font-family="Arial" font-size="9.5" fill="#5b6b82">Luz polarizada linear</text>
+<text x="170" y="20" font-family="Arial" font-size="9.5" fill="#5b6b82">→ sai dividido</text>
+<text x="260" y="20" font-family="Arial" font-size="9.5" fill="#5b6b82">→ 2 ondas</text>
+<text x="360" y="20" font-family="Arial" font-size="9.5" fill="#5b6b82">→ polarizador/retardador</text>
+<text x="470" y="20" font-family="Arial" font-size="9.5" fill="#5b6b82">→ analisador Malus</text>
+</svg>
+</div><figcaption><b>Figura 6.</b> Birrefringência na calcita: n<sub>o</sub> = 1,658 e n<sub>e</sub> = 1,486, Δn = 0,172, rotação de 21,7°/mm a 589 nm. Luz polarizada linear entra, sai dividida em ondas ordinária e extraordinária; pode ser medida em um Malus ou usada como retardador (λ/4, λ/2).</figcaption></figure>
+<h2>7. Luminescência: a luz que o sólido devolve</h2>
+<p>Quando um fóton entra e é absorvido por um centro atômico (um exciton preso, um dopante, um centro de cor), o sistema sai do estado fundamental e relaxa depois, emitindo um fóton de energia menor (comprimento de onda maior). O processo que mede essa emissão é a <b>luminescência</b>. A taxa em que o elétron radia compara‑se à taxa de relaxamento não-radial define o <b>quantum yield</b> Φ = rad/(rad + nr): Φ ≈ 1 no caso ideal (luminescência brilhante), Φ ≪ 1 quando o não-radial domina (a energia vai para calor). O tempo de vida τ = 1/(rad + nr) decide se o sinal chega a tempo de ser fotografado (fotoluminescência de decréscimo rápido) ou fica lento (fosforescência, decréscimo que persiste após desligar a fonte). Estes dois regimes — fluorescência, pico rápido; fosforescência, demora — são a divisão prática usada em toda a instrumentação laboratorial [Yu–Cardona §§ 7.1.1–7.1.5; Hofmann § 9.4.1–9.4.2].</p>
+<p>Centros de cor típicos e suas emissões:</p>
+<ul>
+<li>F‑center em NaCl (elétron em buraco de ânion faltante): absorção extra ∼2,7 eV (460 nm, azul) → cristal amarelo; ao ser iluminado com UV, o elétron salta e o buraco recombina, emitindo o azul que, ao misturar‑se com o resto da luz, dá a sensação de amarelo.</li>
+<li>Cr³⁺ em berilo (Be₃Al₂Si₆O₁₈): o substituto Cr³⁺ nos sites de Be²⁺ define as transições d–d em ⁴A₂ → ⁴T₁(⁴P) a ∼694 nm (rubi) e em ⁴A₂ → ⁴T₂ a ∼570–580 nm (esmeralda).</li>
+<li>YAG:Ce³⁺ em Y₃Al₅O₁₂ dopado com Ce³⁺ em vez de Y³⁺: excitação UV ∼365 nm → emissão azul ∼460 nm. O fósforo azul + o restante amarillo do pó dão a sensação de luz branca “fria”, usada em lâmpadas LED modernas.</li>
+<li>NaI:Tl (tálio em NaI): excitação γ ∼415 nm; usado em detectores de radiação TLD (termoluminescência): ao aquecer, o elétron preso libera a energia acumulada como luz visível.</li>
+<li>LiF:Mg,Ti (dosímetro termo‑luminiscente): ao ser irradiado com ionizante, o Mg²⁺/Ti⁴⁺ cria centros de armadilha que, ao serem aquecidos em °C, emitem luz visível (400–500 nm); o decréscimo é lento e a intensidade depende da dose de radiação — o princípio dos dosímetros de radiação.</li>
+</ul>
+<p>Os tempos característicos: para o rubi (Cr³⁺ em óxido de alumínio), τ ∼ 3 ms (luminescência de microsegundo a milissegundo). Para o YAG:Ce³⁺, τ ∼ 25–40 ns. Para o NaI:Tl, τ ∼ 230 ns. Para o LiF:Mg,Ti, o glow‑curve pode ter pico principal a ∼200 °C, com componentes sub‑glow que persistem horas. Estes números, que a literatura cita (Yu–Cardona § 7.1.4), são exatamente os que os laboratórios usam para decidir qual centro escolher para o tipo de detector ou sensor pretendido.</p>
+<p>O mecanismo geral segue a <b>relação de Strickler–Berg</b>, que liga a área sob o pico de emissão (∫ε₂ dω) ao momento transicional ⟨f|μ|i⟩ e à vida média τ. Em palavras: a intensidade da luz emitida não depende só da quantidade de centros excitados, mas também da "força" da transição (o elemento de matriz do momento dipolar) e de quanto tempo o elétron vive no estado excitado antes de saltar. É o motor que rege a escolha de cores em displays, a sensibilidade de fotodetectores e a luminosidade de fósforos [Yu–Cardona § 7.1.2; Dresselhaus].</p>
+<figure><div class='draw'>
+<svg viewBox="0 0 700 320" width="660" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Espectro de luminescence">
+<rect x="0" y="100" width="640" height="200" fill="#fafafa" stroke="#5b6b82" stroke-width="1"/>
+<polyline points="50,300 100,250 150,280 200,220 250,260 300,190 350,240 400,170 450,220 500,150 550,190 600,130 650,170" fill="none" stroke="#1b2a4a" stroke-width="2.5"/>
+<polyline points="50,100 100,130 150,110 200,150 250,120 300,160 350,130 400,170 450,110 500,150 550,120 600,170 650,140" fill="none" stroke="#5b6b82" stroke-width="2.3"/>
+<text x="45" y="315" font-family="Arial" font-size="10.5" fill="#5b6b82">UV de excitação</text>
+<text x="200" y="315" font-family="Arial" font-size="10.5" fill="#5b6b82">emissão →</text>
+<text x="55" y="110" font-family="Arial" font-size="9.5" fill="#1b2a4a">rubi: 694,3 nm (Cr³⁺)</text>
+<text x="130" y="145" font-family="Arial" font-size="9.5" fill="#5b6b82">∼3 ms</text>
+<text x="225" y="115" font-family="Arial" font-size="9.5" fill="#8a97ab">esmeralda: ∼575 nm (Cr³⁺ em berilo)</text>
+<text x="290" y="140" font-family="Arial" font-size="9.5" fill="#8a97ab">∼3 µs</text>
+<text x="400" y="110" font-family="Arial" font-size="9.5" fill="#8a97ab">YAG:Ce: 460 nm</text>
+<text x="440" y="145" font-family="Arial" font-size="9.5" fill="#8a97ab">∼30 ns</text>
+<text x="530" y="115" font-family="Arial" font-size="9.5" fill="#8a97ab">NaI:Tl: 415 nm</text>
+<text x="570" y="145" font-family="Arial" font-size="9.5" fill="#8a97ab">∼230 ns</text>
+<text x="640" y="315" font-family="Arial" font-size="10.5" fill="#5b6b82">LiF:Mg,Ti glow‐peak ∼200 °C</text>
+</svg>
+</div><figcaption><b>Figura 7.</b> Exemplos de luminescence: rubi (694,3 nm, Cr³⁺, τ ∼ 3 ms), esmeralda (∼575 nm, Cr³⁺ em berilo, τ ∼ µs), YAG:Ce (460 nm, τ ∼ 30 ns, usada em lâmpadas LED "brancas frias"), NaI:Tl (415 nm, τ ∼ 230 ns, detector de radiação), e LiF:Mg,Ti (glow‑curve pico ∼200 °C, dosímetro termo‑luminiscente). Os tempos de vida τ definem fotoluminescência rápida vs. fosforescência lenta.</figcaption></figure>
+<h2>8. Técnicas de medida: de ε(ω) ao micro‑estrutura</h2>
+<p>Recuperar ε(ω) a partir de curvas R(ω), T(ω) ou φ(ω) nunca é direto: cada medida fala uma linguagem diferente e cada uma tem suas limitações. Uma lista rápida das técnicas principais, com o que cada uma entrega, ajuda a escolher o instrumento certo:</p>
+<table>
+<tr><th>Técnica</th><th>Quantidade medida</th><th>Princípio</th><th>Limite / observação</th></tr>\n<tr><td>Espectroscopia de reflexão (R(ω))</td><td>ε₂(ω) via K–K; ε₁ via K–K</td><td>Refletância angular integrada; polarização s/p</td><td>Em cristais transparentes, R pequena → ε difícil; necessidade de K–K</td></tr>\n<tr><td>Elipsometria</td><td>Ψ, Δ → ε₁, ε₂</td><td>Razão de amplitudes de reflexão p/s</td><td>Sensibilidade a 0,01 RIU; filmes finos (1–100 nm)</td></tr>\n<tr><td>Espectroscopia de modulação (mod. R, mod. φ)</td><td>derivada dR/dV ou dε/dV</td><td>Campo elétrico, tensão, temperatura como perturbador</td><td>Singularidades de Van Hove em destaque (nota § 3)</td></tr>\n<tr><td>Absorção FTIR (transmissão T)</td><td>α(ω); ε₂ via α = 2ωκ/c</td><td>Beer–Lambert; caminho óptico d</td><td>Cristais transparentes apenas; KBr pellets</td></tr>\n<tr><td>Raman (espalhamento inelástico)</td><td>ω<sub>ph</sub>, symmetrias de fônons</td><td>Fóton in (ħω<sub>i</sub>) → fóton out (ħω<sub>s</sub>) com ħω<sub>i</sub> − ħω<sub>s</sub> = ħω<sub>ph</sub></td><td>Modos Raman-ativos; regra de exclusão mútua; não‑centrosimétricos mostram TO/LO nas duas técnicas</td></tr>\n<tr><td>Brillouin (espalhamento acústico)</td><td>ω<sub>ph</sub> acústica; tensão, portadores</td><td>Fóton in/out com pequeno desvio ħω ≈ 2ħqv<sub>s</sub></td><td>GHz escala; sensível a deformação e portadores livres</td></tr>\n<tr><td>Fotoemissão (UPS/XPS)</td><td>E<sub>F</sub>, bandas ocupadas, ω<sub>p</sub></td><td>Elétron livre após absorção de hν</td><td>Vácuo alto; superfície sensível (2–10 nm)</td></tr>\n</table>
+<p class='tcap'><b>Tabela 7.</b> Técnicas de espectroscopia óptica e suas quantidades medidas. Da reflexão pura à fotoemissão de superfície; cada técnica abre uma janela sobre ε(ω) ou a estrutura de bandas.</p>
+<p>Entre todas, a <b>elipsometria</b> é talvez a mais poderosa para filmes multicamadas: ao medir os dois parâmetros Ψ e Δ em múltiplos ângulos de incidencia e comprimentos de onda, o tensor dielétrico ε(ω) é recuperado como solução de um sistema de equações não-lineares (modelos de Lorentz/Drude, parâmetros de oscilação). A <b>espectroscopia de modulação</b> (mod. reflectância ou mod. fase) usa um perturbador externo (campo elétrico AC, tensão mecânica, temperatura controlada) e mede a derivada da refletância ou da fase; as singularidades de Van Hove surgem como picos afiados na derivada — com a energia de transição lida direto no pico, sem necessidade de K–K inversa. Já o <b>Raman</b> e o <b>Brillouin</b> falam da dinâmica da rede: Raman modas óticas (10⁻¹³ s), Brillouin fônons acústicos (10⁻¹⁰ s). Na prática, combinar as duas (Raman + Brillouin + elipsometria) entrega a estrutura de bandas completa e as constantes de força dos modos [Yu–Cardona § 7.2.1–7.2.8; Hofmann § 9.4.1–9.4.2].</p>
+<figure><div class='draw'>
+<svg viewBox="0 0 600 300" width="580" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tabela comparativa de técnicas">
+<rect x="10" y="10" width="560" height="260" fill="#fafafa" stroke="#5b6b82" stroke-width="1"/>
+<line x1="10" y1="50" x2="570" y2="50" stroke="#dfe6ef" stroke-width="0.5"/>
+<text x="20" y="55" font-family="Arial" font-size="10" fill="#5b6b82">Técnica</text>
+<text x="130" y="55" font-family="Arial" font-size="10" fill="#5b6b82">Quantidade medida</text>
+<text x="320" y="55" font-family="Arial" font-size="10" fill="#5b6b82">Princípio</text>
+<text x="480" y="55" font-family="Arial" font-size="10" fill="#5b6b82">Limite / obs.</text>
+<text x="10" y="30" font-family="Arial" font-size="9" fill="#5b6b82">Reflexão R(ω)</text>
+<text x="130" y="30" font-family="Arial" font-size="9" fill="#5b6b82">ε₂ via K–K; ε₁ via K–K</text>
+<text x="320" y="30" font-family="Arial" font-size="9" fill="#5b6b82">Refletância angular</text>
+<text x="480" y="30" font-family="Arial" font-size="9" fill="#5b6b82">K–K necessária</text>
+<text x="10" y="60" font-family="Arial" font-size="9" fill="#5b6b82">Elipsometria</text>
+<text x="130" y="60" font-family="Arial" font-size="9" fill="#5b6b82">Ψ, Δ → ε₁, ε₂</text>
+<text x="320" y="60" font-family="Arial" font-size="9" fill="#5b6b82">Razão amplitudes p/s</text>
+<text x="480" y="60" font-family="Arial" font-size="9" fill="#5b6b82">Sensibilidade 0,01 RIU</text>
+<text x="10" y="90" font-family="Arial" font-size="9" fill="#5b6b82">Mod. reflexão</text>
+<text x="130" y="90" font-family="Arial" font-size="9" fill="#5b6b82">dR/dV ou dε/dV</text>
+<text x="320" y="90" font-family="Arial" font-size="9" fill="#5b6b82">Sing. Van Hove</text>
+<text x="480" y="90" font-family="Arial" font-size="9" fill="#5b6b82">Campo/tensão/temp.</text>
+<text x="10" y="120" font-family="Arial" font-size="9" fill="#5b6b82">FTIR absorção</text>
+<text x="130" y="120" font-family="Arial" font-size="9" fill="#5b6b82">α(ω); ε₂ via α</text>
+<text x="320" y="120" font-family="Arial" font-size="9" fill="#5b6b82">Beer–Lambert</text>
+<text x="480" y="120" font-family="Arial" font-size="9" fill="#5b6b82">KBr pellets</text>
+<text x="10" y="150" font-family="Arial" font-size="9" fill="#5b6b82">Raman</text>
+<text x="130" y="150" font-family="Arial" font-size="9" fill="#5b6b82">ω<sub>ph</sub>, simetrias</text>
+<text x="320" y="150" font-family="Arial" font-size="9" fill="#5b6b82">Fóton in/out inelástico</text>
+<text x="480" y="150" font-family="Arial" font-size="9" fill="#5b6b82">Modos Raman‑ativos</text>
+<text x="10" y="180" font-family="Arial" font-size="9" fill="#5b6b82">Brillouin</text>
+<text x="130" y="180" font-family="Arial" font-size="9" fill="#5b6b82">ω<sub>ph</sub> acústica</text>
+<text x="320" y="180" font-family="Arial" font-size="9" fill="#5b6b82">GHz escala</text>
+<text x="480" y="180" font-family="Arial" font-size="9" fill="#5b6b82">Deform. e portadores</text>
+<text x="10" y="210" font-family="Arial" font-size="9" fill="#5b6b82">Fotoemissão</text>
+<text x="130" y="210" font-family="Arial" font-size="9" fill="#5b6b82">E<sub>F</sub>, bandas</text>
+<text x="320" y="210" font-family="Arial" font-size="9" fill="#5b6b82">Elétron livre</text>
+<text x="480" y="210" font-family="Arial" font-size="9" fill="#5b6b82">Vácuo; 2–10 nm</text>
+</svg>
+</div><figcaption><b>Figura 8.</b> Tabela comparativa de técnicas de espectroscopia óptica (Reflexão R(ω), Elipsometria, Modulação, FTIR, Raman, Brillouin, Fotoemissão). Cada técnica abre uma janela diferente sobre a resposta dielétrica ε(ω) ou a estrutura de bandas do sólido.</figcaption></figure>
+<h2>9. Leituras complementares e perspectivas</h2>
+<p>O roteiro que construímos até aqui cobre a gramática principal das propriedades ópticas de sólidos: a função dielétrica ε(ω) como resposta fundamental, as bordas de absorção diretas e indiretas, os excitons, os modos da rede (reststrahlen, Raman, Brillouin), a plasma edge dos metais, a birrefringência dos cristais e a luminescência dos centros de cor. Cada capítulo abriu uma janela e, para quem quiser aprofundar, segue o mapa de leitura recomendada (§§ 1–9):</p>
+<p class='mapa'><b>Leitura recomendada (§ 1):</b> Hofmann § 9.4 (constante dielétrica dependente da frequência); Ashcroft e Mermin cap. 1 (resposta do elétron livre); nota <i>Propriedades Dielétricas</i>.<br/>
+<b>Leitura recomendada (§ 2):</b> Yu–Cardona §§ 6.1–6.1.3 (eletrodinâmica macroscópica, relações de Kramers–Kronig); §§ 6.2.1–6.2.4 (função dielétrica: resultados experimentais, teoria microscópica, J-DOS e singularidades de Van Hove).<br/>
+<b>Leitura recomendada (§ 3):</b> Yu–Cardona §§ 6.2.5–6.2.7 (bordas diretas, indiretas e "proibidas") e §§ 6.3–6.3.2 (excitons em M<sub>0</sub> e espectros de absorção); Hofmann § 9.4.2 (transições eletrônicas no dielétrico).<br/>
+<b>Leitura recomendada (§ 4):</b> Yu–Cardona §§ 6.4.1–6.4.4 (fônons-polaritons, relação LST, absorção/reflexão da rede); nota <i>Propriedades Dielétricas</i> sobre a relação LST e ferroelasticidade.<br/>
+<b>Leitura recomendada (§ 5):</b> Hofmann § 5.2.3 (borda de plasma dos metais); Grosso–Parravicini, caps. 5–6 (plasma coletivo); Yu–Cardona § 6.5 (absorção por elétrons extrínsecos, gap de Burstein–Moss).<br/>
+<b>Leitura recomendada (§ 6):</b> Hofmann §§ 5.2.3, 11.1 (birrefringência, cristais não-isótropos, tensão ótica); calcita n<sub>o</sub> = 1,658 / n<sub>e</sub> = 1,486; rotação 21,7°/mm a 589 nm.<br/>
+<b>Leitura recomendada (§ 7):</b> Yu–Cardona §§ 7.1.1–7.1.5 (espectroscopias de emissão, centros de cor, quantum yield, fluorescência vs. fosforescência, relação Strickler–Berg); Hofmann § 9.4.1–9.4.2 (centros de cor, luminescência).<br/>
+<b>Leitura recomendada (§ 8):</b> Yu–Cardona §§ 7.2.1–7.2.8 (Raman e Brillouin: espectroscopias de espalhamento inelástico); Hofmann § 9.4.1–9.4.2 (medição de modos óticos e acústicos); elipsometria e modulação como técnicas de recuperação de ε(ω).<br/>
+</p>
+<p>Perspectivas: a cada ano, novas fontes de luz (lasers de femtossegundo, fontes de comprimento de onda ajustável, sincrotrons de 4ª geração) permitem medir ε(ω) com maior resolução temporal e espectral. A combinação de elipsometria espectroscópica com Raman em confocal e com fotoemissão (ARPES) entrega, em um único experimento, a estrutura de bandas, a função dielétrica e a dinâmica dos fônons — o que antes exigiria três instalações separadas. Em 2D, o screening fraco e a forte luz–materia acoplamento abrem caminhos para polaritons de exciton (excitonic polaritons) com dispersionão forte, já observados em monocamadas de TMDs (WSe₂, MoS₂) e em microcavidades de perovskita. A espectroscopia de modulação fase‑sensível, aliada ao controle de temperatura e tensão electro‑mecânica, promete mapear em 3D (energia, k, temperatura) a função ε(k, ω, T) — o próximo frente aberto na espectroscopia de sólidos [Yu–Cardona § 7.2.8; Hofmann § 11.1; novo experimentos 2024–2026].</p>
+<references>
+<div class='ref'>
+<b>Referências</b>
+<ul>
+<li>Edital UFC nº 24/2024, Anexo I, pg. 31: tópico 10 — Propriedades Ópticas de Sólidos.</li>
+<li>Yu, Y. & Cardona, M. *Fundamentals of Semiconductors: Physics and Materials Properties*, 4ª ed. (Graduate Texts in Physics). Springer, 2010. (caps. 6 e 7: §§ 6.1–6.1.3, 6.2.1–6.2.7, 6.3–6.3.4, 6.4.1–6.4.4, 6.5, 6.6, 7.1.1–7.1.5, 7.2.1–7.2.8; apêndices Tauc p. 566 e Burstein p. 569).</li>
+<li>Hofmann, P. *Solid State Physics* (2ª ed.). Cambridge University Press, 2015. ( §§ 5.2.3, 7.4.3, 9.4.1–9.4.2, 11.1).</li>
+<li>Ashcroft, N. W. & Mermin, N. D. *Solid State Physics*. Saunders College, 1976. (cap. 1: teoria de Drude — citação de nível de livro; PDF escaneado, texto extraído via OCR parcial).</li>
+<li>Grosso, G. & Pastori Parravicini, G. *Solid State Physics* (Elsevier, 2016/.djvu sem TOC; nível de livro, cobertura de ótica de nível similar a Grosso–PP).</li>
+</ul>
+</div>
+<div class='foot'>
+<span>elaborado em 29/10/2026 · SI</span>
+<a id='modeBtn' href='#' style='opacity:.9;'></a>
+</span>
+</div>
+</references></body></html>
