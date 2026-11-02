@@ -1,47 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang='pt-BR'>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Éxcitons em Sólidos — Prova escrita (Concurso Docente)</title>
+<meta charset='utf-8'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<title>Propriedades Dielétricas de Sólidos</title>
 <style>
 :root{--ink:#1a2333;--navy:#1b2a4a;--muted:#5b6b82;--line:#dfe6ef;--bg:#ffffff;}
 *{box-sizing:border-box}
-body{margin:0;background:#eef1f6;color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.6}
+body{margin:0;background:#eef1f6;color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.65}
 @page{size:A4;margin:18mm 16mm}
-@media print{body{background:#fff}.sheet{box-shadow:none!important;margin:0!important;max-width:none!important;border:none}.inner{padding:0 2mm}.eq{font-size:12px;padding:8px;line-height:1.5}figure{page-break-inside:avoid}table{font-size:11px}h2{page-break-after:avoid}}
+@media print{body{background:#fff}.sheet{box-shadow:none!important;margin:0!important;max-width:none!important;border:none}.inner{padding:0 2mm}.eq{font-size:12.5px;padding:8px;line-height:1.5;page-break-inside:auto}.eq small{font-size:10px}figure{page-break-inside:avoid}table{font-size:11.5px}h2{page-break-after:avoid}}
 .sheet{max-width:860px;margin:26px auto;background:var(--bg);border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.08)}
-.inner{padding:40px 48px}
-@media(max-width:640px){.inner{padding:24px 20px}}
-header.doc-head{border-bottom:3px solid var(--navy);padding-bottom:12px;margin-bottom:16px}
-.doc-head .inst{font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.doc-head h1{font-size:28px;line-height:1.2;margin:6px 0;color:var(--navy)}
-.doc-head .sub{font-style:italic;color:#33415c;font-size:15px}
-.scope{font-family:Arial,Helvetica,sans-serif;font-size:12px;background:#f4f6fa;border:1px solid var(--line);border-left:4px solid var(--navy);padding:8px 12px;margin:14px 0;line-height:1.45}
-h2{font-size:20px;color:var(--navy);margin:26px 0 6px;border-bottom:1px solid var(--line);padding-bottom:5px}
-h3{font-size:16px;color:#24365c;margin:16px 0 4px}
-p{text-align:justify;margin:6px 0}
-ul,ol{margin:4px 0;padding-left:22px}
-li{margin:3px 0}
-.eq{background:#f7f9fc;border:1px solid var(--line);padding:8px 10px;margin:8px 0;text-align:center;font-size:13px;overflow:visible;white-space:normal;word-wrap:break-word;overflow-wrap:anywhere;max-width:100%}
-.eq small{display:block;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:var(--muted);margin-top:4px;white-space:normal;line-height:1.4}
+.inner{padding:44px 52px}
+@media(max-width:640px){.inner{padding:26px 22px}}
+header.doc-head{border-bottom:3px solid var(--navy);padding-bottom:14px;margin-bottom:18px}
+.doc-head .inst{font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.doc-head h1{font-size:30px;line-height:1.2;margin:8px 0;color:var(--navy)}
+.doc-head .sub{font-style:italic;color:#33415c;font-size:16px}
+.scope{font-family:Arial,Helvetica,sans-serif;font-size:13px;background:#f4f6fa;border:1px solid var(--line);border-left:4px solid var(--navy);padding:10px 14px;margin:16px 0;line-height:1.5}
+h2{font-size:22px;color:var(--navy);margin:30px 0 8px;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3{font-size:18px;color:#24365c;margin:20px 0 6px}
+p{text-align:justify;margin:8px 0}
+ul,ol{margin:6px 0;padding-left:24px}
+li{margin:4px 0}
+.mapa{font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:var(--muted);background:#f7f9fc;border-left:3px solid #a9bfd9;padding:8px 12px;margin:12px 0;line-height:1.55}
+.eq{background:#f7f9fc;border:1px solid var(--line);padding:10px 10px;margin:10px 0;text-align:center;font-size:14px;overflow:visible;white-space:normal;word-wrap:break-word;overflow-wrap:anywhere;max-width:100%}
+.eq small{display:block;font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);margin-top:6px;white-space:normal;line-height:1.5}
 .eq mjx-container{overflow:visible !important;max-width:100% !important}
 .eq mjx-container[jax="CHTML"][display="true"]{white-space:normal !important;margin:.4em 0 !important}
-mjx-container[jax="CHTML"]{overflow:visible !important}
-figure{margin:12px auto;border:1px solid var(--line);background:#fbfcfe;max-width:700px}
-figure .draw{padding:8px;display:grid;place-items:center;background:#fff}
+mjx-container[jax="CHTML"][display="true"]{overflow:visible !important}
+figure{margin:14px auto;border:1px solid var(--line);background:#fbfcfe;max-width:760px}
+figure .draw{padding:10px;display:grid;place-items:center;background:#fff}
 figure svg{max-width:100%;height:auto}
-figcaption{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);padding:6px 12px;border-top:1px solid var(--line);text-align:justify;line-height:1.4}
-table{width:100%;border-collapse:collapse;margin:8px 0;font-family:Arial,Helvetica,sans-serif;font-size:12px}
-th{background:var(--navy);color:#fff;text-align:left;padding:5px 7px;font-size:10px;text-transform:uppercase;letter-spacing:.04em}
-td{padding:5px 7px;border-bottom:1px solid var(--line);vertical-align:top}
+figcaption{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:var(--muted);padding:8px 14px;border-top:1px solid var(--line);text-align:justify;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px}
+.tcap{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:var(--muted);margin:12px 0 -8px;line-height:1.45}
+th{background:var(--navy);color:#fff;text-align:left;padding:6px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
 tr:nth-child(even) td{background:#f7f9fc}
-.foot{font-family:Arial,Helvetica,sans-serif;font-size:10px;color:var(--muted);border-top:1px solid var(--line);margin-top:22px;padding-top:8px;display:flex;justify-content:space-between;gap:10px}
-.ref{font-size:14px}
-.ref li{margin:4px 0}
+.foot{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:10px;display:flex;justify-content:space-between;gap:10px}
+.ref{font-size:15px}
+.ref li{margin:6px 0}
 </style>
-<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:.95,linebreaks:{automatic:true,width:'container'}},options:{enableMenu:false}};</script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style id="dk-style">
 html{color-scheme:light}
 html.dark{color-scheme:dark}
@@ -55,12 +55,14 @@ html.dark .scope{background:#132038;border-color:#26324a;color:#c9d6ee}
 html.dark h2{color:#8fc2f7;border-color:#26324a}
 html.dark h3{color:#a9c6f2}
 html.dark p,html.dark li{color:#d9e2f2}
+html.dark .mapa{background:#132038;color:#a9bbe0;border-color:#3a4f75}
 html.dark .eq{background:#131f33;border-color:#26324a;color:#e6eefb}
 html.dark .eq small{color:#8fa3c2}
 html.dark figure{background:#101928;border-color:#26324a}
 html.dark figure .draw{background:#0c1524}
 html.dark figure .draw svg{filter:invert(.92) hue-rotate(180deg)}
 html.dark figcaption{color:#8fa3c2;border-color:#26324a}
+html.dark .tcap{color:#8fa3c2}
 html.dark th{background:#17345e;color:#eaf2ff}
 html.dark td{border-color:#22314c;color:#d9e2f2}
 html.dark tr:nth-child(even) td{background:#132038}
@@ -68,44 +70,33 @@ html.dark .foot{color:#8fa3c2;border-color:#26324a}
 html.dark a{color:#8fc2f7}
 html.dark mjx-container{color:#e6eefb}
 html.dark small{color:#a9bbe0}
-body,.sheet,.eq,figure,h1,h2,h3,th,td,figcaption{transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+body,.sheet,.eq,figure,h1,h2,h3,th,td,figcaption,.tcap{transition:background-color .2s ease,color .2s ease,border-color .2s ease}
 button#modeBtn{position:fixed;top:12px;right:12px;z-index:999;font-family:Arial,Helvetica,sans-serif;font-size:12px;padding:7px 14px;border-radius:999px;border:1px solid #cdd6e4;background:#ffffff;color:#26324a;cursor:pointer;opacity:.9;transition:opacity .15s,background .2s,color .2s;box-shadow:0 1px 6px rgba(0,0,0,.15)}
 button#modeBtn:hover{opacity:1}
 html.dark button#modeBtn{background:#1b2a44;border-color:#3a4f75;color:#d9e2f2;box-shadow:none}
 </style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:.95,linebreaks:{automatic:true,width:'container'}},options:{enableMenu:false}};</script>
+<script async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
 <script id="dk-script">(function(){var DT=document.documentElement;function store(on){try{localStorage.setItem('darkmode',on?'1':'0')}catch(e){}}function label(on){var b=document.getElementById('modeBtn');if(!b)return;b.textContent=on?'\u2600\u00a0Modo claro':'\u263E\u00a0Modo noturno';b.title='Alternar modo claro/noturno';}function set(on){DT.classList.toggle('dark',!!on);store(on);label(on);}function mk(){var b=document.getElementById('modeBtn');if(!b){b=document.createElement('button');b.id='modeBtn';b.type='button';b.title='Alternar modo claro/noturno';(document.body||DT).appendChild(b);}if(!b._dk){b._dk=true;b.addEventListener('click',function(){set(!DT.classList.contains('dark'))});}b.type='button';b.removeAttribute('href');b.style.cursor='pointer';return b;}var p=null,auto=false;try{p=localStorage.getItem('darkmode')}catch(e){}auto=(p===null)&&!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);set(p!==null?p==='1':auto);function go(){mk();label(DT.classList.contains('dark'));}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',go);}else{go();}})();</script>
 </head>
 <body>
-<div class="sheet"><div class="inner">
-
-<header class="doc-head">
-<div class="inst">Concurso Docente &middot; Física da Matéria Condensada &middot; Prova escrita</div>
+<div class='sheet'><div class='inner'>
+<header class='doc-head'><div class='inst'>Departamento de Física · UFC — Física do Estado Sólido Experimental</div>
 <h1>Éxcitons em Sólidos</h1>
-<div class="sub">Fundamentos teóricos, formalismo quântico e aplicações — texto sistemático para nível de pós-graduação.</div>
-</header>
+<div class='sub'>Tópico 4 do edital — em diálogo com Yu e Cardona, <i>Fundamentals of Semiconductors</i> (§§ 6.3, 6.3.2 e 7.1.4), Dresselhaus et al., <i>Solid State Properties</i> (§ 20.5 e subseções), Ashcroft e Mermin e Grosso e Pastori Parravicini, <i>Solid State Physics</i> (nível de livro) — além das notas irmãs da pasta, referidas em itálico no corpo do texto.</div></header>
+<div class='scope'><b>Escopo:</b> sem o Coulomb entre o elétron promovido e a lacuna deixada, a absorção começaria abruptamente em \(E_g\). O que se vê é diferente: picos estreitos <b>abaixo</b> do limiar, seguidos de um contínuo modificado. A origem é o éxciton — um átomo de hidrogênio vestido, com massa reduzida \(\mu\) e carga blindada por \(arepsilon_r\). Este texto percorre a cadeia em <b>nove seções</b>: o problema e os dois regimes (Wannier–Mott e Frenkel); o par como hidrogênio vestido; séries, raios, brilhantes e escuros; como o éxciton aparece na luz (Elliott e Sommerfeld); classificação e complexos; confinamento e dimensionalidade (poços, 2D, TMDs); números e condições de observabilidade; termodinâmica e luminescência; e o fecho. Como nas demais notas da série, privilegia <b>conceito e número</b>: <b>seis</b> equações no corpo inteiro; o resto é prosa, tabelas e desenhos.</div>
+<div class='scope'><b>Conexões com a pasta:</b> a banda que se deforma e as massas efetivas são de <i>Estrutura de Bandas</i> e <i>Estruturas Cristalinas e Redes Recíprocas</i>; a borda de absorção e a luminescência continuam em <i>Propriedades Ópticas de Sólidos</i> e <i>Propriedades de Materiais Semicondutores</i>; o acoplamento elétron–fônon que dá as réplicas de fôno na fotoluminescência liga <i>Acoplamento Elétron–Fônon</i> e <i>Fônons em Sólidos</i>; a blindagem dielétrica e o meio efetivo conversam com <i>Propriedades Dielétricas de Sólidos</i>; os éxcitons em TMDs e heteroestruturas tocam <i>Propriedades Magnéticas</i> (spin–vale) e <i>Plasmons em Gás de Elétrons</i>.</div>
 
-<div class="scope">
-<b>Referências Principais.</b> N. W. Ashcroft e N. D. Mermin, <i>Solid State Physics</i>; M. S. Dresselhaus, G. Dresselhaus e A. Jorio, <i>Solid State Properties: From Bulk to Nano</i>, Springer, 2018; P. Hofmann, <i>Solid State Physics</i>, Wiley-VCH, 2ª ed., 2015; G. Grosso e G. Pastori Parravicini, <i>Solid State Physics</i>, 2ª ed., Academic Press, 2013.
-</div>
+<h2>1. O problema: por que a absorção não começa em \(E_g\)</h2>
+<p>Num semicondutor de <i>gap</i> direto, o modelo de elétrons independentes prevê que a absorção óptica comece abruptamente em \(\hbar\omega=E_g\): abaixo do limiar, transparência; acima, um degrau. A experiência diz outra coisa: a baixas temperaturas aparecem picos estreitos e discretos <b>abaixo</b> de \(E_g\), seguidos de um contínuo modificado. A origem física é o acoplamento Coulombiano: o elétron promovido à banda de condução e a lacuna (buraco) deixada na banda de valência atraem-se, formando um estado ligado neutro — o <b>éxciton</b>.</p>
+<p>O éxciton é uma quase-partícula neutra, um par elétron–lacuna ligado pela interação eletrostática de Coulomb. A sua energia de ligação \(E_b\) posiciona o estado fundamental a \(E_b\) abaixo da borda da banda de condução, de modo que a absorção óptica começa em \(\hbar\omega=E_g-E_b\). A descrição teórica repousa em dois pilares: a <b>aproximação da massa efetiva</b> (EMA), na qual elétron e lacuna se comportam como cargas livres com massas \(m_e^*\) e \(m_h^*\), e a <b>blindagem dielétrica</b> da rede, que atenua a interação para \(V(r)=-e^2/(4\pi\varepsilon_0\varepsilon_r r)\).</p>
+<p>Dependendo da intensidade relativa da interação comparada com a constante de rede \(a\), distinguem-se dois regimes limites. O <b>éxciton de Wannier–Mott</b> é extenso (\(a_X\gg a\)), com \(E_b\sim 1\text{--}100\) meV, típico de semicondutores inorgânicos covalentes. O <b>éxciton de Frenkel</b> é fortemente localizado na mesma célula unitária ou molécula (\(a_X\sim a\)), com \(E_b\sim 0{,}1\text{--}1\) eV, típico de cristais moleculares e isolantes iônicos. Em nanoestruturas — poços quânticos e monocamadas de dicalcogenetos de metais de transição (TMDs) — o confinamento e a redução da blindagem dielétrica elevam \(E_b\) para centenas de meV, garantindo éxcitons estáveis à temperatura ambiente.</p>
+<p class='mapa'><b>Leitura recomendada:</b> Yu–Cardona §§ 6.3 e 7.1.4; Dresselhaus § 20.5 (e subseções 20.5.1, 20.5.2, 20.5.5 e 20.5.6); Grosso e Pastori Parravicini (nível de livro); Ashcroft e Mermin (nível de livro).</p>
 
-<h2>1. Introdução</h2>
-
-<p>Um semicondutor com <i>gap</i> de energia \(E_g\) (largura da banda proibida) é transparente a fótons com energias inferiores a \(E_g\) (\(\hbar\omega < E_g\)). No modelo de elétrons independentes, a absorção óptica começaria abruptamente sob a forma de um degrau em \(\hbar\omega = E_g\). Contudo, a baixas temperaturas, observam-se picos de absorção estreitos e discretos <b>abaixo</b> do limiar da banda de condução, seguidos por um contínuo modificado. A origem física deste fenômeno reside no acoplamento coulombiano: o elétron promovido à banda de condução e a lacuna (buraco) deixada na banda de valência atraem-se mutuamente, formando um estado ligado neutro — o <b>éxciton</b>.</p>
-
-<p>O éxciton é uma quase-partícula neutra constituída por um par elétron–lacuna ligado pela interação eletrostática de Coulomb. A sua energia de ligação \(E_b\) posiciona o estado fundamental a uma energia \(E_b\) abaixo da borda da banda de condução, ocorrendo a absorção óptica no limiar \(\hbar\omega = E_g - E_b\). A descrição teórica baseia-se em dois pilares fundamentais: a <b>Aproximação da Massa Efetiva (EMA)</b>, na qual as partículas se comportam como cargas livres com massas efetivas \(m_e^*\) e \(m_h^*\), e a <b>blindagem dielétrica</b> da rede cristalina, que atenua a interação coulombiana para \(V(r) = -e^2 / (4\pi\varepsilon_0\varepsilon_r r)\).</p>
-
-<p>Dependendo da intensidade relativa da interação em comparação com a constante de rede \(a\), distinguem-se dois regimes limites: o éxciton de <b>Wannier–Mott</b> (extenso, \(a_X \gg a\), \(E_b \sim 1\text{--}100\text{ meV}\), típico de semicondutores inorgânicos) e o éxciton de <b>Frenkel</b> (fortemente localizado na mesma célula unitária ou molécula, \(a_X \sim a\), \(E_b \sim 0{,}1\text{--}1\text{ eV}\), típico de cristais moleculares e isolantes iônicos). Em nanoestruturas como poços quânticos e monocamadas de dicalcogenetos de metais de transição (TMDs), o confinamento quântico e a redução da blindagem dielétrica elevam \(E_b\) para centenas de meV, garantindo a estabilidade dos éxcitons à temperatura ambiente.</p>
-
-<h2>2. Teoria Formal</h2>
-
-<h3>2.1. Do fóton ao par elétron–lacuna</h3>
-
-<p>Num semicondutor de <i>gap</i> direto, a absorção de um fóton promove a transição vertical (\(\Delta k \approx 0\)) de um elétron da banda de valência para a banda de condução. A ausência do elétron na banda de valência é descrita como uma quase-partícula positiva (lacuna) de carga \(+e\) e massa efetiva \(m_h^*\). O Hamiltoniano do par elétron–lacuna no espaço real é dado por:</p>
-
-<div class="eq">\[ \left[-\frac{\hbar^{2}}{2m_{e}^{*}}\nabla_{e}^{2}-\frac{\hbar^{2}}{2m_{h}^{*}}\nabla_{h}^{2}-\frac{e^{2}}{4\pi\varepsilon_{0}\varepsilon_{r}\,\lvert\mathbf{r}_{e}-\mathbf{r}_{h}\rvert}\right]\Phi(\mathbf{r}_e, \mathbf{r}_h) = E_{n}\,\Phi(\mathbf{r}_e, \mathbf{r}_h) \tag{1} \] <small>Os dois primeiros termos representam a energia cinética do elétron e da lacuna nas respectivas bandas; o terceiro termo é a atração coulombiana blindada. A energia total do estado em relação ao topo da banda de valência é \(E_{\text{tot}} = E_g + E_n\), onde \(E_n < 0\) para estados ligados.</small></div>
-
-<p>Se a atração coulombiana fosse nula, o espectro seria um contínuo com início em \(E_g\). É a atração eletrostática que introduz estados discretos dentro da banda proibida. O Hamiltoniano (1) é formalmente idêntico ao do átomo de hidrogênio, com as massas substituídas pelas massas efetivas do cristal e a permissividade do vácuo ajustada pela constante dielétrica do meio \(\varepsilon_r\).</p>
-
+<h2>2. O par elétron–lacuna como um átomo de hidrogênio vestido</h2>
+<p>Num semicondutor de <i>gap</i> direto, a absorção de um fóton promove verticalmente (\(\Delta k\approx 0\)) um elétron da banda de valência para a banda de condução. A ausência do elétron na banda de valência descreve-se como uma quase-partícula positiva (lacuna) de carga \(+e\) e massa efetiva \(m_h^*\). O Hamiltoniano do par no espaço real é</p>
+<div class="eq">\[ \left[-\frac{\hbar^{2}}{2\mu}\nabla_{\mathbf r}^{2}-\frac{e^{2}}{4\pi\varepsilon_{0}\varepsilon_{r}\,r}\right]\phi(\mathbf r)=E_n\,\phi(\mathbf r),\qquad \frac{1}{\mu}=\frac{1}{m_e^*}+\frac{1}{m_h^*} \tag{1} \]<small>Os dois primeiros termos (cinéticas do elétron e da lacuna) foram condensados na massa reduzida \(\mu\); o terceiro é a atração Coulombiana blindada. Se a atração fosse nula, o espectro seria um contínuo com início em \(E_g\); é a atração que introduz estados discretos dentro da banda proibida.</small></div>
+<p>O Hamiltoniano (1) é formalmente idêntico ao do átomo de hidrogênio, com as massas substituídas pelas massas efetivas do cristal e a permissividade do vácuo ajustada por \(\varepsilon_r\). A massa reduzida \(\mu\) governa o raio e a energia de ligação: quanto menor for \(\mu\) e maior for \(\varepsilon_r\), mais extenso e fracamente ligado será o éxciton. A aproximação de meio contínuo (Wannier–Mott) exige \(a_X\gg a\), o que valida o uso de massas efetivas e de uma constante dielétrica macroscópica.</p>
 <figure>
 <div class="draw">
 <svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Criação do par e níveis de energia">
@@ -148,41 +139,21 @@ html.dark button#modeBtn{background:#1b2a44;border-color:#3a4f75;color:#d9e2f2;b
 </g>
 </svg>
 </div>
-<figcaption><b>Fig. 1 — Mecanismo de excitação e espectro excitônico.</b> (a) A absorção de um fóton promove um elétron mantendo o momento angular (\(\Delta k=0\)). (b) Formação de estados ligados discretos abaixo do limiar \(E_g\); a energia de ligação do estado fundamental \(1s\) é \(E_b\).</figcaption>
+<figcaption><b>Figura 1.</b> Do fóton ao par ligado. (a) Absorção vertical (\(\Delta kpprox 0\)): o fóton promove um elétron e deixa uma lacuna. (b) A atração Coulombiana cria estados discretos \(1s,2s,3s\) abaixo de \(E_g\); o estado fundamental fica a \(E_b\) abaixo do limiar.</figcaption>
 </figure>
+<p class='mapa'><b>Leitura recomendada:</b> Yu–Cardona § 6.3 (éxcitons); Dresselhaus § 20.5.1 (efeitos excitônicos em bulk); Grosso e Pastori Parravicini (nível de livro).</p>
 
-<h3>2.2. Separação de variáveis: Centro de Massa e Movimento Relativo</h3>
-
-<p>Para resolver a equação (1), efetua-se uma mudança de coordenadas para a posição relativa \(\mathbf{r} = \mathbf{r}_e - \mathbf{r}_h\) e a posição do Centro de Massa (CM) \(\mathbf{R} = (m_e^*\mathbf{r}_e + m_h^*\mathbf{r}_h)/M\), onde \(M = m_e^* + m_h^*\) é a massa total do par. A função de onda fatora-se exatamente como \(\Phi(\mathbf{r}_e, \mathbf{r}_h) = \phi(\mathbf{r})\psi(\mathbf{R})\).</p>
-
-<p>A equação para o Centro de Massa descreve o movimento de uma partícula livre de massa \(M\) ao longo do cristal:</p>
-
-<div class="eq">\[ \left[-\frac{\hbar^{2}}{2M}\nabla_{\mathbf{R}}^{2}\right]\psi(\mathbf{R}) = E_{\text{CM}}\,\psi(\mathbf{R}) \quad\Longrightarrow\quad \psi(\mathbf{R}) = \frac{1}{\sqrt{\mathcal{V}}} e^{i\mathbf{K}\cdot\mathbf{R}}, \quad E_{\text{CM}} = \frac{\hbar^2 K^2}{2M} \tag{2} \] <small>O vetor de onda \(\mathbf{K} = \mathbf{k}_e + \mathbf{k}_h\) representa o momento total do éxciton no cristal, e \(\mathcal{V}\) é o volume de amostragem.</small></div>
-
-<p>A equação para o movimento relativo reduz-se ao problema de dois corpos com massa reduzida \(\mu\):</p>
-
-<div class="eq">\[ \left[-\frac{\hbar^{2}}{2\mu}\nabla_{\mathbf{r}}^{2} - \frac{e^{2}}{4\pi\varepsilon_{0}\varepsilon_{r}r}\right]\phi(\mathbf{r}) = E_{n}\,\phi(\mathbf{r}), \qquad \frac{1}{\mu} = \frac{1}{m_{e}^{*}} + \frac{1}{m_{h}^{*}} \tag{3} \] <small>A massa reduzida \(\mu\) governa o raio e a energia de ligação. Quanto menor for \(\mu\) e maior for \(\varepsilon_r\), mais extenso e fracamente ligado será o éxciton.</small></div>
-
-<p>Os autovalores de energia relativos formam uma série do tipo Rydberg hidrogenoide:</p>
-
-<div class="eq">\[ E_{n} = -\frac{\mu e^{4}}{2\hbar^{2}(4\pi\varepsilon_{0}\varepsilon_{r})^{2}}\frac{1}{n^{2}} = -\frac{Ry^{*}}{n^{2}}, \qquad Ry^{*} = 13{,}6\ \text{eV} \times \frac{\mu/m_{0}}{\varepsilon_{r}^{2}} \quad (n=1,2,3,\dots) \tag{4} \] <small>\(Ry^*\) é a constante de Rydberg efetiva. Para o GaAs (\(\mu \approx 0{,}067\,m_0\), \(\varepsilon_r \approx 12{,}5\)), obtém-se \(Ry^* \approx 4{,}9\text{ meV}\).</small></div>
-
+<h2>3. O que a teoria prevê: séries, raios, brilhantes e escuros</h2>
+<p>Separando o movimento do centro de massa (\(\mathbf R\)) do movimento relativo (\(\mathbf r\)), a função de onda fatora-se e a energia total de um estado excitônico \(n\) com momento de translação \(\mathbf K\) é</p>
+<div class="eq">\[ E(n,\mathbf K)=E_g-\frac{Ry^*}{n^2}+\frac{\hbar^2K^2}{2M} \tag{4} \]<small>O termo \( \hbar^2K^2/2M\) é a energia cinética do par como um todo; ele afeta transporte e luminescência, mas não o limiar óptico. O estado fundamental (\(n=1,\mathbf K=\mathbf 0\)) situa-se a \(Ry^*\) abaixo de \(E_g\).</small></div>
+<p>Os autovalores relativos formam uma série hidrogenoide:</p>
+<div class="eq">\[ E_n=-\frac{Ry^*}{n^2},\qquad Ry^*=13{,}6\ \text{eV}\times \frac{\mu/m_0}{\varepsilon_r^2}\quad (n=1,2,3,\dots) \tag{2} \]<small>\(Ry^*\) é a constante de Rydberg efetiva. No GaAs (\(\mu\approx 0{,}067\,m_0\), \(\varepsilon_r\approx 12{,}5\)), \(Ry^*\approx 4{,}9\) meV.</small></div>
 <p>O raio de Bohr excitônico equivalente define a extensão espacial do par:</p>
-
-<div class="eq">\[ a_{X} = \frac{4\pi\varepsilon_{0}\varepsilon_{r}\hbar^{2}}{\mu e^{2}} = 0{,}529\ \text{\AA} \times \frac{\varepsilon_{r}}{\mu/m_{0}} \tag{5} \] <small>No GaAs, \(a_X \approx 112\ \text{\AA}\), estendendo-se por dezenas de células unitárias (\(a \approx 5{,}65\ \text{\AA}\)), o que valida a aproximação de meio contínuo (Wannier–Mott).</small></div>
-
-<p>A energia total de um estado excitônico \(n\) com momento de translação \(\mathbf{K}\) é dada pela relação de dispersão:</p>
-
-<div class="eq">\[ E(n, \mathbf{K}) = E_{g} - \frac{Ry^{*}}{n^{2}} + \frac{\hbar^{2}K^{2}}{2M} \tag{6} \] <small>O estado fundamental do éxciton (\(n=1, \mathbf{K}=\mathbf{0}\)) posiciona-se a uma energia \(Ry^*\) abaixo do limiar \(E_g\).</small></div>
-
-<h3>2.3. Conservação do momento, estrutura de spin e regras de seleção</h3>
-
-<p>O vetor de onda de um fóton no visível/infravermelho próximo é extremamente pequeno (\(k_{\text{fóton}} \sim 10^{-3}\ \text{\AA}^{-1}\)) quando comparado com a dimensão da zona de Brillouin (\(\pi/a \sim 1\ \text{\AA}^{-1}\)). Pela conservação do momento linear no processo de absorção direta (\(\mathbf{K} = \mathbf{k}_{\text{fóton}} \approx \mathbf{0}\)):</p>
-
-<div class="eq">\[ \hbar\mathbf{K} \approx \mathbf{0} \tag{7} \] <small>Éxcitons com \(\mathbf{K} \approx \mathbf{0}\) designam-se por <b>brilhantes</b> (opticamente ativos). Éxcitons com \(\mathbf{K} \neq \mathbf{0}\) são <b>escuros</b>, exigindo a emissão/absorção de um fônon para satisfazer a conservação do momento.</small></div>
-
-<p>Relativamente ao spin, o par elétron (\(s=1/2\)) e lacuna (\(j=3/2\) para bandas pesadas/leves) combina-se para formar estados ligantes com multiplicidade de spin total. A <b>interação de troca elétron–lacuna</b> (\(H_{\text{ex}}\)) remove a degenerescência entre o estado singleto (\(S=0\)) e o estado tripleto (\(S=1\)). Como a atração de troca aumenta a energia do estado singleto, este posiciona-se energeticamente <b>acima</b> do estado tripleto. Apenas os estados singletos (ou com momento angular total \(J_z = \pm 1\)) acoplam diretamente ao dipolo elétrico da luz, sendo opticamente ativos; os estados tripletos são opticamente proibidos (escuros) na aproximação dipolar.</p>
-
+<div class="eq">\[ a_X=0{,}529\ \text{\AA}\times \frac{\varepsilon_r}{\mu/m_0} \tag{3} \]<small>No GaAs, \(a_X\approx 112\) Å, estendendo-se por dezenas de células unitárias (\(a\approx 5{,}65\) Å), o que valida a EMA.</small></div>
+<p>O limiar óptico de absorção é portanto menor do que o <i>gap</i> eletrônico:</p>
+<div class="eq">\[ E_g^{\text{óptico}}=E_g-Ry^* \tag{5} \]<small>É esta diferença que desloca o início da absorção para energias menores do que \(E_g\).</small></div>
+<p>A conservação de momento no processo de absorção direta impõe \(\hbar\mathbf K\approx \mathbf 0\), porque o vetor de onda do fóton no visível/IV é \(\sim 10^{-3}\) Å\(^{-1}\), desprezível frente à zona de Brillouin. Éxcitons com \(\mathbf K\approx \mathbf 0\) são <b>brilhantes</b> (opticamente ativos); com \(\mathbf K\neq \mathbf 0\), são <b>escuros</b> e exigem emissão/absorção de fônon para satisfazer a conservação de momento.</p>
+<p>Relativamente ao spin, o par elétron (\(s=1/2\)) e lacuna (\(j=3/2\) para bandas pesadas/leves) combina-se em estados singleto (\(S=0\)) e tripleto (\(S=1\)). A interação de troca elétron–lacuna remove a degenerescência: o singleto fica energeticamente acima do tripleto. Apenas o singleto (ou estados com \(J_z=\pm 1\)) acopla diretamente ao dipolo elétrico da luz; os tripletos são opticamente proibidos (escuros) na aproximação dipolar.</p>
 <figure>
 <div class="draw">
 <svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dispersão e estrutura de spin do éxciton">
@@ -223,25 +194,14 @@ html.dark button#modeBtn{background:#1b2a44;border-color:#3a4f75;color:#d9e2f2;b
 </g>
 </svg>
 </div>
-<figcaption><b>Fig. 2 — Dispersão e acoplamento de spin.</b> (a) A dispersão parabólica implica que a transição óptica direta acopla exclusivamente em \(\mathbf{K} \approx \mathbf{0}\). (b) A interação de troca eleva o estado singleto relativamente ao tripleto; o decaimento radiativo direto ocorre apenas a partir do estado singleto.</figcaption>
+<figcaption><b>Figura 2.</b> Dispersão e spin. (a) A transição óptica direta acopla em \(\mathbf Kpprox \mathbf 0\): éxcitons brilhantes; \(\mathbf K
+eq \mathbf 0\) são escuros. (b) A troca eleva o singleto acima do tripleto; só o singleto (\(J_z=\pm 1\)) é opticamente ativo.</figcaption>
 </figure>
+<p class='mapa'><b>Leitura recomendada:</b> Yu–Cardona §§ 6.3 e 6.3.2 (absorção de éxcitons); Dresselhaus § 20.5.1; Grosso e Pastori Parravicini (nível de livro).</p>
 
-<h3>2.4. Absorção Óptica e Teoria de Elliott</h3>
-
-<p>A constante dielétrica interbandas \(\varepsilon_2(\omega)\), que determina o coeficiente de absorção óptica \(\alpha(\omega)\), é descrita quantitativamente pela <b>Fórmula de Elliott</b>. Para transições interbandas diretas permitidas (\(s\)-like, \(l=0\)), a probabilidade de transição depende da densidade de probabilidade de encontrar o elétron e a lacuna no mesmo ponto do espaço, ou seja, \(\lvert\phi_n(0)\rvert^2\):</p>
-
-<div class="eq">\[ \varepsilon_{2}(\omega) = \frac{8\pi^{2} e^{2}}{3\varepsilon_{0}m_{0}^{2}\omega^{2}}\,\lvert\mathbf{p}_{vc}\rvert^{2} \left[ \sum_{n=1}^{\infty} \lvert\phi_{n}(0)\rvert^{2}\,\delta\!\left(\hbar\omega - E_{g} + \frac{Ry^{*}}{n^{2}}\right) + \text{contínuo} \right] \tag{8} \] <small>O elemento de matriz de momento interbandas é \(\mathbf{p}_{vc} = \langle v|\mathbf{p}|c\rangle\). Para estados \(s\) tridimensionais, \(\lvert\phi_{n}(0)\rvert^{2} = \frac{1}{\pi a_{X}^{3}n^{3}}\).</small></div>
-
-<p>A dependência em \(1/n^3\) impõe uma rápida atenuação da intensidade dos picos de absorção à medida que \(n\) aumenta. Os picos aproximam-se do limiar \(E_g\) e fundem-se gradualmente no contínuo.</p>
-
-<p>Para energias superiores ao <i>gap</i> (\(\hbar\omega > E_g\)), os estados não ligados (unbound) do par elétron–lacuna continuam a ser afetados pela atração coulombiana. Esta atração aumenta a probabilidade de sobreposição na origem em relação ao caso não interativo, amplificando o contínuo através do <b>Fator de Sommerfeld</b> \(F_S(\omega)\):</p>
-
-<div class="eq">\[ \varepsilon_{2}(\hbar\omega > E_{g}) \propto \sqrt{\hbar\omega - E_{g}} \times F_{S}(x), \qquad F_{S}(x) = \frac{2\pi x}{1 - e^{-2\pi x}}, \quad x = \sqrt{\frac{Ry^{*}}{\hbar\omega - E_{g}}} \tag{9} \] <small>No limiar (\(\hbar\omega \to E_g^+\)), \(x \to \infty\) e \(F_S \to 2\pi x\), transformando a densidade de estados parabólica \(\sqrt{\hbar\omega-E_g}\) num valor finito não nulo (degrau de absorção). Para \(\hbar\omega \gg E_g\), \(x \to 0\) e \(F_S \to 1\), recuperando o modelo de elétrons livres.</small></div>
-
-<p>O limiar óptico de absorção (<i>optical bandgap</i>) do material é portanto menor do que o <i>gap</i> de partícula única (<i>electronic gap</i>):</p>
-
-<div class="eq">\[ E_{g}^{\text{óptico}} = E_{g} - Ry^{*} \tag{10} \]</div>
-
+<h2>4. Como o éxciton aparece na luz: Elliott e Sommerfeld</h2>
+<p>A constante dielétrica interbandas \(\varepsilon_2(\omega)\), que determina o coeficiente de absorção, descreve-se quantitativamente pela <b>fórmula de Elliott</b>. Para transições diretas permitidas, a probabilidade depende da densidade de probabilidade de encontrar elétron e lacuna no mesmo ponto, \(|\phi_n(0)|^2\). A dependência \(1/n^3\) dos estados \(s\) impõe atenuação rápida da intensidade dos picos à medida que \(n\) aumenta; eles se aproximam de \(E_g\) e fundem-se gradualmente no contínuo.</p>
+<p>Para energias acima do <i>gap</i> (\(\hbar\omega>E_g\)), os pares não ligados continuam afetados pela atração Coulombiana. Essa atração aumenta a sobreposição na origem em relação ao caso não interativo, amplificando o contínuo através do <b>fator de Sommerfeld</b> \(F_S(\omega)\). No limiar (\(\hbar\omega\to E_g^+\)), \(F_S\to 2\pi x\) transforma a densidade de estados parabólica \(\sqrt{\hbar\omega-E_g}\) num valor finito não nulo — um degrau de absorção. Para \(\hbar\omega\gg E_g\), \(F_S\to 1\) e recupera-se o modelo de elétrons livres.</p>
 <figure>
 <div class="draw">
 <svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Espectro de absorção excitônica">
@@ -272,35 +232,23 @@ html.dark button#modeBtn{background:#1b2a44;border-color:#3a4f75;color:#d9e2f2;b
 </g>
 </svg>
 </div>
-<figcaption><b>Fig. 3 — Espectro de absorção óptico com efeitos excitónicos.</b> Absorção ressonante nos estados discretos \(n=1,2,3\) abaixo do <i>gap</i> eletrônico \(E_g\). O gráfico a tracejado indica o comportamento teórico de partículas independentes; a linha contínua inclui o fator de Sommerfeld \(F_S(\omega)\).</figcaption>
+<figcaption><b>Figura 3.</b> Espectro de absorção com éxcitons. Picos discretos \(\propto 1/n^3\) abaixo de \(E_g\); contínuo amplificado pelo fator de Sommerfeld; o limiar óptico é \(E_g-Ry^*\).</figcaption>
 </figure>
+<p class='mapa'><b>Leitura recomendada:</b> Yu–Cardona § 6.3.2 (espectros de absorção de éxcitons); Dresselhaus § 20.5.1; Grosso e Pastori Parravicini (nível de livro).</p>
 
-<h3>2.5. Classificação dos Éxcitons e Complexos Excitônicos</h3>
+<h2>5. Classificação e complexos excitônicos</h2>
+<p><b>Wannier–Mott:</b> \(a_X\gg a\), \(E_b\sim 1\text{--}50\) meV; validade plena da EMA; o par desloca-se livremente pela rede. Característico de semicondutores inorgânicos covalentes (GaAs, Si, Ge, CdTe).</p>
+<p><b>Frenkel:</b> \(a_X\sim a\), \(E_b\sim 0{,}1\text{--}1\) eV; o par está confinado a um único sítio atômico ou molécula. A descrição usa <i>tight-binding</i>: a excitação salta entre sítios vizinhos por uma integral de transferência \(J\), formando uma banda excitônica cuja largura é proporcional a \(z|J|\). Típico de haletos alcalinos (KBr, NaCl) e cristais orgânicos (antraceno, C\(_{60}\)).</p>
+<p><b>Éxcitons ligados (bound excitons):</b> éxcitons aprisionados por potenciais locais de impurezas neutras ou carregadas (doadores \(D^0X\) ou aceitadores \(A^0X\)). Apresentam picos de emissão extremamente estreitos, a energias inferiores às dos éxcitons livres.</p>
+<p><b>Gotas elétron–lacuna (EHL):</b> sob alta densidade de excitação óptica, a distância média entre éxcitons reduz-se até o limite de Mott (\(n_M^{1/3}a_X\approx 0{,}25\)). O gás de éxcitons sofre transição de fase de primeira ordem, ionizando-se num plasma metálico desordenado e degenerado de elétrons e lacunas (observado em Ge e Si a temperaturas criogênicas).</p>
+<p>Os números contam a história. GaAs: \(E_b=4{,}9\) meV, \(a_X=112\) Å; a 300 K (\(k_BT=25{,}9\) meV) os éxcitons ionizam, exigindo temperaturas criogênicas. Cu\(_2\)O: \(Ry^*\approx 96{,}8\) meV; a transição no topo da banda de valência é proibida por paridade para dipolo elétrico no ponto \(\Gamma\), de modo que a absorção direta ocorre apenas para estados excitônicos \(p\) (\(l=1\)), com intensidade \(\propto (n^2-1)/n^5\). Devido ao elevado \(Ry^*\), observam-se linhas nítidas até \(n=25\) — éxcitons gigantes de Rydberg.</p>
+<p class='mapa'><b>Leitura recomendada:</b> Dresselhaus § 20.5.2 (classificação de éxcitons); Yu–Cardona § 7.1.4 (éxcitons e éxcitons ligados); Grosso e Pastori Parravicini (nível de livro).</p>
 
-<p><b>1. Éxciton de Wannier–Mott:</b> \(a_X \gg a\), \(E_b \sim 1\text{--}50\text{ meV}\). Validade plena da Aproximação da Massa Efetiva. O par desloca-se livremente pela rede. Característico de semicondutores inorgânicos covalentes (GaAs, Si, Ge, CdTe).</p>
-
-<p><b>2. Éxciton de Frenkel:</b> \(a_X \sim a\), \(E_b \sim 0{,}1\text{--}1\text{ eV}\). O par está confinado a um único sítio atômico ou molécula. A descrição teórica utiliza o modelo de <i>tight-binding</i> (ligação forte), onde a excitação salta entre sítios vizinhos através de uma integral de transferência \(J\):</p>
-
-<div class="eq">\[ E(\mathbf{k}) = E_{0} + 2J \sum_{\boldsymbol{\delta}} \cos(\mathbf{k}\cdot\boldsymbol{\delta}) \tag{11} \] <small>\(J\) representa o acoplamento dipolo-dipolo entre sítios vizinhos \(\boldsymbol{\delta}\). A largura da banda excitônica é proporcional a \(z|J|\) (\(z\) = número de vizinhos). Típico de haletos alcalinos (KBr, NaCl) e cristais orgânicos (antraceno, C\(_{60}\)).</small></div>
-
-<p><b>3. Éxcitons Ligados (Bound Excitons):</b> Éxcitons aprisionados por potenciais locais criados por impurezas neutras ou carregadas (doadores \(D^0X\) ou aceitadores \(A^0X\)). Apresentam picos de emissão extremamente estreitos localizados a energias inferiores às dos éxcitons livres.</p>
-
-<p><b>4. Gotas Elétron–Lacuna (Electron-Hole Liquid - EHL):</b> Sob alta densidade de excitação óptica, a distância média entre éxcitons reduz-se até o limite de Mott (\(n_M^{1/3} a_X \approx 0{,}25\)). O gás de éxcitons sofre uma transição de fase de primeira ordem, ionizando-se em um plasma metálico desordenado e degenerado de elétrons e lacunas (observado experimentalmente em Ge e Si a temperaturas criogênicas).</p>
-
-<h3>2.6. Poços Quânticos e Efeito Stark Confinado Quântico (QCSE)</h3>
-
-<p>Num poço quântico de largura \(L_z\) (com barreiras ao longo de \(z\)), o movimento de elétrons e lacunas é quantizado na direção perpendicular ao plano. A energia dos subníveis \(n_z\) é dada por:</p>
-
-<div class="eq">\[ E_{n_z} = \frac{\hbar^{2}\pi^{2}n_z^{2}}{2m^{*}L_{z}^{2}} \qquad (n_z = 1, 2, 3, \dots) \tag{12} \] <small>O confinamento remove a degenerescência da banda de valência no ponto \(\Gamma\), separando as transições associadas a lacunas pesadas (<i>heavy holes</i>, hh) e lacunas leves (<i>light holes</i>, lh).</small></div>
-
-<p>Quando a largura do poço se torna menor do que o raio de Bohr tridimensional (\(L_z < a_X\)), a função de onda do par é comprimida espacialmente ao longo de \(z\). No limite bidimensional ideal (\(L_z \to 0\)), a equação de Schrödinger condensa-se na série 2D:</p>
-
-<div class="eq">\[ E_{n}^{(2D)} = -\frac{Ry^{*}}{(n - 1/2)^{2}} \quad (n=1,2,\dots) \quad\Longrightarrow\quad E_{b}^{(2D)}(1s) = 4Ry^{*} \tag{13} \] <small>Em 2D, a energia de ligação do estado fundamental \(1s\) quadruplica em relação ao valor tridimensional. Em poços reais com altura de barreira finita, \(E_b\) cresce suavemente até atingir um máximo para \(L_z \sim a_X\), decrescendo para \(L_z \to 0\) devido ao vazamento da função de onda para as barreiras.</small></div>
-
-<p>A aplicação de um campo elétrico externo \(F\) perpendicular às camadas do poço produz o <b>Efeito Stark Confinado Quântico (QCSE)</b>. O campo deforma o potencial do poço, deslocando o elétron e a lacuna para lados opostos. Isto reduz a sobreposição espacial e desloca o pico de absorção/emissão para energias menores (<i>redshift</i>):</p>
-
-<div class="eq">\[ \Delta E \approx -\frac{1}{2}\alpha_{X} F^{2}, \qquad \alpha_{X} \propto \frac{e^{2}m^{*}L_{z}^{4}}{\hbar^{2}} \tag{14} \] <small>Ao contrário do bulk, onde o campo elétrico ioniza rapidamente o éxciton por efeito túnel, as barreiras do poço impedem a ionização, permitindo a modulação óptica eficiente em dispositivos optoeletrônicos.</small></div>
-
+<h2>6. Confinamento e dimensionalidade</h2>
+<p>Num poço quântico de largura \(L_z\), elétrons e lacunas quantizam-se na direção perpendicular ao plano. O confinamento remove a degenerescência da banda de valência no ponto \(\Gamma\), separando transições associadas a lacunas pesadas (hh) e leves (lh). Quando \(L_z<a_X\), o sistema entra no regime quase-2D e a energia de ligação do estado fundamental quadruplica:</p>
+<div class="eq">\[ E_b^{(2D)}(1s)=4Ry^* \tag{6} \]<small>Em 2D, \(E_n^{(2D)}=-Ry^*/(n-1/2)^2\). Em poços reais com barreira finita, \(E_b\) cresce suavemente até um máximo para \(L_z\sim a_X\), decrescendo para \(L_z\to 0\) devido ao vazamento da função de onda para as barreiras.</small></div>
+<p>A aplicação de um campo elétrico perpendicular às camadas produz o <b>efeito Stark confinado quântico (QCSE)</b>. O campo deforma o potencial do poço, deslocando elétron e lacuna para lados opostos, reduzindo a sobreposição espacial e deslocando o pico para energias menores (redshift). Ao contrário do bulk, onde o campo ioniza rapidamente o éxciton por efeito túnel, as barreiras do poço impedem a ionização, permitindo modulação óptica eficiente.</p>
+<p>Em monocamadas de TMDs (MoS\(_2\), WSe\(_2\)), o gap é direto nos pontos \(K/K'\) e a blindagem dielétrica é extremamente fraca (efeito Keldysh). Resultado: \(E_b\sim 300\text{--}500\) meV, éxcitons estáveis à temperatura ambiente. A adição de cargas permite tríons (\(X^-=2e+1h\) ou \(X^+=1e+2h\)), com energia de ligação adicional \(E_b^{\text{tr}}\sim 20\text{--}40\) meV. Em nanotubos de carbono (1D), o confinamento unidimensional e a reduzida blindagem dão \(E_b\sim 0{,}5\text{--}1\) eV. Em heteroestruturas de van der Waals do tipo II, elétrons e lacunas relaxam para camadas opostas, formando éxcitons intercamadas com dipolo permanente e tempos de vida de recombinação muito longos.</p>
 <figure>
 <div class="draw">
 <svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Poço quântico e efeito Stark confinado">
@@ -338,60 +286,51 @@ html.dark button#modeBtn{background:#1b2a44;border-color:#3a4f75;color:#d9e2f2;b
 </g>
 </svg>
 </div>
-<figcaption><b>Fig. 4 — Estrutura de subníveis e QCSE em poços quânticos.</b> (a) Quantização ao longo de $z$, resultando em desdobramento das bandas de lacunas pesadas (hh1) e leves (lh1). (b) Sob campo elétrico $F$, o pico de absorção sofre um desvio para o vermelho (\(\Delta E \propto F^2\)) acompanhado por uma redução de amplitude.</figcaption>
+<figcaption><b>Figura 4.</b> Confinamento e QCSE. (a) Quantização em poço: subníveis e1, e2 e hh1, lh1. (b) Sob campo elétrico \(F\), o pico sofre redshift \(\propto F^2\) e perde amplitude, sem ionização.</figcaption>
 </figure>
+<p class='mapa'><b>Leitura recomendada:</b> Dresselhaus § 20.5.5 (éxcitons em TMDs) e § 20.5.6; Yu–Cardona § 7.1.4; Grosso e Pastori Parravicini (nível de livro).</p>
 
-<h3>2.7. Sistemas de Dimensão Reduzida (0D, 1D, 2D)</h3>
-
-<p><b>1. Monocamadas de TMDs (MoS\(_2\), WSe\(_2\) — 2D):</b> Materiais de espessura atômica apresentam <i>gap</i> direto nos pontos \(K/K'\) da zona de Brillouin. Devido ao reduzido espessamento do plano e à descontinuidade da constante dielétrica com o meio envolvente (efeito Keldysh), a blindagem dielétrica é extremamente fraca. Isto resulta em energias de ligação gigantescas (\(E_b \sim 300\text{--}500\text{ meV}\)), tornando os éxcitons estáveis à temperatura ambiente. A adição de cargas via efeito de campo permite a formação de <b>tríons</b> (complexos de três partículas: \(X^- = 2e + 1h\) ou \(X^+ = 1e + 2h\)), com energia de ligação adicional \(E_b^{\text{tr}} \sim 20\text{--}40\text{ meV}\):</p>
-
-<div class="eq">\[ \hbar\omega_{X^{\mp}} = E_{g} - E_{b}^{X^0} - E_{b}^{\text{tr}} \tag{15} \]</div>
-
-<p><b>2. Nanotubos de Carbono (1D):</b> O confinamento quântico unidimensional conduz a divergências na densidade de estados (singularidades de van Hove) e a uma reduzida blindagem coulombiana, resultando em \(E_b \sim 0{,}5\text{--}1\text{ eV}\).</p>
-
-<p><b>3. Heteroestruturas de van der Waals (Excitons Intercamadas - Tipo-II):</b> Em heteroestruturas desalinhadas (ex.: MoSe\(_2\)/WSe\(_2\)), os elétrons e as lacunas relaxam para camadas opostas. A separação espacial cria um éxciton intercamadas com dipolo elétrico permanente perpendicular ao plano, aumentando o tempo de vida de recombinação radiativa em várias ordens de grandeza (de picossegundos para nanossegundos/microssegundos).</p>
-
-<h3>2.8. Termodinâmica e Condições de Observabilidade</h3>
-
-<p>Para que os picos excitônicos sejam resolvidos experimentalmente em um espectro de absorção ou luminescência, duas condições físicas devem ser estritamente satisfeitas:</p>
-
-<div class="eq">\[ k_{B}T \ll E_{b}, \qquad n_{\text{imp}}^{-1/3} \gg a_{X} \tag{16} \] <small>A primeira condição previne a ionização térmica do éxciton (\(k_BT < E_b\)). A segunda exige que a distância média entre impurezas seja muito superior ao raio excitônico, evitando a destruição do estado ligado por blindagem de carga livre.</small></div>
-
-<p>Na fotoluminescência (PL), o pico de emissão de um gás de éxcitons em equilíbrio térmico difere ligeiramente do limiar estático devido à energia cinética Maxwell-Boltzmann dos éxcitons em movimento (\(\frac{1}{2}Mv^2\)):</p>
-
-<div class="eq">\[ I_{\text{lum}}(\hbar\omega) \propto (\hbar\omega - E_X)^{1/2} \exp\left(-\frac{\hbar\omega - E_X}{k_B T}\right) \quad\Longrightarrow\quad \langle\hbar\omega\rangle_{\text{lum}} = E_{g}(T) - Ry^{*} + \frac{3}{2}k_{B}T \tag{17} \] <small>O pico de emissão ocorre em \(\hbar\omega_{\text{pico}} = E_X + \frac{1}{2}k_BT\). Note-se que a contração térmica do <i>gap</i> \(E_g(T)\) (descrita pela relação de Varshni) domina a variação com a temperatura a altas temperaturas.</small></div>
-
-<h2>3. Exemplos Numéricos e Comparativos</h2>
-
-<h3>3.1. Estudo de Casos: GaAs vs. Cu\(_2\)O</h3>
-
-<p><b>GaAs (Semicondutor Covalente):</b> \(E_b = 4{,}9\text{ meV}\), \(a_X = 112\ \text{\AA}\). A \(T = 300\text{ K}\) (\(k_BT = 25{,}9\text{ meV}\)), a energia térmica supera amplamente \(E_b\), ionizando os éxcitons. A observação dos picos discretos exige temperaturas criogênicas (\(T < 50\text{ K}\)).</p>
-
-<p><b>Cu\(_2\)O (Óxido Cuproso — Série Amarela):</b> \(Ry^* \approx 96{,}8\text{ meV}\). A transição no topo da banda de valência para a condução é proibida por paridade para dipolo elétrico no ponto \(\Gamma\) (\(s\)-like). Assim, a absorção direta ocorre apenas para estados excitônicos \(p\) (\(l=1\)), cuja intensidade escala com \(\frac{n^2-1}{n^5}\). Devido ao elevado valor de \(Ry^*\), observam-se linhas espectrais nítidas correspondentes a estados altamente excitados até \(n = 25\) (éxcitons gigantes de Rydberg).</p>
-
+<h2>7. Números que importam e condições de observabilidade</h2>
+<p class='tcap'><b>Tabela 1.</b> Energias de ligação e raios excitônicos típicos [Dresselhaus § 20.5; Yu §§ 6.3 e 7.1.4].</p>
 <table>
-<tr><th>Material</th><th>Tipo de Éxciton</th><th>\(E_b\) Exp. (meV)</th><th>Raio \(a_X\) (\AA)</th><th>Estabilidade a 300 K</th></tr>
-<tr><td>GaAs (Bulk)</td><td>Wannier–Mott</td><td>4,9</td><td>112</td><td>Não (\(k_BT \gg E_b\))</td></tr>
-<tr><td>CdTe (Bulk)</td><td>Wannier–Mott</td><td>10,5</td><td>67</td><td>Não</td></tr>
-<tr><td>Cu\(_2\)O (Bulk)</td><td>Wannier–Mott (Intermediário)</td><td>96,8</td><td>9</td><td>Parcial</td></tr>
-<tr><td>GaAs/AlGaAs (Poço 5 nm)</td><td>Quasi-2D</td><td>\(\sim 15\text{--}20\)</td><td>\(\sim 50\)</td><td>Marginal</td></tr>
-<tr><td>MoS\(_2\) (Monocamada)</td><td>2D Confinado / Keldysh</td><td>\(\sim 400\)</td><td>\(\sim 10\text{--}15\)</td><td>Excelente (\(E_b \gg k_BT\))</td></tr>
-<tr><td>KBr (Cristal Iônico)</td><td>Frenkel</td><td>\(\sim 800\text{--}1000\)</td><td>\(< 5\) (Localizado)</td><td>Excelente</td></tr>
+<tr><th>Material</th><th>Tipo de éxciton</th><th>\(E_b\) exp. (meV)</th><th>Raio \(a_X\) (Å)</th><th>Estabilidade a 300 K</th></tr>
+<tr><td>GaAs (bulk)</td><td>Wannier–Mott</td><td>4,9</td><td>112</td><td>Não (\(k_BT \gg E_b\))</td></tr>
+<tr><td>CdTe (bulk)</td><td>Wannier–Mott</td><td>10,5</td><td>67</td><td>Não</td></tr>
+<tr><td>Cu\(_2\)O (bulk)</td><td>Wannier–Mott (intermediário)</td><td>96,8</td><td>9</td><td>Parcial</td></tr>
+<tr><td>GaAs/AlGaAs (poço 5 nm)</td><td>Quasi-2D</td><td>\(\sim\)15–20</td><td>\(\sim\)50</td><td>Marginal</td></tr>
+<tr><td>MoS\(_2\) (monocamada)</td><td>2D confinado / Keldysh</td><td>\(\sim\)400</td><td>\(\sim\)10–15</td><td>Excelente (\(E_b \gg k_BT\))</td></tr>
+<tr><td>KBr (cristal iônico)</td><td>Frenkel</td><td>\(\sim\)800–1000</td><td>\(\sim 5\)</td><td>Excelente</td></tr>
 </table>
+<p>Para que os picos excitônicos sejam resolvidos experimentalmente, duas condições devem ser satisfeitas: \(k_BT\ll E_b\) (evita ionização térmica) e \(n_{\text{imp}}^{-1/3}\gg a_X\) (impurezas suficientemente afastadas). A 300 K, o GaAs (\(E_b=4{,}9\) meV) ioniza; o Cu\(_2\)O (\(96{,}8\) meV) é parcialmente estável; o MoS\(_2\) (\(\sim 400\) meV) é excelente.</p>
+<p>Na fotoluminescência, o pico de emissão de um gás de éxcitons em equilíbrio térmico desloca-se ligeiramente do limiar estático pela energia cinética Maxwell–Boltzmann: \(\langle \hbar\omega\rangle_{\text{lum}}=E_g(T)-Ry^*+\frac32 k_BT\), com pico em \(\hbar\omega_{\text{pico}}=E_X+\frac12 k_BT\). A contração térmica do <i>gap</i> \(E_g(T)\) (relação de Varshni) domina a variação com a temperatura a altas temperaturas.</p>
+<p class='mapa'><b>Leitura recomendada:</b> Dresselhaus § 20.5.1; Yu–Cardona §§ 6.3 e 7.1.4; Grosso e Pastori Parravicini (nível de livro).</p>
 
-<h2>4. Conclusão</h2>
+<h2>8. Termodinâmica e luminescência</h2>
+<p>Na fotoluminescência, o pico de emissão de um gás de éxcitons em equilíbrio térmico desloca-se ligeiramente do limiar estático pela energia cinética Maxwell–Boltzmann: \(\langle \hbar\omega\rangle_{\text{lum}}=E_g(T)-Ry^*+\frac32 k_BT\), com pico em \(\hbar\omega_{\text{pico}}=E_X+\frac12 k_BT\). A contração térmica do <i>gap</i> \(E_g(T)\) (relação de Varshni) domina a variação com a temperatura a altas temperaturas.</p>
+<p class='mapa'><b>Leitura recomendada:</b> Yu–Cardona §§ 6.3 e 7.1.4; Dresselhaus § 20.5; Grosso e Pastori Parravicini (nível de livro).</p>
 
-<p>O éxciton constitui o problema fundamental de dois corpos em física da matéria condensada. A sua descrição teórica através do Hamiltoniano de Wannier–Mott mapeia o par elétron–lacuna no problema do átomo de hidrogênio com massa reduzida \(\mu\) e permissividade do meio \(\varepsilon_r\). As propriedades excitônicas são profundamente alteradas pela dimensionalidade do sistema: enquanto no <i>bulk</i> 3D as energias de ligação são tipicamente de poucos meV, o confinamento quântico 2D e a redução da blindagem dielétrica em nanoestruturas elevam \(E_b\) para centenas de meV, permitindo o controle óptico e quântico da matéria à temperatura ambiente.</p>
+<h2>9. Fecho: dez frases para a prova</h2>
+<ul>
+<li>Sem Coulomb, a absorção começaria abruptamente em \(E_g\); com Coulomb, aparecem picos abaixo do limiar: éxcitons.</li>
+<li>O éxciton é um par elétron–lacuna ligado, descrito como hidrogênio vestido: massa reduzida \(\mu\), carga blindada por \(\varepsilon_r\).</li>
+<li>Wannier–Mott: extenso, meV, EMA válida; Frenkel: localizado, 0,1–1 eV, tight-binding.</li>
+<li>A série hidrogenoide dá \(E_n=-Ry^*/n^2\), com \(Ry^*=13{,}6(\mu/m_0)/\varepsilon_r^2\) eV e \(a_X=0{,}529\varepsilon_r/(\mu/m_0)\) Å.</li>
+<li>O limiar óptico é \(E_g-Ry^*\); o termo cinético do centro de massa \(\hbar^2K^2/2M\) não muda o limiar.</li>
+<li>Conservação de momento: \(\mathbf K\approx \mathbf 0\) são brilhantes; \(\mathbf K\neq \mathbf 0\) são escuros (precisam de fônon).</li>
+<li>Troca: singleto acima do tripleto; só o singleto (\(J_z=\pm 1\)) é opticamente ativo na aproximação dipolar.</li>
+<li>Elliott: intensidade dos picos \(\propto 1/n^3\); Sommerfeld amplifica o contínuo e cria degrau no limiar.</li>
+<li>Confinamento 2D: \(E_b^{(2D)}(1s)=4Ry^*\); TMDs têm \(E_b\sim 300\text{--}500\) meV (estáveis a 300 K).</li>
+<li>Observabilidade exige \(k_BT\ll E_b\) e impurezas afastadas; na PL o pico desloca-se por \(\frac12 k_BT\).</li>
+</ul>
+<p class='mapa'><b>Leitura recomendada:</b> releia as seções 2 a 7 com Yu–Cardona §§ 6.3, 6.3.2 e 7.1.4; Dresselhaus § 20.5 (e subseções); Grosso e Pastori Parravicini (nível de livro).</p>
 
-<h2>Referências Bibliográficas</h2>
-<ol class="ref">
-<li>N. W. Ashcroft e N. D. Mermin, <i>Solid State Physics</i>, Holt–Saunders, 1976.</li>
-<li>M. S. Dresselhaus, G. Dresselhaus e A. Jorio, <i>Solid State Properties: From Bulk to Nano</i>, Springer, 2018.</li>
-<li>P. Hofmann, <i>Solid State Physics</i>, Wiley-VCH, 2ª ed., 2015.</li>
-<li>G. Grosso e G. Pastori Parravicini, <i>Solid State Physics</i>, 2ª ed., Academic Press, 2013.</li>
+<h2>Referências</h2>
+<ol class='ref'>
+<li>Yu, P. Y.; Cardona, M. <i>Fundamentals of Semiconductors</i>. Springer — §§ 6.3 (éxcitons), 6.3.2 (espectros de absorção de éxcitons) e 7.1.4 (éxcitons e éxcitons ligados).</li>
+<li>Dresselhaus, M. S.; Dresselhaus, G.; Jorio, A. <i>Solid State Properties: From Bulk to Nano</i>. Springer, 2018 — § 20.5 (conceito e espectroscopia de éxcitons) e subseções 20.5.1, 20.5.2, 20.5.5 e 20.5.6.</li>
+<li>Ashcroft, N. W.; Mermin, N. D. <i>Solid State Physics</i>. Saunders, 1976 — nível de livro (sem capítulo específico de éxcitons verificado).</li>
+<li>Grosso, G.; Pastori Parravicini, G. <i>Solid State Physics</i>. 2ª ed., Academic Press, 2013 — nível de livro (sem capítulos específicos).</li>
+<li>Programa do concurso (edital) — tópico 4 (éxcitons em sólidos).</li>
 </ol>
-
-<div class="foot"><span>Física da Matéria Condensada · Éxcitons em Sólidos</span><span>Teoria · Confinamento · Diagramas</span></div>
-</div></div>
-</body>
-</html>
+<div class="foot"><span>UFC · Éxcitons em Sólidos · prova escrita</span><span>Panorama · Hidrogênio vestido · Séries · Luz · Classificação · Confinamento · Números</span></div>
+</div></div></body></html>
