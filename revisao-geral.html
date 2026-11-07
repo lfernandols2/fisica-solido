@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset='utf-8'/>
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<title>Revisão Geral — 10 Tópicos | Física do Estado Sólido</title>
+<style>
+:root{--ink:#1a2333;--navy:#1b2a4a;--muted:#5b6b82;--line:#dfe6ef;--bg:#ffffff;}
+*{box-sizing:border-box}
+body{margin:0;background:#eef1f6;color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.65}
+@page{size:A4;margin:18mm 16mm}
+@media print{body{background:#fff}.sheet{box-shadow:none!important;margin:0!important;max-width:none!important;border:none}.inner{padding:0 2mm}.eq{font-size:12.5px;padding:8px;line-height:1.5;page-break-inside:auto}.eq small{font-size:10px}figure{page-break-inside:avoid}table{font-size:11.5px}h2{page-break-after:avoid}section.topic{page-break-before:always}}
+.sheet{max-width:860px;margin:26px auto;background:var(--bg);border:1px solid var(--line);box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.inner{padding:44px 52px}
+@media(max-width:640px){.inner{padding:26px 22px}}
+header.doc-head{border-bottom:3px solid var(--navy);padding-bottom:14px;margin-bottom:18px}
+.doc-head .inst{font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.doc-head h1{font-size:30px;line-height:1.2;margin:8px 0;color:var(--navy)}
+.doc-head .sub{font-style:italic;color:#33415c;font-size:16px}
+.scope{font-family:Arial,Helvetica,sans-serif;font-size:13px;background:#f4f6fa;border:1px solid var(--line);border-left:4px solid var(--navy);padding:10px 14px;margin:16px 0;line-height:1.5}
+h2{font-size:22px;color:var(--navy);margin:30px 0 8px;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3{font-size:18px;color:#24365c;margin:20px 0 6px}
+p{text-align:justify;margin:8px 0}
+ul,ol{margin:6px 0;padding-left:24px}
+li{margin:4px 0}
+.lead{font-size:16px;background:#fbfcfe;border:1px solid var(--line);border-left:4px solid #2f6dbd;padding:10px 14px;margin:10px 0}
+.lead b{color:var(--navy)}
+.src{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:var(--muted);white-space:nowrap}
+.src a{color:#245b98;text-decoration:none}
+.src a:hover{text-decoration:underline}
+.toc{font-family:Arial,Helvetica,sans-serif;font-size:13.5px;columns:2;column-gap:34px;margin:8px 0 4px;padding-left:20px}
+.toc li{margin:4px 0;break-inside:avoid}
+.toc a{color:#245b98;text-decoration:none}
+.toc a:hover{text-decoration:underline}
+@media(max-width:640px){.toc{columns:1}}
+.mapa{font-family:Arial,Helvetica,sans-serif;font-size:12.5px;color:var(--muted);background:#f7f9fc;border-left:3px solid #a9bfd9;padding:8px 12px;margin:12px 0;line-height:1.55}
+.mapa b{color:#24365c}
+.eq{background:#f7f9fc;border:1px solid var(--line);padding:10px 10px;margin:10px 0;text-align:center;font-size:14px;overflow:visible;white-space:normal;word-wrap:break-word;overflow-wrap:anywhere;max-width:100%}
+.eq small{display:block;font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);margin-top:6px;white-space:normal;line-height:1.5}
+.eq mjx-container{overflow:visible !important;max-width:100% !important}
+.eq mjx-container[jax="CHTML"][display="true"]{white-space:normal !important;margin:.4em 0 !important}
+mjx-container[jax="CHTML"][display="true"]{overflow:visible !important}
+figure{margin:14px auto;border:1px solid var(--line);background:#fbfcfe;max-width:760px}
+figure .draw{padding:10px;display:grid;place-items:center;background:#fff}
+figure svg{max-width:100%;height:auto}
+figcaption{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:var(--muted);padding:8px 14px;border-top:1px solid var(--line);text-align:justify;line-height:1.5}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px}
+.tcap{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:var(--muted);margin:12px 0 -8px;line-height:1.45}
+th{background:var(--navy);color:#fff;text-align:left;padding:6px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#f7f9fc}
+.foot{font-family:Arial,Helvetica,sans-serif;font-size:11px;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:10px;display:flex;justify-content:space-between;gap:10px}
+.ref{font-size:15px}
+.ref li{margin:6px 0}
+.check{list-style:none;padding-left:0}
+.check li{margin:5px 0;padding-left:24px;position:relative}
+.check li:before{content:"\2610";position:absolute;left:0;color:var(--navy);font-size:18px;line-height:1.2}
+@media(max-width:640px){table{font-size:11.5px}th,td{padding:5px 6px}}
+</style>
+<style id="dk-style">
+html{color-scheme:light}
+html.dark{color-scheme:dark}
+html.dark body{background:#0b101b;color:#d9e2f2}
+html.dark .sheet{background:#101928;border-color:#26324a;box-shadow:0 6px 30px rgba(0,0,0,.55)}
+html.dark header.doc-head{border-color:#2f6dbd}
+html.dark .doc-head h1{color:#8fc2f7}
+html.dark .doc-head .sub{color:#c1cfe6}
+html.dark .doc-head .inst{color:#7d8fab}
+html.dark .scope{background:#132038;border-color:#26324a;color:#c9d6ee}
+html.dark h2{color:#8fc2f7;border-color:#26324a}
+html.dark h3{color:#a9c6f2}
+html.dark p,html.dark li{color:#d9e2f2}
+html.dark .lead{background:#132038;border-color:#26324a;border-left-color:#2f6dbd;color:#d9e2f2}
+html.dark .lead b{color:#8fc2f7}
+html.dark .src{color:#8fa3c2}
+html.dark .src a{color:#8fc2f7}
+html.dark .toc a{color:#8fc2f7}
+html.dark .mapa{background:#132038;color:#a9bbe0;border-color:#3a4f75}
+html.dark .mapa b{color:#a9c6f2}
+html.dark .eq{background:#131f33;border-color:#26324a;color:#e6eefb}
+html.dark .eq small{color:#8fa3c2}
+html.dark figure{background:#101928;border-color:#26324a}
+html.dark figure .draw{background:#0c1524}
+html.dark figure .draw svg{filter:invert(.92) hue-rotate(180deg)}
+html.dark figcaption{color:#8fa3c2;border-color:#26324a}
+html.dark .tcap{color:#8fa3c2}
+html.dark th{background:#17345e;color:#eaf2ff}
+html.dark td{border-color:#22314c;color:#d9e2f2}
+html.dark tr:nth-child(even) td{background:#132038}
+html.dark .foot{color:#8fa3c2;border-color:#26324a}
+html.dark a{color:#8fc2f7}
+html.dark mjx-container{color:#e6eefb}
+html.dark small{color:#a9bbe0}
+html.dark .check li:before{color:#8fc2f7}
+body,.sheet,.eq,figure,h1,h2,h3,th,td,figcaption,.tcap,.lead,.mapa{transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+button#modeBtn{position:fixed;top:12px;right:12px;z-index:999;font-family:Arial,Helvetica,sans-serif;font-size:12px;padding:7px 14px;border-radius:999px;border:1px solid #cdd6e4;background:#ffffff;color:#26324a;cursor:pointer;opacity:.9;transition:opacity .15s,background .2s,color .2s;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+button#modeBtn:hover{opacity:1}
+html.dark button#modeBtn{background:#1b2a44;border-color:#3a4f75;color:#d9e2f2;box-shadow:none}
+</style>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},chtml:{scale:.95,linebreaks:{automatic:true,width:'container'}},options:{enableMenu:false}};</script>
+<script async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
+<script id="dk-script">(function(){var DT=document.documentElement;function store(on){try{localStorage.setItem('darkmode',on?'1':'0')}catch(e){}}function label(on){var b=document.getElementById('modeBtn');if(!b)return;b.textContent=on?'\u2600\u00a0Modo claro':'\u263E\u00a0Modo noturno';b.title='Alternar modo claro/noturno';}function set(on){DT.classList.toggle('dark',!!on);store(on);label(on);}function mk(){var b=document.getElementById('modeBtn');if(!b){b=document.createElement('button');b.id='modeBtn';b.type='button';b.title='Alternar modo claro/noturno';(document.body||DT).appendChild(b);}if(!b._dk){b._dk=true;b.addEventListener('click',function(){set(!DT.classList.contains('dark'))});}b.type='button';b.removeAttribute('href');b.style.cursor='pointer';return b;}var p=null,auto=false;try{p=localStorage.getItem('darkmode')}catch(e){}auto=(p===null)&&!!(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);set(p!==null?p==='1':auto);function go(){mk();label(DT.classList.contains('dark'));}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',go);}else{go();}})();</script>
+</head>
+<body>
+<button id="modeBtn" type="button" title="Alternar modo claro/noturno">&#9784;&nbsp;Modo</button>
+<div class='sheet'><div class='inner'>
+
+<header class='doc-head'>
+<div class='inst'>Departamento de Física · UFC — Física do Estado Sólido Experimental</div>
+<h1>Revisão Geral dos 10 Tópicos</h1>
+<div class='sub'>Folha de véspera do edital CCV002 (ANEXO I, p. 31): o esqueleto conceitual, as fórmulas de bolso, os números que a banca cobra e as confusões que derrubam — tópico por tópico.</div>
+</header>
+
+<div class='scope'><b>Como usar.</b> Cada bloco é independente e cabe em uma revisão curta. Comece pelo <b>mapa dos 10 tópicos</b>, depois leia o <b>essencial</b>, confira as <b>fórmulas</b>, memorize os <b>números-âncora</b> e termine nas <b>pegadinhas</b>. O texto é um resumo: a dedução completa, as figuras e as referências estão na nota de cada tópico, linkada no título da seção. Constantes e conversões úteis estão no fim.</div>
+
+<h2>Mapa dos 10 tópicos</h2>
+<p class='tcap'>Tabela 1. Uma ideia e uma fórmula-âncora por tópico. Se você souber explicar a coluna “ideia” sem olhar, a prova já tem um esqueleto.</p>
+<table>
+<tr><th>#</th><th>Tópico</th><th>Ideia em uma linha</th><th>Fórmula-âncora</th></tr>
+<tr><td>1</td><td>Estruturas cristalinas</td><td>A rede é a periodicidade; a base é o conteúdo. O espaço recíproco é a linguagem das ondas no cristal.</td><td>\(\mathbf a_i\cdot\mathbf b_j=2\pi\delta_{ij}\)</td></tr>
+<tr><td>2</td><td>Estrutura de bandas</td><td>Potencial periódico organiza os estados em bandas \(E_n(\mathbf k)\), com \(\mathbf k\) na primeira zona.</td><td>\(\psi_{n\mathbf k}=e^{i\mathbf k\cdot\mathbf r}u_{n\mathbf k}\)</td></tr>
+<tr><td>3</td><td>Fônons</td><td>As vibrações coletivas viram quanta; a conta de modos e a estatística de Bose explicam o calor específico.</td><td>\(\omega(k)=2\sqrt{\gamma/M}\,|\sin(ka/2)|\)</td></tr>
+<tr><td>4</td><td>Éxcitons</td><td>Elétron e buraco atraídos formam um hidrogênio vestido, com níveis abaixo de \(E_g\).</td><td>\(E_n=E_g-\dfrac{Ry^*}{n^2}\)</td></tr>
+<tr><td>5</td><td>Acoplamento elétron-fônon</td><td>A rede nunca é estática: o acoplamento gera resistividade, polarons, transições indiretas e a cola BCS.</td><td>\(\alpha\propto\left(\dfrac{1}{\varepsilon_\infty}-\dfrac{1}{\varepsilon_0}\right)\)</td></tr>
+<tr><td>6</td><td>Plasmons</td><td>A nuvem eletrônica oscila coletivamente; a mesma resposta explica reflexão metálica e blindagem.</td><td>\(\omega_p^2=\dfrac{ne^2}{\varepsilon_0 m}\)</td></tr>
+<tr><td>7</td><td>Semicondutores</td><td>Gap desenhável: dopagem escolhe portadores; transporte, óptica e junções montam o dispositivo.</td><td>\(np=n_i^2\)</td></tr>
+<tr><td>8</td><td>Dielétricos</td><td>Quatro mecanismos de polarização respondem em faixas diferentes; ferroelétricos lembram e histerese.</td><td>\(\varepsilon_r=1+\chi_e\)</td></tr>
+<tr><td>9</td><td>Magnetismo</td><td>Momentos quânticos e troca produzem ordem coletiva; domínios e histerese tornam o ímã útil.</td><td>\(\chi=\dfrac{C}{T-\theta_p}\)</td></tr>
+<tr><td>10</td><td>Óptica</td><td>\(\varepsilon(\omega)\) é a gramática: absorção, reflexão, reststrahlen, plasma, éxcitons e luminescência.</td><td>\(\tilde n^2=\varepsilon_1+i\varepsilon_2\)</td></tr>
+</table>
+
+<h2>Sumário</h2>
+<ol class='toc'>
+<li><a href='#t1'>Estruturas cristalinas e redes recíprocas</a></li>
+<li><a href='#t2'>Estrutura de bandas eletrônicas</a></li>
+<li><a href='#t3'>Fônons em sólidos</a></li>
+<li><a href='#t4'>Éxcitons em sólidos</a></li>
+<li><a href='#t5'>Acoplamento elétron-fônon</a></li>
+<li><a href='#t6'>Plasmons em gás de elétrons</a></li>
+<li><a href='#t7'>Propriedades de materiais semicondutores</a></li>
+<li><a href='#t8'>Propriedades dielétricas de sólidos</a></li>
+<li><a href='#t9'>Propriedades magnéticas de sólidos</a></li>
+<li><a href='#t10'>Propriedades ópticas de sólidos</a></li>
+<li><a href='#constantes'>Constantes, conversões e checklist</a></li>
+</ol>
+
+<section class='topic' id='t1'>
+<h2>1. Estruturas Cristalinas e Redes Recíprocas <span class='src'><a href='01-estruturas-cristalinas-redes-reciprocas.html'>nota completa →</a></span></h2>
+<p class='lead'><b>Em uma frase.</b> A rede de Bravais codifica a periodicidade; a base diz o que há em cada célula; a rede recíproca é a construção que transforma essa periodicidade na geometria natural de ondas, bandas e difração.</p>
+
+<h3>O essencial</h3>
+<ul>
+<li><b>Rede de Bravais</b> é o conjunto de pontos equivalentes por translação, \(\mathbf R=n_1\mathbf a_1+n_2\mathbf a_2+n_3\mathbf a_3\). O cristal é <b>rede + base</b>: \(\mathbf r_{n,j}=\mathbf R_n+\mathbf d_j\).</li>
+<li>Uma estrutura com “favo de mel” <b>não</b> é Bravais: o grafeno e o h-BN têm rede hexagonal com <b>dois átomos na base</b>. Diamante e blenda de zinco são FCC com base de dois átomos; NaCl é FCC com dois íons na base.</li>
+<li><b>Célula primitiva</b> é a de menor volume; a de Wigner–Seitz é a primitiva canônica construída pelos planos bissetores. Há 7 sistemas cristalinos e 14 redes de Bravais em 3D.</li>
+<li><b>Índices de Miller</b> \((hkl)\): recíprocos dos interceptos, reduzidos a inteiros. A direção \([uvw]\) está contida no plano \((hkl)\) quando \(hu+kv+lw=0\).</li>
+<li><b>Rede recíproca:</b> vetores \(\mathbf b_i\) tais que \(\mathbf a_i\cdot\mathbf b_j=2\pi\delta_{ij}\); todo vetor \(\mathbf G=h\mathbf b_1+k\mathbf b_2+l\mathbf b_3\) satisfaz \(e^{i\mathbf G\cdot\mathbf R}=1\).</li>
+<li>A <b>primeira zona de Brillouin</b> é a célula de Wigner–Seitz da rede recíproca. Pontos especiais: \(\Gamma\) (centro), X, L, W, K (FCC); \(\Gamma\), H, N, P (BCC).</li>
+<li><b>Dualidade:</b> a recíproca da FCC é BCC e vice-versa; a cúbica simples é autodual; a hexagonal é hexagonal girada de \(30^\circ\).</li>
+<li><b>Difração:</b> Bragg \(2d_{hkl}\sin\theta=n\lambda\) e Laue \(\mathbf k'-\mathbf k=\mathbf G\). As duas condições são a mesma afirmação geométrica.</li>
+<li><b>Fator de estrutura</b> \(S(\mathbf G)=\sum_j f_j(\mathbf G)e^{-i\mathbf G\cdot\mathbf d_j}\). O fator atômico \(f_j\) cai com \(|\mathbf G|\); o fator de estrutura pode anular reflexões por interferência entre a base (ausências sistemáticas).</li>
+<li>Há exatamente \(N\) valores de \(\mathbf k\) por banda (para \(N\) células), e \(\sum_{\mathbf k}\to \frac{V}{(2\pi)^3}\int_{\rm BZ}d^3k\).</li>
+</ul>
+
+<h3>Fórmulas de bolso</h3>
+<div class='eq'>\[
+\mathbf b_1=2\pi\frac{\mathbf a_2\times\mathbf a_3}{\mathbf a_1\cdot(\mathbf a_2\times\mathbf a_3)},\qquad
+\mathbf b_2=2\pi\frac{\mathbf a_3\times\mathbf a_1}{\mathbf a_2\cdot(\mathbf a_3\times\mathbf a_1)},\qquad
+\mathbf b_3=2\pi\frac{\mathbf a_1\times\mathbf a_2}{\mathbf a_3\cdot(\mathbf a_1\times\mathbf a_2)}
+\]
+<small>Convenção da física, com o fator \(2\pi\). Na cristalografia às vezes se omite o \(2\pi\); não misture as duas convenções.</small></div>
+<div class='eq'>\[
+d_{hkl}=\frac{2\pi}{|\mathbf G_{hkl}|},\qquad
+d_{hkl}=\frac{a}{\sqrt{h^2+k^2+l^2}}\ \text{(cúbico)},\qquad
+2d_{hkl}\sin\theta=n\lambda
+\]
+<small>Planos densos têm \(|\mathbf G|\) pequeno e \(d\) grande; são os primeiros a difratar.</small></div>
+<div class='eq'>\[
+\mathbf k'-\mathbf k=\mathbf G_{hkl},\qquad
+S(\mathbf G)=\sum_{j=1}^{N_{\rm base}}f_j(\mathbf G)\,e^{-i\mathbf G\cdot\mathbf d_j}
+\]
+<small>Laue e Bragg são equivalentes. A intensidade medida é proporcional a \(|S(\mathbf G)|^2\), não a \(S\).</small></div>
+
+<h3>Números e comparações</h3>
+<table>
+<tr><th>Estrutura</th><th>Rede de Bravais</th><th>Base</th><th>Leitura rápida</th></tr>
+<tr><td>Grafeno / h-BN</td><td>Hexagonal</td><td>2 átomos</td><td>O favo não é Bravais; K e K′ são os pontos de Dirac.</td></tr>
+<tr><td>Diamante</td><td>FCC</td><td>2 átomos iguais</td><td>Gap indireto ≈ 5,47 eV; 8 átomos na célula convencional.</td></tr>
+<tr><td>Blenda de zinco (GaAs, ZnS)</td><td>FCC</td><td>2 átomos diferentes</td><td>Sem centro de inversão: piezoelétrico e óptico não linear.</td></tr>
+<tr><td>NaCl</td><td>FCC</td><td>Na⁺ e Cl⁻</td><td>Fator de estrutura alterna com a paridade de \(h+k+l\).</td></tr>
+<tr><td>FCC ↔ BCC</td><td>Recíprocas</td><td>—</td><td>A recíproca da FCC é BCC; a da BCC é FCC.</td></tr>
+</table>
+
+<div class='mapa'><b>Não confunda.</b> (i) Estrutura de favo de mel não é rede de Bravais — é rede hexagonal + base de dois átomos. (ii) A célula de Wigner–Seitz é primitiva; a célula convencional cúbica não é. (iii) Nem todo plano de Bragg é face da primeira zona. (iv) \(S(\mathbf G)=0\) é interferência da base; \(f(\mathbf G)\) pequeno é forma atômica. (v) O \(2\pi\) da rede recíproca não é decorativo: ele fixa a condição de Laue e o volume da zona.</div>
+</section>
+
+<section class='topic' id='t2'>
+<h2>2. Estrutura de Bandas Eletrônicas em Sólidos <span class='src'><a href='02-estrutura-de-bandas-eletronicas.html'>nota completa →</a></span></h2>
+<p class='lead'><b>Em uma frase.</b> Em um potencial periódico, os elétrons não têm mais um espectro contínuo: ganham bandas \(E_n(\mathbf k)\) indexadas por um vetor de onda da primeira zona, e é a ocupação dessas bandas que separa metal, semimetal, semicondutor e isolante.</p>
+
+<h3>O essencial</h3>
+<ul>
+<li><b>Born–Oppenheimer:</b> núcleos pesados e lentos; os elétrons respondem ao potencial efetivo periódico \(V_{\rm eff}(\mathbf r+\mathbf R)=V_{\rm eff}(\mathbf r)\).</li>
+<li><b>Teorema de Bloch:</b> \(\psi_{n\mathbf k}(\mathbf r+\mathbf R)=e^{i\mathbf k\cdot\mathbf R}\psi_{n\mathbf k}(\mathbf r)\), ou \(\psi_{n\mathbf k}=e^{i\mathbf k\cdot\mathbf r}u_{n\mathbf k}\), com \(u\) periódica. Consequência: \(E_n(\mathbf k+\mathbf G)=E_n(\mathbf k)\).</li>
+<li><b>Elétron livre:</b> \(E=\hbar^2k^2/2m_0\), \(k_F=(3\pi^2n_e)^{1/3}\). A superfície de Fermi é uma esfera.</li>
+<li><b>Quase livre:</b> no plano de Bragg \(2\mathbf k\cdot\mathbf G=G^2\), dois estados degeneram; o potencial periódico os mistura e abre um gap local \(\Delta_{\mathbf G}=2|V_{\mathbf G}|\) na aproximação de dois estados.</li>
+<li><b>Ligação forte:</b> orbitais localizados com hopping \(t\); cadeia 1D \(E(k)=\varepsilon_0-2t\cos(ka)\), largura \(W=4|t|\); cúbica simples \(W=12|t|\). No grafeno, duas sub-redes dão cones de Dirac \(E_\pm\simeq E_D\pm\hbar v_F|\mathbf q|\).</li>
+<li><b>Três representações:</b> zona reduzida (tudo na primeira BZ), estendida (bandas repetidas em várias zonas) e repetida (esquema periódico). São a mesma física; mudam só a forma de desenhar.</li>
+<li><b>Gap fundamental</b> \(E_g=\min E_c-\max E_v\) (global, em qualquer \(\mathbf k\)); <b>gap óptico</b> é o limiar vertical no mesmo \(\mathbf k\). São iguais no gap direto e diferentes no indireto.</li>
+<li><b>Velocidade e massa:</b> \(\mathbf v=\frac1\hbar\nabla_{\mathbf k}E\); a massa efetiva é a curvatura invertida, um tensor. Buraco = ausência de elétron com massa positiva e carga \(+e\).</li>
+<li><b>Dinâmica semiclássica:</b> \(\dot{\mathbf r}=\frac1\hbar\nabla_{\mathbf k}E\), \(\hbar\dot{\mathbf k}=-e[\boldsymbol{\mathcal E}+\dot{\mathbf r}\times\mathbf B]\); vale longe de transições interbanda e desprezando Berry.</li>
+<li><b>Classificação:</b> metal (banda parcialmente ocupada), semimetal (bolsões se sobrepõem), semicondutor/isolante (gap com Fermi na região proibida). A fronteira semicondutor/isolante é operacional, não um limiar universal.</li>
+<li><b>Dopagem:</b> doadores/aceitadores rasos, níveis hidrogenoides; \(n_i=\sqrt{N_cN_v}e^{-E_g/2k_BT}\), \(np=n_i^2\).</li>
+<li><b>Exemplos:</b> Na e Al quase livres; Cu com bandas 3d e sp; Si e Ge indiretos; GaAs direto; diamante de gap largo; grafeno sem gap no modelo simples; Bi semimetal.</li>
+</ul>
+
+<h3>Fórmulas de bolso</h3>
+<div class='eq'>\[
+\psi_{n\mathbf k}(\mathbf r)=e^{i\mathbf k\cdot\mathbf r}u_{n\mathbf k}(\mathbf r),\qquad
+u_{n\mathbf k}(\mathbf r+\mathbf R)=u_{n\mathbf k}(\mathbf r),\qquad
+E_n(\mathbf k+\mathbf G)=E_n(\mathbf k)
+\]
+<small>\(\mathbf k\) é momento de cristal, não momento mecânico; \(-\frac{i}{\hbar}\nabla\) não comuta com o potencial periódico.</small></div>
+<div class='eq'>\[
+H_{2\times2}=
+\begin{pmatrix}
+E^{(0)}(\mathbf k)+V_0 & V_{\mathbf G}\\
+V_{\mathbf G}^{*} & E^{(0)}(\mathbf k-\mathbf G)+V_0
+\end{pmatrix},\qquad
+\Delta_{\mathbf G}=2|V_{\mathbf G}|
+\]
+<small>O gap de \(2|V_{\mathbf G}|\) vale no plano de degenerescência, na aproximação de dois estados; não é uma fórmula universal para todos os gaps.</small></div>
+<div class='eq'>\[
+E(k)=\varepsilon_0-2t\cos(ka)\ \text{(1D)},\qquad
+E_\pm(\mathbf k)=\varepsilon_p\pm|t|\,|f(\mathbf k)|\ \text{(grafeno)}
+\]
+<small>Na cadeia 1D, \(W=4|t|\); na cúbica simples, \(W=12|t|\). No grafeno, perto de K, \(E_\pm\simeq E_D\pm\hbar v_F|\mathbf q|\).</small></div>
+<div class='eq'>\[
+\mathbf v_n(\mathbf k)=\frac1\hbar\nabla_{\mathbf k}E_n,\qquad
+(m^{*-1})_{ij}=\frac{1}{\hbar^2}\frac{\partial^2E_n}{\partial k_i\partial k_j}
+\]
+<small>Massa efetiva é tensor; em um mínimo a curvatura é positiva, em um máximo (buraco) a massa do buraco é positiva.</small></div>
+<div class='eq'>\[
+n_i=\sqrt{N_cN_v}\,e^{-E_g/(2k_BT)},\qquad n_ep=n_i^2,\qquad
+E_{D,\nu}=E_c-\frac{m^*}{m_0}\frac{13{,}6\ \mathrm{eV}}{\varepsilon_r^2\nu^2}
+\]
+<small>Regime não degenerado e bandas parabólicas. O doador raso é um hidrogênio com massa efetiva e carga blindada.</small></div>
+
+<h3>Números e comparações</h3>
+<table>
+<tr><th>Material</th><th>Classificação</th><th>\(E_g\)</th><th>Leitura rápida</th></tr>
+<tr><td>Na</td><td>Metal</td><td>—</td><td>Banda 3s parcialmente ocupada; Fermi quase esférico.</td></tr>
+<tr><td>Cu</td><td>Metal</td><td>—</td><td>Bandas 3d ocupadas + banda sp que cruza \(E_F\).</td></tr>
+<tr><td>Si</td><td>Semicondutor indireto</td><td>1,12 eV</td><td>Seis vales em Δ (Γ–X); \(m_l\approx0{,}98m_0\), \(m_t\approx0{,}19m_0\).</td></tr>
+<tr><td>Ge</td><td>Semicondutor indireto</td><td>0,66 eV</td><td>Mínimos em L; valência em Γ.</td></tr>
+<tr><td>GaAs</td><td>Semicondutor direto</td><td>1,42 eV</td><td>Mínimo em Γ; \(m^*\approx0{,}067m_0\); LED/laser.</td></tr>
+<tr><td>Diamante</td><td>Gap largo indireto</td><td>5,47 eV</td><td>Isolante quando puro; transparente no visível.</td></tr>
+<tr><td>Grafeno</td><td>Semimetal de contato</td><td>0 (modelo)</td><td>Cones em K e K′; spin–órbita desprezada.</td></tr>
+</table>
+
+<div class='mapa'><b>Não confunda.</b> (i) \(\mathbf k\) não é o momento do elétron; é o momento de cristal. (ii) \(E_n(\mathbf k)\) é periódica na rede recíproca. (iii) Largura de banda não é gap; gap local no plano de Bragg não é gap global. (iv) Massa efetiva é tensor e pode ser negativa — buraco não é “elétron com massa negativa” na conta final. (v) Gap direto e indireto não são a mesma transição. (vi) Metal, semimetal e semicondutor se distinguem pela ocupação e pela topologia da superfície de Fermi, não só pelo valor de \(E_g\).</div>
+</section>
+
+<section class='topic' id='t3'>
+<h2>3. Fônons em Sólidos <span class='src'><a href='03-fonons-em-solidos.html'>nota completa →</a></span></h2>
+<p class='lead'><b>Em uma frase.</b> Na aproximação harmônica, os átomos viram osciladores acoplados; os modos normais quantizados são os fônons, e a contagem \(3N\) mais a estatística de Bose–Einstein explicam calor específico, condutividade térmica e o acoplamento com a luz.</p>
+
+<h3>O essencial</h3>
+<ul>
+<li><b>Aproximação harmônica:</b> expande o potencial até segunda ordem nos deslocamentos. Um cristal com \(N\) átomos tem \(3N\) modos; com \(p\) átomos na base, \(3p\) ramos: 3 acústicos e \(3(p-1)\) ópticos.</li>
+<li><b>Cadeia monoatômica:</b> \(\omega(k)=2\sqrt{\gamma/M}|\sin(ka/2)|\). No limite \(k\to0\), \(\omega\simeq v k\), com \(v=a\sqrt{\gamma/M}\) (velocidade do som). Na borda da zona, \(\omega\) é máximo e a onda é estacionária.</li>
+<li><b>Cadeia diatômica:</b> dois ramos. O acústico vai a zero em \(k=0\) (átomos em fase); o óptico permanece finito (átomos em contra-fase). O gap óptico fecha quando \(M_1=M_2\).</li>
+<li><b>Born–von Kármán:</b> condição cíclica quantiza \(\mathbf k\). Há \(N\) valores por banda; a primeira zona basta. A densidade de estados em \(\mathbf k\) é \(V/(2\pi)^3\).</li>
+<li><b>Quantização:</b> cada modo é um oscilador de energia \((n+\tfrac12)\hbar\omega\); o quantum é o fônon. A energia de ponto zero existe e a ocupação é Bose–Einstein.</li>
+<li><b>Calor específico:</b> Dulong–Petit \(C=3R\) é o limite clássico de alta temperatura. Einstein dá queda exponencial (modos de mesma frequência); Debye usa \(g(\omega)\propto\omega^2\) e corte em \(\omega_D\), reproduzindo \(C\propto T^3\) em baixa temperatura.</li>
+<li><b>Condutividade térmica:</b> \(\kappa=\kappa_p+\kappa_e\); nos isolantes só fônons, nos metais os elétrons dominam. \(\kappa_p=\frac13 c\lambda_p v_p\). O pico perto de \(0{,}1\Theta_D\) separa o regime de capacidade térmica do regime de espalhamento fôno–fôno.</li>
+<li><b>Anarmonicidade:</b> necessária para expansão térmica, resistência térmica finita e fusão. O processo <b>umklapp</b> (vetor de onda grande) é o que degrada o fluxo de calor; processos normais conservam o momento total.</li>
+<li><b>Óptica:</b> modos polares (que geram dipolo) são IR-ativos; modos que deformam a polarizabilidade são Raman-ativos. Em cristais centrosimétricos vale a regra de exclusão mútua; em não centrosimétricos, o mesmo modo pode aparecer nas duas técnicas.</li>
+<li><b>Exemplos:</b> Al (base monoatômica) só tem ramos acústicos; Si e diamante (base diatômica) têm 6 ramos. \(\Theta_D\): Pb 105 K, Si 645 K, diamante 1860 K; \(\kappa\) do diamante ≈ 2300 W m⁻¹ K⁻¹.</li>
+</ul>
+
+<h3>Fórmulas de bolso</h3>
+<div class='eq'>\[
+\omega(k)=2\sqrt{\frac{\gamma}{M}}\left|\sin\frac{ka}{2}\right|,\qquad
+\omega(k)\simeq v k,\qquad v=a\sqrt{\frac{\gamma}{M}}
+\]
+<small>Cadeia monoatômica. A dispersão é periódica em \(2\pi/a\) e simétrica em \(k\to-k\).</small></div>
+<div class='eq'>\[
+\omega_{\rm op}(0)=\sqrt{\frac{2\gamma}{\mu}},\qquad
+\mu=\frac{M_1M_2}{M_1+M_2},\qquad
+\omega_{\rm ac}(k\to0)\simeq b\sqrt{\frac{\gamma}{2(M_1+M_2)}}\,k
+\]
+<small>No modo óptico os átomos se movem em oposição de fase; no acústico, em fase.</small></div>
+<div class='eq'>\[
+E=\sum_{\mathbf k}\left(n_{\mathbf k}+\tfrac12\right)\hbar\omega(\mathbf k),\qquad
+\langle n\rangle=\frac{1}{e^{\hbar\omega/k_BT}-1}
+\]
+<small>Energia de ponto zero \(\tfrac12\hbar\omega\) por modo; a ocupação é Bose–Einstein.</small></div>
+<div class='eq'>\[
+C_V=3R\ \text{(Dulong–Petit)},\qquad
+C=\frac{12\pi^4}{5}Nk_B\left(\frac{T}{\Theta_D}\right)^3\ \text{(Debye, baixa }T)
+\]
+<small>\(\Theta_D=\hbar\omega_D/k_B\), com \(\omega_D^3=6\pi^2(N/V)v^3\). A lei \(T^3\) vale para \(T\ll\Theta_D\).</small></div>
+<div class='eq'>\[
+\kappa_p=\frac13 c\,\lambda_p\,v_p,\qquad
+\kappa=\kappa_p+\kappa_e
+\]
+<small>\(c\) é o calor específico por volume, \(\lambda_p\) o caminho livre médio do fônon e \(v_p\) a velocidade típica.</small></div>
+
+<h3>Números e comparações</h3>
+<table>
+<tr><th>Material</th><th>Base</th><th>Ramos</th><th>\(\Theta_D\) (K)</th><th>Leitura rápida</th></tr>
+<tr><td>Al</td><td>1 átomo</td><td>3 acústicos</td><td>395</td><td>Metal; calor também conduzido por elétrons.</td></tr>
+<tr><td>Si</td><td>2 átomos</td><td>3 ac. + 3 ópt.</td><td>645</td><td>Covalente; \(\kappa\approx150\) W m⁻¹ K⁻¹, dominado por fônons.</td></tr>
+<tr><td>Diamante</td><td>2 átomos</td><td>3 ac. + 3 ópt.</td><td>1860</td><td>Ligação rígida e átomo leve: maior \(\kappa\) entre os sólidos comuns.</td></tr>
+<tr><td>Pb</td><td>1 átomo</td><td>3 acústicos</td><td>105</td><td>Átomo pesado e ligação fraca: clássico já perto de 77 K.</td></tr>
+</table>
+
+<div class='mapa'><b>Não confunda.</b> (i) \(\omega(k)\) é periódica na rede recíproca, como \(E_n(k)\). (ii) Velocidade de fase \(\omega/k\) e de grupo \(\partial\omega/\partial k\) só coincidem no limite acústico linear. (iii) Acústico não é “som audível”; é o ramo que vai a zero em \(k=0\). (iv) O número de ramos é \(3p\), não \(3N\). (v) Einstein não dá \(T^3\); Debye dá. (vi) Harmônico puro não tem resistência térmica finita — precisa de anarmonicidade/umklapp. (vii) Modo óptico não é automaticamente IR-ativo: precisa gerar dipolo.</div>
+</section>
+
+<section class='topic' id='t4'>
+<h2>4. Éxcitons em Sólidos <span class='src'><a href='04-excitons-em-solidos.html'>nota completa →</a></span></h2>
+<p class='lead'><b>Em uma frase.</b> O elétron excitado e o buraco que ele deixa se atraem; o par ligado é o éxciton, um hidrogênio “vestido” pelo cristal, com níveis discretos abaixo do gap e assinatura direta na absorção e na luminescência.</p>
+
+<h3>O essencial</h3>
+<ul>
+<li>Sem Coulomb, a absorção começaria em \(E_g\). Com Coulomb, aparecem picos <b>abaixo</b> de \(E_g\): os éxcitons. O éxciton é neutro; não é um portador livre.</li>
+<li><b>Wannier–Mott:</b> par extenso, raio de muitas células, ligação de meV, descrição de massa efetiva válida. Típico de semicondutores de gap pequeno e \(\varepsilon_r\) grande.</li>
+<li><b>Frenkel:</b> par localizado, raio de ordem de uma célula, ligação de 0,1–1 eV; descrição de ligação forte. Típico de isolantes iônicos e cristais moleculares.</li>
+<li><b>Série hidrogenoide:</b> \(E_n=E_g-Ry^*/n^2\), com \(Ry^*=13{,}6(\mu/m_0)/\varepsilon_r^2\) eV e \(a_X=0{,}529\,\varepsilon_r/(\mu/m_0)\) Å.</li>
+<li>O <b>limiar óptico</b> é \(E_g-Ry^*\) (estado \(1s\)). O termo de centro de massa \(\hbar^2K^2/2M\) desloca a linha em energia, mas não o limiar de absorção vertical.</li>
+<li><b>Brilhante vs escuro:</b> conservação de momento pede \(\mathbf K\approx0\) para transição dipolar. \(\mathbf K\neq0\) exige fônon. A troca separa singleto e tripleto; na aproximação dipolar, só o singleto é opticamente ativo.</li>
+<li><b>Elliott:</b> a força de oscilador dos picos cai como \(1/n^3\); a interação de Coulomb também amplifica o contínuo (fator de Sommerfeld), criando um degrau no limiar.</li>
+<li><b>2D:</b> \(E_b^{(2D)}(1s)=4Ry^*\). Em poços quânticos e monocamadas, o confinamento e o screening fraco aumentam muito a ligação; TMDs têm \(E_b\sim300\)–\(500\) meV.</li>
+<li><b>Observabilidade:</b> precisa \(k_BT\ll E_b\) e baixa densidade de impurezas. Na fotoluminescência, o pico desloca-se com a temperatura; éxcitons podem formar trions e biexcitons em 2D.</li>
+<li><b>Números:</b> GaAs bulk \(E_b\approx4{,}9\) meV, \(a_X\approx112\) Å; CdTe 10,5 meV; Cu₂O 96,8 meV; MoS₂ monocamada ≈400 meV; KBr (Frenkel) ≈0,8–1 eV.</li>
+</ul>
+
+<h3>Fórmulas de bolso</h3>
+<div class='eq'>\[
+\left[-\frac{\hbar^2}{2\mu}\nabla_{\mathbf r}^2-\frac{e^2}{4\pi\varepsilon_0\varepsilon_r r}\right]\phi(\mathbf r)=E_n\phi(\mathbf r),\qquad
+\frac1\mu=\frac1{m_e^*}+\frac1{m_h^*}
+\]
+<small>Massa reduzida do par; a carga é blindada por \(\varepsilon_r\).</small></div>
+<div class='eq'>\[
+E(n,\mathbf K)=E_g-\frac{Ry^*}{n^2}+\frac{\hbar^2K^2}{2M},\qquad
+Ry^*=13{,}6\ \mathrm{eV}\,\frac{\mu/m_0}{\varepsilon_r^2}
+\]
+<small>\(M=m_e^*+m_h^*\) é a massa total do par. O termo \(\hbar^2K^2/2M\) é cinética do centro de massa.</small></div>
+<div class='eq'>\[
+a_X=0{,}529\ \text{\AA}\times\frac{\varepsilon_r}{\mu/m_0},\qquad
+E_g^{\rm óptico}=E_g-Ry^*,\qquad
+E_b^{(2D)}(1s)=4Ry^*
+\]
+<small>No GaAs, \(Ry^*\approx4{,}9\) meV e \(a_X\approx112\) Å, validando a aproximação de massa efetiva.</small></div>
+<div class='eq'>\[
+f_n\propto\frac1{n^3},\qquad
+\alpha_{\rm cont}(\omega)\propto\frac{1}{1-e^{-2\pi Ry^*/(\hbar\omega-E_g)}}
+\]
+<small>Força de oscilador de Elliott e fator de Sommerfeld; o contínuo é amplificado perto do limiar.</small></div>
+
+<h3>Números e comparações</h3>
+<table>
+<tr><th>Material</th><th>Tipo</th><th>\(E_b\) (meV)</th><th>\(a_X\) (Å)</th><th>Estável a 300 K?</th></tr>
+<tr><td>GaAs bulk</td><td>Wannier–Mott</td><td>4,9</td><td>112</td><td>Não (\(k_BT\gg E_b\)).</td></tr>
+<tr><td>CdTe bulk</td><td>Wannier–Mott</td><td>10,5</td><td>67</td><td>Não.</td></tr>
+<tr><td>Cu₂O bulk</td><td>Wannier intermediário</td><td>96,8</td><td>9</td><td>Parcial.</td></tr>
+<tr><td>MoS₂ monocamada</td><td>2D confinado</td><td>≈400</td><td>10–15</td><td>Sim (\(E_b\gg k_BT\)).</td></tr>
+<tr><td>KBr</td><td>Frenkel</td><td>800–1000</td><td>≈5</td><td>Sim.</td></tr>
+</table>
+
+<div class='mapa'><b>Não confunda.</b> (i) \(E_b\) é energia de ligação, não o gap. (ii) O limiar é \(E_g-Ry^*\), não \(E_g\). (iii) Wannier é extenso e de meV; Frenkel é localizado e de 0,1–1 eV. (iv) Éxciton é neutro: não conduz como elétron ou buraco livre. (v) Éxciton escuro não é “sem energia”; é sem canal dipolar em primeira ordem. (vi) Em 2D, o fator é 4 — não 2. (vii) Na PL, a linha pode deslocar com \(T\) e com densidade; não leia o pico de emissão como o gap.</div>
+</section>
+
+<section class='topic' id='t5'>
+<h2>5. Acoplamento Elétron-Fônon <span class='src'><a href='05-acoplamento-eletron-fonon.html'>nota completa →</a></span></h2>
+<p class='lead'><b>Em uma frase.</b> A rede não é um cenário estático: ela vibra, deforma o potencial e espalha os elétrons; desse acoplamento nascem a resistividade dos metais, os polarons, as transições indiretas e a supercondutividade convencional.</p>
+
+<h3>O essencial</h3>
+<ul>
+<li><b>Por que existe resistividade:</b> num cristal perfeito e estático a condutividade seria infinita. A vibração térmica quebra a periodicidade e fornece o canal elétron–fônon; impurezas e defeitos entram como espalhamento residual.</li>
+<li><b>Aproximação adiabática:</b> separa elétrons (bandas) e núcleos (fônons). O acoplamento é o termo que sobra, linear nos deslocamentos dos íons.</li>
+<li><b>Quatro canais:</b> (1) <b>deformação</b> — dilatação local desloca bordas de banda; sempre presente, único canal acústico no Si e no Ge; (2) <b>piezoelétrico</b> — só em cristais sem centro de inversão; (3) <b>Fröhlich</b> — fônon óptico polar gera campo macroscópico; inexistente no Si/Ge; (4) <b>intervalley</b> — fônon de \(\mathbf q\) grande transfere elétron entre vales (Si, Ge, GaAs).</li>
+<li><b>Polaron:</b> elétron + deformação da rede ao seu redor. O parâmetro \(\alpha\) mede a força: GaAs ≈0,068 (fraco), MgO ≈4,4 (forte), \(\alpha\simeq6\) é a fronteira do polaron pequeno; \(\alpha=0\) no Si e Ge (sem dipolo).</li>
+<li><b>Mobilidade:</b> Matthiessen \(\mu^{-1}=\sum_i\mu_i^{-1}\). Espalhamento acústico \(\mu\propto T^{-3/2}\); impurezas ionizadas aumentam \(\mu\) com \(T\); da competição nasce um máximo de \(\mu(T)\).</li>
+<li><b>Normal vs umklapp:</b> no processo normal o momento total dos elétrons é conservado; no umklapp, o vetor recíproco \(G\) não nulo transfere momento para a rede e degrada a corrente. Só umklapp dá resistividade em metais; exige \(\mathbf q\) grande, \(T\gtrsim\Theta_D/3\).</li>
+<li><b>Metais:</b> Bloch–Grüneisen — \(\rho\propto T\) para \(T\gg\Theta_D\) e \(\rho\propto T^5\) para \(T\ll\Theta_D\), com patamar residual por impurezas. A razão \(RRR=\rho(300\,{\rm K})/\rho(4\,{\rm K})\) mede a pureza.</li>
+<li><b>Óptica:</b> acoplamento gera réplicas de fônon, com intensidades de Poisson \(I_n=e^{-S}S^n/n!\) (fator de Huang–Rhys \(S\)). A transição indireta do Si exige fônon; a direta do GaAs não.</li>
+<li><b>Supercondutividade convencional:</b> a “cola” é a troca de fônons; efeito isotópico \(T_C\propto M^{-1/2}\); BCS \(2\Delta=3{,}53\,k_BT_C\). A escala completa é \(T_C\approx1{,}13\,\Theta_D e^{-1/[g(E_F)V]}\).</li>
+<li><b>Medidas:</b> resistividade vs \(T\), magnetorresistência, efeito Hall, espalhamento Raman, EELS e túnel para o gap supercondutor.</li>
+</ul>
+
+<h3>Fórmulas de bolso</h3>
+<div class='eq'>\[
+\hat H_{\mathrm{e-ph}}=-\sum_i\mathbf s_i\cdot\nabla V_{\mathrm{el-ion}}(\mathbf r-\mathbf R_i^0)
+\]
+<small>O acoplamento enxerga a deformação local, não um deslocamento rígido global. É a origem do nome “potencial de deformação”.</small></div>
+<div class='eq'>\[
+|M_{\rm DP}|^2=\frac{\hbar\,\Xi^2q}{2\rho\mathcal V u}
+\]
+<small>\(\Xi\) é o potencial de deformação, \(\rho\) a densidade, \(u\) a velocidade do som e \(\mathcal V\) o volume.</small></div>
+<div class='eq'>\[
+\alpha=\frac{e^2}{4\pi\varepsilon_0\hbar}\left(\frac{m^*}{2\hbar\omega_{\rm LO}}\right)^{1/2}
+\left(\frac1{\varepsilon_\infty}-\frac1{\varepsilon_0}\right)
+\]
+<small>Acoplamento de Fröhlich. \(\alpha=0\) em Si/Ge; \(\alpha\ll1\) valida a fórmula. \(\alpha\simeq6\) separa polaron grande e pequeno.</small></div>
+<div class='eq'>\[
+\frac1\mu=\sum_i\frac1{\mu_i},\qquad
+\rho(T)\propto
+\begin{cases}
+T, & T\gg\Theta_D\\
+T^5, & T\ll\Theta_D
+\end{cases}
+\]
+<small>Matthiessen é aproximado, mas útil. O patamar de baixa temperatura é o residual de impurezas/defeitos.</small></div>
+<div class='eq'>\[
+I_n=e^{-S}\frac{S^n}{n!},\qquad
+T_C\propto M^{-1/2},\qquad
+2\Delta=3{,}53\,k_BT_C
+\]
+<small>Réplicas de Huang–Rhys, efeito isotópico e gap BCS. O efeito isotópico foi a evidência histórica de que fônons sustentam o pareamento.</small></div>
+
+<h3>Números e comparações</h3>
+<table>
+<tr><th>Canal / material</th><th>Quem sente</th><th>Assinatura</th></tr>
+<tr><td>Deformação</td><td>Todos; único acústico em Si/Ge</td><td>\(\mu\propto T^{-3/2}\); não exige polaridade.</td></tr>
+<tr><td>Piezoelétrico</td><td>III–V, II–VI; GaAs abaixo de ~100 K</td><td>Exige ausência de centro de inversão.</td></tr>
+<tr><td>Fröhlich</td><td>III–V, II–VI, óxidos</td><td>Fônon LO polar; \(\alpha\) mede a força.</td></tr>
+<tr><td>Intervalley</td><td>Si (Δ), Ge, GaAs (Γ, L, X)</td><td>Fônon de \(\mathbf q\) grande; crucial em altos campos.</td></tr>
+</table>
+<p class='tcap'>Tabela 5.2. Ordens de \(\alpha\): InSb ≈0,02; GaAs ≈0,068; MgO ≈4,4. \(\Theta_D\): Au 175 K, Na 202 K, Cu 333 K, Al 395 K, Ni 472 K.</p>
+
+<div class='mapa'><b>Não confunda.</b> (i) Acoplamento elétron–fônon não é interação elétron–elétron. (ii) Potencial de deformação existe em qualquer material; Fröhlich só em cristal polar. (iii) Processo normal não destrói a corrente; umklapp sim. (iv) Espalhamento por impureza cresce com \(T\); por fônon acústico cai. (v) O efeito isotópico não prova “supercondutividade em geral”, mas sim que fônons participam da convencional. (vi) \(\alpha\) grande não significa automaticamente supercondutor; a instabilidade da rede também importa.</div>
+</section>
+
+<section class='topic' id='t6'>
+<h2>6. Plasmons em Gás de Elétrons <span class='src'><a href='06-plasmons-em-gas-de-eletrons.html'>nota completa →</a></span></h2>
+<p class='lead'><b>Em uma frase.</b> O gás de elétrons responde a um deslocamento coletivo com uma oscilação de frequência \(\omega_p\); a mesma resposta dielétrica explica por que o metal reflete abaixo de \(\omega_p\), fica transparente acima e blinda cargas em poucos ångströms.</p>
+
+<h3>O essencial</h3>
+<ul>
+<li><b>Oscilação coletiva longitudinal:</b> um deslocamento \(\mathbf s\) cria carga superficial, que cria campo restaurador; a equação de movimento dá \(\omega_p^2=ne^2/(\varepsilon_0m)\). \(\omega_p\) depende só da densidade (e da massa), não de \(\mathbf k\) em primeira ordem.</li>
+<li><b>Função dielétrica de Drude:</b> \(\varepsilon(\omega)=1-\omega_p^2/[\omega(\omega+i\gamma)]\). Sem amortecimento, \(\varepsilon<0\) abaixo de \(\omega_p\) (reflexão), \(\varepsilon=0\) em \(\omega_p\) (borda de plasma) e \(\varepsilon>0\) acima (transparência).</li>
+<li><b>Assinatura experimental:</b> a função de perda \(\mathcal L(\omega)=-\Im[1/\varepsilon(\omega)]\) tem pico em \(\omega_p\); é o que a espectroscopia de perda de energia de elétrons (EELS) mede. A refletividade cai abruptamente na borda de plasma.</li>
+<li><b>Quantização:</b> o plásmon é o quantum de \(\hbar\omega_p\). Ao contrário do fônon acústico, o plásmon de volume tem <b>gap</b> em \(q\to0\): não existe plásmon estático.</li>
+<li><b>Dispersão de Bohm–Gross:</b> \(\omega^2(q)=\omega_p^2+\frac35v_F^2q^2\), correção de pressão de degenerescência; relevante em \(q\) grande (EELS de alta resolução).</li>
+<li><b>Blindagem de Thomas–Fermi:</b> \(q_{\rm TF}^2=3ne^2/(2\varepsilon_0E_F)\); o potencial efetivo \(e^2/[\varepsilon_0(q^2+q_{\rm TF}^2)]\) decai em poucos ångströms. No Na, \(q_{\rm TF}\approx0{,}5\) Å⁻¹.</li>
+<li><b>Friedel:</b> a resposta exata na borda de Fermi oscila (oscilações de Friedel); Thomas–Fermi é a aproximação suave de longo alcance.</li>
+<li><b>Plásmon 2D:</b> \(\omega^2=n_{2D}e^2q/(2\varepsilon_0m)\), ou seja, \(\omega\propto\sqrt q\); sem gap em \(q=0\), muito dispersivo e ajustável por densidade.</li>
+<li><b>Plásmon de superfície:</b> \(\omega_{\rm sp}=\omega_p/\sqrt{\varepsilon_\infty+2\varepsilon_m}\) para esfera; em vácuo, \(\omega_p/\sqrt3\). Em nanopartículas de Ag/Au, o fundo dielétrico e as interbandas deslocam a ressonância para o visível — a cor das nanopartículas.</li>
+<li><b>Números:</b> \(\hbar\omega_p\): Li 8,0 eV, Na 5,9 eV, K 4,3 eV, Al 15,8 eV, Ag 9,0 eV. Medidos: Al 15,3 eV; Si 16,6 eV; diamante ≈34 eV. Prata: superfície ≈3,5 eV.</li>
+<li><b>Pontes:</b> em semicondutores polares, plásmon e fônon LO se acoplam (modos mistos); as interbandas modificam \(\varepsilon(\omega)\) e deslocam a borda de plasma.</li>
+</ul>
+
+<h3>Fórmulas de bolso</h3>
+<div class='eq'>\[
+\frac{\partial^2\mathbf s}{\partial t^2}+\omega_p^2\mathbf s=0,\qquad
+\omega_p^2=\frac{ne^2}{\varepsilon_0m}
+\]
+<small>SI. A massa \(m\) é a massa efetiva dos elétrons de condução; a densidade \(n\) é a de elétrons livres.</small></div>
+<div class='eq'>\[
+\varepsilon(\omega)=1-\frac{\omega_p^2}{\omega(\omega+i\gamma)}
+\ \xrightarrow[\gamma\to0]{}\
+1-\frac{\omega_p^2}{\omega^2},\qquad
+R(\omega)=\left|\frac{1-\sqrt{\varepsilon}}{1+\sqrt{\varepsilon}}\right|^2
+\]
+<small>Abaixo de \(\omega_p\), \(\varepsilon<0\) e \(R\approx1\); acima, \(\varepsilon>0\) e o metal transmite.</small></div>
+<div class='eq'>\[
+\mathcal L(\omega)=-\Im\!\left[\frac1{\varepsilon(\omega)}\right],\qquad
+\omega^2(q)=\omega_p^2+\frac35v_F^2q^2
+\]
+<small>Pico de perda em \(\omega_p\); dispersão de Bohm–Gross. O plásmon de volume tem gap em \(q=0\).</small></div>
+<div class='eq'>\[
+\varepsilon(q,0)=1+\frac{q_{\rm TF}^2}{q^2},\qquad
+q_{\rm TF}^2=\frac{3ne^2}{2\varepsilon_0E_F},\qquad
+V_{\rm ef}(q)=\frac{e^2}{\varepsilon_0(q^2+q_{\rm TF}^2)}
+\]
+<small>Blindagem estática de Thomas–Fermi; \(E_F=\frac{\hbar^2}{2m}(3\pi^2n)^{2/3}\).</small></div>
+<div class='eq'>\[
+\omega^2(q)=\frac{n_{2D}e^2q}{2\varepsilon_0m},\qquad
+\omega_{\rm sp}=\frac{\omega_p}{\sqrt{\varepsilon_\infty+2\varepsilon_m}}
+\]
+<small>Plásmon 2D (\(\omega\propto\sqrt q\)) e plásmon de superfície de uma esfera (ressonância de Fröhlich).</small></div>
+
+<h3>Números e comparações</h3>
+<table>
+<tr><th>Material</th><th>\(n\) (10²⁸ m⁻³)</th><th>\(\hbar\omega_p\) (eV)</th><th>Leitura rápida</th></tr>
+<tr><td>Li</td><td>4,6</td><td>8,0</td><td>Alcalino leve; plasma no UV médio.</td></tr>
+<tr><td>Na</td><td>2,5</td><td>5,9</td><td>Alcalino de referência; resposta quase ideal.</td></tr>
+<tr><td>K</td><td>1,3</td><td>4,3</td><td>Alcalino pesado; frequência mais baixa.</td></tr>
+<tr><td>Al</td><td>18,1</td><td>15,8</td><td>Três elétrons de valência; pico de EELS em 15,3 eV.</td></tr>
+<tr><td>Ag / Au</td><td>5,9</td><td>9,0</td><td>No modelo livre iguais; interbandas deslocam a ressonância de superfície para o visível.</td></tr>
+<tr><td>Diamante</td><td>—</td><td>≈34</td><td>Quatro elétrons em ligações sp³ rígidas: escala máxima.</td></tr>
+</table>
+
+<div class='mapa'><b>Não confunda.</b> (i) Plásmon é excitação coletiva, não transição de um elétron. (ii) É longitudinal; ondas eletromagnéticas transversais não acoplam diretamente ao plásmon de volume sem estrutura (superfície, rede, etc.). (iii) \(\omega_p\) independente de \(k\) só em primeira ordem; Bohm–Gross corrige. (iv) Plásmon de volume tem gap; plásmon 2D não. (v) Borda de plasma (\(\varepsilon=0\)) não é o mesmo que mínimo de \(\varepsilon\). (vi) Thomas–Fermi é blindagem estática; não descreve a oscilação dinâmica. (vii) A cor de nanopartículas não é só \(\omega_p\): interbandas e fundo dielétrico importam.</div>
+</section>
+
+<section class='topic' id='t7'>
+<h2>7. Propriedades de Materiais Semicondutores <span class='src'><a href='07-propriedades-de-materiais-semicondutores.html'>nota completa →</a></span></h2>
+<p class='lead'><b>Em uma frase.</b> O semicondutor é o sólido cuja condutividade se desenha: o gap dá a escala, as massas efetivas traduzem o cristal em partículas, a dopagem escolhe os portadores e o transporte/óptica/junções montam o dispositivo.</p>
+
+<h3>O essencial</h3>
+<ul>
+<li><b>Panorama:</b> gap típico de 0,2–4 eV; condutividade controlável por dopagem e temperatura. Si domina a lógica; GaAs/InP a optoeletrônica; GaN/SiC a potência e alta temperatura.</li>
+<li><b>Bandas e massas:</b> massa efetiva é a curvatura de \(E(\mathbf k)\), um tensor. Si: seis vales em Δ, \(m_l\approx0{,}98m_0\), \(m_t\approx0{,}19m_0\); Ge: vales em L; GaAs: mínimo em Γ, \(m^*\approx0{,}067m_0\).</li>
+<li><b>Dopagem:</b> doadores (grupo V em Si) e aceitadores (grupo III). Níveis rasos hidrogenoides: Si:P ≈45 meV (modelo simples ≈26 meV). A dopagem não muda o gap de forma apreciável; muda a posição do Fermi e a condutividade.</li>
+<li><b>Estatística:</b> \(n_i=\sqrt{N_cN_v}e^{-E_g/2k_BT}\), \(np=n_i^2\). A lei de ação de massa vale no equilíbrio; dopar n reduz p. Em alta dopagem, o semicondutor pode ficar degenerado.</li>
+<li><b>Transporte:</b> \(\sigma=e(n\mu_e+p\mu_h)\), \(\mu=e\tau/m^*\). Matthiessen; impurezas dominam em baixa \(T\), fônons em alta \(T\). Campo alto: velocidade de saturação, elétrons quentes, efeito Gunn em GaAs.</li>
+<li><b>Hall:</b> \(R_H=-1/(ne)\) para elétrons e \(+1/(pe)\) para buracos; o sinal identifica o tipo e o módulo dá a densidade. Em dois portadores, a interpretação exige cuidado.</li>
+<li><b>Borda óptica:</b> direta \(\alpha\propto(\hbar\omega-E_g)^{1/2}\); indireta \(\alpha\propto(\hbar\omega-E_g\pm\hbar\Omega)^2\), com fônon. A absorção indireta é muito mais fraca perto do limiar; por isso Si fotovoltaico precisa de centenas de μm e GaAs, de poucos μm.</li>
+<li><b>Luminescência:</b> recombinação radiativa é eficiente em gap direto; em indireto, precisa de fônon e é lenta. Stokes shift, centros profundos e defeitos matam a eficiência.</li>
+<li><b>Centros profundos, ligas e superfícies:</b> níveis no meio do gap (EL2, DX) capturam portadores; ligas ajustam \(E_g\) e massas; superfícies e interfaces fixam o Fermi (pinning).</li>
+<li><b>Dispositivos:</b> junção p–n (depleção, \(V_{bi}\), diodo), MOSFET, LED/laser (gap direto), fotodetectores e células solares.</li>
+<li><b>Técnicas:</b> Hall/van der Pauw (tipo, \(n\), \(\mu\)), C–V (perfil), DLTS (centros profundos), PL (níveis rasos), absorção/ciclotron (\(E_g\), \(m^*\)), XRD/TEM (rede), fotoemissão (superfície).</li>
+</ul>
+
+<h3>Fórmulas de bolso</h3>
+<div class='eq'>\[
+\frac1{m^*_{ij}}=\frac{1}{\hbar^2}\frac{\partial^2E}{\partial k_i\partial k_j},\qquad
+n_i=\sqrt{N_cN_v}\,e^{-E_g/(2k_BT)},\qquad
+n_ep=n_i^2
+\]
+<small>Massa é tensor; \(N_c,N_v\) incluem massas de densidade de estados e multiplicidade de vales.</small></div>
+<div class='eq'>\[
+E_D=E_c-\frac{m^*}{m_0}\frac{13{,}6\ \mathrm{eV}}{\varepsilon_r^2 n^2},\qquad
+a_D=\varepsilon_r\frac{m_0}{m^*}a_0
+\]
+<small>Doador raso hidrogenoide; \(n=1,2,\ldots\). No Si, a anisotropia dos vales corrige o valor simples.</small></div>
+<div class='eq'>\[
+\sigma=e(n\mu_e+p\mu_h),\qquad
+\mu=\frac{e\tau}{m^*},\qquad
+R_H=-\frac1{ne}\ \text{(elétrons)}
+\]
+<small>\(\sigma\) em uma banda parabólica isotrópica; o Hall de buracos inverte o sinal.</small></div>
+<div class='eq'>\[
+\alpha_{\rm dir}\propto(\hbar\omega-E_g)^{1/2},\qquad
+\alpha_{\rm ind}\propto(\hbar\omega-E_g\pm\hbar\Omega)^2
+\]
+<small>O sinal \(\pm\) corresponde a absorção/emissão de fônon; a borda indireta é fraca.</small></div>
+<div class='eq'>\[
+V_{bi}=\frac{k_BT}{e}\ln\!\left(\frac{N_AN_D}{n_i^2}\right),\qquad
+W=\sqrt{\frac{2\varepsilon_sV_{bi}(N_A+N_D)}{eN_AN_D}}
+\]
+<small>Junção abrupta; \(W\) é a largura da região de depleção. A corrente do diodo é \(I=I_0(e^{eV/k_BT}-1)\).</small></div>
+
+<h3>Números e comparações</h3>
+<table>
+<tr><th>Material</th><th>\(E_g\)</th><th>Tipo</th><th>\(\mu_e\) (cm²/V·s)</th><th>\(n_i\) (cm⁻³)</th><th>Uso</th></tr>
+<tr><td>Si</td><td>1,12 eV</td><td>Indireto</td><td>1,4×10³</td><td>1,4×10¹⁰</td><td>Lógica, imagem, fotovoltaica.</td></tr>
+<tr><td>Ge</td><td>0,66 eV</td><td>Indireto</td><td>3,9×10³</td><td>2,4×10¹³</td><td>IR, fotodiodos.</td></tr>
+<tr><td>GaAs</td><td>1,42 eV</td><td>Direto</td><td>8,5×10³</td><td>~2×10⁶</td><td>LED/laser, HEMT, fotônica.</td></tr>
+<tr><td>InP</td><td>1,35 eV</td><td>Direto</td><td>~5×10³</td><td>~10⁷</td><td>Laser 1,3–1,55 μm.</td></tr>
+<tr><td>GaN</td><td>3,4 eV</td><td>Direto</td><td>~10³</td><td>~10⁻³⁰</td><td>LED azul, RF/potência.</td></tr>
+<tr><td>4H-SiC</td><td>3,26 eV</td><td>Indireto</td><td>~9×10²</td><td>~10⁻⁹</td><td>Potência, alta T, radiação.</td></tr>
+</table>
+
+<div class='mapa'><b>Não confunda.</b> (i) \(n_i\) depende fortemente de \(T\); não é constante. (ii) \(np=n_i^2\) é equilíbrio; fora dele, use quasi-Fermi. (iii) Mobilidade não é condutividade: \(\sigma=ne\mu\). (iv) O sinal de Hall identifica o portador majoritário, mas amostras com dois portadores podem enganar. (v) Gap direto é requisito prático para LED/laser eficiente; Si e Ge são indiretos. (vi) Dopagem não “encolhe” o gap; ela desloca o Fermi. (vii) Semicondutor vs isolante é uma fronteira operacional, não um valor universal de gap.</div>
+</section>
+
+<section class='topic' id='t8'>
+<h2>8. Propriedades Dielétricas de Sólidos <span class='src'><a href='08-propriedades-dieletricas-de-solidos.html'>nota completa →</a></span></h2>
+<p class='lead'><b>Em uma frase.</b> Sob um campo, o sólido responde com quatro mecanismos de polarização — eletrônica, iônica, dipolar e carga de espaço —, cada um com seu relógio; a partir dessa escada se entendem ε(ω), perdas, ferroeletricidade, piezoeletricidade e a ruptura.</p>
+
+<h3>O essencial</h3>
+<ul>
+<li><b>Definições:</b> \(\mathbf D=\varepsilon_0\mathbf E+\mathbf P\), \(\mathbf P=\chi_e\varepsilon_0\mathbf E\), \(\varepsilon_r=1+\chi_e\). Em geral \(\varepsilon(\omega)=\varepsilon_1+i\varepsilon_2\) é complexa; \(\varepsilon_2\) mede perdas.</li>
+<li><b>Quatro mecanismos:</b> (1) <b>eletrônico</b> — nuvem eletrônica, responde até UV; (2) <b>iônico</b> — sub-redes de cargas opostas, IR; (3) <b>dipolar/orientacional</b> — dipolos permanentes, micro-ondas a rádio; (4) <b>carga de espaço</b> — íons/defeitos em interfaces, baixa frequência. Cada mecanismo “cai fora” em uma frequência e deixa um degrau em \(\varepsilon'\) e um pico em \(\varepsilon''\).</li>
+<li><b>Clausius–Mossotti:</b> liga \(\varepsilon_r\) à polarizabilidade e à densidade. Quando \(n\alpha/(3\varepsilon_0)\to1\), a resposta diverge e surge a instabilidade ferroelétrica.</li>
+<li><b>Relaxação de Debye:</b> dipolo que fica para trás; \(\varepsilon^*(\omega)=\varepsilon_\infty+(\varepsilon_s-\varepsilon_\infty)/(1+i\omega\tau)\). Água: \(\varepsilon_s\approx78\), \(\varepsilon_\infty\approx5\), \(\tau\approx8\)–10 ps, pico de perdas ≈19 GHz.</li>
+<li><b>Perdas:</b> \(\tan\delta=\varepsilon''/\varepsilon'\); energia dissipada por ciclo ∝\(\tan\delta\). RF exige \(\tan\delta<10^{-4}\) (quartzo); polímeros com água podem chegar a \(10^{-2}\).</li>
+<li><b>Modo polar e reststrahlen:</b> entre \(\omega_{TO}\) e \(\omega_{LO}\), \(\varepsilon_1<0\) e o cristal reflete quase tudo. A relação LST \(\omega_{LO}^2/\omega_{TO}^2=\varepsilon_s/\varepsilon_\infty\) amarra fônons e constantes dielétricas. NaCl: 264/164 cm⁻¹ e 5,9/2,25.</li>
+<li><b>Ferroeletricidade:</b> polarização espontânea reversível por campo. Domínios, histerese \(P\)–\(E\), \(P_s\), \(P_r\), \(E_c\). Na fase paraelétrica, \(\varepsilon_r=C/(T-T_C)\) (Curie–Weiss). BaTiO₃: \(T_C\approx120^\circ\)C, \(P_s\approx0{,}26\) C/m², \(\varepsilon_r\sim10^3\).</li>
+<li><b>Modo suave:</b> \(\omega_{TO}\to0\) faz \(\varepsilon_s\) divergir pela LST — a ponte microscópica para a ferroeletricidade.</li>
+<li><b>Piezo e piro:</b> piezoelétrico = strain linear com campo (só em cristais sem centro de inversão); piroelétrico = polarização espontânea varia com \(T\). Todo ferroelétrico é piro e piezoelétrico, mas não o contrário. PZT no MPB: \(d_{33}\approx200\)–\(600\) pC/N.</li>
+<li><b>Falhas:</b> perdas, impurezas, envelhecimento, ruptura dielétrica. BOPP suporta ≈600–700 MV/m; alta-\(\kappa\) (HfO₂, 16–22) permite reduzir espessura de porta.</li>
+<li><b>Técnicas:</b> LCR (20 Hz–2 MHz), impedância (10⁻³–10⁷ Hz), ressonador de RF, THz-TDS, FTIR (reststrahlen), Sawyer–Tower (P–E), PFM (domínios), \(d_{33}\) Berlincourt, TSDC, ruptura/Weibull.</li>
+</ul>
+
+<h3>Fórmulas de bolso</h3>
+<div class='eq'>\[
+\mathbf D=\varepsilon_0\mathbf E+\mathbf P,\qquad
+\mathbf P=\chi_e\varepsilon_0\mathbf E,\qquad
+\varepsilon_r=1+\chi_e,\qquad
+\tan\delta=\frac{\varepsilon''}{\varepsilon'}
+\]
+<small>\(\varepsilon_r\) estático é adimensional; \(\tan\delta\) mede a defasagem entre \(D\) e \(E\).</small></div>
+<div class='eq'>\[
+\frac{\varepsilon_r-1}{\varepsilon_r+2}=\frac{n\alpha}{3\varepsilon_0}
+\]
+<small>Clausius–Mossotti (ou Lorentz–Lorenz na frequência óptica). \(n\) é a densidade de polarizabilidades \(\alpha\).</small></div>
+<div class='eq'>\[
+\varepsilon^*(\omega)=\varepsilon_\infty+\frac{\varepsilon_s-\varepsilon_\infty}{1+i\omega\tau}
+\]
+<small>Debye: \(\varepsilon_s\) estático, \(\varepsilon_\infty\) de alta frequência, \(\tau\) tempo de relaxação. Materiais reais podem exigir Cole–Cole.</small></div>
+<div class='eq'>\[
+\frac{\omega_{LO}^2}{\omega_{TO}^2}=\frac{\varepsilon_s}{\varepsilon_\infty},\qquad
+\varepsilon_r=\frac{C}{T-T_C}
+\]
+<small>Relação LST e Curie–Weiss. A primeira conecta fônons e dielétrico; a segunda descreve a divergência paraelétrica perto de \(T_C\).</small></div>
+<div class='eq'>\[
+C=\varepsilon_r\varepsilon_0\frac{A}{d},\qquad
+P_s\ \text{(espontânea)},\qquad
+d_{33}=\left(\frac{\partial S_3}{\partial E_3}\right)_T
+\]
+<small>Capacitor de placas; \(d_{33}\) é o coeficiente piezoelétrico longitudinal. A energia armazenada por volume é \(\frac12\varepsilon E^2\).</small></div>
+
+<h3>Números e comparações</h3>
+<table>
+<tr><th>Material</th><th>\(\varepsilon_r\)</th><th>\(\tan\delta\)</th><th>Leitura rápida</th></tr>
+<tr><td>SiO₂</td><td>3,9</td><td>≈10⁻⁴</td><td>Óxido de porta; isolante de referência.</td></tr>
+<tr><td>Quartzo fundido</td><td>4,5</td><td>≈10⁻⁴</td><td>Baixa perda; janelas ópticas.</td></tr>
+<tr><td>HfO₂</td><td>16–22</td><td>10⁻³–10⁻²</td><td>Alta-\(\kappa\) para portas finas.</td></tr>
+<tr><td>BaTiO₃ cerâmico</td><td>≈10³</td><td>1–3%</td><td>MLCC; ferroelétrico clássico.</td></tr>
+<tr><td>PZT</td><td>≈10³</td><td>≈1–2%</td><td>Atuadores, FeRAM; \(d_{33}\approx200\)–\(600\) pC/N.</td></tr>
+<tr><td>Água</td><td>78</td><td>≈0,9 (pico em 19 GHz)</td><td>Dipolo prototípico; \(\tau\approx8\)–10 ps.</td></tr>
+<tr><td>BOPP</td><td>≈2,2</td><td>baixo</td><td>Ruptura ≈600–700 MV/m; capacitores de filme.</td></tr>
+</table>
+
+<div class='mapa'><b>Não confunda.</b> (i) \(\varepsilon_r\) não é suscetibilidade: \(\varepsilon_r=1+\chi_e\). (ii) \(\varepsilon\) estático e \(\varepsilon_\infty\) não são o mesmo; a diferença é a contribuição iônica/dipolar. (iii) Debye é relaxação (pico de perdas), não ressonância de fônon. (iv) Ferroelétrico não é sinônimo de piezoelétrico: todo ferroelétrico é piezo, mas nem todo piezo é ferro. (v) Piroelétrico não é necessariamente ferroelétrico. (vi) A relação LST exige modo polar; não vale para qualquer cristal. (vii) \(\tan\delta\) não é o ângulo de perda em graus; é a tangente.</div>
+</section>
+
+<section class='topic' id='t9'>
+<h2>9. Propriedades Magnéticas de Sólidos <span class='src'><a href='09-propriedades-magneticas-de-solidos.html'>nota completa →</a></span></h2>
+<p class='lead'><b>Em uma frase.</b> O magnetismo é quântico e coletivo: momentos atômicos e spins se acoplam por troca, produzem ordens (ferro, antiferro, ferrimagnética) e, na escala útil, domínios, paredes e histerese.</p>
+
+<h3>O essencial</h3>
+<ul>
+<li><b>Definições:</b> \(\mathbf B=\mu_0(\mathbf H+\mathbf M)\), \(\mathbf M=\chi_m\mathbf H\), \(\mu_r=1+\chi_m\). \(\mathbf B\) é o campo induzido; \(\mathbf H\) o campo aplicado (em SI, A/m); \(\mathbf M\) a magnetização por volume.</li>
+<li><b>Bohr–van Leeuwen:</b> o magnetismo não existe no limite clássico de equilíbrio; é efeito quântico. \(\mu_B=e\hbar/2m_e=9{,}274\times10^{-24}\) J/T.</li>
+<li><b>Momentos atômicos:</b> spin + orbital; regras de Hund; \(g_J\) de Landé; \(\mu_{\rm eff}=g_J\sqrt{J(J+1)}\mu_B\). Em 3d, o campo cristalino costuma “congelar” o orbital: \(\mu_{\rm eff}\approx2\sqrt{S(S+1)}\mu_B\).</li>
+<li><b>Diamagnetismo:</b> precessão de Larmor, \(\chi<0\), universal e pequeno; supercondutor é o caso extremo (\(\chi=-1\), diamagnetismo perfeito).</li>
+<li><b>Paramagnetismo:</b> Brillouin/Curie, \(\chi=C/T\); \(M/M_s=B_J(x)\). Em metais, o paramagnetismo de Pauli é \(\sim10^{-5}\), só a casquinha de Fermi gira; Landau dá diamagnetismo orbital oposto.</li>
+<li><b>Stoner:</b> ferromagnetismo itinerante quando \(U\,N(E_F)>1\). Explica momentos não inteiros de Fe, Co, Ni e a instabilidade do paramagneto de Pauli.</li>
+<li><b>Troca:</b> dipolar é fraca demais. Mecanismos: direta (Heisenberg \(-J\mathbf S_i\cdot\mathbf S_j\)), superexchange (via O²⁻, regras de Goodenough–Kanamori), dupla troca (Mn³⁺/Mn⁴⁺), RKKY (metal, oscilatório) e Dzyaloshinskii–Moriya (assimetria, gira o par).</li>
+<li><b>Ordens:</b> ferromagnética (M≠0), antiferromagnética (M=0, sub-redes opostas), ferrimagnética (sub-redes desiguais, M≠0), helicoidal, vidro de spin, frustração. \(T_C\) (ferro) e \(T_N\) (antiferro).</li>
+<li><b>Transição e excitações:</b> Landau; \(M_s(T)\propto(T_C-T)^{1/2}\), \(\chi\propto|T_C-T|^{-1}\). Magnons: \(\omega\propto k^2\) no ferro, linear no antiferro; Bloch \(T^{3/2}\) na magnetização.</li>
+<li><b>Domínios e histerese:</b> paredes de Bloch, \(\delta\sim\pi\sqrt{A/K}\); coercividade \(H_c\); materiais moles (transformadores) e duros (ímãs permanentes). Superparamagnetismo quando \(K_1V\lesssim k_BT\).</li>
+<li><b>Medidas:</b> SQUID/VSM (M–H, M–T), ESR/FMR, NMR, Mössbauer, difração de nêutrons, MOKE/XMCD, Hall e magnetorresistências (AMR, GMR, TMR).</li>
+<li><b>Números:</b> Fe 1043 K, Co 1388 K, Ni 627 K, Gd 293 K; Fe₃O₄ 858 K; Cr 311 K; NiO 525 K; MnO 118 K. Nd₂Fe₁₄B: \(H_c\sim10^6\) A/m, \(BH_{\max}\) até ≈400 kJ/m³.</li>
+</ul>
+
+<h3>Fórmulas de bolso</h3>
+<div class='eq'>\[
+\mathbf B=\mu_0(\mathbf H+\mathbf M),\qquad
+\mathbf M=\chi_m\mathbf H,\qquad
+\mu_r=1+\chi_m
+\]
+<small>Em SI, \(\chi_m\) é adimensional (suscetibilidade volumétrica). Cuidado com fórmulas em CGS.</small></div>
+<div class='eq'>\[
+\mathcal H_{\rm ex}=-\sum_{\langle i,j\rangle}J_{ij}\,\mathbf S_i\cdot\mathbf S_j,\qquad
+J>0:\ \text{ferro},\qquad J<0:\ \text{antiferro}
+\]
+<small>A troca é de origem eletrostática (Coulomb + Pauli), não magnética. O sinal de \(J\) decide a ordem.</small></div>
+<div class='eq'>\[
+\chi(T)=\frac{C}{T-\theta_p},\qquad
+C=\frac{\mu_0ng_J^2\mu_B^2J(J+1)}{3k_B},\qquad
+\mu_{\rm eff}=g_J\sqrt{J(J+1)}\,\mu_B
+\]
+<small>Curie–Weiss: \(\theta_p\approx T_C\) no ferro e \(\theta_p\approx-T_N\) no antiferro. A curvatura de \(1/\chi\) denuncia desvios.</small></div>
+<div class='eq'>\[
+g_J=\frac32+\frac{S(S+1)-L(L+1)}{2J(J+1)},\qquad
+\frac{M}{M_s}=B_J\!\left(\frac{g_J\mu_BJB}{k_BT}\right)
+\]
+<small>Fator de Landé e função de Brillouin. Para spin puro, \(g_J\approx2\); para orbital puro, \(g_J\approx1\).</small></div>
+<div class='eq'>\[
+U\,N(E_F)>1\ \Longleftrightarrow\ \text{ferromagnetismo itinerante (Stoner)},\qquad
+\omega(k)\sim Dk^2\ \text{(ferro)},\quad \omega(k)\approx c|k|\ \text{(antiferro)}
+\]
+<small>Magnons: quadráticos no ferro e lineares no antiferro. \(D\approx2JSa^2\).</small></div>
+<div class='eq'>\[
+\delta\sim\pi\sqrt{\frac AK},\qquad
+\sigma_w\sim4\sqrt{AK},\qquad
+\mathrm{TMR}=\frac{2P_1P_2}{1-P_1P_2}
+\]
+<small>Largura e energia de parede de domínio; TMR no modelo de Jullière, com polarizações de spin \(P_i\).</small></div>
+
+<h3>Números e comparações</h3>
+<table>
+<tr><th>Material</th><th>Ordem</th><th>\(T_C\) ou \(T_N\)</th><th>Leitura rápida</th></tr>
+<tr><td>Fe</td><td>Ferro</td><td>1043 K</td><td>BCC; \(\mu\approx2{,}2\mu_B\)/átomo.</td></tr>
+<tr><td>Co</td><td>Ferro</td><td>1388 K</td><td>HCP; anisotropia grande.</td></tr>
+<tr><td>Ni</td><td>Ferro</td><td>627 K</td><td>FCC; \(\mu\approx0{,}6\mu_B\)/átomo.</td></tr>
+<tr><td>Gd</td><td>Ferro</td><td>≈293 K</td><td>4f localizado; sensível à desordem.</td></tr>
+<tr><td>Fe₃O₄</td><td>Ferrimagneto</td><td>858 K</td><td>Sub-redes A/B antiparalelas desiguais.</td></tr>
+<tr><td>Cr</td><td>Antiferro</td><td>311 K</td><td>Onda de densidade de spin incommensurável.</td></tr>
+<tr><td>NiO</td><td>Antiferro</td><td>525 K</td><td>Superexchange 180° via O²⁻.</td></tr>
+<tr><td>MnO</td><td>Antiferro</td><td>118 K</td><td>Ordem tipo II; nêutrons revelam.</td></tr>
+</table>
+
+<div class='mapa'><b>Não confunda.</b> (i) \(\mathbf B\) e \(\mathbf H\) não são a mesma coisa; em SI, \(\mathbf B=\mu_0(\mathbf H+\mathbf M)\). (ii) Diamagnetismo é negativo; paramagnetismo é positivo. (iii) Antiferromagneto tem \(M=0\), mas responde a campo (susceptibilidade). (iv) Ferrimagneto não é antiferromagneto: as sub-redes são desiguais e sobra \(M\). (v) Troca não é interação dipolar; dipolar é fraca demais para ordenar à temperatura ambiente. (vi) Pauli é de metal; Curie é de momentos localizados. (vii) \(T_C\) é ferro; \(T_N\) é antiferro. (viii) Superparamagnetismo não é ferromagnetismo: a partícula flutua como um momento gigante.</div>
+</section>
+
+<section class='topic' id='t10'>
+<h2>10. Propriedades Ópticas de Sólidos <span class='src'><a href='10-propriedades-opticas-de-solidos.html'>nota completa →</a></span></h2>
+<p class='lead'><b>Em uma frase.</b> A luz pergunta ao sólido “quem responde nesta frequência?”; a resposta é a função dielétrica \(\varepsilon(\omega)\), e cada janela espectral revela uma excitação diferente — fônons, elétrons de banda, portadores livres, éxcitons ou centros de cor.</p>
+
+<h3>O essencial</h3>
+<ul>
+<li><b>Função dielétrica:</b> \(\tilde n^2=\varepsilon(\omega)=\varepsilon_1+i\varepsilon_2\). \(\varepsilon_2\) mede absorção; \(\varepsilon_1\) refração. \(R\) e \(T\) não dão \(\varepsilon\) diretamente; Kramers–Kronig amarram \(\varepsilon_1\) e \(\varepsilon_2\).</li>
+<li><b>Janelas:</b> THz/IR longo vê fônons acústicos e portadores; IR médio vê fônons ópticos (reststrahlen); visível vê gaps de semicondutores e cores de metais; UV vê gaps largos e éxcitons; UV de vácuo/raios X veem plasma e níveis de núcleo.</li>
+<li><b>Interbanda:</b> o fóton tem momento desprezível, então a transição é quase vertical. Gap direto: \(\alpha\propto(\hbar\omega-E_g)^{1/2}\), borda forte. Gap indireto: precisa de fônon, \(\alpha\propto(\hbar\omega-E_g\pm\hbar\Omega)^2\), borda fraca.</li>
+<li><b>Éxcitons:</b> picos abaixo de \(E_g\); \(E_n=E_g-Ry^*/n^2\). Em GaAs, \(Ry^*\approx4\)–5 meV; em TMDs 2D, centenas de meV.</li>
+<li><b>Fônons ópticos:</b> entre \(\omega_{TO}\) e \(\omega_{LO}\), \(\varepsilon_1<0\) e o cristal reflete — a banda de reststrahlen. A relação LST \(\omega_{LO}^2/\omega_{TO}^2=\varepsilon_s/\varepsilon_\infty\) conecta óptica e dielétrico. NaCl: TO 164 cm⁻¹, LO 264 cm⁻¹.</li>
+<li><b>Raman e Brillouin:</b> espalhamento inelástico. Raman vê modos ópticos; Brillouin, acústicos de GHz. Em cristais centrosimétricos, regra de exclusão mútua entre IR e Raman.</li>
+<li><b>Borda de plasma:</b> metais têm \(\varepsilon_1<0\) abaixo de \(\omega_p\) e refletem; acima, ficam transparentes. Drude: \(\sigma(\omega)=ne^2\tau/[m^*(1-i\omega\tau)]\).</li>
+<li><b>Birrefringência:</b> \(\varepsilon_{ij}\) tensor; \(n_o\neq n_e\). Calcita: \(n_o=1{,}658\), \(n_e=1{,}486\), \(\Delta n=0{,}172\), rotação 21,7°/mm em 589 nm. Base de polarizadores e lâminas \(\lambda/4\), \(\lambda/2\).</li>
+<li><b>Luminescência:</b> fluorescência (rápida) vs fosforescência (lenta); quantum yield \(\Phi=\Gamma_{\rm rad}/(\Gamma_{\rm rad}+\Gamma_{\rm nr})\). Centros de cor: F-center em NaCl, Cr³⁺ em rubi/esmeralda, YAG:Ce em LEDs brancos.</li>
+<li><b>Técnicas:</b> reflexão + K–K, elipsometria, espectroscopia de modulação, FTIR, Raman, Brillouin, fotoemissão. A modulação destaca singularidades de Van Hove.</li>
+</ul>
+
+<h3>Fórmulas de bolso</h3>
+<div class='eq'>\[
+\tilde n^2=\varepsilon(\omega)=\varepsilon_1(\omega)+i\varepsilon_2(\omega),\qquad
+R=\left|\frac{\tilde n-1}{\tilde n+1}\right|^2,\qquad
+\alpha=\frac{2\omega\kappa}{c}
+\]
+<small>\(\tilde n=n+i\kappa\); \(\kappa\) é o coeficiente de extinção. \(R\) em incidência normal.</small></div>
+<div class='eq'>\[
+E_n=E_g-\frac{R^*}{n^2},\qquad
+R^*=13{,}6\ \mathrm{eV}\,\frac{\mu}{m_e}\frac1{\varepsilon_\infty^2}
+\]
+<small>Série excitônica. O limiar de absorção é \(E_g-R^*\), não \(E_g\).</small></div>
+<div class='eq'>\[
+\frac{\omega_{LO}^2}{\omega_{TO}^2}=\frac{\varepsilon_s}{\varepsilon_\infty}
+\]
+<small>Lyddane–Sachs–Teller. NaCl: \((264/164)^2\approx2{,}59\) contra \(5{,}9/2{,}25\approx2{,}62\).</small></div>
+<div class='eq'>\[
+m^*\frac{d\mathbf v}{dt}=-e\mathbf E-m^*\gamma\mathbf v,\qquad
+\sigma(\omega)=\frac{ne^2\tau}{m^*}\frac{1}{1-i\omega\tau}
+\]
+<small>Drude. Em SI, \(\varepsilon(\omega)=1+i\sigma/(\varepsilon_0\omega)\); abaixo de \(\omega_p\), \(\varepsilon_1<0\).</small></div>
+<div class='eq'>\[
+\alpha_{\rm dir}\propto(\hbar\omega-E_g)^{1/2},\qquad
+\alpha_{\rm ind}\propto(\hbar\omega-E_g\pm\hbar\Omega)^2
+\]
+<small>Bordas direta e indireta. A indireta é ordens de grandeza mais fraca perto do limiar.</small></div>
+
+<h3>Números e comparações</h3>
+<table>
+<tr><th>Material</th><th>\(E_g\) (eV)</th><th>Tipo</th><th>O que resulta na luz</th></tr>
+<tr><td>Si</td><td>1,12</td><td>Indireto</td><td>Absorve com fônon; não emite bem — sensor/fotovoltaica.</td></tr>
+<tr><td>Ge</td><td>0,66 (L); ~0,8 direto em Γ</td><td>Indireto</td><td>Fotodiodos de IR; absorção de borda fraca.</td></tr>
+<tr><td>GaAs</td><td>1,42</td><td>Direto</td><td>Borda íngreme; LED/laser de IR.</td></tr>
+<tr><td>GaN</td><td>3,44</td><td>Direto</td><td>LED azul e laser azul-violeta.</td></tr>
+<tr><td>Diamante</td><td>5,47</td><td>Indireto</td><td>Transparente no visível; corta UV curto.</td></tr>
+<tr><td>MoS₂ monocamada</td><td>≈1,9</td><td>Direto</td><td>Éxcitons gigantes; óptica 2D.</td></tr>
+</table>
+<p class='tcap'>Tabela 10.2. NaCl: \(\omega_{TO}\approx164\) cm⁻¹, \(\omega_{LO}\approx264\) cm⁻¹; \(\varepsilon_s\approx5{,}9\), \(\varepsilon_\infty\approx2{,}25\). Calcita: \(n_o=1{,}658\), \(n_e=1{,}486\).</p>
+
+<div class='mapa'><b>Não confunda.</b> (i) \(\varepsilon_1\) não é absorção; \(\varepsilon_2\) é. (ii) Absorção e refração são faces da mesma resposta complexa. (iii) Gap direto vs indireto decide a eficiência de emissão. (iv) Éxciton é estado ligado abaixo do gap; não é o gap. (v) Reststrahlen é banda de reflexão, não absorção pura. (vi) Raman não é IR: são processos e regras de seleção diferentes. (vii) Kramers–Kronig exige espectro completo; não se inventa \(\varepsilon_1\) de um único ponto. (viii) Luminescência tem Stokes shift; o pico emitido não é o gap.</div>
+</section>
+
+<section class='topic' id='constantes'>
+<h2>Constantes, conversões e checklist de véspera</h2>
+<p class='tcap'>Tabela 11. Valores para estimar ordens de grandeza sem calculadora.</p>
+<table>
+<tr><th>Constante / conversão</th><th>Valor</th><th>Uso típico</th></tr>
+<tr><td>\(k_BT\) a 300 K</td><td>25,85 meV</td><td>Comparar com \(E_b\), gaps e fônons.</td></tr>
+<tr><td>\(\hbar c\)</td><td>197,3 eV·nm</td><td>\(E({\rm eV})=1240/\lambda({\rm nm})\).</td></tr>
+<tr><td>1 eV ↔ comprimento de onda</td><td>1240 nm</td><td>Faixa visível: 1,65–3,1 eV.</td></tr>
+<tr><td>1 THz</td><td>4,136 meV</td><td>Fônons e espectroscopia THz.</td></tr>
+<tr><td>1 cm⁻¹</td><td>0,12398 meV</td><td>Modos ópticos (100–1200 cm⁻¹).</td></tr>
+<tr><td>Rydberg</td><td>13,6 eV</td><td>Doadores e éxcitons.</td></tr>
+<tr><td>Raio de Bohr</td><td>0,529 Å</td><td>Escala de doadores e éxcitons.</td></tr>
+<tr><td>Magneton de Bohr</td><td>\(9{,}274\times10^{-24}\) J/T</td><td>Momentos magnéticos.</td></tr>
+<tr><td>\(m_0c^2\)</td><td>511 keV</td><td>Energia de repouso do elétron.</td></tr>
+</table>
+
+<h3>Checklist: você sabe responder?</h3>
+<ul class='check'>
+<li>Distinguir rede de Bravais, base e célula primitiva; construir a recíproca e a primeira zona.</li>
+<li>Explicar Bloch, o que é \(\mathbf k\) e por que \(E_n(\mathbf k)\) é periódica.</li>
+<li>Diferenciar gap fundamental, gap óptico e gap local; direto vs indireto.</li>
+<li>Contar modos: \(3N\), \(3p\) ramos, 3 acústicos e \(3(p-1)\) ópticos.</li>
+<li>Deduzir a dispersão da cadeia monoatômica e o limite do som.</li>
+<li>Explicar Dulong–Petit, Einstein, Debye e a lei \(T^3\).</li>
+<li>Calcular \(Ry^*\), \(a_X\) e o limiar \(E_g-Ry^*\) de um éxciton.</li>
+<li>Diferenciar Wannier–Mott de Frenkel e éxciton brilhante de escuro.</li>
+<li>Listar os quatro canais elétron–fônon e dizer qual domina em cada material.</li>
+<li>Explicar normal vs umklapp e as leis de Bloch–Grüneisen.</li>
+<li>Obter \(\omega_p\), a função dielétrica de Drude e a borda de plasma.</li>
+<li>Diferenciar plásmon de volume, 2D e de superfície; explicar Thomas–Fermi.</li>
+<li>Usar \(n_i\), \(np=n_i^2\), Hall e as bordas de absorção direta/indireta.</li>
+<li>Descrever a junção p–n, o MOSFET e o LED/laser em uma frase cada.</li>
+<li>Listar os quatro mecanismos dielétricos e a ordem de frequência de cada um.</li>
+<li>Escrever Clausius–Mossotti, Debye, LST e Curie–Weiss.</li>
+<li>Explicar ferroeletricidade, domínios, histerese e modo suave.</li>
+<li>Diferenciar piezo, piro e ferroelétrico.</li>
+<li>Definir \(B\), \(H\), \(M\), \(\chi\), \(\mu_r\) e explicar Bohr–van Leeuwen.</li>
+<li>Explicar troca, Stoner, ordens magnéticas, magnons e histerese.</li>
+<li>Descrever \(\varepsilon(\omega)\), Kramers–Kronig e as janelas espectrais.</li>
+<li>Explicar reststrahlen, Raman, plasma edge, birrefringência e luminescência.</li>
+</ul>
+
+<h3>Roteiro de 30 minutos</h3>
+<ol>
+<li><b>10 min:</b> leia o mapa dos 10 tópicos e recite a fórmula-âncora de cada um.</li>
+<li><b>10 min:</b> percorra as caixas “Não confunda” — são as pegadinhas mais prováveis.</li>
+<li><b>10 min:</b> escreva de memória as constantes, as fórmulas de bolso dos tópicos 4–8 e os números de Si, GaAs, NaCl e Fe.</li>
+</ol>
+
+<div class='foot'>
+<span>Revisão geral dos 10 tópicos · elaborada em 06/11/2026 · Física do Estado Sólido Experimental (UFC)</span>
+<span>Notas completas: <a href='index.html'>índice</a> · referências: Yu &amp; Cardona, Hofmann, Ashcroft &amp; Mermin, Blundell, Dresselhaus, Grosso &amp; Pastori Parravicini</span>
+</div>
+</section>
+
+</div></div>
+</body>
+</html>
